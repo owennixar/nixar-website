@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors — from the NIXAR logo */
+  --color-primary: #E71840;
+  --color-primary-hover: #C41535;
+  --color-primary-light: rgba(231, 24, 64, 0.08);
+  --color-primary-glow: rgba(231, 24, 64, 0.25);
+
+  /* Neutrals */
+  --color-black: #1A1A1A;
+  --color-dark: #231F20;
+  --color-text: #111111;
+  --color-text-secondary: #444444;
+  --color-text-muted: #666666;
+  --color-white: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-bg-alt: #F8F8F8;
+  --color-bg-dark: #0A0A0A;
+  --color-border: #E5E5E5;
+  --color-border-hover: #D0D0D0;
+
+  /* Fonts — set by next/font in layout.tsx */
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-plus-jakarta);
+}
+
+@theme inline {
+  /* Brand */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-glow: var(--color-primary-glow);
+
+  /* Neutrals */
+  --color-nixar-black: var(--color-black);
+  --color-nixar-dark: var(--color-dark);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-bg: var(--color-bg);
+  --color-bg-alt: var(--color-bg-alt);
+  --color-bg-dark: var(--color-bg-dark);
+  --color-border: var(--color-border);
+  --color-border-hover: var(--color-border-hover);
+
+  /* Fonts */
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+}
+
+/* Base */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Utility: gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #FF2D55 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ── Hero gradient orbs ──────────────────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  will-change: transform;
+}
+.hero-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(231, 24, 64, 0.06);
+  top: -10%;
+  right: 10%;
+  animation: orbFloat1 18s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(231, 24, 64, 0.04);
+  bottom: 10%;
+  left: -5%;
+  animation: orbFloat2 20s ease-in-out infinite;
+}
+.hero-orb-3 {
+  width: 350px;
+  height: 350px;
+  background: rgba(200, 200, 200, 0.05);
+  top: 40%;
+  left: 40%;
+  animation: orbFloat3 15s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(30px, -40px); }
+  66% { transform: translate(-20px, 20px); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-25px, 30px); }
+  66% { transform: translate(35px, -15px); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -30px); }
+}
+
+/* Hero floating image */
+.hero-float {
+  animation: heroFloat 4s ease-in-out infinite;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Hero scroll indicator */
+.hero-scroll-line {
+  animation: scrollLine 1.5s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* ── Trust / section marquee ─────────────────────────────────────── */
+.trust-marquee-track {
+  animation: marqueeScroll 35s linear infinite;
+}
+
+/* ── CTA banner floating shapes ──────────────────────────────────── */
+.cta-shape {
+  animation: ctaFloat 12s ease-in-out infinite;
+}
+.cta-shape-2 { animation-delay: -3s; animation-duration: 15s; }
+.cta-shape-3 { animation-delay: -6s; animation-duration: 10s; }
+.cta-shape-4 { animation-delay: -9s; animation-duration: 18s; }
+
+@keyframes ctaFloat {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(5deg) translate(10px, -15px); }
+  50% { transform: rotate(-3deg) translate(-10px, 10px); }
+  75% { transform: rotate(4deg) translate(15px, 5px); }
+}
+
+/* Footer marquee */
+.footer-marquee-track {
+  animation: marqueeScroll 30s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

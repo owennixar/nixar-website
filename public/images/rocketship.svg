@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 800" fill="none">
+  <!-- Rocket body -->
+  <defs>
+    <linearGradient id="bodyGrad" x1="200" y1="0" x2="200" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F8F8F8"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8E8E8"/>
+    </linearGradient>
+    <linearGradient id="noseGrad" x1="200" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#E71840"/>
+      <stop offset="100%" stop-color="#C41535"/>
+    </linearGradient>
+    <linearGradient id="flameGrad" x1="200" y1="580" x2="200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6B35"/>
+      <stop offset="40%" stop-color="#E71840"/>
+      <stop offset="100%" stop-color="#E71840" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main body -->
+  <path d="M200 80 C200 80, 280 200, 280 400 L280 560 L120 560 L120 400 C120 200, 200 80, 200 80Z" fill="url(#bodyGrad)" stroke="#D0D0D0" stroke-width="1.5"/>
+
+  <!-- Nose cone -->
+  <path d="M200 20 C200 20, 260 120, 265 180 L135 180 C140 120, 200 20, 200 20Z" fill="url(#noseGrad)"/>
+
+  <!-- Window -->
+  <circle cx="200" cy="280" r="35" fill="#1A1A1A" stroke="#C0C0C0" stroke-width="3"/>
+  <circle cx="200" cy="280" r="28" fill="#0A0A0A"/>
+  <circle cx="188" cy="270" r="8" fill="rgba(255,255,255,0.3)"/>
+
+  <!-- NIXAR text on body -->
+  <text x="200" y="400" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="28" fill="#E71840" letter-spacing="3">NIXAR</text>
+
+  <!-- Red stripe -->
+  <rect x="120" y="440" width="160" height="6" rx="3" fill="#E71840"/>
+
+  <!-- Left fin -->
+  <path d="M120 480 L60 580 L60 600 L120 560Z" fill="url(#noseGrad)"/>
+
+  <!-- Right fin -->
+  <path d="M280 480 L340 580 L340 600 L280 560Z" fill="url(#noseGrad)"/>
+
+  <!-- Bottom fin -->
+  <path d="M160 560 L200 600 L240 560Z" fill="#1A1A1A"/>
+
+  <!-- Engine nozzle -->
+  <ellipse cx="200" cy="570" rx="40" ry="12" fill="#444444"/>
+  <ellipse cx="200" cy="570" rx="28" ry="8" fill="#1A1A1A"/>
+
+  <!-- Exhaust flame -->
+  <path d="M175 575 C175 575, 200 720, 200 780 C200 720, 225 575, 225 575" fill="url(#flameGrad)" filter="url(#glow)" opacity="0.9"/>
+  <path d="M185 575 C185 575, 200 700, 200 740 C200 700, 215 575, 215 575" fill="#FFAA00" filter="url(#glow)" opacity="0.7"/>
+</svg>

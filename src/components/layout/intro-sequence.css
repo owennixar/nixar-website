@@ -1,0 +1,436 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   INTRO SEQUENCE — Pure CSS @keyframes animation
+   Total duration: ~7.7s
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Overlay ─────────────────────────────────────────────────────────────── */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* ── ACT 1: Text Wall ────────────────────────────────────────────────────── */
+.intro-wall {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.intro-row {
+  white-space: nowrap;
+  font-family: var(--font-syne), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  /* Default: visible, will animate out via split */
+  opacity: 1;
+  transform: translateX(0) scale(1);
+  animation: rowSplit 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  /* animation-delay set via inline style */
+  animation-play-state: paused;
+}
+
+/* Pause initially, play when delay fires */
+.intro-row {
+  animation-play-state: running;
+}
+
+.intro-row-odd {
+  color: #E71840;
+  background: #ffffff;
+}
+
+.intro-row-even {
+  color: #ffffff;
+  background: #E71840;
+}
+
+/* Inner text: continuous drift */
+.intro-row-inner {
+  display: inline-block;
+  animation: rowDrift 4s linear infinite;
+  animation-direction: var(--drift-anim-dir, normal);
+}
+
+.intro-row-odd .intro-row-inner {
+  animation-name: rowDriftLeft;
+}
+
+.intro-row-even .intro-row-inner {
+  animation-name: rowDriftRight;
+}
+
+@keyframes rowDriftLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-20px); }
+}
+
+@keyframes rowDriftRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(20px); }
+}
+
+/* Split animation — odd rows go left, even go right */
+.intro-row-odd {
+  animation-name: rowSplitLeft;
+}
+
+.intro-row-even {
+  animation-name: rowSplitRight;
+}
+
+@keyframes rowSplitLeft {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100vw) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes rowSplitRight {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) scale(1.05);
+    opacity: 0;
+  }
+}
+
+/* ── ACT 2: Rocket + Text Stage ──────────────────────────────────────────── */
+.intro-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Rocketship */
+.intro-rocket {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  height: 60vh;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  /* Appear */
+  animation:
+    rocketAppear 0.5s ease-out 2.0s forwards,
+    rocketLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 4.2s forwards;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .intro-rocket {
+    height: 45vh;
+  }
+}
+
+@keyframes rocketAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes rocketLaunch {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-50%) translateY(-5vh) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-120vh) scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Exhaust glow */
+.intro-exhaust {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 180px;
+  height: 120px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 140, 0, 0.5) 0%,
+    rgba(231, 24, 64, 0.3) 40%,
+    transparent 70%
+  );
+  filter: blur(30px);
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 1;
+  animation:
+    exhaustAppear 0.1s ease-out 3.8s forwards,
+    exhaustPulse 0.13s ease-in-out 3.8s 3,
+    exhaustLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 4.2s forwards;
+}
+
+@keyframes exhaustAppear {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes exhaustPulse {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.3); }
+}
+
+@keyframes exhaustLaunch {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(1) scaleY(1);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-50%) translateY(-10vh) scale(1.2) scaleY(2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-120vh) scale(0.8) scaleY(4);
+    opacity: 0;
+  }
+}
+
+/* ── Text overlays ───────────────────────────────────────────────────────── */
+.intro-text {
+  position: absolute;
+  font-family: var(--font-syne), system-ui, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  z-index: 3;
+}
+
+/* "WE TRANSFORM" — top left */
+.intro-text-transform {
+  top: 8vh;
+  left: 5vw;
+  color: #1A1A1A;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  animation:
+    fadeSlideLeft 0.6s ease-out 2.3s forwards,
+    textDriftLeft 0.5s ease-in 4.4s forwards;
+}
+
+@keyframes fadeSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textDriftLeft {
+  to {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+}
+
+/* "YOUR BRAND" — mid right */
+.intro-text-brand {
+  top: 38vh;
+  right: 5vw;
+  text-align: right;
+  color: #1A1A1A;
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  animation:
+    fadeSlideRight 0.6s ease-out 2.7s forwards,
+    textDriftRight 0.5s ease-in 4.4s forwards;
+}
+
+@keyframes fadeSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textDriftRight {
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+/* "ONLINE." — bottom left, largest, RED */
+.intro-text-online {
+  bottom: 12vh;
+  left: 5vw;
+  color: #E71840;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  text-shadow: 0 0 40px rgba(231, 24, 64, 0.2);
+  animation:
+    fadeSlideUp 0.7s ease-out 3.1s forwards,
+    textDriftLeft 0.5s ease-in 4.4s forwards;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Screen shake ────────────────────────────────────────────────────────── */
+.intro-shake {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  animation: screenShake 0.15s linear 4.2s 1;
+}
+
+@keyframes screenShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* ── ACT 3: Tagline ──────────────────────────────────────────────────────── */
+.intro-tagline {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.intro-tagline-text {
+  font-family: var(--font-syne), system-ui, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  color: #E71840;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  animation:
+    taglineAppear 0.8s ease-out 5.5s forwards,
+    taglineFade 0.5s ease-in 6.8s forwards;
+}
+
+@keyframes taglineAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes taglineFade {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Shimmer sweep */
+.intro-shimmer {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(255, 255, 255, 0.25) 55%,
+    transparent 65%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmerSweep 0.6s ease-in-out 5.8s forwards;
+}
+
+@keyframes shimmerSweep {
+  0% {
+    opacity: 1;
+    background-position: 200% 0;
+  }
+  100% {
+    opacity: 1;
+    background-position: -200% 0;
+  }
+}
+
+/* ── Final fadeout ────────────────────────────────────────────────────────── */
+.intro-fadeout {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  animation: finalFade 0.4s ease-in 7.3s forwards;
+}
+
+@keyframes finalFade {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+/* ── Reduced motion: no animation at all ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay {
+    display: none !important;
+  }
+}

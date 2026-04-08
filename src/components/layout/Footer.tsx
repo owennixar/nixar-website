@@ -1,0 +1,253 @@
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { services } from "@/lib/data/services";
+import { cities } from "@/lib/data/cities";
+
+const COMPANY_LINKS = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "#contact" },
+  { label: "Careers", href: "/careers" },
+] as const;
+
+const SOCIAL_LINKS = [
+  { label: "Instagram", href: "https://instagram.com/nixarsolutions", icon: InstagramIcon },
+  { label: "LinkedIn", href: "https://linkedin.com/company/nixarsolutions", icon: LinkedInIcon },
+  { label: "Facebook", href: "https://facebook.com/nixarsolutions", icon: FacebookIcon },
+  { label: "X", href: "https://x.com/nixarsolutions", icon: XIcon },
+] as const;
+
+const MARQUEE_TEXT =
+  "Digital-Transformation Agency \u00A0\u2022\u00A0 Content-Centric & SEO-Driven \u00A0\u2022\u00A0 Sales-Focused & Lead-Conversion Oriented \u00A0\u2022\u00A0 End-to-End Web & Digital Infrastructure \u00A0\u2022\u00A0 Full-Funnel Sales Support \u00A0\u2022\u00A0 ";
+
+const TOP_CITIES = cities.slice(0, 12);
+
+export default function Footer() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 500);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  return (
+    <>
+      <footer className="bg-[#0A0A0A] text-white" role="contentinfo">
+        {/* ── Marquee strip ─────────────────────────────────────────── */}
+        <div className="overflow-hidden border-b border-white/[0.06] py-4">
+          <div className="footer-marquee-track flex whitespace-nowrap">
+            {/* Duplicate for seamless loop */}
+            {[0, 1].map((n) => (
+              <span
+                key={n}
+                className="inline-block font-[family-name:var(--font-heading)] text-sm font-700 uppercase tracking-[0.15em] text-white/20"
+                aria-hidden={n === 1}
+              >
+                {MARQUEE_TEXT}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Main grid ─────────────────────────────────────────────── */}
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-8">
+          {/* Column 1: Brand */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <Link href="/" aria-label="NIXAR Solutions — Home">
+              <Image
+                src="/logo-white.svg"
+                alt="NIXAR Solutions"
+                width={160}
+                height={48}
+                className="h-8 w-auto"
+              />
+            </Link>
+            <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/45">
+              Dallas-Fort Worth&apos;s AI-Powered Digital Transformation Agency
+            </p>
+            {/* Social */}
+            <div className="mt-6 flex gap-3">
+              {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/35 transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Column 2: Company */}
+          <div>
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+              Company
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {COMPANY_LINKS.map(({ label, href }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services — all 10 */}
+          <div>
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+              Services
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {services.map(({ slug, shortTitle }) => (
+                <li key={slug}>
+                  <Link
+                    href={`/services/${slug}`}
+                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                  >
+                    {shortTitle}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Serving DFW — top 12 cities */}
+          <div>
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+              Serving DFW
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {TOP_CITIES.map(({ slug, name }) => (
+                <li key={slug}>
+                  <Link
+                    href={`/${slug}`}
+                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* ── Contact strip ─────────────────────────────────────────── */}
+        <div className="border-t border-white/[0.06]">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-6 px-5 py-8 sm:flex-row sm:gap-10 lg:px-8">
+            <span className="flex items-center gap-2 text-[14px] text-white/55">
+              <MapPin size={15} className="text-[var(--color-primary)]" />
+              Frisco, TX
+            </span>
+            <a
+              href="tel:4697593638"
+              className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-white"
+            >
+              <Phone size={15} className="text-[var(--color-primary)]" />
+              469-759-3638
+            </a>
+            <a
+              href="mailto:hello@nixarsolutions.com"
+              className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-white"
+            >
+              <Mail size={15} className="text-[var(--color-primary)]" />
+              hello@nixarsolutions.com
+            </a>
+          </div>
+        </div>
+
+        {/* ── Bottom bar ────────────────────────────────────────────── */}
+        <div className="border-t border-[#222]">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-[12px] text-white/25 md:flex-row lg:px-8">
+            <p>&copy; 2026 NIXAR Solutions. All Rights Reserved.</p>
+            <div className="flex gap-6">
+              <Link
+                href="/privacy"
+                className="transition-colors hover:text-white/50"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="/terms"
+                className="transition-colors hover:text-white/50"
+              >
+                Terms &amp; Conditions
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* ── Back to top button ──────────────────────────────────────── */}
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-white shadow-lg shadow-black/10 transition-all duration-300 hover:shadow-xl ${
+          showBackToTop
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none translate-y-4 opacity-0"
+        }`}
+      >
+        <ArrowUp size={18} className="text-[var(--color-primary)]" />
+      </button>
+    </>
+  );
+}
+
+/* ── Inline social SVG icons ───────────────────────────────────────────── */
+function InstagramIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
