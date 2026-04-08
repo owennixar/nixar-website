@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Syne, Plus_Jakarta_Sans } from "next/font/google";
+import { Bebas_Neue, Plus_Jakarta_Sans } from "next/font/google";
 import IntroSequence from "@/components/layout/IntroSequence";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const syne = Syne({
+const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
-  variable: "--font-syne",
-  weight: ["700", "800"],
+  variable: "--font-bebas",
+  weight: "400",
   display: "swap",
 });
 
@@ -91,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${syne.variable} ${plusJakarta.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${plusJakarta.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preload" as="image" href="/images/rocketship.webp" />

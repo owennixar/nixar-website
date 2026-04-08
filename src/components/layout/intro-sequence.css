@@ -1,6 +1,18 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   INTRO SEQUENCE — Pure CSS @keyframes animation
-   Total duration: ~7.7s
+   INTRO SEQUENCE — Simplified: rocket + text + launch + tagline
+   Total duration: ~6.0s
+
+   Timeline:
+   0.0s  — White screen, rocket fades in (0.5s)
+   0.5s  — "WE TRANSFORM" slides from left
+   0.9s  — "YOUR BRAND" slides from right
+   1.3s  — "ONLINE." slides up from below
+   2.0s  — Exhaust glow pulses
+   2.4s  — Rocket launches, screen shake, text drifts away
+   3.7s  — Brief white pause
+   4.0s  — "Know YOUR Potential." fades in, shimmer
+   5.5s  — Tagline fades out
+   6.0s  — Overlay fades out, homepage revealed
    ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ── Overlay ─────────────────────────────────────────────────────────────── */
@@ -12,111 +24,7 @@
   overflow: hidden;
 }
 
-/* ── ACT 1: Text Wall ────────────────────────────────────────────────────── */
-.intro-wall {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.intro-row {
-  white-space: nowrap;
-  font-family: var(--font-syne), system-ui, sans-serif;
-  font-weight: 900;
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 1.1;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  overflow: hidden;
-  /* Default: visible, will animate out via split */
-  opacity: 1;
-  transform: translateX(0) scale(1);
-  animation: rowSplit 0.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-  /* animation-delay set via inline style */
-  animation-play-state: paused;
-}
-
-/* Pause initially, play when delay fires */
-.intro-row {
-  animation-play-state: running;
-}
-
-.intro-row-odd {
-  color: #E71840;
-  background: #ffffff;
-}
-
-.intro-row-even {
-  color: #ffffff;
-  background: #E71840;
-}
-
-/* Inner text: continuous drift */
-.intro-row-inner {
-  display: inline-block;
-  animation: rowDrift 4s linear infinite;
-  animation-direction: var(--drift-anim-dir, normal);
-}
-
-.intro-row-odd .intro-row-inner {
-  animation-name: rowDriftLeft;
-}
-
-.intro-row-even .intro-row-inner {
-  animation-name: rowDriftRight;
-}
-
-@keyframes rowDriftLeft {
-  from { transform: translateX(0); }
-  to { transform: translateX(-20px); }
-}
-
-@keyframes rowDriftRight {
-  from { transform: translateX(0); }
-  to { transform: translateX(20px); }
-}
-
-/* Split animation — odd rows go left, even go right */
-.intro-row-odd {
-  animation-name: rowSplitLeft;
-}
-
-.intro-row-even {
-  animation-name: rowSplitRight;
-}
-
-@keyframes rowSplitLeft {
-  0% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100vw) scale(1.05);
-    opacity: 0;
-  }
-}
-
-@keyframes rowSplitRight {
-  0% {
-    transform: translateX(0) scale(1);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(100vw) scale(1.05);
-    opacity: 0;
-  }
-}
-
-/* ── ACT 2: Rocket + Text Stage ──────────────────────────────────────────── */
+/* ── Rocket + Text Stage ────────────────────────────────────────────────── */
 .intro-stage {
   position: absolute;
   inset: 0;
@@ -126,7 +34,7 @@
   pointer-events: none;
 }
 
-/* Rocketship */
+/* Rocketship — fades in immediately */
 .intro-rocket {
   position: absolute;
   bottom: 0;
@@ -136,10 +44,9 @@
   width: auto;
   object-fit: contain;
   opacity: 0;
-  /* Appear */
   animation:
-    rocketAppear 0.5s ease-out 2.0s forwards,
-    rocketLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 4.2s forwards;
+    rocketAppear 0.5s ease-out 0s forwards,
+    rocketLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 2.4s forwards;
   z-index: 2;
 }
 
@@ -194,9 +101,9 @@
   opacity: 0;
   z-index: 1;
   animation:
-    exhaustAppear 0.1s ease-out 3.8s forwards,
-    exhaustPulse 0.13s ease-in-out 3.8s 3,
-    exhaustLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 4.2s forwards;
+    exhaustAppear 0.1s ease-out 2.0s forwards,
+    exhaustPulse 0.13s ease-in-out 2.0s 3,
+    exhaustLaunch 1.3s cubic-bezier(0.32, 0, 0.67, 0) 2.4s forwards;
 }
 
 @keyframes exhaustAppear {
@@ -229,23 +136,23 @@
 /* ── Text overlays ───────────────────────────────────────────────────────── */
 .intro-text {
   position: absolute;
-  font-family: var(--font-syne), system-ui, sans-serif;
-  font-weight: 900;
+  font-family: var(--font-bebas), var(--font-heading), system-ui, sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   opacity: 0;
   z-index: 3;
 }
 
-/* "WE TRANSFORM" — top left */
+/* "WE TRANSFORM" — top left, slides from left at 0.5s */
 .intro-text-transform {
   top: 8vh;
   left: 5vw;
   color: #1A1A1A;
   font-size: clamp(2.5rem, 5.5vw, 5rem);
   animation:
-    fadeSlideLeft 0.6s ease-out 2.3s forwards,
-    textDriftLeft 0.5s ease-in 4.4s forwards;
+    fadeSlideLeft 0.6s ease-out 0.5s forwards,
+    textDriftLeft 0.5s ease-in 2.6s forwards;
 }
 
 @keyframes fadeSlideLeft {
@@ -266,7 +173,7 @@
   }
 }
 
-/* "YOUR BRAND" — mid right */
+/* "YOUR BRAND" — mid right, slides from right at 0.9s */
 .intro-text-brand {
   top: 38vh;
   right: 5vw;
@@ -274,8 +181,8 @@
   color: #1A1A1A;
   font-size: clamp(2.5rem, 5.5vw, 5rem);
   animation:
-    fadeSlideRight 0.6s ease-out 2.7s forwards,
-    textDriftRight 0.5s ease-in 4.4s forwards;
+    fadeSlideRight 0.6s ease-out 0.9s forwards,
+    textDriftRight 0.5s ease-in 2.6s forwards;
 }
 
 @keyframes fadeSlideRight {
@@ -296,7 +203,7 @@
   }
 }
 
-/* "ONLINE." — bottom left, largest, RED */
+/* "ONLINE." — bottom left, largest, RED, slides up at 1.3s */
 .intro-text-online {
   bottom: 12vh;
   left: 5vw;
@@ -304,8 +211,8 @@
   font-size: clamp(3.5rem, 8vw, 7rem);
   text-shadow: 0 0 40px rgba(231, 24, 64, 0.2);
   animation:
-    fadeSlideUp 0.7s ease-out 3.1s forwards,
-    textDriftLeft 0.5s ease-in 4.4s forwards;
+    fadeSlideUp 0.7s ease-out 1.3s forwards,
+    textDriftLeft 0.5s ease-in 2.6s forwards;
 }
 
 @keyframes fadeSlideUp {
@@ -319,13 +226,13 @@
   }
 }
 
-/* ── Screen shake ────────────────────────────────────────────────────────── */
+/* ── Screen shake at launch (2.4s) ──────────────────────────────────────── */
 .intro-shake {
   position: absolute;
   inset: 0;
   z-index: 10;
   pointer-events: none;
-  animation: screenShake 0.15s linear 4.2s 1;
+  animation: screenShake 0.15s linear 2.4s 1;
 }
 
 @keyframes screenShake {
@@ -337,7 +244,7 @@
   100% { transform: translateX(0); }
 }
 
-/* ── ACT 3: Tagline ──────────────────────────────────────────────────────── */
+/* ── Tagline (4.0s–5.5s) ────────────────────────────────────────────────── */
 .intro-tagline {
   position: absolute;
   inset: 0;
@@ -349,18 +256,18 @@
 }
 
 .intro-tagline-text {
-  font-family: var(--font-syne), system-ui, sans-serif;
-  font-weight: 900;
+  font-family: var(--font-bebas), var(--font-heading), system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(2.5rem, 6vw, 5.5rem);
   color: #E71840;
   text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   opacity: 0;
   position: relative;
   overflow: hidden;
   animation:
-    taglineAppear 0.8s ease-out 5.5s forwards,
-    taglineFade 0.5s ease-in 6.8s forwards;
+    taglineAppear 0.8s ease-out 4.0s forwards,
+    taglineFade 0.5s ease-in 5.5s forwards;
 }
 
 @keyframes taglineAppear {
@@ -397,7 +304,7 @@
     transparent 100%
   );
   background-size: 200% 100%;
-  animation: shimmerSweep 0.6s ease-in-out 5.8s forwards;
+  animation: shimmerSweep 0.6s ease-in-out 4.3s forwards;
 }
 
 @keyframes shimmerSweep {
@@ -411,7 +318,7 @@
   }
 }
 
-/* ── Final fadeout ────────────────────────────────────────────────────────── */
+/* ── Final fadeout (5.6s) ────────────────────────────────────────────────── */
 .intro-fadeout {
   position: absolute;
   inset: 0;
@@ -419,7 +326,7 @@
   background: #ffffff;
   opacity: 0;
   pointer-events: none;
-  animation: finalFade 0.4s ease-in 7.3s forwards;
+  animation: finalFade 0.4s ease-in 5.6s forwards;
 }
 
 @keyframes finalFade {

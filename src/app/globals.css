@@ -21,7 +21,7 @@
   --color-border-hover: #D0D0D0;
 
   /* Fonts — set by next/font in layout.tsx */
-  --font-heading: var(--font-syne);
+  --font-heading: var(--font-bebas);
   --font-body: var(--font-plus-jakarta);
 }
 
@@ -56,6 +56,11 @@ body {
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Bebas Neue headings — uppercase by design, add tracking */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.02em;
 }
 
 html {
