@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import AboutHero from "./AboutHero";
 import AboutStats from "./AboutStats";
 import OriginStory from "./OriginStory";
+import Timeline from "./Timeline";
+import Values from "./Values";
 import TeamSection from "./TeamSection";
+import CounterSection from "./CounterSection";
 import Differentiators from "./Differentiators";
 import CtaBanner from "@/components/sections/CtaBanner";
 import {
@@ -24,7 +27,10 @@ export default function AboutPage() {
         <AboutHero />
         <AboutStats />
         <OriginStory />
+        <Timeline />
+        <Values />
         <TeamSection />
+        <CounterSection />
         <Differentiators />
         <CtaBanner />
       </main>

@@ -48,7 +48,7 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
             <AnimateIn key={project.slug} delay={0.08 * i}>
               {/* TODO: Replace gradient with nano-banana-2 generated project mockup */}
               <a
-                href={`#${project.slug}`}
+                href={`/portfolio/${project.slug}`}
                 className="group relative block aspect-[16/10] overflow-hidden rounded-2xl"
               >
                 <div

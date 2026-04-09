@@ -11,6 +11,16 @@ import {
   Bot,
   Palette,
   BarChart3,
+  UtensilsCrossed,
+  HardHat,
+  Heart,
+  Building,
+  ShoppingCart,
+  Briefcase,
+  Car,
+  Cpu,
+  CheckCircle2,
+  XCircle,
 } from "lucide-react";
 import { services } from "@/lib/data/services";
 import AnimateIn from "@/components/ui/AnimateIn";
@@ -144,6 +154,203 @@ export default function ServicesIndex() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* How We Work */}
+        <section className="bg-[#0A0A0A] py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="text-center font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2.25rem)] font-700 uppercase tracking-tight text-white">
+                How We Work
+              </h2>
+            </AnimateIn>
+
+            <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  num: "01",
+                  title: "DISCOVER",
+                  desc: "We audit your current presence, analyze competitors, and identify opportunities.",
+                },
+                {
+                  num: "02",
+                  title: "STRATEGY",
+                  desc: "We build a custom roadmap aligned to your business goals with clear KPIs and timelines.",
+                },
+                {
+                  num: "03",
+                  title: "EXECUTION",
+                  desc: "Our team implements the strategy across all channels with weekly progress updates.",
+                },
+                {
+                  num: "04",
+                  title: "SUPPORT",
+                  desc: "Ongoing optimization, monthly reporting, and strategic adjustments to maximize results.",
+                },
+              ].map((step, i) => (
+                <AnimateIn key={step.num} delay={0.1 * i}>
+                  <div className="glass-card relative p-7 text-center">
+                    <span className="font-[family-name:var(--font-heading)] text-[2.5rem] font-700 leading-none text-[#E71840]/20">
+                      {step.num}
+                    </span>
+                    <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1.1rem] font-700 text-white">
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-[1.6] text-[#999]">
+                      {step.desc}
+                    </p>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
+
+            {/* Connecting line (decorative) */}
+            <div className="mx-auto mt-6 hidden max-w-4xl items-center justify-center gap-0 lg:flex">
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="h-[2px] flex-1 bg-gradient-to-r from-[#E71840]/40 via-[#E71840]/20 to-[#E71840]/40"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Industries We Serve */}
+        <section className="bg-[#111] py-24 lg:py-32">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="text-center font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2.25rem)] font-700 uppercase tracking-tight text-white">
+                Who We Work With
+              </h2>
+            </AnimateIn>
+
+            <div className="mt-14 grid grid-cols-2 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {([
+                {
+                  Icon: UtensilsCrossed,
+                  name: "Restaurants & Food Service",
+                  desc: "Menu optimization, local SEO, social media that drives reservations.",
+                },
+                {
+                  Icon: HardHat,
+                  name: "Construction & Home Services",
+                  desc: "Lead generation, project portfolios, and local search dominance.",
+                },
+                {
+                  Icon: Heart,
+                  name: "Healthcare & Medical",
+                  desc: "Patient acquisition, HIPAA-aware marketing, and reputation management.",
+                },
+                {
+                  Icon: Building,
+                  name: "Real Estate",
+                  desc: "Property marketing, agent branding, and listing visibility.",
+                },
+                {
+                  Icon: ShoppingCart,
+                  name: "E-Commerce & Retail",
+                  desc: "Product SEO, shopping ads, and conversion optimization.",
+                },
+                {
+                  Icon: Briefcase,
+                  name: "Professional Services",
+                  desc: "Authority building, lead generation, and thought leadership content.",
+                },
+                {
+                  Icon: Car,
+                  name: "Automotive",
+                  desc: "Local search, inventory marketing, and service department leads.",
+                },
+                {
+                  Icon: Cpu,
+                  name: "Technology & SaaS",
+                  desc: "Product marketing, demand generation, and technical content.",
+                },
+              ] as const).map((industry, i) => (
+                <AnimateIn key={industry.name} delay={0.05 * i}>
+                  <div className="glass-card p-6 text-center transition-transform duration-300 hover:-translate-y-1">
+                    <industry.Icon size={28} className="mx-auto text-[#E71840]" />
+                    <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
+                      {industry.name}
+                    </h3>
+                    <p className="mt-1.5 text-[13px] leading-[1.6] text-[#999]">
+                      {industry.desc}
+                    </p>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table */}
+        <section className="bg-[#0A0A0A] py-24 lg:py-32">
+          <div className="mx-auto max-w-5xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="text-center font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2.25rem)] font-700 uppercase tracking-tight text-white">
+                Why NIXAR vs. Other Agencies
+              </h2>
+            </AnimateIn>
+
+            <AnimateIn delay={0.15}>
+              <div className="glass-card mt-12 overflow-hidden p-0">
+                {/* Header */}
+                <div className="flex items-center border-b border-white/10">
+                  <div className="w-[40%] px-5 py-4 text-[13px] font-600 text-white/50" />
+                  <div className="flex-1 border-b-2 border-[#E71840] bg-white/[0.04] px-4 py-4 text-center font-[family-name:var(--font-heading)] text-[0.85rem] font-700 uppercase tracking-wider text-white">
+                    NIXAR
+                  </div>
+                  <div className="flex-1 px-4 py-4 text-center text-[0.8rem] font-600 text-white/50">
+                    Typical Agency
+                  </div>
+                  <div className="flex-1 px-4 py-4 text-center text-[0.8rem] font-600 text-white/50">
+                    DIY
+                  </div>
+                </div>
+
+                {/* Rows */}
+                {([
+                  { label: "Strategy Alignment", nixar: true, typical: true, diy: false },
+                  { label: "AI-Powered Tools", nixar: true, typical: false, diy: false },
+                  { label: "24/7 Support", nixar: true, typical: false, diy: false },
+                  { label: "Transparent Reporting", nixar: true, typical: true, diy: true },
+                  { label: "Cross-Functional Alignment", nixar: true, typical: false, diy: false },
+                  { label: "GEO Optimization", nixar: true, typical: false, diy: false },
+                  { label: "Custom AI Agents", nixar: true, typical: false, diy: false },
+                  { label: "Dedicated Team", nixar: true, typical: true, diy: false },
+                ] as const).map((row, i) => (
+                  <div
+                    key={row.label}
+                    className={`flex items-center ${
+                      i % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"
+                    }`}
+                  >
+                    <div className="w-[40%] px-5 py-3.5 text-[14px] text-white/70">
+                      {row.label}
+                    </div>
+                    <div className="flex flex-1 items-center justify-center bg-white/[0.02] py-3.5">
+                      <CheckCircle2 size={18} className="text-green-500" />
+                    </div>
+                    <div className="flex flex-1 items-center justify-center py-3.5">
+                      {row.typical ? (
+                        <CheckCircle2 size={18} className="text-green-500" />
+                      ) : (
+                        <XCircle size={18} className="text-red-500/50" />
+                      )}
+                    </div>
+                    <div className="flex flex-1 items-center justify-center py-3.5">
+                      {row.diy ? (
+                        <CheckCircle2 size={18} className="text-green-500" />
+                      ) : (
+                        <XCircle size={18} className="text-red-500/50" />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </AnimateIn>
           </div>
         </section>
 

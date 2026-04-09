@@ -16,7 +16,7 @@ import {
 import { services } from "@/lib/data/services";
 import { cities, getCityBySlug } from "@/lib/data/cities";
 import { testimonials } from "@/lib/data/testimonials";
-import { getCityFaqs } from "@/lib/data/faq";
+// FAQ data is defined inline for the Dallas hub page
 import {
   localBusinessSchema,
   faqSchema,
@@ -39,13 +39,46 @@ export const metadata: Metadata = {
 
 export default function DallasPage() {
   const dallas = getCityBySlug("dallas")!;
-  const faqs = getCityFaqs("Dallas");
+  const faqs = [
+    {
+      question: "What digital marketing services does NIXAR offer in Dallas?",
+      answer: "NIXAR Solutions provides comprehensive digital marketing in Dallas including AI-Powered SEO, Generative Engine Optimization (GEO), Custom AI Agents, Web Development, Brand Identity, Social Media Management, Content Marketing, Paid Advertising, Automation & AI Integration, and Personalized Sales Support. Every strategy is customized to Dallas\u2019s competitive market dynamics.",
+    },
+    {
+      question: "How much does a marketing agency cost in Dallas?",
+      answer: "Marketing agency costs in Dallas vary widely based on services and scope. NIXAR Solutions provides customized proposals after a free consultation. We believe in transparent pricing with clear deliverables and measurable outcomes. Contact us at 469-759-3638 for a free Dallas market analysis.",
+    },
+    {
+      question: "Why should I hire a Dallas-based agency instead of a national one?",
+      answer: "A local Dallas agency understands the DFW market dynamics, competition landscape, and consumer behavior in ways a national agency cannot. NIXAR is based in Frisco and serves Dallas businesses daily \u2014 we know the neighborhoods, the competition, and what works in this specific market.",
+    },
+    {
+      question: "Does NIXAR specialize in any industries in Dallas?",
+      answer: "We work across all major Dallas industries including financial services, technology, healthcare, real estate, hospitality, restaurants, construction, and professional services. Our AI-powered approach adapts to each industry\u2019s unique challenges and opportunities.",
+    },
+    {
+      question: "How is NIXAR different from other Dallas marketing agencies?",
+      answer: "Three key differentiators: We\u2019re AI-first, using artificial intelligence across every service. We prioritize cross-functional alignment before external marketing. And we\u2019re radically transparent \u2014 every strategy has clear KPIs and honest reporting. We don\u2019t hide behind vanity metrics.",
+    },
+    {
+      question: "What is GEO and why do Dallas businesses need it?",
+      answer: "GEO (Generative Engine Optimization) ensures your business appears when people ask AI assistants like ChatGPT, Perplexity, or Google AI Overviews about your industry. With AI search growing 300%+ year-over-year, Dallas businesses that optimize for AI search now will have a major competitive advantage.",
+    },
+    {
+      question: "How long does SEO take to work for a Dallas business?",
+      answer: "SEO is a long-term strategy. Most Dallas businesses see initial improvements in 2-3 months and significant results in 4-6 months. The Dallas market is competitive, which means SEO takes consistency and quality \u2014 but the compounding returns are worth the investment.",
+    },
+    {
+      question: "Does NIXAR offer free consultations for Dallas businesses?",
+      answer: "Yes. We offer a completely free digital audit and consultation for Dallas businesses. We\u2019ll analyze your current online presence, identify opportunities, and provide actionable recommendations \u2014 no cost, no obligation. Call 469-759-3638 or visit our free audit page.",
+    },
+  ];
 
   return (
     <>
       <main>
         {/* ─── HERO ──────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-white pb-16 pt-32 lg:pt-40">
+        <section id="dallas-hero" className="relative overflow-hidden bg-white pb-16 pt-32 lg:pt-40">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="hero-orb" style={{ width: 500, height: 500, background: "rgba(231,24,64,0.05)", top: "-8%", right: "0%", animation: "orbFloat1 18s ease-in-out infinite" }} />
             <div className="hero-orb" style={{ width: 350, height: 350, background: "rgba(231,24,64,0.03)", bottom: "5%", left: "5%", animation: "orbFloat2 22s ease-in-out infinite" }} />
@@ -342,6 +375,64 @@ export default function DallasPage() {
                       </p>
                     </div>
                   </div>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── DALLAS BY THE NUMBERS ─────────────────────────── */}
+        <section className="bg-[#111] py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="text-center font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase tracking-tight text-white">
+                Dallas by the Numbers
+              </h2>
+            </AnimateIn>
+
+            <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {[
+                { stat: "~1.3M", label: "City Population" },
+                { stat: "~7.6M", label: "DFW Metro Population" },
+                { stat: "#4", label: "US Tech Hub Ranking" },
+                { stat: "2,000+", label: "Marketing Agencies in DFW" },
+              ].map((item, i) => (
+                <AnimateIn key={item.label} delay={0.1 * i}>
+                  <div className="glass-card flex flex-col items-center justify-center rounded-2xl p-8 text-center">
+                    <p className="font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-700 text-white">
+                      {item.stat}
+                    </p>
+                    <p className="mt-2 text-[14px] text-[#666]">{item.label}</p>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── NEIGHBORHOODS WE SERVE ──────────────────────────── */}
+        <section className="bg-[#0A0A0A] py-24">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="text-center font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase tracking-tight text-white">
+                Neighborhoods We Serve in Dallas
+              </h2>
+            </AnimateIn>
+
+            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {[
+                "Uptown", "Deep Ellum", "Downtown", "Design District",
+                "Bishop Arts", "Oak Lawn", "Highland Park", "Lakewood",
+                "Lower Greenville", "Knox-Henderson", "Victory Park", "Trinity Groves",
+              ].map((neighborhood, i) => (
+                <AnimateIn key={neighborhood} delay={0.04 * i}>
+                  <a
+                    href="#dallas-hero"
+                    className="glass-card flex items-center gap-2 rounded-xl px-4 py-3 transition-all hover:border-[#E71840]/40"
+                  >
+                    <MapPin size={14} className="shrink-0 text-[#E71840]" />
+                    <span className="text-[14px] text-white">{neighborhood}</span>
+                  </a>
                 </AnimateIn>
               ))}
             </div>

@@ -194,6 +194,60 @@ export default async function CityPage({
           </div>
         </section>
 
+        {/* ─── WHY DIGITAL TRANSFORMATION ────────────────────── */}
+        <section className="bg-[#0A0A0A] py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-white">
+                Why {city.name} Businesses Need{" "}
+                <span className="text-[#E71840]">Digital Transformation</span>
+              </h2>
+            </AnimateIn>
+
+            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+              <AnimateIn delay={0.1}>
+                <div className="glass-card rounded-2xl p-7">
+                  <h3 className="font-[family-name:var(--font-heading)] text-[1.05rem] font-700 text-[#E71840]">
+                    LOCAL COMPETITION IS FIERCE
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
+                    With {city.population} residents and thousands of businesses competing
+                    for attention, standing out online isn&apos;t optional — it&apos;s survival.
+                    The businesses investing in digital marketing today will own the market
+                    tomorrow.
+                  </p>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.2}>
+                <div className="glass-card rounded-2xl p-7">
+                  <h3 className="font-[family-name:var(--font-heading)] text-[1.05rem] font-700 text-[#E71840]">
+                    YOUR CUSTOMERS ARE SEARCHING ONLINE
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
+                    88% of local searches on mobile result in a call or visit within one
+                    week. If your business isn&apos;t visible when {city.name} residents search
+                    for your services, you&apos;re losing customers to competitors who are.
+                  </p>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.3}>
+                <div className="glass-card rounded-2xl p-7">
+                  <h3 className="font-[family-name:var(--font-heading)] text-[1.05rem] font-700 text-[#E71840]">
+                    AI IS CHANGING EVERYTHING
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
+                    ChatGPT, Perplexity, and Google AI Overviews are reshaping how people
+                    find businesses. {city.name} businesses that optimize for AI search now
+                    will have a massive head start over those that wait.
+                  </p>
+                </div>
+              </AnimateIn>
+            </div>
+          </div>
+        </section>
+
         {/* ─── SERVICES ──────────────────────────────────────── */}
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -308,6 +362,73 @@ export default async function CityPage({
                   </div>
                 </AnimateIn>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── EXPLORE OUR SERVICES ─────────────────────────── */}
+        <section className="bg-[var(--color-bg-alt)] py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-[#1A1A1A]">
+                Explore Our Services
+              </h2>
+              <p className="mt-3 max-w-2xl text-[15px] text-[var(--color-text-secondary)]">
+                Learn more about how NIXAR Solutions can help your {city.name} business grow.
+              </p>
+            </AnimateIn>
+
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <AnimateIn delay={0.1}>
+                <Link
+                  href="/services"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                >
+                  <div>
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                      All Services
+                    </h3>
+                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                      SEO, AI agents, web dev &amp; more
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                </Link>
+              </AnimateIn>
+
+              <AnimateIn delay={0.15}>
+                <Link
+                  href="/free-audit"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                >
+                  <div>
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                      Free Audit
+                    </h3>
+                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                      Get a free {city.name} market analysis
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                </Link>
+              </AnimateIn>
+
+              <AnimateIn delay={0.2}>
+                <Link
+                  href="/blog"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                >
+                  <div>
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                      Blog
+                    </h3>
+                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                      Digital marketing insights &amp; tips
+                    </p>
+                  </div>
+                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                </Link>
+              </AnimateIn>
             </div>
           </div>
         </section>

@@ -9,11 +9,12 @@ import { cities } from "@/lib/data/cities";
 
 const COMPANY_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#about" },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
+  { label: "Free Audit", href: "/free-audit" },
 ] as const;
 
 const SOCIAL_LINKS = [

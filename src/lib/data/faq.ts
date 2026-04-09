@@ -66,6 +66,10 @@ export function getCityFaqs(cityName: string): FAQ[] {
       question: `What digital marketing services are available in ${cityName}?`,
       answer: `NIXAR Solutions offers comprehensive digital marketing services in ${cityName} including AI-Powered SEO, Generative Engine Optimization (GEO), Custom AI Agents, Web Development, Brand Identity, Social Media Management, Content Marketing, Paid Advertising, Automation & AI Integration, and Personalized Sales Support. Every strategy is customized to ${cityName}'s specific market dynamics.`,
     },
+    {
+      question: `What is GEO and why do ${cityName} businesses need it?`,
+      answer: `GEO (Generative Engine Optimization) is a new discipline that ensures your business appears in AI-powered search results from ChatGPT, Perplexity, Google AI Overviews, and other AI assistants. As AI search usage grows 300%+ year-over-year, ${cityName} businesses that invest in GEO now will gain a significant competitive advantage over those that wait. NIXAR Solutions is one of the first agencies in DFW to offer dedicated GEO services.`,
+    },
   ];
 }
 
