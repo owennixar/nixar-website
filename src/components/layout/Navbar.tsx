@@ -163,7 +163,7 @@ export default function Navbar() {
                       }}
                       aria-expanded={servicesOpen}
                       aria-haspopup="true"
-                      className="nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] text-white transition-colors hover:text-[var(--color-primary)]"
+                      className="nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840]"
                     >
                       {label}
                       <ChevronDown
@@ -227,7 +227,7 @@ export default function Navbar() {
                   key={label}
                   href={href}
                   role="menuitem"
-                  className="nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] text-white transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm"
+                  className="nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[#E71840] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E71840] focus-visible:ring-offset-4 focus-visible:rounded-sm"
                 >
                   {label}
                 </Link>
@@ -239,7 +239,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-5 lg:flex">
             <a
               href="tel:4697593638"
-              className="flex items-center gap-1.5 text-[13px] font-500 text-white/50 transition-colors hover:text-white"
+              className="flex items-center gap-1.5 text-[13px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
               aria-label="Call us at 469-759-3638"
             >
               <Phone size={14} />
@@ -263,13 +263,13 @@ export default function Navbar() {
             aria-controls="mobile-menu"
           >
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${mobileOpen ? "bg-[var(--color-black)] translate-y-[8px] rotate-45" : "bg-white"}`}
+              className={`block h-[2px] w-6 rounded-full bg-white transition-all duration-300 origin-center ${mobileOpen ? "translate-y-[8px] rotate-45" : ""}`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${mobileOpen ? "bg-[var(--color-black)] scale-x-0 opacity-0" : "bg-white"}`}
+              className={`block h-[2px] w-6 rounded-full bg-white transition-all duration-300 ${mobileOpen ? "scale-x-0 opacity-0" : ""}`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${mobileOpen ? "bg-[var(--color-black)] -translate-y-[8px] -rotate-45" : "bg-white"}`}
+              className={`block h-[2px] w-6 rounded-full bg-white transition-all duration-300 origin-center ${mobileOpen ? "-translate-y-[8px] -rotate-45" : ""}`}
             />
           </button>
         </div>
@@ -287,7 +287,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-white lg:hidden"
+            className="fixed inset-0 z-[100] bg-[#0A0A0A] lg:hidden"
           >
             <div className="flex h-full flex-col justify-between px-6 pb-8 pt-24">
               {/* Nav links */}
@@ -302,7 +302,7 @@ export default function Navbar() {
                     <Link
                       href={href}
                       onClick={closeMobile}
-                      className="font-[family-name:var(--font-heading)] text-[2rem] font-700 tracking-tight text-[var(--color-black)] transition-colors hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:text-[var(--color-primary)]"
+                      className="font-[family-name:var(--font-heading)] text-[2rem] font-700 tracking-tight text-[#FFFFFF] transition-colors hover:text-[#E71840] focus-visible:outline-none focus-visible:text-[#E71840]"
                     >
                       {label}
                     </Link>
@@ -326,7 +326,7 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-text-muted)] transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-[#333] text-[#FFFFFF]/60 transition-all hover:border-[#E71840] hover:text-[#E71840]"
                     >
                       <Icon />
                     </a>
