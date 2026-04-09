@@ -6,12 +6,18 @@ import "./intro-sequence.css";
 const SESSION_KEY = "nixar-intro-played";
 
 export default function IntroSequence() {
-  const [phase, setPhase] = useState<"init" | "video" | "tagline" | "exit" | "done">("init");
+  const [phase, setPhase] = useState<
+    "init" | "video" | "post" | "done"
+  >("init");
   const [postVideoActive, setPostVideoActive] = useState(false);
+  const [whiteBg, setWhiteBg] = useState(false);
   const [taglineReveal, setTaglineReveal] = useState(false);
+  const [taglineFadeOut, setTaglineFadeOut] = useState(false);
   const [shimmer, setShimmer] = useState(false);
-  const [slideOut, setSlideOut] = useState(false);
-  const [videoEnded, setVideoEnded] = useState(false);
+  const [wipeActive, setWipeActive] = useState(false);
+  const [wipeExit, setWipeExit] = useState(false);
+  const [videoHidden, setVideoHidden] = useState(false);
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const stallTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const timersRef = useRef<ReturnType<typeof setTimeout>[]>([]);
@@ -31,23 +37,47 @@ export default function IntroSequence() {
     return id;
   }, []);
 
+  const runPostVideoSequence = useCallback(() => {
+    // Hide video, show post-video overlay
+    setVideoHidden(true);
+    setPostVideoActive(true);
+
+    // 0ms: dark bg shows
+    // 200ms: transition to white
+    addTimer(() => setWhiteBg(true), 200);
+
+    // 500ms: tagline appears with blur-to-sharp
+    addTimer(() => setTaglineReveal(true), 500);
+
+    // 800ms: shimmer on "YOUR"
+    addTimer(() => setShimmer(true), 800);
+
+    // 2000ms: tagline fades out
+    addTimer(() => setTaglineFadeOut(true), 2000);
+
+    // 2500ms: red wipe begins
+    addTimer(() => {
+      setWipeActive(true);
+      setWipeExit(true);
+    }, 2500);
+
+    // 3100ms: unmount, restore page
+    addTimer(() => {
+      // Restore theme color to brand red
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) themeMeta.setAttribute("content", "#E71840");
+      document.body.style.overflow = "auto";
+      setPhase("done");
+    }, 3100);
+  }, [addTimer]);
+
   const skipToTagline = useCallback(() => {
     clearAllTimers();
     if (videoRef.current) {
       videoRef.current.pause();
     }
-    setVideoEnded(true);
-    setPostVideoActive(true);
-
-    // Reveal tagline after brief pause
-    addTimer(() => setTaglineReveal(true), 300);
-    addTimer(() => setShimmer(true), 800);
-    addTimer(() => setSlideOut(true), 2500);
-    addTimer(() => {
-      document.body.style.overflow = "auto";
-      setPhase("done");
-    }, 3100);
-  }, [clearAllTimers, addTimer]);
+    runPostVideoSequence();
+  }, [clearAllTimers, runPostVideoSequence]);
 
   // Init: check sessionStorage and prefers-reduced-motion
   useEffect(() => {
@@ -63,14 +93,20 @@ export default function IntroSequence() {
     }
     sessionStorage.setItem(SESSION_KEY, "1");
     document.body.style.overflow = "hidden";
+
+    // Set dark theme-color during cinematic intro
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.setAttribute("content", "#0A0A0A");
+
     setPhase("video");
 
     return () => {
       document.body.style.overflow = "auto";
+      if (themeMeta) themeMeta.setAttribute("content", "#E71840");
     };
   }, []);
 
-  // Video ended handler — transition to tagline phase
+  // Video event handlers
   useEffect(() => {
     if (phase !== "video") return;
 
@@ -78,30 +114,17 @@ export default function IntroSequence() {
     if (!video) return;
 
     const handleEnded = () => {
-      setVideoEnded(true);
-      setPostVideoActive(true);
-
-      // 10.3s — tagline appears (0.3s after video ends)
-      addTimer(() => setTaglineReveal(true), 300);
-      // 10.8s — shimmer on "YOUR"
-      addTimer(() => setShimmer(true), 800);
-      // 12.5s — slide out
-      addTimer(() => setSlideOut(true), 2500);
-      // 13.1s — unmount
-      addTimer(() => {
-        document.body.style.overflow = "auto";
-        setPhase("done");
-      }, 3100);
+      runPostVideoSequence();
     };
 
     const handleError = () => {
-      // Video failed to load — skip everything
       document.body.style.overflow = "auto";
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) themeMeta.setAttribute("content", "#E71840");
       setPhase("done");
     };
 
     const handleWaiting = () => {
-      // Start stall timer — if buffering > 3s, skip
       if (stallTimerRef.current) clearTimeout(stallTimerRef.current);
       stallTimerRef.current = setTimeout(() => {
         skipToTagline();
@@ -109,7 +132,6 @@ export default function IntroSequence() {
     };
 
     const handlePlaying = () => {
-      // Clear stall timer when playback resumes
       if (stallTimerRef.current) {
         clearTimeout(stallTimerRef.current);
         stallTimerRef.current = null;
@@ -128,56 +150,78 @@ export default function IntroSequence() {
       video.removeEventListener("playing", handlePlaying);
       clearAllTimers();
     };
-  }, [phase, addTimer, clearAllTimers, skipToTagline]);
+  }, [phase, runPostVideoSequence, skipToTagline, clearAllTimers]);
 
-  // Mobile tap to skip
+  // Tap/click to skip
   const handleTap = useCallback(() => {
     if (phase === "video") {
       skipToTagline();
     }
-  }, [phase, videoEnded, skipToTagline]);
+  }, [phase, skipToTagline]);
 
   if (phase === "done" || phase === "init") return null;
 
   return (
     <div
-      className={`intro-overlay${slideOut ? " slide-out" : ""}`}
+      className={`intro-overlay${wipeExit ? " wipe-exit" : ""}`}
       aria-hidden="true"
       role="presentation"
       onClick={handleTap}
       onTouchEnd={handleTap}
     >
-      {/* LAYER 1: Video */}
-      {!videoEnded && (
-        <video
-          ref={videoRef}
-          className="intro-video"
-          autoPlay
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/intro-video.mp4"
-        />
-      )}
+      {/* ═══ CINEMATIC VIDEO FRAME ═══ */}
+      {!videoHidden && (
+        <div className="intro-cinema-frame intro-shake-target">
+          <video
+            ref={videoRef}
+            className="intro-video"
+            autoPlay
+            muted
+            playsInline
+            preload="auto"
+            src="/videos/intro-video.mp4"
+          />
 
-      {/* LAYER 2: Scene text overlays (only during video) */}
-      {!videoEnded && (
-        <div className="intro-text-layer intro-shake">
-          <span className="intro-scene-text intro-text-transform">
-            We Transform
-          </span>
-          <span className="intro-scene-text intro-text-business">
-            Your Business
-          </span>
-          <span className="intro-scene-text intro-text-online">
-            Online.
-          </span>
+          {/* Vignette */}
+          <div className="intro-vignette" />
+
+          {/* Film grain */}
+          <div className="intro-grain" />
+
+          {/* ═══ TEXT OVERLAYS — relative to cinema frame ═══ */}
+          <div className="intro-text-layer">
+            {/* Scene 1: lower-third left */}
+            <div className="intro-lt-line1" />
+            <span className="intro-lt intro-lt-text1">We Transform</span>
+
+            {/* Scene 2: lower-third right */}
+            <div className="intro-lt-line2" />
+            <span className="intro-lt intro-lt-text2">Your Business</span>
+
+            {/* Scene 3: center stamp */}
+            <span className="intro-center-stamp">Online.</span>
+
+            {/* Shockwave ring */}
+            <div className="intro-shockwave" />
+          </div>
         </div>
       )}
 
-      {/* POST-VIDEO: White screen + tagline */}
-      <div className={`intro-post-video${postVideoActive ? " active" : ""}`}>
-        <span className={`intro-tagline-text${taglineReveal ? " reveal" : ""}`}>
+      {/* ═══ POST-VIDEO: TAGLINE REVEAL ═══ */}
+      <div
+        className={
+          "intro-post-video" +
+          (postVideoActive ? " active" : "") +
+          (whiteBg ? " white-bg" : "")
+        }
+      >
+        <span
+          className={
+            "intro-tagline-text" +
+            (taglineReveal ? " reveal" : "") +
+            (taglineFadeOut ? " fade-out" : "")
+          }
+        >
           <span className="intro-tagline-black">Know </span>
           <span className={`intro-tagline-red${shimmer ? " shimmer" : ""}`}>
             YOUR{" "}
@@ -185,6 +229,9 @@ export default function IntroSequence() {
           <span className="intro-tagline-black">Potential.</span>
         </span>
       </div>
+
+      {/* ═══ RED WIPE CURTAIN ═══ */}
+      <div className={`intro-wipe${wipeActive ? " active" : ""}`} />
     </div>
   );
 }
