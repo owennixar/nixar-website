@@ -20,7 +20,7 @@ import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import PulsingGrid from "@/components/ui/PulsingGrid";
 import ParticleField from "@/components/ui/ParticleField";
 import AccentLines from "@/components/ui/AccentLines";
-import TheDifference from "@/components/sections/TheDifference";
+import AgencyComparison from "@/components/sections/AgencyComparison";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HOOK: Intersection Observer for scroll-triggered reveals
@@ -317,7 +317,7 @@ export default function HomeDark() {
            SECTION 3: THE DIFFERENCE — Other Agencies vs NIXAR Way
            ═══════════════════════════════════════════════════════════════════ */}
       </div>{/* Close z-10 wrapper temporarily for full-bleed pinned section */}
-      <TheDifference />
+      <AgencyComparison />
       <div className="relative z-10">{/* Re-open z-10 wrapper */}
 
       {/* ═══════════════════════════════════════════════════════════════════
