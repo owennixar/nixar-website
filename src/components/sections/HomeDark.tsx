@@ -20,6 +20,7 @@ import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import PulsingGrid from "@/components/ui/PulsingGrid";
 import ParticleField from "@/components/ui/ParticleField";
 import AccentLines from "@/components/ui/AccentLines";
+import TheDifference from "@/components/sections/TheDifference";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HOOK: Intersection Observer for scroll-triggered reveals
@@ -313,46 +314,11 @@ export default function HomeDark() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 3: ABOUT / MISSION STATEMENT — 100vh
+           SECTION 3: THE DIFFERENCE — Other Agencies vs NIXAR Way
            ═══════════════════════════════════════════════════════════════════ */}
-      <section
-        id="about"
-        className="flex min-h-dvh items-center justify-center px-5 py-24 lg:px-8"
-      >
-        <div className="max-w-3xl text-center">
-          <Reveal>
-            <span
-              className="block font-[family-name:var(--font-oswald)] text-[6rem] leading-none text-[#E71840] select-none"
-              aria-hidden="true"
-            >
-              &ldquo;
-            </span>
-          </Reveal>
-
-          <Reveal delay={0.1}>
-            <p className="mt-2 font-[family-name:var(--font-oswald)] text-[clamp(1.5rem,3.5vw,2.5rem)] font-700 uppercase leading-[1.3] text-white">
-              We provide full-spectrum digital solutions, handling everything
-              from branding and web design to automation and paid ads — so you
-              don&apos;t have to juggle multiple vendors.
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <div className="mx-auto mt-8 h-[2px] w-[40px] bg-[#E71840]" />
-            <p className="mt-4 text-[0.8rem] font-500 uppercase tracking-[0.15em] text-[#666]">
-              — NIXAR Solutions, Est. 2023
-            </p>
-          </Reveal>
-
-          <Reveal delay={0.3}>
-            <div className="mx-auto mt-10 flex items-center justify-center gap-8 text-[0.85rem] font-600 uppercase tracking-[0.1em] text-white">
-              <span>500+ Projects</span>
-              <span className="h-5 w-px bg-white/20" />
-              <span>97% Satisfaction</span>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      </div>{/* Close z-10 wrapper temporarily for full-bleed pinned section */}
+      <TheDifference />
+      <div className="relative z-10">{/* Re-open z-10 wrapper */}
 
       {/* ═══════════════════════════════════════════════════════════════════
            SECTION 4: SERVICES — GLASS CARD GRID
