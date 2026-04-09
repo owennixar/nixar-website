@@ -5,6 +5,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/data/services";
 import { testimonials } from "@/lib/data/testimonials";
+import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
+import PulsingGrid from "@/components/ui/PulsingGrid";
+import ParticleField from "@/components/ui/ParticleField";
+import AccentLines from "@/components/ui/AccentLines";
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HOOK: Intersection Observer for scroll-triggered reveals
@@ -169,7 +173,14 @@ export default function HomeDark() {
   const processObs = useInView(0.1);
 
   return (
-    <div className="bg-[#0A0A0A] text-white">
+    <div className="relative bg-[#0A0A0A] text-white">
+      {/* ═══ AMBIENT LAYERS ═══ */}
+      <AnimatedOrbs />
+      <ParticleField />
+      <AccentLines />
+
+      {/* All content above ambient layers */}
+      <div className="relative z-10">
       {/* ═══════════════════════════════════════════════════════════════════
            SECTION 1: HERO — 100vh
            ═══════════════════════════════════════════════════════════════════ */}
@@ -177,6 +188,7 @@ export default function HomeDark() {
         id="hero"
         className="relative flex min-h-dvh items-center overflow-hidden pt-20"
       >
+        <PulsingGrid />
         <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 lg:px-8">
           {/* Left — Text */}
           <div className="max-w-2xl">
@@ -190,10 +202,10 @@ export default function HomeDark() {
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
-                <span className="block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-white">
+                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-white">
                   Digital
                 </span>
-                <span className="block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-[#E71840]">
+                <span className="hero-glow-red block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-[#E71840]">
                   Transformation.
                 </span>
               </h1>
@@ -437,6 +449,8 @@ export default function HomeDark() {
                   </span>
                 </div>
               </div>
+              {/* Scan line on hover */}
+              <div className="portfolio-scanline absolute inset-0 pointer-events-none z-10" />
               {/* Hover overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                 <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
@@ -656,6 +670,7 @@ export default function HomeDark() {
           </a>
         </div>
       </div>
+      </div>{/* close z-10 content wrapper */}
     </div>
   );
 }
