@@ -38,7 +38,7 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services", hasDropdown: true },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "https://y-two-tawny.vercel.app/", external: true },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -236,11 +236,13 @@ export default function Navbar() {
                 );
               }
 
+              const isExternal = "external" in rest && rest.external;
               return (
                 <a
                   key={label}
                   href={href}
                   role="menuitem"
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm ${isHomepage ? "text-white" : "text-[#1A1A1A]"}`}
                 >
                   {label}
@@ -312,11 +314,12 @@ export default function Navbar() {
             <div className="flex h-full flex-col justify-between px-6 pb-8 pt-24">
               {/* Nav links */}
               <nav className="flex flex-col gap-6">
-                {NAV_LINKS.map(({ label, href }, i) => (
+                {NAV_LINKS.map(({ label, href, ...rest }, i) => (
                   <motion.a
                     key={label}
                     href={href}
                     onClick={closeMobile}
+                    {...("external" in rest && rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 * i, duration: 0.3 }}

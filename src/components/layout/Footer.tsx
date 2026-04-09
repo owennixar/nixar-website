@@ -11,7 +11,7 @@ const COMPANY_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "/blog" },
+  { label: "Blog", href: "https://y-two-tawny.vercel.app/", external: true },
   { label: "Contact", href: "#contact" },
   { label: "Careers", href: "/careers" },
 ] as const;
@@ -100,10 +100,11 @@ export default function Footer() {
               Company
             </h3>
             <ul className="mt-5 space-y-3">
-              {COMPANY_LINKS.map(({ label, href }) => (
+              {COMPANY_LINKS.map(({ label, href, ...rest }) => (
                 <li key={label}>
                   <a
                     href={href}
+                    {...("external" in rest && rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {label}
