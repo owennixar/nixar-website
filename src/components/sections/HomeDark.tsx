@@ -128,6 +128,30 @@ const PROCESS_STEPS = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   BLOG POSTS
+   ═══════════════════════════════════════════════════════════════════════════ */
+const BLOG_POSTS = [
+  {
+    category: "SOCIAL MEDIA",
+    title: "The Ultimate Guide to Social Media Advertising for Small Businesses",
+    date: "December 8, 2025",
+    gradient: "from-[#2a0a0f] to-[#0a0a0a]",
+  },
+  {
+    category: "DESIGN",
+    title: "Why Custom Illustrations Can Transform Your Brand Identity",
+    date: "December 8, 2025",
+    gradient: "from-[#1a1a1a] to-[#0a0a0a]",
+  },
+  {
+    category: "DIGITAL MARKETING",
+    title: "Digital Marketing Strategies That Actually Convert in 2026",
+    date: "December 2, 2025",
+    gradient: "from-[#1f1f1f] to-[#0a0a0a]",
+  },
+];
+
+/* ═══════════════════════════════════════════════════════════════════════════
    PORTFOLIO PLACEHOLDERS
    ═══════════════════════════════════════════════════════════════════════════ */
 const PORTFOLIO = [
@@ -140,8 +164,15 @@ const PORTFOLIO = [
 /* ═══════════════════════════════════════════════════════════════════════════
    MARQUEE TAGLINES
    ═══════════════════════════════════════════════════════════════════════════ */
-const MARQUEE =
-  "DIGITAL TRANSFORMATION \u00A0\u2022\u00A0 CONTENT-CENTRIC \u00A0\u2022\u00A0 SEO-DRIVEN \u00A0\u2022\u00A0 SALES-FOCUSED \u00A0\u2022\u00A0 END-TO-END DIGITAL \u00A0\u2022\u00A0 FULL-FUNNEL SUPPORT \u00A0\u2022\u00A0 AI-POWERED \u00A0\u2022\u00A0 ";
+const MARQUEE_ITEMS = [
+  "DIGITAL TRANSFORMATION",
+  "CONTENT-CENTRIC",
+  "SEO-DRIVEN",
+  "SALES-FOCUSED",
+  "END-TO-END DIGITAL",
+  "FULL-FUNNEL SUPPORT",
+  "AI-POWERED",
+];
 
 /* ═══════════════════════════════════════════════════════════════════════════
    MAIN COMPONENT
@@ -234,7 +265,7 @@ export default function HomeDark() {
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-white">
                   Digital
                 </span>
-                <span className="hero-glow-red block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-[#E71840]">
+                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] text-[clamp(5rem,12vw,10rem)] font-700 italic leading-[0.9] tracking-tight text-[#E71840]">
                   Transformation.
                 </span>
               </h1>
@@ -246,7 +277,7 @@ export default function HomeDark() {
 
             <Reveal delay={0.3}>
               <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-[#999]">
-                We don&apos;t just market — we transform businesses online
+                We don&apos;t just <span className="text-[#E71840]">market</span> — we transform businesses online
                 through strategy, design, AI, and relentless execution.
               </p>
             </Reveal>
@@ -298,10 +329,15 @@ export default function HomeDark() {
           {[0, 1].map((n) => (
             <span
               key={n}
-              className="inline-block text-[0.75rem] font-500 uppercase tracking-[0.15em] text-[#E71840]"
+              className="inline-block text-[0.75rem] font-500 uppercase tracking-[0.15em]"
               aria-hidden={n === 1}
             >
-              {MARQUEE}
+              {MARQUEE_ITEMS.map((item, idx) => (
+                <span key={idx}>
+                  <span className="text-[#E71840]">{item}</span>
+                  <span className="text-white">{"\u00A0\u2022\u00A0"}</span>
+                </span>
+              ))}
             </span>
           ))}
         </div>
@@ -365,7 +401,7 @@ export default function HomeDark() {
               <Reveal key={s.slug} delay={i * 0.1}>
                 <Link
                   href={`/services/${s.slug}`}
-                  className="glass-card group flex flex-col justify-between p-10 transition-all duration-300 hover:-translate-y-1"
+                  className="glass-card group flex flex-col justify-between"
                   style={{ minHeight: "320px" }}
                 >
                   <div>
@@ -591,7 +627,53 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 10: CTA
+           SECTION 10: BLOG — LATEST INSIGHTS
+           ═══════════════════════════════════════════════════════════════════ */}
+      <section id="blog" className="py-24 lg:py-32">
+        <Reveal className="mx-auto max-w-7xl px-5 lg:px-8">
+          <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,6vw,5rem)] font-700 uppercase leading-none text-white">
+            Read Our Latest Insights
+          </h2>
+          <p className="mt-4 font-[family-name:var(--font-plus-jakarta)] text-[1rem] text-[#666]">
+            Strategy, trends, and ideas from the NIXAR team.
+          </p>
+        </Reveal>
+
+        <div className="mx-auto mt-12 max-w-7xl px-5 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {BLOG_POSTS.map((post, i) => (
+              <Reveal key={post.title} delay={i * 0.1}>
+                <Link
+                  href="/blog"
+                  className="glass-card group flex flex-col !p-0 overflow-hidden"
+                >
+                  {/* Image placeholder */}
+                  <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient}`} />
+                    <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
+                  </div>
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col p-8">
+                    <span className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+                      {post.category}
+                    </span>
+                    <h3 className="mt-3 font-[family-name:var(--font-oswald)] text-[1.2rem] font-700 uppercase leading-[1.3] text-white">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-[0.8rem] text-[#666]">{post.date}</p>
+                    <span className="mt-auto pt-6 text-[0.75rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                      Read More &rarr;
+                    </span>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+           SECTION 11: CTA
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="contact"

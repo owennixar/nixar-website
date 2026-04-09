@@ -172,8 +172,9 @@ export default function IntroSequence() {
               </span>
             )}
             {scene === "scene2" && (
-              <span className="intro-scene-text intro-scene-text--white">
-                Your Business<span className="text-[#E71840]">.</span>
+              <span className="intro-scene-text">
+                <span className="intro-scene-text--white">Your </span>
+                <span className="intro-scene-text--red">Business.</span>
               </span>
             )}
             {scene === "scene3" && (
