@@ -142,11 +142,23 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="relative z-10 shrink-0"
+            className="relative z-10 shrink-0 flex items-center"
             aria-label="NIXAR Solutions — Home"
           >
-            <Logo variant={isHomepage || isBlog ? "dark-bg" : "light-bg"} height={30} />
-            <span className="sr-only">NIXAR Solutions</span>
+            {isHomepage || isBlog ? (
+              <img
+                src="/images/nixar-logo-dark.png"
+                alt="NIXAR Solutions"
+                style={{
+                  height: '40px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  mixBlendMode: 'screen',
+                }}
+              />
+            ) : (
+              <Logo variant="light-bg" height={30} />
+            )}
           </Link>
 
           {/* Desktop nav links — centered */}
