@@ -14,7 +14,7 @@ export default function PortfolioPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white pb-8 pt-32 lg:pt-40">
+      <section className="bg-white pb-8 pt-12 lg:pt-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
             <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">

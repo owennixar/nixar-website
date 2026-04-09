@@ -60,7 +60,7 @@ export default async function CityPage({
     <>
       <main>
         {/* ─── HERO ────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-white pb-16 pt-32 lg:pt-40">
+        <section className="relative overflow-hidden bg-white pb-16 pt-12 lg:pt-16">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="hero-orb" style={{ width: 400, height: 400, background: "rgba(231,24,64,0.04)", top: "-5%", right: "5%", animation: "orbFloat2 20s ease-in-out infinite" }} />
           </div>

@@ -46,7 +46,7 @@ export default function BlogPage() {
       {/* ═══════════════════════════════════════════════════════════════
            HERO — VIDEO BACKGROUND
            ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '75vh' }}>
         <video
           autoPlay
           muted

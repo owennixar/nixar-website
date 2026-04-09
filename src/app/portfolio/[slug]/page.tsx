@@ -59,7 +59,7 @@ export default async function PortfolioDetailPage({
       />
 
       {/* Hero */}
-      <section className="pb-16 pt-32 lg:pt-40">
+      <section className="pb-16 pt-12 lg:pt-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           {/* Back link */}
           <AnimateIn>

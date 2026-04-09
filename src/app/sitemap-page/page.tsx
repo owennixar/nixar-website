@@ -36,7 +36,7 @@ export default function SitemapPage() {
   return (
     <main className="bg-[#0a0a0a]">
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="pb-16 pt-32 lg:pb-24 lg:pt-40">
+      <section className="pb-16 pt-12 lg:pb-24 lg:pt-16">
         <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
           <AnimateIn>
             <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,7vw,5rem)] font-700 uppercase leading-[1.05] tracking-tight">

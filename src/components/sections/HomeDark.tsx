@@ -220,7 +220,8 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="relative min-h-screen w-full overflow-hidden flex items-center"
+        className="relative w-full overflow-hidden flex items-center"
+        style={{ height: '85vh' }}
       >
         {/* Background Image */}
         <Image

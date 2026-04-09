@@ -78,7 +78,7 @@ export default function DallasPage() {
     <>
       <main>
         {/* ─── HERO ──────────────────────────────────────────── */}
-        <section id="dallas-hero" className="relative overflow-hidden bg-white pb-16 pt-32 lg:pt-40">
+        <section id="dallas-hero" className="relative overflow-hidden bg-white pb-16 pt-12 lg:pt-16">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="hero-orb" style={{ width: 500, height: 500, background: "rgba(231,24,64,0.05)", top: "-8%", right: "0%", animation: "orbFloat1 18s ease-in-out infinite" }} />
             <div className="hero-orb" style={{ width: 350, height: 350, background: "rgba(231,24,64,0.03)", bottom: "5%", left: "5%", animation: "orbFloat2 22s ease-in-out infinite" }} />

@@ -110,7 +110,7 @@ export default async function ServicePage({
     <>
       <main className="bg-[#0A0A0A]">
         {/* ─── HERO ─────────────────────────────────────────────── */}
-        <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
           {/* Background — image or animated effects */}
           {heroImage ? (
             <img
@@ -118,7 +118,7 @@ export default async function ServicePage({
               alt={heroImage.alt}
               loading="eager"
               decoding="sync"
-              className="absolute top-0 left-0 w-full h-full object-cover object-right"
+              className="absolute inset-0 w-full h-full object-cover object-right"
               style={{ zIndex: 0 }}
             />
           ) : (
@@ -127,7 +127,7 @@ export default async function ServicePage({
             </div>
           )}
 
-          <div className="relative w-full max-w-7xl mx-auto px-6 py-32" style={{ zIndex: 2 }}>
+          <div className="relative h-full flex items-center max-w-7xl mx-auto px-6" style={{ zIndex: 2 }}>
             <div className="max-w-xl">
               <AnimateIn delay={0.05} direction="none">
                 <Link

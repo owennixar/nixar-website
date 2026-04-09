@@ -51,20 +51,20 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
           <img
             src="/images/contact-hero.png"
             alt="Two astronauts handshaking in space representing partnership"
             loading="eager"
             decoding="sync"
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             style={{ zIndex: 0 }}
           />
           <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)' }}
+            className="absolute inset-0"
+            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.85), rgba(10,10,10,0.4))' }}
           />
-          <div className="relative w-full max-w-7xl mx-auto px-6 py-32" style={{ zIndex: 2 }}>
+          <div className="relative h-full flex items-center max-w-7xl mx-auto px-6" style={{ zIndex: 2 }}>
             <AnimateIn>
               <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Contact
