@@ -32,23 +32,23 @@ import BackgroundEffects from "@/components/ui/BackgroundEffects";
 
 const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string }> = {
   "social-media-management": {
-    src: "/images/hf_20260409_222638_d1f78e7e-aaae-4e5e-bca1-9e5a80ce9143.png",
+    src: "/images/service-social.png",
     alt: "iPhone displaying Instagram with floating social media icons",
   },
   "web-development": {
-    src: "/images/hf_20260409_222813_afb4d32f-a73d-4bd1-8581-b6051213c0af.png",
+    src: "/images/service-webdev.png",
     alt: "MacBook with floating code elements and web development icons",
   },
   "automation-ai-integration": {
-    src: "/images/hf_20260409_223214_f48d7f0e-e1d6-46c4-ab12-585b93ec21dd.png",
+    src: "/images/service-ai.png",
     alt: "Friendly white robot face with CRM and workflow automation elements",
   },
   "personalized-sales-support": {
-    src: "/images/hf_20260409_223420_85e8792f-cefa-44c1-95d4-ce5b669aaebd.png",
+    src: "/images/service-sales.png",
     alt: "Headset with sales funnel and lead generation elements",
   },
   "search-everywhere-optimization": {
-    src: "/images/hf_20260409_223657_7bb6e9b5-5135-48f9-b39f-8be7c6eae044.png",
+    src: "/images/service-seo.png",
     alt: "Magnifying glass with Google, TikTok, and ChatGPT search icons",
   },
 };
@@ -106,13 +106,23 @@ export default async function ServicePage({
     <>
       <main className="bg-[#0A0A0A]">
         {/* ─── HERO ─────────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-[#0A0A0A] pb-16 pt-32 lg:pt-40">
+        <section style={{ position: 'relative', minHeight: '80vh', overflow: 'hidden' }} className="bg-[#0A0A0A] pb-16 pt-32 lg:pt-40">
           {/* Background — image or animated effects */}
           {heroImage ? (
             <img
               src={heroImage.src}
               alt={heroImage.alt}
-              className="absolute inset-0 h-full w-full object-cover"
+              loading="eager"
+              decoding="sync"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                zIndex: 0
+              }}
             />
           ) : (
             <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -120,7 +130,7 @@ export default async function ServicePage({
             </div>
           )}
 
-          <div className={`relative z-10 px-5 lg:px-8 ${heroImage ? "ml-0 max-w-[45%] pl-8 lg:pl-16" : "mx-auto max-w-7xl"}`}>
+          <div style={{ position: 'relative', zIndex: 2 }} className={`px-5 lg:px-8 ${heroImage ? "ml-0 max-w-[45%] pl-8 lg:pl-16" : "mx-auto max-w-7xl"}`}>
             <AnimateIn delay={0.05} direction="none">
               <Link
                 href="/services"

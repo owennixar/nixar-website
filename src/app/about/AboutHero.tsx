@@ -4,20 +4,37 @@ import AnimateIn from "@/components/ui/AnimateIn";
 
 export default function AboutHero() {
   return (
-    <section className="relative flex min-h-[60vh] items-center overflow-hidden pt-20">
+    <section style={{ position: 'relative', minHeight: '80vh', overflow: 'hidden' }} className="flex items-center pt-20">
       {/* Hero background image */}
       <img
-        src="/images/hf_20260409_221040_c04f47c4-63b1-4ea1-9dc0-1a22ade7adaa.png"
+        src="/images/about-hero.png"
         alt="Space command center with marketing dashboards overlooking Earth"
-        className="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+        decoding="sync"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0
+        }}
       />
       {/* Gradient overlay for text readability */}
       <div
-        className="absolute inset-0"
-        style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)" }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)',
+          zIndex: 1
+        }}
       />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div style={{ position: 'relative', zIndex: 2 }} className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
         <AnimateIn delay={0.1} direction="none">
           <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
             About Us

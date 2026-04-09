@@ -51,19 +51,36 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden pb-4 pt-32 lg:pt-40">
+        <section style={{ position: 'relative', minHeight: '80vh', overflow: 'hidden' }} className="pb-4 pt-32 lg:pt-40">
           {/* Hero background image */}
           <img
-            src="/images/hf_20260409_221826_519a8eaf-d78e-4890-92a7-6606e9a8d959.png"
+            src="/images/contact-hero.png"
             alt="Two astronauts handshaking in space representing partnership"
-            className="absolute inset-0 h-full w-full object-cover"
+            loading="eager"
+            decoding="sync"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              zIndex: 0
+            }}
           />
           {/* Gradient overlay for text readability */}
           <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)" }}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              background: 'linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)',
+              zIndex: 1
+            }}
           />
-          <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+          <div style={{ position: 'relative', zIndex: 2 }} className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
               <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Contact
