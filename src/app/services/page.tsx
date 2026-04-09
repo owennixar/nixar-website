@@ -25,6 +25,7 @@ import {
 import { services } from "@/lib/data/services";
 import AnimateIn from "@/components/ui/AnimateIn";
 import CtaBanner from "@/components/sections/CtaBanner";
+import BackgroundEffects from "@/components/ui/BackgroundEffects";
 
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   megaphone: Megaphone,
@@ -51,22 +52,25 @@ export const metadata: Metadata = {
 export default function ServicesIndex() {
   return (
     <>
-      <main>
+      <main className="bg-[#0A0A0A]">
         {/* Hero */}
-        <section className="bg-white pb-8 pt-32 lg:pt-40">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <section className="relative overflow-hidden bg-[#0A0A0A] pb-8 pt-32 lg:pt-40">
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            <BackgroundEffects />
+          </div>
+          <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 What We Do
               </p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-[#1A1A1A]">
+              <h1 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,5vw,4rem)] font-bold uppercase leading-[1.05] tracking-tight text-white">
                 Our Services
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-[var(--color-text-secondary)]">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
                 End-to-end digital solutions — from branding and web design to AI automation and
                 paid advertising. One team. Full accountability. Measurable results.
               </p>
@@ -75,7 +79,7 @@ export default function ServicesIndex() {
         </section>
 
         {/* Bento grid */}
-        <section className="bg-white pb-24 pt-8 lg:pb-32">
+        <section className="bg-[#0A0A0A] pb-24 pt-8 lg:pb-32">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, i) => {
@@ -90,41 +94,41 @@ export default function ServicesIndex() {
                   >
                     <Link
                       href={`/services/${service.slug}`}
-                      className={`group relative flex h-full flex-col rounded-2xl border border-transparent bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--color-primary)] hover:shadow-lg ${
+                      className={`group relative flex h-full flex-col glass-card rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-[#E71840]/30 ${
                         isLarge ? "lg:p-10" : ""
                       }`}
                     >
                       {/* Badge */}
                       {service.isNew && (
-                        <span className="absolute right-5 top-5 rounded-full bg-[var(--color-primary)] px-2.5 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
+                        <span className="absolute right-5 top-5 rounded-full bg-[#E71840] px-2.5 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
                           New
                         </span>
                       )}
 
                       {/* Icon */}
                       <div
-                        className={`flex items-center justify-center rounded-xl bg-[var(--color-primary-light)] transition-colors group-hover:bg-[var(--color-primary)] ${
+                        className={`flex items-center justify-center rounded-xl bg-[#E71840]/10 transition-colors group-hover:bg-[#E71840] ${
                           isLarge ? "h-14 w-14" : "h-11 w-11"
                         }`}
                       >
                         {Icon && (
                           <Icon
                             size={isLarge ? 24 : 20}
-                            className="text-[var(--color-primary)] transition-colors group-hover:text-white"
+                            className="text-[#E71840] transition-colors group-hover:text-white"
                           />
                         )}
                       </div>
 
                       {/* Content */}
                       <h2
-                        className={`mt-5 font-[family-name:var(--font-heading)] font-700 text-[#1A1A1A] ${
+                        className={`mt-5 font-[family-name:var(--font-oswald)] font-bold uppercase text-white ${
                           isLarge ? "text-[1.35rem]" : "text-[1.1rem]"
                         }`}
                       >
                         {service.title}
                       </h2>
                       <p
-                        className={`mt-2 leading-[1.65] text-[var(--color-text-secondary)] ${
+                        className={`mt-2 leading-[1.65] text-white/50 ${
                           isLarge ? "text-[15px]" : "text-[14px]"
                         }`}
                       >
@@ -137,7 +141,7 @@ export default function ServicesIndex() {
                           {service.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full bg-[var(--color-bg-alt)] px-2.5 py-0.5 text-[11px] font-500 text-[var(--color-text-muted)]"
+                              className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-500 text-white/40"
                             >
                               {tag}
                             </span>
@@ -146,7 +150,7 @@ export default function ServicesIndex() {
                       )}
 
                       {/* Learn more */}
-                      <span className="mt-auto pt-5 text-[13px] font-600 text-[var(--color-primary)] transition-colors group-hover:text-[var(--color-primary-hover)]">
+                      <span className="mt-auto pt-5 text-[13px] font-600 text-[#E71840]">
                         Learn More &rarr;
                       </span>
                     </Link>

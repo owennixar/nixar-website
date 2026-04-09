@@ -178,7 +178,7 @@ export default function Footer() {
             <p>&copy; 2026 NIXAR Solutions. All Rights Reserved.</p>
             <div className="flex gap-6">
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="transition-colors hover:text-white/50"
               >
                 Privacy Policy
@@ -188,6 +188,12 @@ export default function Footer() {
                 className="transition-colors hover:text-white/50"
               >
                 Terms &amp; Conditions
+              </Link>
+              <Link
+                href="/sitemap-page"
+                className="transition-colors hover:text-white/50"
+              >
+                Sitemap
               </Link>
             </div>
           </div>
