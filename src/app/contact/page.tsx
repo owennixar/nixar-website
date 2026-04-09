@@ -51,20 +51,31 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="bg-white pb-4 pt-32 lg:pt-40">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <section className="relative overflow-hidden pb-4 pt-32 lg:pt-40">
+          {/* Hero background image */}
+          <img
+            src="/images/hf_20260409_221826_519a8eaf-d78e-4890-92a7-6606e9a8d959.png"
+            alt="Two astronauts handshaking in space representing partnership"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* Gradient overlay for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)" }}
+          />
+          <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Contact
               </p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-[#1A1A1A]">
+              <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-white">
                 Let&apos;s Talk
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-[var(--color-text-secondary)]">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/70">
                 Ready to transform your digital presence? Get in touch for a free audit
                 and discover how NIXAR can grow your business.
               </p>

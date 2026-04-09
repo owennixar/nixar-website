@@ -25,7 +25,7 @@ import {
 import { services } from "@/lib/data/services";
 import AnimateIn from "@/components/ui/AnimateIn";
 import CtaBanner from "@/components/sections/CtaBanner";
-import BackgroundEffects from "@/components/ui/BackgroundEffects";
+
 
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   megaphone: Megaphone,
@@ -54,10 +54,18 @@ export default function ServicesIndex() {
     <>
       <main className="bg-[#0A0A0A]">
         {/* Hero */}
-        <section className="relative overflow-hidden bg-[#0A0A0A] pb-8 pt-32 lg:pt-40">
-          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-            <BackgroundEffects />
-          </div>
+        <section className="relative overflow-hidden pb-8 pt-32 lg:pt-40">
+          {/* Hero background image */}
+          <img
+            src="/images/hf_20260409_221524_f9359f6f-a0ac-44ea-9db5-8fc0fcafff32.png"
+            alt="Fleet of rockets launching with digital marketing icons"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          {/* Gradient overlay for text readability */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.4) 100%)" }}
+          />
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
               <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
