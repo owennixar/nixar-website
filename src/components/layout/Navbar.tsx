@@ -53,8 +53,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [isHomepage, setIsHomepage] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => {
+    setIsHomepage(window.location.pathname === "/");
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -120,7 +125,9 @@ export default function Navbar() {
         aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
+            ? isHomepage
+              ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#222]"
+              : "bg-white/95 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
             : "bg-transparent"
         }`}
       >
@@ -136,7 +143,7 @@ export default function Navbar() {
             aria-label="NIXAR Solutions — Home"
           >
             <Image
-              src="/logo.svg"
+              src={isHomepage ? "/logo-white.svg" : "/logo.svg"}
               alt="NIXAR Solutions"
               width={160}
               height={48}
@@ -170,7 +177,7 @@ export default function Navbar() {
                       }}
                       aria-expanded={servicesOpen}
                       aria-haspopup="true"
-                      className="nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] text-[#1A1A1A] transition-colors hover:text-[var(--color-primary)]"
+                      className={`nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] ${isHomepage ? "text-white" : "text-[#1A1A1A]"}`}
                     >
                       {label}
                       <ChevronDown
@@ -234,7 +241,7 @@ export default function Navbar() {
                   key={label}
                   href={href}
                   role="menuitem"
-                  className="nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] text-[#1A1A1A] transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm"
+                  className={`nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm ${isHomepage ? "text-white" : "text-[#1A1A1A]"}`}
                 >
                   {label}
                 </a>
@@ -246,7 +253,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-5 lg:flex">
             <a
               href="tel:4697593638"
-              className="flex items-center gap-1.5 text-[13px] font-500 text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-text)]"
+              className={`flex items-center gap-1.5 text-[13px] font-500 transition-colors ${isHomepage ? "text-white/50 hover:text-white" : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"}`}
               aria-label="Call us at 469-759-3638"
             >
               <Phone size={14} />
@@ -270,17 +277,17 @@ export default function Navbar() {
             aria-controls="mobile-menu"
           >
             <span
-              className={`block h-[2px] w-6 rounded-full bg-[var(--color-black)] transition-all duration-300 origin-center ${
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${isHomepage && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
                 mobileOpen ? "translate-y-[8px] rotate-45" : ""
               }`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full bg-[var(--color-black)] transition-all duration-300 ${
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${isHomepage && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
                 mobileOpen ? "scale-x-0 opacity-0" : ""
               }`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full bg-[var(--color-black)] transition-all duration-300 origin-center ${
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${isHomepage && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
                 mobileOpen ? "-translate-y-[8px] -rotate-45" : ""
               }`}
             />

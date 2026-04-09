@@ -87,6 +87,21 @@ html {
   background: var(--color-text-muted);
 }
 
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll indicator line */
+@keyframes scrollLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
 /* Utility: gradient text */
 .gradient-text {
   background: linear-gradient(135deg, var(--color-primary) 0%, #FF2D55 100%);

@@ -8,18 +8,7 @@ import {
 } from "@/lib/seo/schemas";
 import { generalFaqs } from "@/lib/data/faq";
 
-import Hero from "@/components/sections/Hero";
-import TrustMarquee from "@/components/sections/TrustMarquee";
-import About from "@/components/sections/About";
-import Services from "@/components/sections/Services";
-import Process from "@/components/sections/Process";
-import Portfolio from "@/components/sections/Portfolio";
-import Results from "@/components/sections/Results";
-import Testimonials from "@/components/sections/Testimonials";
-import Problems from "@/components/sections/Problems";
-import ContactForm from "@/components/sections/ContactForm";
-import CtaBanner from "@/components/sections/CtaBanner";
-import ScrollProgress from "@/components/sections/ScrollProgress";
+import HomeDark from "@/components/sections/HomeDark";
 
 export const metadata: Metadata = {
   title:
@@ -31,20 +20,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ScrollProgress />
-
       <main>
-        <Hero />
-        <TrustMarquee />
-        <About />
-        <Services />
-        <Process />
-        <Portfolio />
-        <Results />
-        <Testimonials />
-        <Problems />
-        <ContactForm />
-        <CtaBanner />
+        <HomeDark />
       </main>
 
       {/* JSON-LD Schemas */}
