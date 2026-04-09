@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Logo from "@/components/ui/Logo";
 import {
   Megaphone,
   Code,
@@ -144,11 +145,8 @@ export default function Navbar() {
             className="relative z-10 shrink-0"
             aria-label="NIXAR Solutions — Home"
           >
-            <img
-              src="/images/nixar-logo-dark.png"
-              alt="NIXAR Solutions"
-              style={{ height: '32px', width: 'auto' }}
-            />
+            <Logo variant={isHomepage || isBlog ? "dark-bg" : "light-bg"} height={30} />
+            <span className="sr-only">NIXAR Solutions</span>
           </Link>
 
           {/* Desktop nav links — centered */}
