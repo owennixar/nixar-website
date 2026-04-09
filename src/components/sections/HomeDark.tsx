@@ -3,6 +3,18 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import { services } from "@/lib/data/services";
+import {
+  Share2,
+  Code2,
+  Bot,
+  Headphones,
+  Search,
+  PenTool,
+  Brain,
+  Sparkles,
+  Palette,
+  Target,
+} from "lucide-react";
 import { testimonials } from "@/lib/data/testimonials";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import PulsingGrid from "@/components/ui/PulsingGrid";
@@ -93,12 +105,15 @@ function Reveal({
 /* ═══════════════════════════════════════════════════════════════════════════
    SERVICES DATA for numbered cards
    ═══════════════════════════════════════════════════════════════════════════ */
+const SERVICE_ICONS = [Share2, Code2, Bot, Headphones, Search, PenTool, Brain, Sparkles, Palette, Target];
+
 const SERVICE_CARDS = services.map((s, i) => ({
   num: String(i + 1).padStart(2, "0"),
   title: s.shortTitle,
   desc: s.description.split(".").slice(0, 2).join(".") + ".",
   slug: s.slug,
   isNew: s.isNew ?? false,
+  Icon: SERVICE_ICONS[i],
 }));
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -359,6 +374,7 @@ export default function HomeDark() {
                   style={{ minHeight: "320px" }}
                 >
                   <div>
+                    {s.Icon && <s.Icon size={28} color="#E71840" className="mb-3" />}
                     <span className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-[#E71840]">
                       {s.num}
                     </span>
@@ -639,7 +655,7 @@ export default function HomeDark() {
               className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,8vw,6rem)] font-700 uppercase leading-[0.95] text-white"
               style={{ textShadow: "0 0 80px rgba(231,24,64,0.15)" }}
             >
-              Ready to Launch?
+              Ready to <span className="text-[#E71840]">Launch?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
