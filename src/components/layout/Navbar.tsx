@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useCallback, useRef } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "@/components/ui/Logo";
@@ -51,18 +50,11 @@ const MOBILE_SOCIAL = [
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [isHomepage, setIsHomepage] = useState(false);
-  const isBlog = pathname?.startsWith("/blog");
   const dropdownRef = useRef<HTMLDivElement>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout>>(undefined);
-
-  useEffect(() => {
-    setIsHomepage(window.location.pathname === "/");
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -128,9 +120,7 @@ export default function Navbar() {
         aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? isHomepage || isBlog
-              ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#222]"
-              : "bg-white/95 backdrop-blur-md shadow-[0_1px_12px_rgba(0,0,0,0.06)]"
+            ? "bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#222]"
             : "bg-transparent"
         }`}
       >
@@ -173,7 +163,7 @@ export default function Navbar() {
                       }}
                       aria-expanded={servicesOpen}
                       aria-haspopup="true"
-                      className={`nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] ${isHomepage || isBlog ? "text-white" : "text-[#1A1A1A]"}`}
+                      className="nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] text-white transition-colors hover:text-[var(--color-primary)]"
                     >
                       {label}
                       <ChevronDown
@@ -237,7 +227,7 @@ export default function Navbar() {
                   key={label}
                   href={href}
                   role="menuitem"
-                  className={`nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm ${isHomepage || isBlog ? "text-white" : "text-[#1A1A1A]"}`}
+                  className="nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] text-white transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm"
                 >
                   {label}
                 </Link>
@@ -249,7 +239,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-5 lg:flex">
             <a
               href="tel:4697593638"
-              className={`flex items-center gap-1.5 text-[13px] font-500 transition-colors ${isHomepage || isBlog ? "text-white/50 hover:text-white" : "text-[var(--color-text-muted)] hover:text-[var(--color-text)]"}`}
+              className="flex items-center gap-1.5 text-[13px] font-500 text-white/50 transition-colors hover:text-white"
               aria-label="Call us at 469-759-3638"
             >
               <Phone size={14} />
@@ -273,19 +263,13 @@ export default function Navbar() {
             aria-controls="mobile-menu"
           >
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${(isHomepage || isBlog) && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
-                mobileOpen ? "translate-y-[8px] rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${mobileOpen ? "bg-[var(--color-black)] translate-y-[8px] rotate-45" : "bg-white"}`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${(isHomepage || isBlog) && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
-                mobileOpen ? "scale-x-0 opacity-0" : ""
-              }`}
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 ${mobileOpen ? "bg-[var(--color-black)] scale-x-0 opacity-0" : "bg-white"}`}
             />
             <span
-              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${(isHomepage || isBlog) && !mobileOpen ? "bg-white" : "bg-[var(--color-black)]"} ${
-                mobileOpen ? "-translate-y-[8px] -rotate-45" : ""
-              }`}
+              className={`block h-[2px] w-6 rounded-full transition-all duration-300 origin-center ${mobileOpen ? "bg-[var(--color-black)] -translate-y-[8px] -rotate-45" : "bg-white"}`}
             />
           </button>
         </div>
