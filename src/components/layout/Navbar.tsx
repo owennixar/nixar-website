@@ -38,7 +38,7 @@ const NAV_LINKS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services", hasDropdown: true },
   { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "https://y-two-tawny.vercel.app/", external: true },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
