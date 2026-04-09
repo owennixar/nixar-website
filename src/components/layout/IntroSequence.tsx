@@ -90,9 +90,9 @@ export default function IntroSequence() {
 
     const onTimeUpdate = () => {
       const t = video.currentTime;
-      if (t >= 0.3 && t < 3.2) {
+      if (t >= 0.5 && t < 2.8) {
         setScene("scene1");
-      } else if (t >= 3.5 && t < 6.4) {
+      } else if (t >= 3.35 && t < 6.4) {
         setScene("scene2");
       } else if (t >= 6.8 && t < 8.0) {
         setScene("scene3");
