@@ -52,12 +52,12 @@ export default function IntroSequence() {
     setShowPost(true);
 
     // 0ms: dark bg visible
-    // 200ms: transition to white
-    addTimer(() => setWhiteBg(true), 200);
-    // 500ms: tagline blur-in
-    addTimer(() => setTaglineVisible(true), 500);
-    // 2000ms: hard cut — unmount everything
-    addTimer(() => finish(), 2000);
+    // 100ms: transition to white
+    addTimer(() => setWhiteBg(true), 100);
+    // 300ms: tagline blur-in
+    addTimer(() => setTaglineVisible(true), 300);
+    // 1300ms: hard cut — unmount everything (1s on screen)
+    addTimer(() => finish(), 1300);
   }, [clearAllTimers, addTimer, finish]);
 
   // Init
@@ -166,17 +166,18 @@ export default function IntroSequence() {
           {/* Text — hard cut visibility via scene state */}
           <div className="intro-text-layer">
             {scene === "scene1" && (
-              <span className="intro-scene-text intro-scene-text--white">
-                We Transform
+              <span className="intro-scene-text">
+                <span className="intro-scene-text--white">We </span>
+                <span className="intro-scene-text--red">Transform</span>
               </span>
             )}
             {scene === "scene2" && (
-              <span className="intro-scene-text intro-scene-text--white">
+              <span className="intro-scene-text intro-scene-text--red">
                 Your Business
               </span>
             )}
             {scene === "scene3" && (
-              <span className="intro-scene-text intro-scene-text--red">
+              <span className="intro-scene-text intro-scene-text--red-big">
                 Online.
               </span>
             )}

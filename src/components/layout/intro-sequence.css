@@ -98,7 +98,6 @@
   letter-spacing: 0.04em;
   line-height: 1;
   white-space: nowrap;
-  text-shadow: 0 2px 30px rgba(0, 0, 0, 0.7);
 }
 
 .intro-scene-text--white {
@@ -108,10 +107,12 @@
 
 .intro-scene-text--red {
   color: #E71840;
+  font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.intro-scene-text--red-big {
+  color: #E71840;
   font-size: clamp(4rem, 10vw, 8rem);
-  text-shadow:
-    0 2px 30px rgba(0, 0, 0, 0.5),
-    0 0 60px rgba(231, 24, 64, 0.3);
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
