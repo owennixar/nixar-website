@@ -1,0 +1,22 @@
+# NIXAR Solutions Website
+
+## Tech Stack
+Next.js 14+ App Router, TypeScript, Tailwind CSS v4, Framer Motion, GSAP, 21st.dev Magic UI, Aceternity UI.
+
+## Brand
+WHITE theme: #ffffff bg, #f8f8f8 alternating sections, #E71840 RED accent. Dark footer (#0a0a0a).
+Logo uses original colors on white (red NIXAR, dark SOLUTIONS). White SOLUTIONS text in footer only.
+UI inspired by theskylineagency.com, theuptownagency.com, teamforcesolutions.com.
+
+## Business Info
+Frisco TX agency. Contact: 469-759-3638, hello@nixarsolutions.com.
+Co-founders: Anwar Mirza & Owen Nixon. Founded 2023.
+Real stats only: 20+ years combined experience, 500+ projects, 97%+ satisfaction.
+Never invent reviews, numbers, or client names.
+8 services including AI SEO/GEO and Custom AI Agents.
+20 unique DFW city pages for local SEO.
+
+## Skills — Read these BEFORE building any UI:
+- Read and follow .claude/skills/ui-ux-pro-max/SKILL.md for all UI/UX and frontend design work.
+- Use the 21st-magic MCP server to generate modern UI components via natural language.
+- Use the @magicuidesign/mcp server for marquees, bento grids, animated borders, scroll progress, and other Magic UI components.@AGENTS.md
