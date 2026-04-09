@@ -36,11 +36,11 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: 
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services", hasDropdown: true },
-  { label: "Portfolio", href: "#portfolio" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services", hasDropdown: true },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 const MOBILE_SOCIAL = [
@@ -232,17 +232,15 @@ export default function Navbar() {
                 );
               }
 
-              const isExternal = "external" in rest && rest.external;
               return (
-                <a
+                <Link
                   key={label}
                   href={href}
                   role="menuitem"
-                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] transition-colors hover:text-[var(--color-primary)] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[var(--color-primary)] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-4 focus-visible:rounded-sm ${isHomepage || isBlog ? "text-white" : "text-[#1A1A1A]"}`}
                 >
                   {label}
-                </a>
+                </Link>
               );
             })}
           </div>
@@ -257,12 +255,12 @@ export default function Navbar() {
               <Phone size={14} />
               469-759-3638
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/free-audit"
               className="inline-flex h-10 items-center rounded-full bg-[var(--color-primary)] px-6 text-[13px] font-600 text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-[0_8px_24px_var(--color-primary-glow)]"
             >
               Get Free Audit
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -310,19 +308,21 @@ export default function Navbar() {
             <div className="flex h-full flex-col justify-between px-6 pb-8 pt-24">
               {/* Nav links */}
               <nav className="flex flex-col gap-6">
-                {NAV_LINKS.map(({ label, href, ...rest }, i) => (
-                  <motion.a
+                {NAV_LINKS.map(({ label, href }, i) => (
+                  <motion.div
                     key={label}
-                    href={href}
-                    onClick={closeMobile}
-                    {...("external" in rest && rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.05 * i, duration: 0.3 }}
-                    className="font-[family-name:var(--font-heading)] text-[2rem] font-700 tracking-tight text-[var(--color-black)] transition-colors hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:text-[var(--color-primary)]"
                   >
-                    {label}
-                  </motion.a>
+                    <Link
+                      href={href}
+                      onClick={closeMobile}
+                      className="font-[family-name:var(--font-heading)] text-[2rem] font-700 tracking-tight text-[var(--color-black)] transition-colors hover:text-[var(--color-primary)] focus-visible:outline-none focus-visible:text-[var(--color-primary)]"
+                    >
+                      {label}
+                    </Link>
+                  </motion.div>
                 ))}
               </nav>
 
@@ -350,13 +350,13 @@ export default function Navbar() {
                 </div>
 
                 {/* CTA button */}
-                <a
-                  href="#contact"
+                <Link
+                  href="/free-audit"
                   onClick={closeMobile}
                   className="flex h-14 w-full items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-600 text-white transition-all hover:bg-[var(--color-primary-hover)]"
                 >
                   Get Free Audit
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>
