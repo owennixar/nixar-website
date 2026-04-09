@@ -198,63 +198,32 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="relative flex min-h-dvh items-center overflow-hidden pt-20"
+        className="relative min-h-screen w-full overflow-hidden flex items-center"
       >
-        <PulsingGrid />
+        {/* Background Image - using img tag to guarantee it loads */}
+        <img
+          src="/images/hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ zIndex: 0 }}
+        />
 
-        {/* Matrix rain — CSS only */}
-        <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden opacity-[0.04]" aria-hidden="true">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div
-              key={i}
-              className="matrix-col absolute top-0 text-[10px] leading-[14px] font-mono text-[#E71840] whitespace-pre"
-              style={{
-                left: `${8 + i * 7.5}%`,
-                animationDelay: `${-i * 1.3}s`,
-                animationDuration: `${8 + (i % 3) * 2}s`,
-              }}
-            >
-              {Array.from({ length: 60 }).map((_, j) => (
-                <span key={j} className="block">{String.fromCharCode(48 + (j * 7 + i * 3) % 10)}</span>
-              ))}
-            </div>
-          ))}
-        </div>
+        {/* Dark Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            zIndex: 1,
+            background: 'linear-gradient(to right, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.3) 70%, rgba(10,10,10,0.2) 100%)'
+          }}
+        />
 
-        {/* Floating astronaut SVG — easter egg */}
-        <div className="pointer-events-none absolute top-[12%] right-[8%] z-[2] hidden lg:block" aria-hidden="true">
-          <svg className="astronaut-float" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Asteroid */}
-            <ellipse cx="65" cy="105" rx="40" ry="15" fill="#222" />
-            <ellipse cx="55" cy="103" rx="5" ry="3" fill="#333" />
-            <ellipse cx="78" cy="108" rx="3" ry="2" fill="#2a2a2a" />
-            {/* Body */}
-            <rect x="48" y="55" width="34" height="40" rx="10" fill="#ddd" />
-            {/* Helmet */}
-            <circle cx="65" cy="45" r="22" fill="#ccc" />
-            <circle cx="65" cy="45" r="16" fill="#1a1a2e" />
-            {/* Visor reflection */}
-            <ellipse cx="60" cy="40" rx="6" ry="4" fill="rgba(231,24,64,0.15)" transform="rotate(-15 60 40)" />
-            {/* Backpack */}
-            <rect x="38" y="58" width="10" height="25" rx="4" fill="#bbb" />
-            {/* Arms */}
-            <rect x="82" y="62" width="14" height="6" rx="3" fill="#ddd" transform="rotate(15 82 62)" />
-            <rect x="36" y="68" width="14" height="6" rx="3" fill="#ddd" transform="rotate(-20 36 68)" />
-            {/* Legs */}
-            <rect x="52" y="90" width="8" height="16" rx="4" fill="#ccc" />
-            <rect x="68" y="90" width="8" height="16" rx="4" fill="#ccc" />
-            {/* Boots */}
-            <rect x="50" y="102" width="12" height="6" rx="3" fill="#999" />
-            <rect x="66" y="102" width="12" height="6" rx="3" fill="#999" />
-          </svg>
-        </div>
-
-        <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 lg:px-8">
-          {/* Left — Text */}
+        {/* Hero Content */}
+        <div className="relative mx-auto flex w-full max-w-7xl items-center px-5 lg:px-8" style={{ zIndex: 2 }}>
           <div className="max-w-2xl">
             <Reveal>
               <p
-                className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-[#666]"
+                className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-white/60"
               >
                 NIXAR Solutions — Frisco, TX
               </p>
@@ -276,7 +245,7 @@ export default function HomeDark() {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-[#999]">
+              <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-white/70">
                 We don&apos;t just <span className="text-[#E71840]">market</span> — we transform businesses online
                 through strategy, design, AI, and relentless execution.
               </p>
@@ -291,31 +260,16 @@ export default function HomeDark() {
               </a>
             </Reveal>
           </div>
-
-          {/* Right — Hero image placeholder */}
-          <Reveal
-            delay={0.2}
-            className="hidden w-[45%] shrink-0 lg:block"
-          >
-            <div className="relative aspect-[4/3] overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#16213e]" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-oswald)] text-[6rem] font-700 uppercase leading-none text-white/[0.04] select-none">
-                  NIXAR
-                </span>
-              </div>
-            </div>
-          </Reveal>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2" style={{ zIndex: 2 }}>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-[#444]">
+            <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-white/40">
               Scroll
             </span>
-            <div className="h-[30px] w-[2px] overflow-hidden bg-[#222]">
-              <div className="h-[30px] w-full animate-[scrollLine_1.5s_ease-in-out_infinite] bg-[#666]" />
+            <div className="h-[30px] w-[2px] overflow-hidden bg-white/20">
+              <div className="h-[30px] w-full animate-[scrollLine_1.5s_ease-in-out_infinite] bg-white/40" />
             </div>
           </div>
         </div>
