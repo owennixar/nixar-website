@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/lib/data/services";
@@ -17,11 +18,12 @@ import {
   Target,
 } from "lucide-react";
 import { testimonials } from "@/lib/data/testimonials";
-import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
-import PulsingGrid from "@/components/ui/PulsingGrid";
-import ParticleField from "@/components/ui/ParticleField";
-import AccentLines from "@/components/ui/AccentLines";
-import AgencyComparison from "@/components/sections/AgencyComparison";
+
+const AnimatedOrbs = dynamic(() => import("@/components/ui/AnimatedOrbs"), { ssr: false });
+const PulsingGrid = dynamic(() => import("@/components/ui/PulsingGrid"), { ssr: false });
+const ParticleField = dynamic(() => import("@/components/ui/ParticleField"), { ssr: false });
+const AccentLines = dynamic(() => import("@/components/ui/AccentLines"), { ssr: false });
+const AgencyComparison = dynamic(() => import("@/components/sections/AgencyComparison"), { ssr: false });
 
 /* ═══════════════════════════════════════════════════════════════════════════
    HOOK: Intersection Observer for scroll-triggered reveals
@@ -220,12 +222,15 @@ export default function HomeDark() {
         id="hero"
         className="relative min-h-screen w-full overflow-hidden flex items-center"
       >
-        {/* Background Image - using img tag to guarantee it loads */}
-        <img
-          src="/images/hero-bg.png"
+        {/* Background Image */}
+        <Image
+          src="/images/hero-bg.webp"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
           style={{ zIndex: 0 }}
         />
 
@@ -337,11 +342,10 @@ export default function HomeDark() {
         <div className="mx-auto mt-12 max-w-7xl px-5 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICE_CARDS.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.1}>
+              <Reveal key={s.slug} delay={i * 0.1} className="h-full">
                 <Link
                   href={`/services/${s.slug}`}
-                  className="glass-card group flex flex-col justify-between"
-                  style={{ minHeight: "320px" }}
+                  className="glass-card group flex h-full flex-col justify-between"
                 >
                   <div>
                     {s.Icon && <s.Icon size={28} color="#E71840" className="mb-3" />}
@@ -582,16 +586,17 @@ export default function HomeDark() {
         <div className="mx-auto mt-12 max-w-7xl px-5 lg:px-8">
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {BLOG_POSTS.map((post, i) => (
-              <Reveal key={post.title} delay={i * 0.1}>
+              <Reveal key={post.title} delay={i * 0.1} className="h-full">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="glass-card group flex flex-col !p-0 overflow-hidden"
+                  className="glass-card group flex h-full flex-col !p-0 overflow-hidden"
                 >
                   <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

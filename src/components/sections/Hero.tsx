@@ -8,7 +8,7 @@ export default function Hero() {
       id="hero"
       className="flex items-center overflow-hidden"
       style={{
-        backgroundImage: "url('/images/hero-bg.png')",
+        backgroundImage: "url('/images/hero-bg.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

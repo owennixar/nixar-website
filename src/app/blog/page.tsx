@@ -52,10 +52,11 @@ export default function BlogPage() {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ zIndex: 0 }}
         >
-          <source src="/videos/blog-bg.mp4" type="video/mp4" />
+          <source src="/videos/blog-bg-compressed.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} />
         <div className="relative text-center px-4" style={{ zIndex: 2 }}>
@@ -133,6 +134,7 @@ export default function BlogPage() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -221,6 +223,7 @@ export default function BlogPage() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -277,6 +280,7 @@ export default function BlogPage() {
                     src={post.image}
                     alt={post.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

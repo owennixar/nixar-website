@@ -158,7 +158,7 @@ export default function IntroSequence() {
             muted
             playsInline
             preload="auto"
-            src="/videos/intro-video.mp4"
+            src="/videos/intro-compressed.mp4"
           />
           <div className="intro-vignette" />
           <div className="intro-grain" />
@@ -169,6 +169,7 @@ export default function IntroSequence() {
               <span className="intro-scene-text">
                 <span className="intro-scene-text--white">We </span>
                 <span className="intro-scene-text--red">Transform</span>
+                <span className="intro-scene-text--red">.</span>
               </span>
             )}
             {scene === "scene2" && (
