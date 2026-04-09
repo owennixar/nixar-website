@@ -144,26 +144,29 @@ const PROCESS_STEPS = [
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   BLOG POSTS
+   BLOG POSTS (first 3 featured from blog data)
    ═══════════════════════════════════════════════════════════════════════════ */
 const BLOG_POSTS = [
   {
-    category: "SOCIAL MEDIA",
-    title: "The Ultimate Guide to Social Media Advertising for Small Businesses",
-    date: "December 8, 2025",
+    slug: "geo-generative-engine-optimization-2026",
+    category: "AI & SEO",
+    title: "GEO: How Generative Engine Optimization Is Changing the Marketing Landscape in 2026",
+    date: "March 17, 2026",
     gradient: "from-[#2a0a0f] to-[#0a0a0a]",
   },
   {
-    category: "DESIGN",
-    title: "Why Custom Illustrations Can Transform Your Brand Identity",
-    date: "December 8, 2025",
-    gradient: "from-[#1a1a1a] to-[#0a0a0a]",
+    slug: "seo-vs-ai-seo-understanding-the-difference",
+    category: "SEARCH STRATEGY",
+    title: "SEO vs. AI SEO: Understanding the Difference and Why It Matters",
+    date: "March 17, 2026",
+    gradient: "from-[#0a0f2a] to-[#0a0a0a]",
   },
   {
-    category: "DIGITAL MARKETING",
-    title: "Digital Marketing Strategies That Actually Convert in 2026",
-    date: "December 2, 2025",
-    gradient: "from-[#1f1f1f] to-[#0a0a0a]",
+    slug: "manus-ai-changing-social-media-marketing",
+    category: "SOCIAL MEDIA & AI",
+    title: "How Manus AI Is Changing Social Media Marketing Forever",
+    date: "March 17, 2026",
+    gradient: "from-[#1a0a2a] to-[#0a0a0a]",
   },
 ];
 
@@ -580,7 +583,7 @@ export default function HomeDark() {
             {BLOG_POSTS.map((post, i) => (
               <Reveal key={post.title} delay={i * 0.1}>
                 <Link
-                  href="/blog"
+                  href={`/blog/${post.slug}`}
                   className="glass-card group flex flex-col !p-0 overflow-hidden"
                 >
                   {/* Image placeholder */}
