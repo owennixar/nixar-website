@@ -172,12 +172,12 @@ export default function IntroSequence() {
               </span>
             )}
             {scene === "scene2" && (
-              <span className="intro-scene-text intro-scene-text--red">
-                Your Business
+              <span className="intro-scene-text intro-scene-text--white">
+                Your Business<span className="text-[#E71840]">.</span>
               </span>
             )}
             {scene === "scene3" && (
-              <span className="intro-scene-text intro-scene-text--red-big">
+              <span className="intro-scene-text intro-scene-text--red-big intro-scene-text--playfair">
                 Online.
               </span>
             )}
@@ -196,7 +196,7 @@ export default function IntroSequence() {
         <span className={"intro-tagline" + (taglineVisible ? " reveal" : "")}>
           <span className="intro-tagline-dark">Know </span>
           <span className="intro-tagline-red">YOUR </span>
-          <span className="intro-tagline-dark">Potential.</span>
+          <span className="intro-tagline-dark">Potential<span className="text-[#E71840]">.</span></span>
         </span>
       </div>
     </div>

@@ -142,6 +142,42 @@ html {
   to { top: 100%; }
 }
 
+/* ── Glass morphism service cards ─────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(231, 24, 64, 0.3);
+  box-shadow: inset 0 0 30px rgba(231, 24, 64, 0.05);
+}
+
+/* ── Matrix rain columns ─────────────────────────────────────────── */
+.matrix-col {
+  animation: matrixFall linear infinite;
+}
+@keyframes matrixFall {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(100vh); }
+}
+
+/* ── Floating astronaut ──────────────────────────────────────────── */
+.astronaut-float {
+  animation: astroFloat 3s ease-in-out infinite, astroRotate 5s ease-in-out infinite;
+}
+@keyframes astroFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes astroRotate {
+  0%, 100% { rotate: -3deg; }
+  50% { rotate: 3deg; }
+}
+
 /* Utility: gradient text */
 .gradient-text {
   background: linear-gradient(135deg, var(--color-primary) 0%, #FF2D55 100%);

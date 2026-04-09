@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Anton, Oswald, Plus_Jakarta_Sans } from "next/font/google";
+import { Bebas_Neue, Anton, Oswald, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import IntroSequence from "@/components/layout/IntroSequence";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -23,6 +23,14 @@ const oswald = Oswald({
   subsets: ["latin"],
   variable: "--font-oswald",
   weight: "700",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: "700",
+  style: "italic",
   display: "swap",
 });
 
@@ -105,7 +113,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${anton.variable} ${oswald.variable} ${plusJakarta.variable}`}>
+    <html lang="en" className={`${bebasNeue.variable} ${anton.variable} ${oswald.variable} ${playfair.variable} ${plusJakarta.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preload" as="video" href="/videos/intro-video.mp4" />

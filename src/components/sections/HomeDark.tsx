@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { services } from "@/lib/data/services";
 import { testimonials } from "@/lib/data/testimonials";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
@@ -148,24 +147,6 @@ const MARQUEE =
    MAIN COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 export default function HomeDark() {
-  /* ── Services horizontal scroll ─────────────────────────────────────── */
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  const handleScroll = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setScrollProgress(max > 0 ? el.scrollLeft / max : 0);
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", handleScroll, { passive: true });
-    return () => el.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
   /* ── Stats count-up ─────────────────────────────────────────────────── */
   const statsObs = useInView(0.3);
 
@@ -189,6 +170,54 @@ export default function HomeDark() {
         className="relative flex min-h-dvh items-center overflow-hidden pt-20"
       >
         <PulsingGrid />
+
+        {/* Matrix rain — CSS only */}
+        <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden opacity-[0.04]" aria-hidden="true">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div
+              key={i}
+              className="matrix-col absolute top-0 text-[10px] leading-[14px] font-mono text-[#E71840] whitespace-pre"
+              style={{
+                left: `${8 + i * 7.5}%`,
+                animationDelay: `${-i * 1.3}s`,
+                animationDuration: `${8 + (i % 3) * 2}s`,
+              }}
+            >
+              {Array.from({ length: 60 }).map((_, j) => (
+                <span key={j} className="block">{String.fromCharCode(48 + (j * 7 + i * 3) % 10)}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* Floating astronaut SVG — easter egg */}
+        <div className="pointer-events-none absolute top-[12%] right-[8%] z-[2] hidden lg:block" aria-hidden="true">
+          <svg className="astronaut-float" width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* Asteroid */}
+            <ellipse cx="65" cy="105" rx="40" ry="15" fill="#222" />
+            <ellipse cx="55" cy="103" rx="5" ry="3" fill="#333" />
+            <ellipse cx="78" cy="108" rx="3" ry="2" fill="#2a2a2a" />
+            {/* Body */}
+            <rect x="48" y="55" width="34" height="40" rx="10" fill="#ddd" />
+            {/* Helmet */}
+            <circle cx="65" cy="45" r="22" fill="#ccc" />
+            <circle cx="65" cy="45" r="16" fill="#1a1a2e" />
+            {/* Visor reflection */}
+            <ellipse cx="60" cy="40" rx="6" ry="4" fill="rgba(231,24,64,0.15)" transform="rotate(-15 60 40)" />
+            {/* Backpack */}
+            <rect x="38" y="58" width="10" height="25" rx="4" fill="#bbb" />
+            {/* Arms */}
+            <rect x="82" y="62" width="14" height="6" rx="3" fill="#ddd" transform="rotate(15 82 62)" />
+            <rect x="36" y="68" width="14" height="6" rx="3" fill="#ddd" transform="rotate(-20 36 68)" />
+            {/* Legs */}
+            <rect x="52" y="90" width="8" height="16" rx="4" fill="#ccc" />
+            <rect x="68" y="90" width="8" height="16" rx="4" fill="#ccc" />
+            {/* Boots */}
+            <rect x="50" y="102" width="12" height="6" rx="3" fill="#999" />
+            <rect x="66" y="102" width="12" height="6" rx="3" fill="#999" />
+          </svg>
+        </div>
+
         <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-8 px-5 lg:px-8">
           {/* Left — Text */}
           <div className="max-w-2xl">
@@ -269,7 +298,7 @@ export default function HomeDark() {
           {[0, 1].map((n) => (
             <span
               key={n}
-              className="inline-block text-[0.75rem] font-500 uppercase tracking-[0.15em] text-[#444]"
+              className="inline-block text-[0.75rem] font-500 uppercase tracking-[0.15em] text-[#E71840]"
               aria-hidden={n === 1}
             >
               {MARQUEE}
@@ -321,102 +350,47 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 4: SERVICES — HORIZONTAL SCROLL
+           SECTION 4: SERVICES — GLASS CARD GRID
            ═══════════════════════════════════════════════════════════════════ */}
       <section id="services" className="py-24 lg:py-32">
-        <Reveal className="px-5 lg:px-8">
+        <Reveal className="mx-auto max-w-7xl px-5 lg:px-8">
           <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,6vw,5rem)] font-700 uppercase leading-none text-white">
             What We Do
           </h2>
         </Reveal>
 
-        <div className="mt-12 relative">
-          <div
-            ref={scrollRef}
-            className="flex gap-0 overflow-x-auto scroll-smooth scrollbar-hide"
-            style={{ scrollSnapType: "x mandatory" }}
-          >
-            {/* Left padding spacer */}
-            <div className="shrink-0 w-5 lg:w-8" />
-
-            {SERVICE_CARDS.map((s) => (
-              <Link
-                key={s.slug}
-                href={`/services/${s.slug}`}
-                className="group shrink-0 w-[340px] sm:w-[400px] border-r border-[#222] bg-[#111] p-8 flex flex-col justify-between transition-colors duration-300 hover:bg-[#1A1A1A]"
-                style={{
-                  scrollSnapAlign: "start",
-                  minHeight: "500px",
-                }}
-              >
-                {/* Top border accent on hover */}
-                <div>
-                  <div className="h-[3px] w-full bg-transparent transition-colors duration-300 group-hover:bg-[#E71840] -mt-8 mb-8" />
-                  <span className="font-[family-name:var(--font-oswald)] text-[3rem] font-700 leading-none text-[#E71840]">
-                    {s.num}
+        <div className="mx-auto mt-12 max-w-7xl px-5 lg:px-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {SERVICE_CARDS.map((s, i) => (
+              <Reveal key={s.slug} delay={i * 0.1}>
+                <Link
+                  href={`/services/${s.slug}`}
+                  className="glass-card group flex flex-col justify-between p-10 transition-all duration-300 hover:-translate-y-1"
+                  style={{ minHeight: "320px" }}
+                >
+                  <div>
+                    <span className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-[#E71840]">
+                      {s.num}
+                    </span>
+                    <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1.3rem] font-700 uppercase text-white flex items-center gap-2">
+                      {s.title}
+                      {s.isNew && (
+                        <span className="text-[0.6rem] font-600 uppercase tracking-wider text-[#E71840]">
+                          NEW
+                        </span>
+                      )}
+                    </h3>
+                    <p className="mt-3 text-[0.9rem] leading-[1.6] text-[#888]">
+                      {s.desc}
+                    </p>
+                  </div>
+                  <span className="mt-6 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                    Learn More &rarr;
                   </span>
-                  <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white flex items-center gap-2">
-                    {s.title}
-                    {s.isNew && (
-                      <span className="text-[0.65rem] font-600 uppercase tracking-wider text-[#E71840]">
-                        NEW
-                      </span>
-                    )}
-                  </h3>
-                  <p className="mt-3 text-[0.9rem] leading-[1.6] text-[#888]">
-                    {s.desc}
-                  </p>
-                </div>
-                <span className="mt-6 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
-                  Learn More &rarr;
-                </span>
-              </Link>
+                </Link>
+              </Reveal>
             ))}
-
-            {/* Right padding spacer */}
-            <div className="shrink-0 w-5 lg:w-8" />
           </div>
-
-          {/* Scroll progress indicator */}
-          <div className="mx-5 mt-6 h-[2px] bg-[#222] lg:mx-8">
-            <div
-              className="h-full bg-[#E71840] transition-all duration-150"
-              style={{ width: `${scrollProgress * 100}%` }}
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 5: FEATURED QUOTE — full viewport
-           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-dvh items-center justify-center px-5 py-24 lg:px-8">
-        {/* Watermark */}
-        <div
-          className="pointer-events-none absolute inset-0 flex items-center justify-center"
-          aria-hidden="true"
-        >
-          <Image
-            src="/logo-white.svg"
-            alt=""
-            width={600}
-            height={180}
-            className="w-[60vw] max-w-[600px] opacity-[0.04]"
-          />
-        </div>
-
-        <div className="relative z-10 max-w-4xl text-center">
-          <Reveal>
-            <p className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,5vw,4rem)] font-700 uppercase leading-[1.2] text-white">
-              It doesn&apos;t matter where you start.
-            </p>
-          </Reveal>
-          <Reveal delay={0.15}>
-            <p className="mt-2 font-[family-name:var(--font-oswald)] text-[clamp(2rem,5vw,4rem)] font-700 uppercase leading-[1.2] text-white">
-              It&apos;s how you{" "}
-              <span className="text-[#E71840]">transform</span> from there.
-            </p>
-          </Reveal>
         </div>
       </section>
 
