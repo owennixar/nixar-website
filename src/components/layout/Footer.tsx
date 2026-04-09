@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
 import { services } from "@/lib/data/services";
 import { cities } from "@/lib/data/cities";
@@ -66,12 +65,10 @@ export default function Footer() {
           {/* Column 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="NIXAR Solutions — Home">
-              <Image
-                src="/logo-white.svg"
+              <img
+                src="/images/nixar-logo-dark.png"
                 alt="NIXAR Solutions"
-                width={160}
-                height={48}
-                className="h-8 w-auto"
+                style={{ height: '32px', width: 'auto' }}
               />
             </Link>
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/45">
