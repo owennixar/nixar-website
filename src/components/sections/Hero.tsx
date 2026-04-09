@@ -1,35 +1,34 @@
 "use client";
 
-import Image from "next/image";
 import AnimateIn from "@/components/ui/AnimateIn";
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex h-screen items-center overflow-hidden bg-[#0a0a0a]"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#0a0a0a]"
     >
       {/* Background image */}
-      <Image
-        src="/images/hero-bg.png"
-        alt=""
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
+      <div
+        className="absolute inset-0 z-0 h-full w-full"
+        style={{
+          backgroundImage: "url('/images/hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       />
 
       {/* Gradient overlay — dark left, transparent right */}
       <div
-        className="pointer-events-none absolute inset-0 z-[1]"
+        className="absolute inset-0 z-[1]"
         aria-hidden="true"
         style={{
           background:
-            "linear-gradient(to right, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.85) 35%, rgba(10,10,10,0.3) 70%, rgba(10,10,10,0.3) 100%)",
+            "linear-gradient(to right, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.3) 70%, rgba(10,10,10,0.2) 100%)",
         }}
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-12 px-5 lg:px-8">
+      <div className="relative z-[2] mx-auto flex w-full max-w-7xl items-center justify-between gap-12 px-5 lg:px-8">
         {/* Text block */}
         <div className="max-w-3xl">
           <AnimateIn delay={0.1} direction="none">
@@ -86,7 +85,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <AnimateIn delay={1.0} direction="none" className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
+      <AnimateIn delay={1.0} direction="none" className="absolute bottom-8 left-1/2 z-[2] -translate-x-1/2">
         <div className="flex flex-col items-center gap-2">
           <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-white/40">Scroll</span>
           <div className="h-[30px] w-[2px] overflow-hidden bg-white/20">
