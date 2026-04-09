@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { services } from "@/lib/data/services";
 import {
   Share2,
@@ -152,21 +153,21 @@ const BLOG_POSTS = [
     category: "AI & SEO",
     title: "GEO: How Generative Engine Optimization Is Changing the Marketing Landscape in 2026",
     date: "March 17, 2026",
-    gradient: "from-[#2a0a0f] to-[#0a0a0a]",
+    image: "/images/blog/geo-generative-engine-optimization-2026.jpg",
   },
   {
     slug: "seo-vs-ai-seo-understanding-the-difference",
     category: "SEARCH STRATEGY",
     title: "SEO vs. AI SEO: Understanding the Difference and Why It Matters",
     date: "March 17, 2026",
-    gradient: "from-[#0a0f2a] to-[#0a0a0a]",
+    image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.jpg",
   },
   {
     slug: "manus-ai-changing-social-media-marketing",
     category: "SOCIAL MEDIA & AI",
     title: "How Manus AI Is Changing Social Media Marketing Forever",
     date: "March 17, 2026",
-    gradient: "from-[#1a0a2a] to-[#0a0a0a]",
+    image: "/images/blog/manus-ai-changing-social-media-marketing.jpg",
   },
 ];
 
@@ -586,9 +587,14 @@ export default function HomeDark() {
                   href={`/blog/${post.slug}`}
                   className="glass-card group flex flex-col !p-0 overflow-hidden"
                 >
-                  {/* Image placeholder */}
                   <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient}`} />
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
                   </div>
                   {/* Content */}

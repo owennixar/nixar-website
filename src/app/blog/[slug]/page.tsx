@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { blogPosts, getRelatedPosts } from "@/lib/data/blog";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
+import BlogArticle from "@/components/sections/BlogArticle";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,11 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [
+        {
+          url: `https://nixarsolutions.com${post.image}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
   };
 }
 
-/* ─── badge color helper ─────────────────────────────────────────── */
 function badgeBg(color?: string) {
   return {
     backgroundColor: color ? `${color}22` : "rgba(231,24,64,0.13)",
@@ -38,13 +47,6 @@ function badgeBg(color?: string) {
   };
 }
 
-const GRADIENTS = [
-  "from-[#2a0a0f] to-[#0a0a0a]",
-  "from-[#0a0f2a] to-[#0a0a0a]",
-  "from-[#1a0a2a] to-[#0a0a0a]",
-  "from-[#0a2a1a] to-[#0a0a0a]",
-];
-
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
@@ -52,8 +54,40 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(slug, 3);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    image: `https://nixarsolutions.com${post.image}`,
+    datePublished: post.date,
+    author: {
+      "@type": "Organization",
+      name: post.author,
+      url: "https://nixarsolutions.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "NIXAR Solutions",
+      url: "https://nixarsolutions.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://nixarsolutions.com/logo.svg",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://nixarsolutions.com/blog/${post.slug}`,
+    },
+  };
+
   return (
     <main className="w-full bg-[#0A0A0A] relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Background effects */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <AnimatedOrbs />
@@ -61,18 +95,25 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════
-           HERO
+           HERO — Image background
            ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-10 pt-32 pb-16 lg:pt-44 lg:pb-24">
-        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+      <section className="relative w-full h-[60vh] min-h-[400px] flex items-end overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/70 to-transparent" />
+        <div className="relative z-10 mx-auto max-w-4xl px-5 lg:px-8 pb-12 w-full">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840] hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840] hover:text-white transition-colors mb-6"
           >
             &larr; Back to Blog
           </Link>
-
-          <div className="flex flex-wrap items-center gap-3 mb-6">
+          <div className="flex flex-wrap items-center gap-3 mb-4">
             <span
               className="rounded-full px-3 py-1 text-[0.6rem] font-700 uppercase tracking-wider"
               style={badgeBg(post.badgeColor)}
@@ -88,12 +129,10 @@ export default async function BlogPostPage({ params }: Props) {
               </span>
             )}
           </div>
-
-          <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,5vw,3.5rem)] font-700 uppercase leading-[1.1] text-white">
+          <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(1.8rem,4vw,3rem)] font-700 uppercase leading-[1.1] text-white">
             {post.title}
           </h1>
-
-          <div className="mt-6 flex flex-wrap items-center gap-4 text-[0.75rem] text-[#666]">
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-[0.75rem] text-[#999]">
             <span>{post.author}</span>
             <span>·</span>
             <span>{post.date}</span>
@@ -106,23 +145,43 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ═══════════════════════════════════════════════════════════════
            ARTICLE BODY
            ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative z-10 pb-24">
+      <section className="relative z-10 py-16">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
-          <div className="glass-card !p-8 lg:!p-12">
-            <p className="text-[1.05rem] leading-[1.8] text-[#ccc] font-[family-name:var(--font-plus-jakarta)]">
-              {post.excerpt}
-            </p>
+          <BlogArticle content={post.content} />
 
-            <div className="mt-12 border-t border-[#222] pt-12 text-center">
-              <div className="inline-block rounded-2xl border border-[#E71840]/20 bg-[#E71840]/5 px-8 py-6">
-                <p className="text-[0.85rem] font-600 text-white">
-                  Full article coming soon
-                </p>
-                <p className="mt-2 text-[0.8rem] text-[#888]">
-                  We&apos;re finalizing this piece. Check back shortly or subscribe to
-                  get notified when it&apos;s live.
-                </p>
-              </div>
+          {/* Share */}
+          <div className="mt-16 pt-8 border-t border-[#222] flex items-center justify-between">
+            <span className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#666]">
+              Share this article
+            </span>
+            <div className="flex gap-3">
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                aria-label="Share on X"
+              >
+                𝕏
+              </a>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                aria-label="Share on LinkedIn"
+              >
+                in
+              </a>
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                aria-label="Share on Facebook"
+              >
+                f
+              </a>
             </div>
           </div>
         </div>
@@ -138,16 +197,20 @@ export default async function BlogPostPage({ params }: Props) {
               Related <span className="text-[#E71840]">Articles</span>
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {related.map((rel, i) => (
+              {related.map((rel) => (
                 <Link
                   key={rel.slug}
                   href={`/blog/${rel.slug}`}
                   className="glass-card group flex flex-col !p-0 overflow-hidden"
                 >
                   <div className="relative h-[160px] w-full overflow-hidden rounded-t-[24px]">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}
+                    <Image
+                      src={rel.image}
+                      alt={rel.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
@@ -174,12 +237,11 @@ export default async function BlogPostPage({ params }: Props) {
       <section className="relative z-10 py-24 border-t border-[#1a1a1a]">
         <div className="mx-auto max-w-2xl px-5 lg:px-8 text-center">
           <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,4vw,3rem)] font-700 uppercase leading-none text-white">
-            Want NIXAR to Handle{" "}
-            <span className="text-[#E71840]">Your Marketing?</span>
+            Ready to Transform Your{" "}
+            <span className="text-[#E71840]">Digital Presence?</span>
           </h2>
           <p className="mt-4 text-[0.95rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
-            From AI-powered SEO to full-service campaigns — we help Dallas
-            businesses grow faster.
+            Get your free audit and discover what&apos;s possible for your business.
           </p>
           <div className="mt-8 flex gap-4 justify-center">
             <Link

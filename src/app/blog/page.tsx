@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { getFeaturedPosts, getSeriesPosts, getMorePosts } from "@/lib/data/blog";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
 import NewsletterForm from "@/components/sections/NewsletterForm";
+import DecodedText from "@/components/ui/DecodedText";
 
 export const metadata: Metadata = {
   title: "Blog | NIXAR Solutions",
@@ -27,15 +29,6 @@ function badgeBg(color?: string) {
   };
 }
 
-/* ─── gradient map for card headers ──────────────────────────────── */
-const GRADIENTS = [
-  "from-[#2a0a0f] to-[#0a0a0a]",
-  "from-[#0a0f2a] to-[#0a0a0a]",
-  "from-[#1a0a2a] to-[#0a0a0a]",
-  "from-[#0a2a1a] to-[#0a0a0a]",
-  "from-[#2a1a0a] to-[#0a0a0a]",
-  "from-[#1a1a1a] to-[#0a0a0a]",
-];
 
 export default function BlogPage() {
   const featured = getFeaturedPosts();
@@ -87,13 +80,7 @@ export default function BlogPage() {
             </span>{" "}
             of
             <br />
-            Marketing,{" "}
-            <span
-              className="underline decoration-2 underline-offset-8"
-              style={{ color: "#E71840" }}
-            >
-              Decoded.
-            </span>
+            Marketing, <DecodedText />
           </h1>
           <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto font-[family-name:var(--font-plus-jakarta)]">
             NIXAR Solutions breaks down emerging trends in AI, SEO, social media,
@@ -142,11 +129,14 @@ export default function BlogPage() {
                 className="glass-card group flex flex-col !p-0 overflow-hidden"
               >
                 <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
-                  {/* Badge */}
                   <span
                     className="absolute top-4 left-4 rounded-full px-3 py-1 text-[0.6rem] font-700 uppercase tracking-wider"
                     style={badgeBg(post.badgeColor)}
@@ -227,9 +217,13 @@ export default function BlogPage() {
                 className="glass-card group flex flex-col !p-0 overflow-hidden"
               >
                 <div className="relative h-[140px] w-full overflow-hidden rounded-t-[24px]">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[(i + 3) % GRADIENTS.length]}`}
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#10B981]" />
                   <span
                     className="absolute top-3 left-3 rounded-full px-3 py-1 text-[0.55rem] font-700 uppercase tracking-wider"
@@ -279,9 +273,13 @@ export default function BlogPage() {
                 className="glass-card group flex flex-col sm:flex-row !p-0 overflow-hidden"
               >
                 <div className="relative h-[180px] sm:h-auto sm:w-[220px] flex-shrink-0 overflow-hidden rounded-t-[24px] sm:rounded-t-none sm:rounded-l-[24px]">
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-0 sm:bottom-auto sm:top-0 sm:right-0 left-0 sm:left-auto sm:w-[3px] h-[3px] sm:h-full bg-[#E71840]" />
                   <span
                     className="absolute top-3 left-3 rounded-full px-3 py-1 text-[0.55rem] font-700 uppercase tracking-wider"
