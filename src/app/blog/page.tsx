@@ -48,15 +48,14 @@ export default function BlogPage() {
       </section>
 
       {/* BLOG CONTENT IFRAME - skip the blog's own hero */}
-      <div id="blog-content">
+      <div id="blog-content" style={{ overflow: 'hidden', height: '200vh' }}>
         <iframe
           src="https://y-two-tawny.vercel.app/"
           className="w-full border-none"
           style={{
-            height: 'calc(200vh + 120px)',
-            minHeight: '100vh',
-            marginTop: '-750px',
-            clipPath: 'inset(750px 0 0 0)',
+            height: 'calc(200vh + 950px)',
+            marginTop: '-950px',
+            border: 'none',
             background: '#0A0A0A',
           }}
           title="NIXAR Solutions Blog"
