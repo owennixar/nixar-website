@@ -101,7 +101,7 @@ export default function RootLayout({
     <html lang="en" className={`${bebasNeue.variable} ${anton.variable} ${plusJakarta.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="preload" as="image" href="/images/rocketship.webp" />
+        <link rel="preload" as="video" href="/videos/intro-video.mp4" />
         <meta name="theme-color" content="#E71840" />
         <meta name="geo.region" content="US-TX" />
         <meta name="geo.placename" content="Frisco" />

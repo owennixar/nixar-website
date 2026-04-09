@@ -1,414 +1,221 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   CINEMATIC INTRO — Rocket + Text Slam + Smoke + Tagline Reveal
-   Total: ~6.5s
+   CINEMATIC VIDEO INTRO — Scene-synced text overlays on rocket launch video
+   Total: ~13s (10s video + 3s tagline + slide-out)
 
-   0.0s   Rocket fades in (0.6s)
-   0.6s   "WE TRANSFORM" slams from left
-   1.0s   "YOUR BRAND" slams from right
-   1.4s   "ONLINE." punches up from below
-   1.8s   Exhaust ignition + screen shake
-   2.0s   Rocket launches + text blows away
-   2.2s   Smoke fills viewport
-   3.5s   Tagline revealed as smoke dissipates
-   5.0s   Smoke cleared, tagline holds
-   6.0s   Tagline + overlay fade out
+   0.0s–3.3s   Scene 1: Exterior rocket — "WE TRANSFORM"
+   3.3s–6.6s   Scene 2: Crew cockpit — "YOUR BUSINESS"
+   6.6s–10.0s  Scene 3: Rocket launch + smoke — "ONLINE."
+   10.0s–13.1s Post-video: "Know YOUR Potential." + slide-out
    ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ── Overlay ──────────────────────────────────────────────────────────── */
+/* ── Overlay container ───────────────────────────────────────────────── */
 .intro-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
-  background: #ffffff;
+  z-index: 9998;
+  background: #000000;
   overflow: hidden;
 }
 
-/* ── Stage ─────────────────────────────────────────────────────────────── */
-.intro-stage {
+/* ── Video layer ─────────────────────────────────────────────────────── */
+.intro-video {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* ── Text overlay layer ──────────────────────────────────────────────── */
+.intro-text-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
   pointer-events: none;
 }
 
-/* ── Rocketship ────────────────────────────────────────────────────────── */
-.intro-rocket {
+/* ── Shared text style ───────────────────────────────────────────────── */
+.intro-scene-text {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) scale(0.85);
-  height: 65vh;
-  width: auto;
-  object-fit: contain;
-  opacity: 0;
-  z-index: 2;
-  animation:
-    rocketFadeIn 0.6s ease-out 0s forwards,
-    rocketLaunch 1.2s cubic-bezier(0.4, 0, 0.15, 1) 2.0s forwards;
-}
-
-@media (max-width: 768px) {
-  .intro-rocket { height: 50vh; }
-}
-
-@keyframes rocketFadeIn {
-  from { opacity: 0; transform: translateX(-50%) scale(0.85); }
-  to   { opacity: 1; transform: translateX(-50%) scale(1); }
-}
-
-@keyframes rocketLaunch {
-  0%   { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
-  15%  { transform: translateX(-50%) translateY(-3vh) scale(1.02); opacity: 1; }
-  100% { transform: translateX(-50%) translateY(-130vh) scale(1.05); opacity: 1; }
-}
-
-/* ── Engine glow ───────────────────────────────────────────────────────── */
-.intro-glow {
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%) scale(0);
-  width: 200px;
-  height: 140px;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(255, 140, 0, 0.6) 0%,
-    rgba(231, 24, 64, 0.35) 40%,
-    transparent 70%
-  );
-  filter: blur(25px);
-  border-radius: 50%;
-  opacity: 0;
-  z-index: 1;
-  animation:
-    glowIdle 0.8s ease-out 0.3s forwards,
-    glowPulse 0.25s ease-in-out 0.3s 6,
-    glowIgnite 0.2s ease-in 1.8s forwards,
-    glowLaunch 1.2s cubic-bezier(0.4, 0, 0.15, 1) 2.0s forwards;
-}
-
-@keyframes glowIdle {
-  to { opacity: 0.5; transform: translateX(-50%) scale(0.7); }
-}
-
-@keyframes glowPulse {
-  0%, 100% { transform: translateX(-50%) scale(0.7); }
-  50%      { transform: translateX(-50%) scale(0.85); }
-}
-
-@keyframes glowIgnite {
-  to { opacity: 1; transform: translateX(-50%) scale(1.4); }
-}
-
-@keyframes glowLaunch {
-  0%   { transform: translateX(-50%) translateY(0) scale(1.4) scaleY(1); opacity: 1; }
-  30%  { transform: translateX(-50%) translateY(-10vh) scale(1.5) scaleY(2.5); opacity: 0.8; }
-  100% { transform: translateX(-50%) translateY(-130vh) scale(0.8) scaleY(5); opacity: 0; }
-}
-
-/* ── Text SLAMS ────────────────────────────────────────────────────────── */
-.intro-text {
-  position: absolute;
-  font-family: var(--font-anton), var(--font-bebas), system-ui, sans-serif;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-anton), 'Anton', system-ui, sans-serif;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 0.95;
+  line-height: 1;
+  white-space: nowrap;
   opacity: 0;
-  z-index: 3;
 }
 
-/* "WE TRANSFORM" — slams from left at 0.6s */
+/* ── Scene 1: "WE TRANSFORM" ─────────────────────────────────────────── */
 .intro-text-transform {
-  top: 8vh;
-  left: 4vw;
-  color: #1A1A1A;
-  font-size: clamp(4rem, 10vw, 9rem);
+  font-size: clamp(4rem, 12vw, 10rem);
+  color: #ffffff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
   animation:
-    slamFromLeft 0.35s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards,
-    slamSettle 0.1s ease-out 0.95s forwards,
-    textBlowLeft 0.4s ease-in 2.0s forwards;
+    punchIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards,
+    fadeOut 0.3s ease-out 3.0s forwards;
 }
 
-@keyframes slamFromLeft {
-  from { opacity: 0; transform: translateX(-100vw) scale(1); }
-  to   { opacity: 1; transform: translateX(0) scale(1.03); }
-}
-
-@keyframes slamSettle {
-  to { transform: translateX(0) scale(1); }
-}
-
-@keyframes textBlowLeft {
-  to { opacity: 0; transform: translateX(-50px); }
-}
-
-/* "YOUR BRAND" — slams from right at 1.0s */
-.intro-text-brand {
-  top: 38vh;
-  right: 4vw;
-  text-align: right;
-  color: #1A1A1A;
-  font-size: clamp(4rem, 10vw, 9rem);
+/* ── Scene 2: "YOUR BUSINESS" ────────────────────────────────────────── */
+.intro-text-business {
+  font-size: clamp(4rem, 12vw, 10rem);
+  color: #ffffff;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 0, 0, 0.3);
   animation:
-    slamFromRight 0.35s cubic-bezier(0.22, 1, 0.36, 1) 1.0s forwards,
-    slamSettleR 0.1s ease-out 1.35s forwards,
-    textBlowRight 0.4s ease-in 2.0s forwards;
+    punchIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) 3.5s forwards,
+    fadeOut 0.3s ease-out 6.3s forwards;
 }
 
-@keyframes slamFromRight {
-  from { opacity: 0; transform: translateX(100vw) scale(1); }
-  to   { opacity: 1; transform: translateX(0) scale(1.03); }
-}
-
-@keyframes slamSettleR {
-  to { transform: translateX(0) scale(1); }
-}
-
-@keyframes textBlowRight {
-  to { opacity: 0; transform: translateX(50px); }
-}
-
-/* "ONLINE." — punches up from below at 1.4s — BIGGEST */
+/* ── Scene 3: "ONLINE." ──────────────────────────────────────────────── */
 .intro-text-online {
-  bottom: 10vh;
-  left: 4vw;
+  font-size: clamp(5rem, 15vw, 12rem);
   color: #E71840;
-  font-size: clamp(5rem, 14vw, 12rem);
-  text-shadow:
-    0 0 80px rgba(231, 24, 64, 0.3),
-    0 4px 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4), 0 0 60px rgba(231, 24, 64, 0.4);
   animation:
-    slamFromBelow 0.35s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards,
-    slamSettleUp 0.1s ease-out 1.75s forwards,
-    textDropDown 0.4s ease-in 2.0s forwards;
+    punchInBig 0.5s cubic-bezier(0.16, 1, 0.3, 1) 6.8s forwards,
+    fadeOut 0.3s ease-out 8.0s forwards;
 }
 
-@keyframes slamFromBelow {
-  from { opacity: 0; transform: translateY(100vh) scale(1); }
-  to   { opacity: 1; transform: translateY(0) scale(1.05); }
+/* ── Punch-in animations ─────────────────────────────────────────────── */
+@keyframes punchIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.0);
+  }
 }
 
-@keyframes slamSettleUp {
-  to { transform: translateY(0) scale(1); }
+@keyframes punchInBig {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.4);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.0);
+  }
 }
 
-@keyframes textDropDown {
-  to { opacity: 0; transform: translateY(20px); }
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 
-/* ── Screen shake at 1.8s ──────────────────────────────────────────────── */
+/* ── Screen shake at 7.5s ────────────────────────────────────────────── */
 .intro-shake {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  pointer-events: none;
-  animation: screenShake 0.2s linear 1.8s 1;
+  animation: screenShake 0.5s linear 7.5s 1;
 }
 
 @keyframes screenShake {
-  0%   { transform: translate(0, 0); }
-  15%  { transform: translate(-3px, 1px); }
-  30%  { transform: translate(3px, -1px); }
-  45%  { transform: translate(-3px, -1px); }
-  60%  { transform: translate(3px, 1px); }
-  75%  { transform: translate(-2px, 0); }
-  100% { transform: translate(0, 0); }
+  0%   { transform: translateX(0); }
+  10%  { transform: translateX(-4px); }
+  20%  { transform: translateX(4px); }
+  30%  { transform: translateX(-3px); }
+  40%  { transform: translateX(3px); }
+  50%  { transform: translateX(-2px); }
+  60%  { transform: translateX(2px); }
+  100% { transform: translateX(0); }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
-   PHASE 2: SMOKE
+   POST-VIDEO: White screen + tagline
    ══════════════════════════════════════════════════════════════════════════ */
 
-.intro-smoke-container {
+.intro-post-video {
   position: absolute;
   inset: 0;
-  z-index: 4;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* ── CSS Fallback Smoke (always present) ───────────────────────────────── */
-.intro-smoke-css {
-  position: absolute;
-  bottom: -20%;
-  left: 50%;
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0;
-  background: radial-gradient(ellipse at center, #ffffff 0%, rgba(255,255,255,0.6) 40%, transparent 70%);
-  will-change: transform, opacity;
-}
-
-.intro-smoke-css-1 {
-  width: 500px; height: 500px;
-  margin-left: -250px;
-  animation: smokeExpand 1.8s ease-out 2.2s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-.intro-smoke-css-2 {
-  width: 400px; height: 400px;
-  margin-left: -100px;
-  animation: smokeExpand2 1.6s ease-out 2.3s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-.intro-smoke-css-3 {
-  width: 450px; height: 350px;
-  margin-left: -350px;
-  animation: smokeExpand3 1.7s ease-out 2.35s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-.intro-smoke-css-4 {
-  width: 350px; height: 350px;
-  margin-left: -50px;
-  bottom: -10%;
-  animation: smokeExpand 1.9s ease-out 2.4s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-.intro-smoke-css-5 {
-  width: 550px; height: 400px;
-  margin-left: -200px;
-  bottom: -25%;
-  animation: smokeExpand2 2.0s ease-out 2.25s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-.intro-smoke-css-6 {
-  width: 300px; height: 300px;
-  margin-left: 50px;
-  bottom: -5%;
-  animation: smokeExpand3 1.5s ease-out 2.45s forwards, smokeFade 1.5s ease-in 3.5s forwards;
-}
-
-@keyframes smokeExpand {
-  0%   { opacity: 0; transform: scale(0.2) translateY(0); }
-  40%  { opacity: 0.85; }
-  100% { opacity: 0.85; transform: scale(4) translateY(-30vh); }
-}
-
-@keyframes smokeExpand2 {
-  0%   { opacity: 0; transform: scale(0.3) translateY(0); }
-  40%  { opacity: 0.8; }
-  100% { opacity: 0.8; transform: scale(3.5) translateY(-25vh); }
-}
-
-@keyframes smokeExpand3 {
-  0%   { opacity: 0; transform: scale(0.25) translateY(0); }
-  40%  { opacity: 0.75; }
-  100% { opacity: 0.75; transform: scale(3.8) translateY(-35vh); }
-}
-
-@keyframes smokeFade {
-  from { opacity: inherit; }
-  to   { opacity: 0; transform: inherit scale(1.2); }
-}
-
-/* ── PNG Smoke Layers (enhance if images exist) ────────────────────────── */
-.intro-smoke-img {
-  position: absolute;
-  bottom: -30%;
-  left: 50%;
-  transform: translateX(-50%) scale(0.3);
-  width: 120%;
-  max-width: none;
-  opacity: 0;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-/* Layer 3 — fire/exhaust (first, fastest) */
-.intro-smoke-fire {
   z-index: 3;
-  animation: smokeImgFire 1.5s ease-out 2.2s forwards;
-}
-
-@keyframes smokeImgFire {
-  0%   { opacity: 0; transform: translateX(-50%) scale(0.3); }
-  30%  { opacity: 0.9; transform: translateX(-50%) scale(1.5); }
-  100% { opacity: 0; transform: translateX(-50%) scale(3); }
-}
-
-/* Layer 1 — dense smoke (fills screen) */
-.intro-smoke-dense {
-  z-index: 2;
-  animation: smokeImgDense 2.5s ease-out 2.4s forwards, smokeImgFadeOut 1.5s ease-in 3.5s forwards;
-}
-
-@keyframes smokeImgDense {
-  0%   { opacity: 0; transform: translateX(-50%) scale(0.5); }
-  40%  { opacity: 1; }
-  100% { opacity: 1; transform: translateX(-50%) scale(2.5); }
-}
-
-@keyframes smokeImgFadeOut {
-  from { opacity: 1; }
-  to   { opacity: 0; transform: translateX(-50%) scale(3); }
-}
-
-/* Layer 2 — wispy texture */
-.intro-smoke-wispy {
-  z-index: 4;
-  animation: smokeImgWispy 2.2s ease-out 2.5s forwards, smokeImgFadeOut 1.5s ease-in 3.5s forwards;
-}
-
-@keyframes smokeImgWispy {
-  0%   { opacity: 0; transform: translateX(-50%) scale(0.5); }
-  40%  { opacity: 0.7; }
-  100% { opacity: 0.7; transform: translateX(-50%) scale(2); }
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   PHASE 3: TAGLINE REVEAL
-   ══════════════════════════════════════════════════════════════════════════ */
-
-.intro-tagline {
-  position: absolute;
-  inset: 0;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3; /* below smoke — revealed as smoke clears */
+  opacity: 0;
   pointer-events: none;
 }
 
+.intro-post-video.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Tagline: "Know YOUR Potential." ─────────────────────────────────── */
 .intro-tagline-text {
-  font-family: var(--font-anton), var(--font-bebas), system-ui, sans-serif;
+  font-family: var(--font-anton), 'Anton', system-ui, sans-serif;
   font-weight: 400;
   font-size: clamp(3rem, 8vw, 7rem);
   text-transform: uppercase;
   letter-spacing: 0.02em;
   line-height: 1;
   opacity: 0;
-  animation:
-    taglineReveal 1.5s ease-out 3.5s forwards,
-    taglineFadeOut 0.3s ease-in 6.0s forwards;
+  white-space: nowrap;
+}
+
+.intro-tagline-text.reveal {
+  animation: taglineReveal 1.0s ease-out forwards;
+}
+
+@keyframes taglineReveal {
+  from {
+    opacity: 0;
+    filter: blur(12px);
+    transform: scale(1.08);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1.0);
+  }
 }
 
 .intro-tagline-black { color: #1A1A1A; }
-.intro-tagline-red   { color: #E71840; }
-
-@keyframes taglineReveal {
-  from { opacity: 0; transform: scale(0.97); }
-  to   { opacity: 1; transform: scale(1); }
+.intro-tagline-red   {
+  color: #E71840;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 
-@keyframes taglineFadeOut {
-  to { opacity: 0; }
-}
-
-/* ── Final overlay fade (6.0s) ─────────────────────────────────────────── */
-.intro-fadeout {
+/* ── Shimmer on "YOUR" ───────────────────────────────────────────────── */
+.intro-tagline-red.shimmer::after {
+  content: '';
   position: absolute;
-  inset: 0;
-  z-index: 20;
-  background: #ffffff;
-  opacity: 0;
-  pointer-events: none;
-  animation: finalFade 0.3s ease-in 6.2s forwards;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    transparent 100%
+  );
+  animation: shimmerSweep 0.5s ease-in-out forwards;
 }
 
-@keyframes finalFade {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes shimmerSweep {
+  from { left: -100%; }
+  to   { left: 100%; }
 }
 
-/* ── Reduced motion ────────────────────────────────────────────────────── */
+/* ── Slide-out exit ──────────────────────────────────────────────────── */
+.intro-overlay.slide-out {
+  animation: slideOutLeft 0.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100vw); }
+}
+
+/* ── Reduced motion ──────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .intro-overlay {
     display: none !important;
