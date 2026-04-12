@@ -223,8 +223,8 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="relative w-full overflow-hidden flex items-center"
-        style={{ height: '85vh' }}
+        className="relative w-full flex items-center"
+        style={{ height: '85vh', clipPath: 'inset(0)', overflow: 'visible' }}
       >
         {/* Background Image */}
         <Image
@@ -263,9 +263,11 @@ export default function HomeDark() {
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
-                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap', overflow: 'visible', paddingLeft: '0.1em', marginLeft: '-0.05em' }}>
-                  <SplitText text="Transformation." delay={0.4} stagger={0.03} />
-                </span>
+                <div style={{ overflow: 'visible', position: 'relative' }}>
+                  <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ display: 'inline-block', fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap', padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
+                    <SplitText text="Transformation." delay={0.4} stagger={0.03} />
+                  </span>
+                </div>
               </h1>
             </Reveal>
 
