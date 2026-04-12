@@ -64,11 +64,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Let Lenis handle smooth scroll, not CSS */
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  will-change: auto;
 }
 
 ::selection {
-  background-color: var(--color-primary);
+  background: rgba(231, 24, 64, 0.3);
   color: white;
 }
 

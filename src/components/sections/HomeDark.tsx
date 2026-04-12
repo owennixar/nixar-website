@@ -18,6 +18,9 @@ import {
   Target,
 } from "lucide-react";
 import { testimonials } from "@/lib/data/testimonials";
+import SplitText from "@/components/ui/SplitText";
+import MagneticButton from "@/components/ui/MagneticButton";
+import ImageReveal from "@/components/ui/ImageReveal";
 
 const AnimatedOrbs = dynamic(() => import("@/components/ui/AnimatedOrbs"), { ssr: false });
 const PulsingGrid = dynamic(() => import("@/components/ui/PulsingGrid"), { ssr: false });
@@ -97,8 +100,8 @@ function Reveal({
       className={className}
       style={{
         opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(30px)",
-        transition: `opacity 0.8s ease-out ${delay}s, transform 0.8s ease-out ${delay}s`,
+        transform: inView ? "translateY(0)" : "translateY(60px)",
+        transition: `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
       }}
     >
       {children}
@@ -258,10 +261,10 @@ export default function HomeDark() {
             <Reveal delay={0.1}>
               <h1 className="mt-6">
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-white">
-                  Digital
+                  <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
                 <span className="hero-glow-red block font-[family-name:var(--font-playfair)] text-[clamp(5rem,12vw,10rem)] font-700 italic leading-[0.9] tracking-tight text-[#E71840]">
-                  Transformation.
+                  <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                 </span>
               </h1>
             </Reveal>
@@ -278,12 +281,14 @@ export default function HomeDark() {
             </Reveal>
 
             <Reveal delay={0.4}>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex h-[52px] items-center border border-white px-8 text-[13px] font-600 uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-white hover:text-[#0A0A0A]"
-              >
-                Get Free Audit
-              </a>
+              <MagneticButton>
+                <a
+                  href="#contact"
+                  className="mt-8 inline-flex h-[52px] items-center border border-white px-8 text-[13px] font-600 uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-white hover:text-[#0A0A0A]"
+                >
+                  Get Free Audit
+                </a>
+              </MagneticButton>
             </Reveal>
           </div>
         </div>
@@ -376,97 +381,9 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 6: PORTFOLIO — EDITORIAL IMAGE GRID
+           SECTION 6: PORTFOLIO — HORIZONTAL SCROLL
            ═══════════════════════════════════════════════════════════════════ */}
-      <section id="portfolio" className="py-24 lg:py-32">
-        <Reveal className="px-5 lg:px-8 mb-12">
-          <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,6vw,5rem)] font-700 uppercase leading-none text-white">
-            Selected Work
-          </h2>
-        </Reveal>
-
-        {/* Row 1: 60/40 */}
-        <div className="flex flex-col md:flex-row">
-          {PORTFOLIO.slice(0, 2).map((p, i) => (
-            <Reveal
-              key={p.name}
-              delay={i * 0.1}
-              className={`group relative overflow-hidden ${
-                i === 0 ? "md:w-[60%]" : "md:w-[40%]"
-              }`}
-            >
-              <div
-                className={`aspect-[16/10] bg-gradient-to-br ${p.gradient}`}
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-[family-name:var(--font-oswald)] text-[4rem] font-700 uppercase text-white/[0.03] select-none">
-                    {p.name}
-                  </span>
-                </div>
-              </div>
-              {/* Scan line on hover */}
-              <div className="portfolio-scanline absolute inset-0 pointer-events-none z-10" />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
-                  {p.name}
-                </h3>
-                <p className="mt-1 text-[0.8rem] uppercase tracking-[0.1em] text-[#999]">
-                  {p.cat}
-                </p>
-                <span className="mt-4 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
-                  View Project &rarr;
-                </span>
-              </div>
-              {/* Caption */}
-              <div className="px-5 py-3 lg:px-8">
-                <p className="text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
-                  {p.name} &mdash; {p.cat}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Row 2: 40/60 (reversed) */}
-        <div className="flex flex-col md:flex-row">
-          {PORTFOLIO.slice(2, 4).map((p, i) => (
-            <Reveal
-              key={p.name}
-              delay={i * 0.1}
-              className={`group relative overflow-hidden ${
-                i === 0 ? "md:w-[40%]" : "md:w-[60%]"
-              }`}
-            >
-              <div
-                className={`aspect-[16/10] bg-gradient-to-br ${p.gradient}`}
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-[family-name:var(--font-oswald)] text-[4rem] font-700 uppercase text-white/[0.03] select-none">
-                    {p.name}
-                  </span>
-                </div>
-              </div>
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
-                  {p.name}
-                </h3>
-                <p className="mt-1 text-[0.8rem] uppercase tracking-[0.1em] text-[#999]">
-                  {p.cat}
-                </p>
-                <span className="mt-4 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
-                  View Project &rarr;
-                </span>
-              </div>
-              <div className="px-5 py-3 lg:px-8">
-                <p className="text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
-                  {p.name} &mdash; {p.cat}
-                </p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      <HorizontalPortfolio />
 
       {/* ═══════════════════════════════════════════════════════════════════
            SECTION 7: STATS
@@ -592,7 +509,7 @@ export default function HomeDark() {
                   href={`/blog/${post.slug}`}
                   className="glass-card group flex h-full flex-col !p-0 overflow-hidden"
                 >
-                  <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
+                  <ImageReveal className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
                     <Image
                       src={post.image}
                       alt={post.title}
@@ -602,7 +519,7 @@ export default function HomeDark() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
-                  </div>
+                  </ImageReveal>
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-8">
                     <span className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
@@ -645,12 +562,14 @@ export default function HomeDark() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <a
-              href="mailto:hello@nixarsolutions.com"
-              className="mt-10 inline-flex h-[56px] items-center border border-[#E71840] px-10 text-[13px] font-600 uppercase tracking-[0.15em] text-[#E71840] transition-all duration-300 hover:bg-[#E71840] hover:text-white"
-            >
-              Get Free Audit
-            </a>
+            <MagneticButton>
+              <a
+                href="mailto:hello@nixarsolutions.com"
+                className="mt-10 inline-flex h-[56px] items-center border border-[#E71840] px-10 text-[13px] font-600 uppercase tracking-[0.15em] text-[#E71840] transition-all duration-300 hover:bg-[#E71840] hover:text-white"
+              >
+                Get Free Audit
+              </a>
+            </MagneticButton>
           </Reveal>
         </div>
       </section>
@@ -679,6 +598,109 @@ export default function HomeDark() {
       </div>
       </div>{/* close z-10 content wrapper */}
     </div>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HORIZONTAL SCROLL PORTFOLIO (GSAP ScrollTrigger)
+   ═══════════════════════════════════════════════════════════════════════════ */
+function HorizontalPortfolio() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let ctx: { revert: () => void } | null = null;
+
+    const init = async () => {
+      const gsap = (await import("gsap")).default;
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+      gsap.registerPlugin(ScrollTrigger);
+
+      if (!sectionRef.current || !trackRef.current) return;
+
+      const track = trackRef.current;
+      const scrollWidth = track.scrollWidth - window.innerWidth;
+
+      ctx = gsap.context(() => {
+        gsap.to(track, {
+          x: -scrollWidth,
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: () => `+=${scrollWidth}`,
+            pin: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+      });
+    };
+
+    init();
+    return () => { ctx?.revert(); };
+  }, []);
+
+  return (
+    <section ref={sectionRef} id="portfolio" className="relative overflow-hidden">
+      <div
+        ref={trackRef}
+        className="flex items-center"
+        style={{ width: "max-content" }}
+      >
+        {/* Heading card */}
+        <div className="flex h-screen w-[40vw] shrink-0 flex-col justify-center px-5 lg:px-16">
+          <Reveal>
+            <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,6vw,5rem)] font-700 uppercase leading-none text-white">
+              Selected Work
+            </h2>
+            <p className="mt-4 max-w-md text-[1rem] leading-[1.7] text-[#888]">
+              Real projects, real results. Scroll to explore our portfolio.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Portfolio cards */}
+        {PORTFOLIO.map((p) => (
+          <div
+            key={p.name}
+            className="group relative mx-4 h-[70vh] w-[40vw] shrink-0 overflow-hidden rounded-2xl"
+          >
+            <div
+              className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="font-[family-name:var(--font-oswald)] text-[4rem] font-700 uppercase text-white/[0.03] select-none">
+                  {p.name}
+                </span>
+              </div>
+            </div>
+            <div className="portfolio-scanline absolute inset-0 pointer-events-none z-10" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
+                {p.name}
+              </h3>
+              <p className="mt-1 text-[0.8rem] uppercase tracking-[0.1em] text-[#999]">
+                {p.cat}
+              </p>
+              <span className="mt-4 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
+                View Project &rarr;
+              </span>
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 px-5 py-3 lg:px-8">
+              <p className="text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
+                {p.name} &mdash; {p.cat}
+              </p>
+            </div>
+          </div>
+        ))}
+
+        {/* Spacer at end */}
+        <div className="w-[10vw] shrink-0" />
+      </div>
+    </section>
   );
 }
 

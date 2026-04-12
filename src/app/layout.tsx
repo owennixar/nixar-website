@@ -3,6 +3,8 @@ import { Bebas_Neue, Anton, Oswald, Playfair_Display, Plus_Jakarta_Sans } from "
 import IntroSequence from "@/components/layout/IntroSequence";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import SmoothScroll from "@/components/layout/SmoothScroll";
+import CustomCursor from "@/components/ui/CustomCursor";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -122,10 +124,13 @@ export default function RootLayout({
         <meta name="geo.placename" content="Frisco" />
       </head>
       <body className="min-h-dvh flex flex-col antialiased">
-        <IntroSequence />
-        <Navbar />
-        <div id="main-content">{children}</div>
-        <Footer />
+        <SmoothScroll>
+          <CustomCursor />
+          <IntroSequence />
+          <Navbar />
+          <div id="main-content">{children}</div>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

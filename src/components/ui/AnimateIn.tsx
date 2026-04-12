@@ -19,8 +19,8 @@ export default function AnimateIn({
   className = "",
   delay = 0,
   direction = "up",
-  distance = 24,
-  duration = 0.6,
+  distance = 60,
+  duration = 0.8,
   once = true,
   threshold = 0.15,
   as = "div",
@@ -62,7 +62,7 @@ export default function AnimateIn({
   const style = {
     opacity: visible ? 1 : 0,
     transform: visible ? "translate(0, 0)" : translateMap[direction],
-    transition: `opacity ${duration}s ease-out ${delay}s, transform ${duration}s ease-out ${delay}s`,
+    transition: `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`,
     willChange: "opacity, transform" as const,
   };
 
