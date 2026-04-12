@@ -148,13 +148,18 @@ export default function AgencyComparison() {
       // Pin the viewport
       ScrollTrigger.create({ ...st, pin });
 
-      /* ── INTRO TEXT FADE OUT (0-15% visible, 15-25% fade out) ──── */
+      /* ── INTRO TEXT ZOOM-OUT (0-5% visible, 5-20% recedes) ────── */
       if (introTextRef.current) {
-        gsap.fromTo(introTextRef.current, { opacity: 1 }, {
-          opacity: 0,
-          scrollTrigger: { ...st, start: "15% top", end: "25% top" },
-          ease: "none",
-        });
+        gsap.fromTo(introTextRef.current,
+          { opacity: 1, scale: 1, filter: "blur(0px)" },
+          {
+            opacity: 0,
+            scale: 0.3,
+            filter: "blur(8px)",
+            scrollTrigger: { ...st, start: "5% top", end: "20% top" },
+            ease: "power2.in",
+          }
+        );
       }
 
       /* ── BOX ANIMATIONS ──────────────────────────────────────────── */
@@ -174,8 +179,8 @@ export default function AgencyComparison() {
           opacity: 0,
         });
 
-        // 25-35%: pop in with stagger (each box 1% apart)
-        const popStart = 25 + i * 1;
+        // 20-30%: pop in with stagger (each box 1% apart)
+        const popStart = 20 + i * 1;
         const popEnd = popStart + 3;
         gsap.to(box, {
           scale: 1,
@@ -184,40 +189,40 @@ export default function AgencyComparison() {
           ease: "back.out(1.7)",
         });
 
-        // 35-60%: move to organized positions
+        // 30-55%: move to organized positions
         gsap.to(box, {
           left: `${o.x}%`,
           top: `${o.y}%`,
           rotation: 0,
-          scrollTrigger: { ...st, start: "35% top", end: "60% top" },
+          scrollTrigger: { ...st, start: "30% top", end: "55% top" },
           ease: "power2.inOut",
         });
 
-        // Flicker → steady opacity: 35-50% fading to solid
+        // Flicker → steady opacity: 30-45% fading to solid
         const inner = box.querySelector("[data-card-inner]") as HTMLElement;
         if (inner) {
           gsap.to(inner, {
             opacity: 1,
-            scrollTrigger: { ...st, start: "35% top", end: "50% top" },
+            scrollTrigger: { ...st, start: "30% top", end: "45% top" },
             ease: "power2.inOut",
           });
 
-          // Color transitions: 35-60%
+          // Color transitions: 30-55%
           gsap.to(inner, {
             "--icon-color": "#E71840",
             "--text-color": "#ffffff",
             "--border-color": "rgba(231,24,64,0.25)",
             "--bg-color": "rgba(231,24,64,0.06)",
             "--blur": "40px",
-            scrollTrigger: { ...st, start: "35% top", end: "60% top" },
+            scrollTrigger: { ...st, start: "30% top", end: "55% top" },
             ease: "power2.inOut",
           });
 
           // Remove flicker animation class during transition
           ScrollTrigger.create({
             ...st,
-            start: "40% top",
-            end: "40% top",
+            start: "35% top",
+            end: "35% top",
             onEnter: () => inner.classList.remove("flicker-anim"),
             onLeaveBack: () => inner.classList.add("flicker-anim"),
           });
@@ -229,12 +234,12 @@ export default function AgencyComparison() {
         if (!el) return;
         gsap.fromTo(el, { opacity: 0 }, {
           opacity: 0.35,
-          scrollTrigger: { ...st, start: "28% top", end: "35% top" },
+          scrollTrigger: { ...st, start: "22% top", end: "28% top" },
           ease: "none",
         });
         gsap.to(el, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "35% top", end: "45% top" },
+          scrollTrigger: { ...st, start: "30% top", end: "40% top" },
           ease: "none",
         });
       });
@@ -243,24 +248,28 @@ export default function AgencyComparison() {
       if (brokenLineRef.current) {
         gsap.to(brokenLineRef.current, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "35% top", end: "45% top" },
+          scrollTrigger: { ...st, start: "30% top", end: "40% top" },
           ease: "none",
         });
       }
 
-      /* ── HEADING: THE NIXAR WAY (fades in at 60-65%) ─────────── */
+      /* ── HEADING: THE NIXAR WAY (fades in at 60-65% with scale) ── */
       if (heading2Ref.current) {
-        gsap.fromTo(heading2Ref.current, { opacity: 0 }, {
-          opacity: 1,
-          scrollTrigger: { ...st, start: "60% top", end: "65% top" },
-          ease: "none",
-        });
+        gsap.fromTo(heading2Ref.current,
+          { opacity: 0, scale: 0.95 },
+          {
+            opacity: 1,
+            scale: 1,
+            scrollTrigger: { ...st, start: "60% top", end: "65% top" },
+            ease: "power2.out",
+          }
+        );
       }
 
       /* ── KEEP SCROLLING PROMPT ───────────────────────────────────── */
       if (keepScrollRef.current) {
         const tl = gsap.timeline({
-          scrollTrigger: { ...st, start: "30% top", end: "42% top" },
+          scrollTrigger: { ...st, start: "25% top", end: "35% top" },
         });
         tl.fromTo(keepScrollRef.current, { opacity: 0 }, { opacity: 1, duration: 0.3 });
         tl.to(keepScrollRef.current, { opacity: 0, duration: 0.3 }, 0.7);
@@ -269,7 +278,7 @@ export default function AgencyComparison() {
       /* ── "NOW IMAGINE THIS." FLASH ───────────────────────────────── */
       if (flashRef.current) {
         const tl2 = gsap.timeline({
-          scrollTrigger: { ...st, start: "42% top", end: "52% top" },
+          scrollTrigger: { ...st, start: "38% top", end: "48% top" },
         });
         tl2.fromTo(flashRef.current, { opacity: 0 }, { opacity: 1, duration: 0.35 });
         tl2.to(flashRef.current, { opacity: 0, duration: 0.35 }, 0.65);
@@ -279,7 +288,7 @@ export default function AgencyComparison() {
       if (strategyRef.current) {
         gsap.fromTo(strategyRef.current, { opacity: 0, scale: 0.8 }, {
           opacity: 1, scale: 1,
-          scrollTrigger: { ...st, start: "55% top", end: "62% top" },
+          scrollTrigger: { ...st, start: "50% top", end: "57% top" },
           ease: "power2.out",
         });
       }
@@ -288,7 +297,7 @@ export default function AgencyComparison() {
       if (growthRef.current) {
         gsap.fromTo(growthRef.current, { opacity: 0, scale: 0.8 }, {
           opacity: 1, scale: 1,
-          scrollTrigger: { ...st, start: "60% top", end: "67% top" },
+          scrollTrigger: { ...st, start: "55% top", end: "62% top" },
           ease: "power2.out",
         });
       }
@@ -301,7 +310,7 @@ export default function AgencyComparison() {
           const dy = parseFloat(line.getAttribute("y2") || "0") - parseFloat(line.getAttribute("y1") || "0");
           const len = Math.sqrt(dx * dx + dy * dy) * 15;
           const group = Number(line.dataset.group);
-          const startPct = 62 + group * 4;
+          const startPct = 55 + group * 4;
           const endPct = startPct + 5;
 
           gsap.set(line, { strokeDasharray: len, strokeDashoffset: len, opacity: 0 });
@@ -313,11 +322,11 @@ export default function AgencyComparison() {
         });
       }
 
-      /* ── RED PULSE at 78% ────────────────────────────────────────── */
+      /* ── RED PULSE at 68% ────────────────────────────────────────── */
       if (pulseRef1.current) {
         gsap.set(pulseRef1.current, { scale: 0.5, opacity: 0 });
         const pulseTl = gsap.timeline({
-          scrollTrigger: { ...st, start: "76% top", end: "80% top" },
+          scrollTrigger: { ...st, start: "66% top", end: "70% top" },
         });
         pulseTl.to(pulseRef1.current, { scale: 5, opacity: 0.4, duration: 0.3, ease: "power2.out" });
         pulseTl.to(pulseRef1.current, { opacity: 0, duration: 0.7, ease: "none" }, 0.3);
@@ -325,18 +334,18 @@ export default function AgencyComparison() {
       if (pulseRef2.current) {
         gsap.set(pulseRef2.current, { scale: 0.5, opacity: 0 });
         const pulseTl2 = gsap.timeline({
-          scrollTrigger: { ...st, start: "77% top", end: "81% top" },
+          scrollTrigger: { ...st, start: "67% top", end: "71% top" },
         });
         pulseTl2.to(pulseRef2.current, { scale: 5, opacity: 0.4, duration: 0.3, ease: "power2.out" });
         pulseTl2.to(pulseRef2.current, { opacity: 0, duration: 0.7, ease: "none" }, 0.3);
       }
 
-      // Flash all connection lines brighter at 78%
+      // Flash all connection lines brighter at 68%
       if (connLineRef.current) {
         const allLines = connLineRef.current.querySelectorAll<SVGLineElement>("line");
         allLines.forEach((line) => {
           const flashTl = gsap.timeline({
-            scrollTrigger: { ...st, start: "77% top", end: "81% top" },
+            scrollTrigger: { ...st, start: "67% top", end: "71% top" },
           });
           flashTl.to(line, { opacity: 1, duration: 0.3 });
           flashTl.to(line, { opacity: 0.7, duration: 0.7 }, 0.3);
@@ -347,7 +356,7 @@ export default function AgencyComparison() {
       if (colLabelsRef.current) {
         gsap.fromTo(colLabelsRef.current, { opacity: 0 }, {
           opacity: 1,
-          scrollTrigger: { ...st, start: "68% top", end: "74% top" },
+          scrollTrigger: { ...st, start: "70% top", end: "76% top" },
           ease: "none",
         });
       }
@@ -367,34 +376,34 @@ export default function AgencyComparison() {
         const startY = 20 + (i * 4) % 40;
         gsap.set(el, { top: `${startY}%`, opacity: 0.15 });
 
-        // Drift down 25-50%
+        // Drift down 20-45%
         gsap.to(el, {
           top: `${startY + 35}%`,
-          scrollTrigger: { ...st, start: "25% top", end: "50% top" },
+          scrollTrigger: { ...st, start: "20% top", end: "45% top" },
           ease: "none",
         });
-        // Slow, reverse direction 50-70%
+        // Slow, reverse direction 45-65%
         gsap.to(el, {
           top: `${startY + 10}%`,
           color: "rgba(34,197,94,0.35)",
           opacity: 0.3,
-          scrollTrigger: { ...st, start: "50% top", end: "70% top" },
+          scrollTrigger: { ...st, start: "45% top", end: "65% top" },
           ease: "power2.inOut",
         });
-        // Flow upward 70-100%
+        // Flow upward 65-100%
         gsap.to(el, {
           top: `${startY - 25}%`,
           opacity: 0.25,
-          scrollTrigger: { ...st, start: "70% top", end: "100% top" },
+          scrollTrigger: { ...st, start: "65% top", end: "100% top" },
           ease: "none",
         });
       });
 
-      /* ── MONEY FLOW (green $ along paths, 72%+) ──────────────────── */
+      /* ── MONEY FLOW (mixed $ + bills along paths, starts at 70%) ── */
       if (moneyFlowRef.current) {
         gsap.fromTo(moneyFlowRef.current, { opacity: 0 }, {
           opacity: 1,
-          scrollTrigger: { ...st, start: "78% top", end: "86% top" },
+          scrollTrigger: { ...st, start: "70% top", end: "76% top" },
           ease: "none",
         });
       }
@@ -403,7 +412,7 @@ export default function AgencyComparison() {
       if (sparklesRef.current) {
         gsap.fromTo(sparklesRef.current, { opacity: 0 }, {
           opacity: 1,
-          scrollTrigger: { ...st, start: "80% top", end: "90% top" },
+          scrollTrigger: { ...st, start: "72% top", end: "82% top" },
           ease: "none",
         });
       }
@@ -449,21 +458,21 @@ export default function AgencyComparison() {
     <section ref={sectionRef} className="relative" style={{ height: "500vh" }}>
       <div ref={pinRef} className="relative h-screen w-full overflow-hidden bg-[#0A0A0A]">
 
-        {/* ── INTRO TEXT: OTHER AGENCIES (centered, fades out) ── */}
+        {/* ── INTRO TEXT: OTHER AGENCIES (centered, weak/sick, recedes on scroll) ── */}
         <div
           ref={introTextRef}
-          className="absolute z-30 pointer-events-none"
-          style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center' }}
+          className="absolute z-30 pointer-events-none intro-jitter"
+          style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', willChange: 'transform, opacity, filter' }}
         >
-          <div className="font-[family-name:var(--font-oswald)] font-700 uppercase text-white" style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', lineHeight: 1.1 }}>OTHER</div>
-          <div className="font-[family-name:var(--font-oswald)] font-700 uppercase text-[#E71840]" style={{ fontSize: 'clamp(4rem, 10vw, 8rem)', lineHeight: 1.1 }}>AGENCIES</div>
+          <div className="font-[family-name:var(--font-plus-jakarta)] font-300 uppercase text-[#666]" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', lineHeight: 1.1, letterSpacing: '0.3em' }}>OTHER</div>
+          <div className="font-[family-name:var(--font-plus-jakarta)] font-300 uppercase text-[#444]" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', lineHeight: 1.1, letterSpacing: '0.3em' }}>AGENCIES</div>
         </div>
 
-        {/* ── HEADING 2: THE NIXAR WAY ── */}
+        {/* ── HEADING 2: THE NIXAR WAY (bold, stable, confident) ── */}
         <h2
           ref={heading2Ref}
-          className="absolute top-6 left-6 z-30 font-[family-name:var(--font-oswald)] text-[clamp(1rem,2vw,1.4rem)] font-700 uppercase tracking-[0.1em] lg:top-8 lg:left-10"
-          style={{ opacity: 0 }}
+          className="absolute top-6 left-6 z-30 font-[family-name:var(--font-oswald)] text-[clamp(1.2rem,2.5vw,1.6rem)] font-700 uppercase lg:top-8 lg:left-10"
+          style={{ opacity: 0, letterSpacing: '0.05em', willChange: 'transform, opacity' }}
         >
           <span className="text-white">The NIXAR </span>
           <span className="text-[#E71840]">Way.</span>
@@ -644,23 +653,44 @@ export default function AgencyComparison() {
           </span>
         ))}
 
-        {/* ── MONEY FLOW (green $ along pipeline paths, 72%+) ── */}
+        {/* ── MONEY FLOW (mixed $ text + paper bill SVGs, flows upward) ── */}
         <div ref={moneyFlowRef} className="absolute inset-0 z-[7] pointer-events-none" style={{ opacity: 0 }}>
-          {Array.from({ length: 15 }).map((_, i) => {
-            // Distribute money along three columns
+          {Array.from({ length: 24 }).map((_, i) => {
             const col = i % 3;
             const xBase = col === 0 ? 20 : col === 1 ? 50 : 80;
-            const xOffset = (Math.sin(i * 2.5) * 2);
-            const speed = 3 + (i % 4);
-            const delay = (i * 0.4) % 3;
+            const xDrift = Math.sin(i * 1.7) * 5;
+            const speed = 3 + (i % 5);
+            const delay = (i * 0.35) % 4;
+            const isBill = i % 3 === 0;
+            const fontSize = 14 + (i % 4) * 2;
+
+            if (isBill) {
+              return (
+                <span
+                  key={`m-${i}`}
+                  className="absolute"
+                  style={{
+                    left: `${xBase + xDrift}%`,
+                    animation: `moneyUp ${speed}s linear ${delay}s infinite`,
+                    transform: "translateX(-50%)",
+                  }}
+                >
+                  <svg width="24" height="14" viewBox="0 0 24 14">
+                    <rect x="0" y="0" width="24" height="14" rx="2" fill="#22C55E" fillOpacity="0.6" />
+                    <circle cx="12" cy="7" r="4" fill="none" stroke="#166534" strokeWidth="1" />
+                    <text x="12" y="9.5" textAnchor="middle" fontSize="7" fill="#166534" fontWeight="bold">$</text>
+                  </svg>
+                </span>
+              );
+            }
             return (
               <span
                 key={`m-${i}`}
                 className="absolute font-[family-name:var(--font-oswald)] font-700"
                 style={{
-                  left: `${xBase + xOffset}%`,
-                  fontSize: 14,
-                  color: "rgba(34,197,94,0.2)",
+                  left: `${xBase + xDrift}%`,
+                  fontSize,
+                  color: "rgba(34,197,94,0.25)",
                   animation: `moneyUp ${speed}s linear ${delay}s infinite`,
                   transform: "translateX(-50%)",
                 }}
@@ -719,6 +749,16 @@ export default function AgencyComparison() {
 
         {/* ── KEYFRAME STYLES ── */}
         <style jsx>{`
+          .intro-jitter {
+            animation: textJitter 3s ease-in-out infinite;
+          }
+          @keyframes textJitter {
+            0% { transform: translate(-50%, -50%) translate(0, 0); }
+            25% { transform: translate(-50%, -50%) translate(-1px, 1px); }
+            50% { transform: translate(-50%, -50%) translate(1px, -1px); }
+            75% { transform: translate(-50%, -50%) translate(-1px, 0); }
+            100% { transform: translate(-50%, -50%) translate(0, 0); }
+          }
           .flicker-anim {
             animation-name: flicker;
             animation-timing-function: steps(1);
