@@ -260,10 +260,10 @@ export default function HomeDark() {
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
-                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase leading-[0.9] tracking-tight text-white" style={{ fontSize: 'clamp(4rem,10vw,9rem)' }}>
+                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
-                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic leading-[0.9] tracking-tight text-[#E71840]" style={{ fontSize: 'clamp(2.5rem,7.5vw,7rem)' }}>
+                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
                   <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                 </span>
               </h1>
