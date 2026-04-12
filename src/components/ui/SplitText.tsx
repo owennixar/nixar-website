@@ -34,7 +34,7 @@ export default function SplitText({
   return (
     <span className={className} aria-label={text}>
       {text.split('').map((char, i) => (
-        <span key={i} className="inline-block overflow-hidden" aria-hidden="true">
+        <span key={i} className="inline-block overflow-visible" aria-hidden="true">
           <span
             className={`inline-block ${charClassName}`}
             style={

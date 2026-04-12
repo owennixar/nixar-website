@@ -263,7 +263,7 @@ export default function HomeDark() {
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
-                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap' }}>
+                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap', overflow: 'visible', paddingLeft: '0.1em', marginLeft: '-0.05em' }}>
                   <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                 </span>
               </h1>
