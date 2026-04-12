@@ -57,14 +57,15 @@ export default function ContactPage() {
             alt="Two astronauts handshaking in space representing partnership"
             loading="eager"
             decoding="sync"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: 0 }}
+            className="absolute top-0 left-0 w-full h-full"
+            style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
           />
           <div
             className="absolute inset-0"
-            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.85), rgba(10,10,10,0.4))' }}
+            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.3) 60%, rgba(10,10,10,0.1) 100%)' }}
           />
-          <div className="relative h-full flex items-center max-w-7xl mx-auto px-6" style={{ zIndex: 2 }}>
+          <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
+            <div className="max-w-7xl mx-auto px-6 w-full">
             <AnimateIn>
               <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Contact
@@ -81,6 +82,7 @@ export default function ContactPage() {
                 and discover how NIXAR can grow your business.
               </p>
             </AnimateIn>
+            </div>
           </div>
         </section>
 

@@ -65,6 +65,15 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       "Brand voice development",
                     ],
                   },
+                  {
+                    name: "YouTube",
+                    points: [
+                      "Long-form video strategy",
+                      "YouTube Shorts optimization",
+                      "Channel SEO & thumbnails",
+                      "Community engagement",
+                    ],
+                  },
                 ].map((platform, i) => (
                   <AnimateIn key={platform.name} direction="up" delay={i * 0.1}>
                     <div className="glass-card rounded-2xl p-6 h-full">
@@ -115,30 +124,30 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
 
                     {/* Row 1 */}
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
+                    <div className="bg-white rounded-lg h-10" />
 
                     {/* Row 2 */}
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
 
                     {/* Row 3 */}
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
-                    <div className="bg-white/5 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
+                    <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white/10 rounded-lg h-10" />
+                    <div className="bg-white rounded-lg h-10" />
                   </div>
 
                   {/* Legend */}
@@ -148,11 +157,11 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <span className="text-[#999] text-sm">Video Content</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-white/10" />
+                      <div className="w-4 h-4 rounded bg-white" />
                       <span className="text-[#999] text-sm">Post / Carousel</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-white/5 border border-white/10" />
+                      <div className="w-4 h-4 rounded" style={{ backgroundColor: '#666666' }} />
                       <span className="text-[#999] text-sm">Story / Engagement</span>
                     </div>
                   </div>
@@ -237,42 +246,6 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
             </div>
           </section>
 
-          {/* TECHNOLOGY STACK */}
-          <section className="bg-[#111] py-20 lg:py-28">
-            <div className="mx-auto max-w-7xl px-5 lg:px-8">
-              <AnimateIn direction="up">
-                <h2 className="font-[family-name:var(--font-oswald)] text-3xl md:text-4xl font-bold uppercase text-white mb-4">
-                  Technology Stack
-                </h2>
-                <p className="text-[#999] max-w-2xl mb-12">
-                  We use industry-leading tools to build fast, scalable, and
-                  beautiful websites.
-                </p>
-              </AnimateIn>
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                {[
-                  "Next.js",
-                  "React",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Node.js",
-                  "Vercel",
-                  "Figma",
-                  "WordPress",
-                  "Shopify",
-                ].map((tech, i) => (
-                  <AnimateIn key={tech} direction="up" delay={i * 0.05}>
-                    <div className="glass-card rounded-2xl p-5 text-center">
-                      <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-sm">
-                        {tech}
-                      </span>
-                    </div>
-                  </AnimateIn>
-                ))}
-              </div>
-            </div>
-          </section>
         </>
       );
 

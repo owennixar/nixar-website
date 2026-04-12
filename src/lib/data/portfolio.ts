@@ -64,7 +64,7 @@ export const portfolio: PortfolioProject[] = [
     results:
       "The new website transformed the brand's online perception. Visitors spent more time on the site, bounce rates decreased significantly, and the professional design helped establish trust with new customers. The site served as a foundation for all subsequent marketing efforts.",
     serviceLinks: [
-      { title: "Web Design & Development", slug: "web-development" },
+      { title: "Website Development", slug: "web-development" },
       { title: "Branding & Brand Identity", slug: "branding-brand-identity" },
     ],
     testimonialIndex: null,
@@ -83,7 +83,7 @@ export const portfolio: PortfolioProject[] = [
     results:
       "The transformation was dramatic. The company's professional image improved substantially, leading to inquiries from larger, higher-value projects. Their digital presence now accurately reflects the quality of their construction work, and they consistently generate leads through their website.",
     serviceLinks: [
-      { title: "Web Design & Development", slug: "web-development" },
+      { title: "Website Development", slug: "web-development" },
       { title: "Content Marketing", slug: "content-marketing" },
     ],
     testimonialIndex: 2,

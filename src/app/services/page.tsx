@@ -44,7 +44,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: 
 const LARGE_SLUGS = new Set(["ai-seo-geo", "ai-tailored-agents"]);
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services Dallas | SEO, Web Design, AI | NIXAR Solutions",
+  title: "Digital Marketing Services Dallas | SEO, Website Development, AI | NIXAR Solutions",
   description:
     "Explore NIXAR Solutions' full suite of digital marketing services — SEO, web development, AI agents, social media, paid ads, and more for Dallas-Fort Worth businesses.",
 };
@@ -60,14 +60,15 @@ export default function ServicesIndex() {
             alt="Fleet of rockets launching with digital marketing icons"
             loading="eager"
             decoding="sync"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ zIndex: 0 }}
+            className="absolute top-0 left-0 w-full h-full"
+            style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
           />
           <div
             className="absolute inset-0"
-            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.85), rgba(10,10,10,0.4))' }}
+            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.3) 60%, rgba(10,10,10,0.1) 100%)' }}
           />
-          <div className="relative h-full flex items-center max-w-7xl mx-auto px-6" style={{ zIndex: 2 }}>
+          <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
+            <div className="max-w-7xl mx-auto px-6 w-full">
             <AnimateIn>
               <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 What We Do
@@ -80,10 +81,11 @@ export default function ServicesIndex() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
-                End-to-end digital solutions — from branding and web design to AI automation and
+                End-to-end digital solutions — from branding and website development to AI automation and
                 paid advertising. One team. Full accountability. Measurable results.
               </p>
             </AnimateIn>
+            </div>
           </div>
         </section>
 

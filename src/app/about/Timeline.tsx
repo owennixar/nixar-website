@@ -17,7 +17,7 @@ const timelineData = [
   {
     year: "2024",
     description:
-      "Expanded services to include full-spectrum digital solutions \u2014 web dev, SEO, content, social media, paid ads.",
+      "Expanded services to include full-spectrum digital solutions \u2014 website development, SEO, content, social media, paid ads.",
   },
   {
     year: "2024",

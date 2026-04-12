@@ -180,8 +180,8 @@ const BLOG_POSTS = [
    PORTFOLIO PLACEHOLDERS
    ═══════════════════════════════════════════════════════════════════════════ */
 const PORTFOLIO = [
-  { name: "Tire Wheel Center", cat: "Web Design & SEO", gradient: "from-[#1a1a2e] to-[#16213e]" },
-  { name: "SYB Builders", cat: "Branding & Web Dev", gradient: "from-[#1a1a1a] to-[#2d2d2d]" },
+  { name: "Tire Wheel Center", cat: "Website Development & SEO", gradient: "from-[#1a1a2e] to-[#16213e]" },
+  { name: "SYB Builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]" },
   { name: "RunMyProcess", cat: "Digital Strategy", gradient: "from-[#0f3460] to-[#1a1a2e]" },
   { name: "DFW Local Business", cat: "Local SEO & Ads", gradient: "from-[#2d2d2d] to-[#1a1a1a]" },
 ];
@@ -249,7 +249,7 @@ export default function HomeDark() {
 
         {/* Hero Content */}
         <div className="relative mx-auto flex w-full max-w-7xl items-center px-5 lg:px-8" style={{ zIndex: 2 }}>
-          <div className="max-w-2xl">
+          <div style={{ maxWidth: '800px' }}>
             <Reveal>
               <p
                 className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-white/60"
@@ -260,10 +260,10 @@ export default function HomeDark() {
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
-                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] text-[clamp(5rem,12vw,10rem)] font-700 uppercase leading-[0.9] tracking-tight text-white">
+                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase leading-[0.9] tracking-tight text-white" style={{ fontSize: 'clamp(4rem,10vw,9rem)' }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
-                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] text-[clamp(5rem,12vw,10rem)] font-700 italic leading-[0.9] tracking-tight text-[#E71840]">
+                <span className="hero-glow-red block font-[family-name:var(--font-playfair)] font-700 italic leading-[0.9] tracking-tight text-[#E71840]" style={{ fontSize: 'clamp(2.5rem,7.5vw,7rem)' }}>
                   <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                 </span>
               </h1>

@@ -13,7 +13,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "What services does NIXAR Solutions offer?",
     answer:
-      "NIXAR Solutions offers 10 core services: Social Media Management, Web Design & Development, Automation & AI Integration, Personalized Sales Support, Search Everywhere Optimization (SEO), Content Marketing, AI SEO & Generative Engine Optimization (GEO), Custom AI Tailored Agents, Branding & Brand Identity, and Paid Advertising. Each service is customized to the client's specific business goals — we don't sell cookie-cutter packages.",
+      "NIXAR Solutions offers 10 core services: Social Media Management, Website Development, Automation & AI Integration, Personalized Sales Support, Search Everywhere Optimization (SEO), Content Marketing, AI SEO & Generative Engine Optimization (GEO), Custom AI Tailored Agents, Branding & Brand Identity, and Paid Advertising. Each service is customized to the client's specific business goals — we don't sell cookie-cutter packages.",
   },
   {
     question: "What is Generative Engine Optimization (GEO)?",

@@ -110,7 +110,7 @@ export default async function ServicePage({
     <>
       <main className="bg-[#0A0A0A]">
         {/* ─── HERO ─────────────────────────────────────────────── */}
-        <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
+        <section className="relative w-full overflow-hidden" style={{ height: '80vh', minHeight: '600px' }}>
           {/* Background — image or animated effects */}
           {heroImage ? (
             <img
@@ -118,8 +118,8 @@ export default async function ServicePage({
               alt={heroImage.alt}
               loading="eager"
               decoding="sync"
-              className="absolute inset-0 w-full h-full object-cover object-right"
-              style={{ zIndex: 0 }}
+              className="absolute top-0 left-0 w-full h-full"
+              style={{ objectFit: 'cover', objectPosition: 'right center', zIndex: 0 }}
             />
           ) : (
             <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -127,8 +127,9 @@ export default async function ServicePage({
             </div>
           )}
 
-          <div className="relative h-full flex items-center max-w-7xl mx-auto px-6" style={{ zIndex: 2 }}>
-            <div className="max-w-xl">
+          <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
+            <div className="max-w-7xl mx-auto px-6 w-full">
+              <div style={{ maxWidth: '500px' }}>
               <AnimateIn delay={0.05} direction="none">
                 <Link
                   href="/services"
@@ -197,6 +198,7 @@ export default async function ServicePage({
                   ))}
                 </div>
               </AnimateIn>
+              </div>
             </div>
           </div>
         </section>
@@ -277,10 +279,10 @@ export default async function ServicePage({
               </h2>
             </AnimateIn>
 
-            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3" style={{ alignItems: 'stretch' }}>
               {(detail?.approachExtended ?? [service.nixarApproach]).map((p, i) => (
-                <AnimateIn key={i} delay={0.1 + i * 0.1}>
-                  <div className="glass-card rounded-2xl p-7">
+                <AnimateIn key={i} delay={0.1 + i * 0.1} className="h-full">
+                  <div className="flex h-full flex-col rounded-2xl p-8" style={{ minHeight: '280px', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', background: 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)' }}>
                     <span className="font-[family-name:var(--font-oswald)] text-3xl font-bold text-[#E71840]/20">
                       {String(i + 1).padStart(2, "0")}
                     </span>

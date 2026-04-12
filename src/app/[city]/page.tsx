@@ -389,7 +389,7 @@ export default async function CityPage({
                       All Services
                     </h3>
                     <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
-                      SEO, AI agents, web dev &amp; more
+                      SEO, AI agents, website dev &amp; more
                     </p>
                   </div>
                   <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />

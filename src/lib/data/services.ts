@@ -35,8 +35,8 @@ export const services: Service[] = [
   },
   {
     slug: "web-development",
-    title: "Web Design & Development",
-    shortTitle: "Web Dev",
+    title: "Website Development",
+    shortTitle: "Website Development",
     description:
       "Comprehensive website development from information gathering through post-launch support.",
     whatItIs:
@@ -47,7 +47,7 @@ export const services: Service[] = [
       "Every site we build is conversion-focused from wireframe to launch. We don't just make it look good — we engineer it to generate leads, rank on Google, and scale with your business. Performance budgets, accessibility standards, and SEO architecture are baked in from day one, not bolted on after.",
     icon: "code",
     tags: ["Next.js", "React", "Responsive Design", "Performance", "SEO"],
-    seoTitle: "Web Development Dallas | Custom Websites | NIXAR Solutions",
+    seoTitle: "Website Development Dallas | NIXAR Solutions",
     seoDescription:
       "High-performance website development for Dallas businesses. Next.js, React, and modern frameworks. Conversion-focused design with built-in SEO. Fast-loading, accessible, beautiful.",
   },
