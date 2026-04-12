@@ -143,42 +143,42 @@ export default function AgencyComparison() {
         trigger: section,
         start: "top top",
         end: "bottom bottom",
-        scrub: true,
+        scrub: 1.5,
       };
 
       // Pin the viewport
       ScrollTrigger.create({ ...st, pin });
 
-      /* ── PHASE 1: "OTHER AGENCIES" (0-2% — fast zoom-out exit) ─── */
+      /* ── PHASE 1: "OTHER AGENCIES" (visible 0-3%, fades 3-7%) ──── */
       if (introTextRef.current) {
         gsap.fromTo(introTextRef.current,
           { opacity: 1, scale: 1, filter: "blur(0px)" },
           {
-            opacity: 0, scale: 0.2, filter: "blur(12px)",
-            scrollTrigger: { ...st, start: "0% top", end: "2% top" },
-            ease: "power2.in",
+            opacity: 0, scale: 0.6, filter: "blur(6px)",
+            scrollTrigger: { ...st, start: "3% top", end: "7% top" },
+            ease: "power1.inOut",
           }
         );
       }
 
-      /* ── PHASE 2: "Now imagine this." (3-8%) ────────────────────── */
+      /* ── PHASE 2: "Now imagine this." (crossfades in at 5%, out at 12%) ── */
       if (imagineRef.current) {
-        gsap.set(imagineRef.current, { opacity: 0, scale: 0.95, y: 0 });
-        // Fade in 3-5%
+        gsap.set(imagineRef.current, { opacity: 0, scale: 0.9, y: 20 });
+        // Fade in 5-9% (overlaps with phase 1 exit for crossfade)
         gsap.to(imagineRef.current, {
-          opacity: 1, scale: 1,
-          scrollTrigger: { ...st, start: "3% top", end: "5% top" },
-          ease: "power2.out",
+          opacity: 1, scale: 1, y: 0,
+          scrollTrigger: { ...st, start: "5% top", end: "9% top" },
+          ease: "power1.out",
         });
-        // Fade out 6-8%
+        // Fade out 12-16%
         gsap.to(imagineRef.current, {
-          opacity: 0, y: -30,
-          scrollTrigger: { ...st, start: "6% top", end: "8% top" },
-          ease: "power2.in",
+          opacity: 0, scale: 1.05, y: -20, filter: "blur(4px)",
+          scrollTrigger: { ...st, start: "12% top", end: "16% top" },
+          ease: "power1.inOut",
         });
       }
 
-      /* ── PHASE 3: BOX ANIMATIONS (pop in 8-15%) ─────────────────── */
+      /* ── PHASE 3: BOXES FADE IN (13-18%, crossfades with phase 2 exit) ── */
       boxRefs.current.forEach((box, i) => {
         if (!box) return;
         const c = CHAOS[i];
@@ -187,22 +187,22 @@ export default function AgencyComparison() {
         gsap.set(box, {
           xPercent: -50, yPercent: -50,
           left: `${c.x}%`, top: `${c.y}%`,
-          rotation: c.r, scale: 0, opacity: 0,
+          rotation: c.r, scale: 0.8, opacity: 0,
         });
 
-        // 8-15%: pop in with stagger (each box ~0.8% apart)
-        const popStart = 8 + i * 0.8;
-        const popEnd = popStart + 2;
+        // 13-18%: gentle scale in with stagger (each box ~0.3% apart)
+        const popStart = 13 + i * 0.3;
+        const popEnd = popStart + 4;
         gsap.to(box, {
           scale: 1, opacity: 1,
           scrollTrigger: { ...st, start: `${popStart}% top`, end: `${popEnd}% top` },
-          ease: "back.out(1.7)",
+          ease: "power2.out",
         });
 
-        // 20-50%: move to organized positions
+        // 22-50%: move to organized positions
         gsap.to(box, {
           left: `${o.x}%`, top: `${o.y}%`, rotation: 0,
-          scrollTrigger: { ...st, start: "20% top", end: "50% top" },
+          scrollTrigger: { ...st, start: "22% top", end: "50% top" },
           ease: "power2.inOut",
         });
 
@@ -210,7 +210,7 @@ export default function AgencyComparison() {
         if (inner) {
           gsap.to(inner, {
             opacity: 1,
-            scrollTrigger: { ...st, start: "20% top", end: "40% top" },
+            scrollTrigger: { ...st, start: "22% top", end: "40% top" },
             ease: "power2.inOut",
           });
           gsap.to(inner, {
@@ -219,7 +219,7 @@ export default function AgencyComparison() {
             "--border-color": "rgba(231,24,64,0.25)",
             "--bg-color": "rgba(231,24,64,0.06)",
             "--blur": "40px",
-            scrollTrigger: { ...st, start: "20% top", end: "50% top" },
+            scrollTrigger: { ...st, start: "22% top", end: "50% top" },
             ease: "power2.inOut",
           });
           ScrollTrigger.create({
@@ -235,12 +235,12 @@ export default function AgencyComparison() {
         if (!el) return;
         gsap.fromTo(el, { opacity: 0 }, {
           opacity: 0.35,
-          scrollTrigger: { ...st, start: "10% top", end: "16% top" },
+          scrollTrigger: { ...st, start: "14% top", end: "20% top" },
           ease: "none",
         });
         gsap.to(el, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "20% top", end: "30% top" },
+          scrollTrigger: { ...st, start: "22% top", end: "32% top" },
           ease: "none",
         });
       });
@@ -249,7 +249,7 @@ export default function AgencyComparison() {
       if (brokenLineRef.current) {
         gsap.to(brokenLineRef.current, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "20% top", end: "30% top" },
+          scrollTrigger: { ...st, start: "22% top", end: "32% top" },
           ease: "none",
         });
       }
