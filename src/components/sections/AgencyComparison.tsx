@@ -111,6 +111,7 @@ export default function AgencyComparison() {
   const pulseRef1 = useRef<HTMLDivElement>(null);
   const pulseRef2 = useRef<HTMLDivElement>(null);
   const introTextRef = useRef<HTMLDivElement>(null);
+  const imagineRef = useRef<HTMLDivElement>(null);
   const heading2Ref = useRef<HTMLHeadingElement>(null);
   const keepScrollRef = useRef<HTMLDivElement>(null);
   const flashRef = useRef<HTMLDivElement>(null);
@@ -148,81 +149,81 @@ export default function AgencyComparison() {
       // Pin the viewport
       ScrollTrigger.create({ ...st, pin });
 
-      /* ── INTRO TEXT ZOOM-OUT (0-5% visible, 5-20% recedes) ────── */
+      /* ── PHASE 1: "OTHER AGENCIES" (0-2% — fast zoom-out exit) ─── */
       if (introTextRef.current) {
         gsap.fromTo(introTextRef.current,
           { opacity: 1, scale: 1, filter: "blur(0px)" },
           {
-            opacity: 0,
-            scale: 0.3,
-            filter: "blur(8px)",
-            scrollTrigger: { ...st, start: "5% top", end: "20% top" },
+            opacity: 0, scale: 0.2, filter: "blur(12px)",
+            scrollTrigger: { ...st, start: "0% top", end: "2% top" },
             ease: "power2.in",
           }
         );
       }
 
-      /* ── BOX ANIMATIONS ──────────────────────────────────────────── */
+      /* ── PHASE 2: "Now imagine this." (3-8%) ────────────────────── */
+      if (imagineRef.current) {
+        gsap.set(imagineRef.current, { opacity: 0, scale: 0.95, y: 0 });
+        // Fade in 3-5%
+        gsap.to(imagineRef.current, {
+          opacity: 1, scale: 1,
+          scrollTrigger: { ...st, start: "3% top", end: "5% top" },
+          ease: "power2.out",
+        });
+        // Fade out 6-8%
+        gsap.to(imagineRef.current, {
+          opacity: 0, y: -30,
+          scrollTrigger: { ...st, start: "6% top", end: "8% top" },
+          ease: "power2.in",
+        });
+      }
+
+      /* ── PHASE 3: BOX ANIMATIONS (pop in 8-15%) ─────────────────── */
       boxRefs.current.forEach((box, i) => {
         if (!box) return;
         const c = CHAOS[i];
         const o = ORDER[i];
 
-        // Initial: hidden (scale 0, opacity 0), at chaos positions
         gsap.set(box, {
-          xPercent: -50,
-          yPercent: -50,
-          left: `${c.x}%`,
-          top: `${c.y}%`,
-          rotation: c.r,
-          scale: 0,
-          opacity: 0,
+          xPercent: -50, yPercent: -50,
+          left: `${c.x}%`, top: `${c.y}%`,
+          rotation: c.r, scale: 0, opacity: 0,
         });
 
-        // 20-30%: pop in with stagger (each box 1% apart)
-        const popStart = 20 + i * 1;
-        const popEnd = popStart + 3;
+        // 8-15%: pop in with stagger (each box ~0.8% apart)
+        const popStart = 8 + i * 0.8;
+        const popEnd = popStart + 2;
         gsap.to(box, {
-          scale: 1,
-          opacity: 1,
+          scale: 1, opacity: 1,
           scrollTrigger: { ...st, start: `${popStart}% top`, end: `${popEnd}% top` },
           ease: "back.out(1.7)",
         });
 
-        // 30-55%: move to organized positions
+        // 20-50%: move to organized positions
         gsap.to(box, {
-          left: `${o.x}%`,
-          top: `${o.y}%`,
-          rotation: 0,
-          scrollTrigger: { ...st, start: "30% top", end: "55% top" },
+          left: `${o.x}%`, top: `${o.y}%`, rotation: 0,
+          scrollTrigger: { ...st, start: "20% top", end: "50% top" },
           ease: "power2.inOut",
         });
 
-        // Flicker → steady opacity: 30-45% fading to solid
         const inner = box.querySelector("[data-card-inner]") as HTMLElement;
         if (inner) {
           gsap.to(inner, {
             opacity: 1,
-            scrollTrigger: { ...st, start: "30% top", end: "45% top" },
+            scrollTrigger: { ...st, start: "20% top", end: "40% top" },
             ease: "power2.inOut",
           });
-
-          // Color transitions: 30-55%
           gsap.to(inner, {
             "--icon-color": "#E71840",
             "--text-color": "#ffffff",
             "--border-color": "rgba(231,24,64,0.25)",
             "--bg-color": "rgba(231,24,64,0.06)",
             "--blur": "40px",
-            scrollTrigger: { ...st, start: "30% top", end: "55% top" },
+            scrollTrigger: { ...st, start: "20% top", end: "50% top" },
             ease: "power2.inOut",
           });
-
-          // Remove flicker animation class during transition
           ScrollTrigger.create({
-            ...st,
-            start: "35% top",
-            end: "35% top",
+            ...st, start: "30% top", end: "30% top",
             onEnter: () => inner.classList.remove("flicker-anim"),
             onLeaveBack: () => inner.classList.add("flicker-anim"),
           });
@@ -234,12 +235,12 @@ export default function AgencyComparison() {
         if (!el) return;
         gsap.fromTo(el, { opacity: 0 }, {
           opacity: 0.35,
-          scrollTrigger: { ...st, start: "22% top", end: "28% top" },
+          scrollTrigger: { ...st, start: "10% top", end: "16% top" },
           ease: "none",
         });
         gsap.to(el, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "30% top", end: "40% top" },
+          scrollTrigger: { ...st, start: "20% top", end: "30% top" },
           ease: "none",
         });
       });
@@ -248,7 +249,7 @@ export default function AgencyComparison() {
       if (brokenLineRef.current) {
         gsap.to(brokenLineRef.current, {
           opacity: 0,
-          scrollTrigger: { ...st, start: "30% top", end: "40% top" },
+          scrollTrigger: { ...st, start: "20% top", end: "30% top" },
           ease: "none",
         });
       }
@@ -269,26 +270,19 @@ export default function AgencyComparison() {
       /* ── KEEP SCROLLING PROMPT ───────────────────────────────────── */
       if (keepScrollRef.current) {
         const tl = gsap.timeline({
-          scrollTrigger: { ...st, start: "25% top", end: "35% top" },
+          scrollTrigger: { ...st, start: "15% top", end: "25% top" },
         });
         tl.fromTo(keepScrollRef.current, { opacity: 0 }, { opacity: 1, duration: 0.3 });
         tl.to(keepScrollRef.current, { opacity: 0, duration: 0.3 }, 0.7);
       }
 
-      /* ── "NOW IMAGINE THIS." FLASH ───────────────────────────────── */
-      if (flashRef.current) {
-        const tl2 = gsap.timeline({
-          scrollTrigger: { ...st, start: "38% top", end: "48% top" },
-        });
-        tl2.fromTo(flashRef.current, { opacity: 0 }, { opacity: 1, duration: 0.35 });
-        tl2.to(flashRef.current, { opacity: 0, duration: 0.35 }, 0.65);
-      }
+      /* ── "NOW IMAGINE THIS." FLASH (removed — replaced by Phase 2 text) ── */
 
       /* ── STRATEGY NODE ───────────────────────────────────────────── */
       if (strategyRef.current) {
         gsap.fromTo(strategyRef.current, { opacity: 0, scale: 0.8 }, {
           opacity: 1, scale: 1,
-          scrollTrigger: { ...st, start: "50% top", end: "57% top" },
+          scrollTrigger: { ...st, start: "48% top", end: "55% top" },
           ease: "power2.out",
         });
       }
@@ -297,12 +291,12 @@ export default function AgencyComparison() {
       if (growthRef.current) {
         gsap.fromTo(growthRef.current, { opacity: 0, scale: 0.8 }, {
           opacity: 1, scale: 1,
-          scrollTrigger: { ...st, start: "55% top", end: "62% top" },
+          scrollTrigger: { ...st, start: "52% top", end: "58% top" },
           ease: "power2.out",
         });
       }
 
-      /* ── CONNECTION LINES (draw via dashoffset) ──────────────────── */
+      /* ── CONNECTION LINES (draw via dashoffset, 55-65%) ──────────── */
       if (connLineRef.current) {
         const lines = connLineRef.current.querySelectorAll<SVGLineElement>("line");
         lines.forEach((line) => {
@@ -310,8 +304,8 @@ export default function AgencyComparison() {
           const dy = parseFloat(line.getAttribute("y2") || "0") - parseFloat(line.getAttribute("y1") || "0");
           const len = Math.sqrt(dx * dx + dy * dy) * 15;
           const group = Number(line.dataset.group);
-          const startPct = 55 + group * 4;
-          const endPct = startPct + 5;
+          const startPct = 55 + group * 3;
+          const endPct = startPct + 4;
 
           gsap.set(line, { strokeDasharray: len, strokeDashoffset: len, opacity: 0 });
           gsap.to(line, {
@@ -322,11 +316,11 @@ export default function AgencyComparison() {
         });
       }
 
-      /* ── RED PULSE at 68% ────────────────────────────────────────── */
+      /* ── RED PULSE at 65-70% ─────────────────────────────────────── */
       if (pulseRef1.current) {
         gsap.set(pulseRef1.current, { scale: 0.5, opacity: 0 });
         const pulseTl = gsap.timeline({
-          scrollTrigger: { ...st, start: "66% top", end: "70% top" },
+          scrollTrigger: { ...st, start: "65% top", end: "69% top" },
         });
         pulseTl.to(pulseRef1.current, { scale: 5, opacity: 0.4, duration: 0.3, ease: "power2.out" });
         pulseTl.to(pulseRef1.current, { opacity: 0, duration: 0.7, ease: "none" }, 0.3);
@@ -334,18 +328,18 @@ export default function AgencyComparison() {
       if (pulseRef2.current) {
         gsap.set(pulseRef2.current, { scale: 0.5, opacity: 0 });
         const pulseTl2 = gsap.timeline({
-          scrollTrigger: { ...st, start: "67% top", end: "71% top" },
+          scrollTrigger: { ...st, start: "66% top", end: "70% top" },
         });
         pulseTl2.to(pulseRef2.current, { scale: 5, opacity: 0.4, duration: 0.3, ease: "power2.out" });
         pulseTl2.to(pulseRef2.current, { opacity: 0, duration: 0.7, ease: "none" }, 0.3);
       }
 
-      // Flash all connection lines brighter at 68%
+      // Flash all connection lines brighter at 66%
       if (connLineRef.current) {
         const allLines = connLineRef.current.querySelectorAll<SVGLineElement>("line");
         allLines.forEach((line) => {
           const flashTl = gsap.timeline({
-            scrollTrigger: { ...st, start: "67% top", end: "71% top" },
+            scrollTrigger: { ...st, start: "66% top", end: "70% top" },
           });
           flashTl.to(line, { opacity: 1, duration: 0.3 });
           flashTl.to(line, { opacity: 0.7, duration: 0.7 }, 0.3);
@@ -458,14 +452,54 @@ export default function AgencyComparison() {
     <section ref={sectionRef} className="relative" style={{ height: "500vh" }}>
       <div ref={pinRef} className="relative h-screen w-full overflow-hidden bg-[#0A0A0A]">
 
-        {/* ── INTRO TEXT: OTHER AGENCIES (centered, weak/sick, recedes on scroll) ── */}
+        {/* ── PHASE 1: OTHER AGENCIES (bold, centered, fast exit) ── */}
         <div
           ref={introTextRef}
-          className="absolute z-30 pointer-events-none intro-jitter"
+          className="absolute z-30 pointer-events-none"
           style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', willChange: 'transform, opacity, filter' }}
         >
-          <div className="font-[family-name:var(--font-plus-jakarta)] font-300 uppercase text-[#666]" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', lineHeight: 1.1, letterSpacing: '0.3em' }}>OTHER</div>
-          <div className="font-[family-name:var(--font-plus-jakarta)] font-300 uppercase text-[#444]" style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', lineHeight: 1.1, letterSpacing: '0.3em' }}>AGENCIES</div>
+          <div className="font-[family-name:var(--font-oswald)] font-700 uppercase text-white" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1.1, letterSpacing: '0.05em' }}>OTHER</div>
+          <div className="font-[family-name:var(--font-oswald)] font-700 uppercase text-[#E71840]" style={{ fontSize: 'clamp(3rem, 8vw, 6rem)', lineHeight: 1.1, letterSpacing: '0.05em' }}>AGENCIES</div>
+        </div>
+
+        {/* ── PHASE 2: "Now imagine this." (dreamy, centered) ── */}
+        <div
+          ref={imagineRef}
+          className="absolute z-30 pointer-events-none"
+          style={{
+            top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            display: 'flex', alignItems: 'baseline', gap: '0.4em',
+            whiteSpace: 'nowrap', opacity: 0, willChange: 'transform, opacity',
+          }}
+        >
+          <span style={{
+            fontFamily: "var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif",
+            fontWeight: 300,
+            fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+            color: 'rgba(255,255,255,0.5)',
+            textShadow: '0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.15), 0 0 80px rgba(255,255,255,0.05)',
+            filter: 'blur(0.5px)',
+            letterSpacing: '0.05em',
+          }}>Now</span>
+          <span style={{
+            fontFamily: "var(--font-playfair), 'Playfair Display', serif",
+            fontWeight: 700,
+            fontStyle: 'italic',
+            fontSize: 'clamp(3rem, 9vw, 7rem)',
+            color: '#E71840',
+            lineHeight: 1,
+            padding: '0 0.1em',
+            overflow: 'visible',
+          }}>imagine</span>
+          <span style={{
+            fontFamily: "var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif",
+            fontWeight: 300,
+            fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+            color: 'rgba(255,255,255,0.5)',
+            textShadow: '0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(255,255,255,0.15), 0 0 80px rgba(255,255,255,0.05)',
+            filter: 'blur(0.5px)',
+            letterSpacing: '0.05em',
+          }}>this.</span>
         </div>
 
         {/* ── HEADING 2: THE NIXAR WAY (bold, stable, confident) ── */}
@@ -488,16 +522,7 @@ export default function AgencyComparison() {
           <ChevronDown size={16} color="#E71840" className="animate-bounce" />
         </div>
 
-        {/* ── "NOW IMAGINE THIS." FLASH ── */}
-        <div
-          ref={flashRef}
-          className="absolute inset-0 z-30 flex items-center justify-center pointer-events-none"
-          style={{ opacity: 0 }}
-        >
-          <p className="font-[family-name:var(--font-oswald)] text-[clamp(1.5rem,4vw,2.5rem)] font-700 uppercase text-[#E71840]">
-            Now Imagine This.
-          </p>
-        </div>
+        {/* (Flash text replaced by Phase 2 "Now imagine this." above) */}
 
         {/* ── STRATEGY NODE ── */}
         <div
@@ -749,16 +774,6 @@ export default function AgencyComparison() {
 
         {/* ── KEYFRAME STYLES ── */}
         <style jsx>{`
-          .intro-jitter {
-            animation: textJitter 3s ease-in-out infinite;
-          }
-          @keyframes textJitter {
-            0% { transform: translate(-50%, -50%) translate(0, 0); }
-            25% { transform: translate(-50%, -50%) translate(-1px, 1px); }
-            50% { transform: translate(-50%, -50%) translate(1px, -1px); }
-            75% { transform: translate(-50%, -50%) translate(-1px, 0); }
-            100% { transform: translate(-50%, -50%) translate(0, 0); }
-          }
           .flicker-anim {
             animation-name: flicker;
             animation-timing-function: steps(1);
