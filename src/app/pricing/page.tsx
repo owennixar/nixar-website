@@ -73,19 +73,23 @@ export default function PricingPage() {
   return (
     <>
       <main className="bg-[#0A0A0A]">
-        <section className="pb-8 pt-32 lg:pt-40">
-          <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <AnimateIn>
-              <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,5vw,4rem)] font-700 uppercase leading-[1.05] tracking-tight">
-                <span className="text-white">Transparent </span>
-                <span className="text-[#E71840]">Pricing.</span>
-              </h1>
-            </AnimateIn>
-            <AnimateIn delay={0.1}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
-                Every business is different. Here&apos;s a starting point for what to expect.
-              </p>
-            </AnimateIn>
+        <section className="relative w-full overflow-hidden" style={{ height: '45vh' }}>
+          <img src="/images/pricing-hero.jpg" alt="Transparent digital marketing pricing — NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.9) 100%)' }} />
+          <div className="relative h-full flex items-end pb-12" style={{ zIndex: 2 }}>
+            <div className="mx-auto max-w-7xl px-6 w-full">
+              <AnimateIn>
+                <h1 className="font-[family-name:var(--font-oswald)] font-bold uppercase leading-[1.05]" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
+                  <span className="text-white">Transparent </span>
+                  <span style={{ color: '#E71840' }}>Pricing.</span>
+                </h1>
+              </AnimateIn>
+              <AnimateIn delay={0.1}>
+                <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/80" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+                  Every business is different. Here&apos;s a starting point for what to expect.
+                </p>
+              </AnimateIn>
+            </div>
           </div>
         </section>
 

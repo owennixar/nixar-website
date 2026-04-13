@@ -31,7 +31,7 @@ import CtaBanner from "@/components/sections/CtaBanner";
 import UniqueServiceSections from "@/components/services/UniqueServiceSections";
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
 
-const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string }> = {
+const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string; overlay?: boolean }> = {
   "social-media-management": {
     src: "/images/service-social.png",
     alt: "iPhone displaying Instagram with floating social media icons",
@@ -55,6 +55,26 @@ const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string }> = {
   "ai-tailored-agents": {
     src: "/images/service-ai.png",
     alt: "Friendly AI robot with automation and workflow elements",
+  },
+  "content-marketing": {
+    src: "/images/service-content.jpg",
+    alt: "Content marketing strategy and editorial planning — NIXAR Solutions Dallas",
+    overlay: true,
+  },
+  "ai-seo-geo": {
+    src: "/images/service-geo.jpg",
+    alt: "AI SEO and generative engine optimization — NIXAR Solutions Dallas",
+    overlay: true,
+  },
+  "branding-brand-identity": {
+    src: "/images/service-branding.jpg",
+    alt: "Brand identity and visual design — NIXAR Solutions Dallas",
+    overlay: true,
+  },
+  "paid-advertising": {
+    src: "/images/service-ads.jpg",
+    alt: "Paid advertising and performance marketing — NIXAR Solutions Dallas",
+    overlay: true,
   },
 };
 
@@ -119,8 +139,14 @@ export default async function ServicePage({
               loading="eager"
               decoding="sync"
               className="absolute top-0 left-0 w-full h-full"
-              style={{ objectFit: 'contain', objectPosition: 'center', zIndex: 0, backgroundColor: '#0A0A0A' }}
+              style={{ objectFit: heroImage.overlay ? 'cover' : 'contain', objectPosition: 'center', zIndex: 0, backgroundColor: '#0A0A0A' }}
             />
+            {heroImage.overlay && (
+              <div
+                className="absolute inset-0"
+                style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.3) 100%)' }}
+              />
+            )}
             <div className="absolute inset-0 flex items-center" style={{ zIndex: 2 }}>
               <div className="max-w-7xl mx-auto px-6 w-full">
                 <div style={{ maxWidth: '500px' }}>

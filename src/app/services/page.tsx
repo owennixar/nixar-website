@@ -250,54 +250,65 @@ export default function ServicesIndex() {
               {([
                 {
                   Icon: UtensilsCrossed,
+                  image: "/images/industry-restaurant.jpg",
                   name: "Restaurants & Food Service",
                   desc: "Menu optimization, local SEO, social media that drives reservations.",
                 },
                 {
                   Icon: HardHat,
+                  image: "/images/industry-construction.jpg",
                   name: "Construction & Home Services",
                   desc: "Lead generation, project portfolios, and local search dominance.",
                 },
                 {
                   Icon: Heart,
+                  image: "/images/industry-healthcare.jpg",
                   name: "Healthcare & Medical",
                   desc: "Patient acquisition, HIPAA-aware marketing, and reputation management.",
                 },
                 {
                   Icon: Building,
+                  image: "/images/industry-realestate.jpg",
                   name: "Real Estate",
                   desc: "Property marketing, agent branding, and listing visibility.",
                 },
                 {
                   Icon: ShoppingCart,
+                  image: "/images/industry-ecommerce.jpg",
                   name: "E-Commerce & Retail",
                   desc: "Product SEO, shopping ads, and conversion optimization.",
                 },
                 {
                   Icon: Briefcase,
+                  image: "/images/industry-professional.jpg",
                   name: "Professional Services",
                   desc: "Authority building, lead generation, and thought leadership content.",
                 },
                 {
                   Icon: Car,
+                  image: "/images/industry-automotive.jpg",
                   name: "Automotive",
                   desc: "Local search, inventory marketing, and service department leads.",
                 },
                 {
                   Icon: Cpu,
+                  image: "/images/industry-tech.jpg",
                   name: "Technology & SaaS",
                   desc: "Product marketing, demand generation, and technical content.",
                 },
               ] as const).map((industry, i) => (
                 <AnimateIn key={industry.name} delay={0.05 * i}>
-                  <div className="glass-card p-6 text-center transition-transform duration-300 hover:-translate-y-1">
-                    <industry.Icon size={28} className="mx-auto text-[#E71840]" />
-                    <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
-                      {industry.name}
-                    </h3>
-                    <p className="mt-1.5 text-[13px] leading-[1.6] text-[#999]">
-                      {industry.desc}
-                    </p>
+                  <div className="glass-card overflow-hidden text-center transition-transform duration-300 hover:-translate-y-1">
+                    <img src={industry.image} alt={`${industry.name} marketing Dallas — NIXAR Solutions`} loading="lazy" className="w-full h-32 object-cover opacity-60" />
+                    <div className="p-6">
+                      <industry.Icon size={24} className="mx-auto text-[#E71840]" />
+                      <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
+                        {industry.name}
+                      </h3>
+                      <p className="mt-1.5 text-[13px] leading-[1.6] text-[#999]">
+                        {industry.desc}
+                      </p>
+                    </div>
                   </div>
                 </AnimateIn>
               ))}

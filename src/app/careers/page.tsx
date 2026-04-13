@@ -64,9 +64,14 @@ const perks = [
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#0A0A0A]">
+      {/* Hero Image */}
+      <section className="relative w-full overflow-hidden" style={{ height: '50vh' }}>
+        <img src="/images/careers-hero.jpg" alt="Creative team collaborating at NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.8) 100%)' }} />
+      </section>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Careers", href: "/careers" }]} />
       {/* Hero */}
-      <section className="pb-16">
+      <section className="pb-16 pt-12">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <AnimateIn>
             <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,6vw,4.5rem)] font-700 uppercase leading-[1.05] text-white">

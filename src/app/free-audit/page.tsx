@@ -87,27 +87,26 @@ export default function FreeAuditPage() {
   return (
     <>
       <main className="bg-[#0a0a0a]">
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Free Audit", href: "/free-audit" }]} />
-        {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="pb-16 lg:pb-24">
-          <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
-            <AnimateIn>
-              <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,7vw,5rem)] font-700 uppercase leading-[1.05] tracking-tight">
-                <span className="text-white">YOUR FREE</span>
-                <br />
-                <span className="text-[var(--color-primary)]">
-                  DIGITAL AUDIT.
-                </span>
-              </h1>
-            </AnimateIn>
-            <AnimateIn delay={0.15}>
-              <p className="mx-auto mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-white/60">
-                Discover exactly where your online presence stands and
-                what&apos;s holding your business back.
-              </p>
-            </AnimateIn>
+        {/* ── Hero Image ───────────────────────────────────────── */}
+        <section className="relative w-full overflow-hidden" style={{ height: '50vh' }}>
+          <img src="/images/free-audit-hero.jpg" alt="Digital marketing audit dashboard analysis — NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.85) 100%)' }} />
+          <div className="relative h-full flex items-center justify-center text-center px-5" style={{ zIndex: 2 }}>
+            <div>
+              <AnimateIn>
+                <h1 className="font-[family-name:var(--font-oswald)] font-bold text-white uppercase leading-[1.05]" style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>
+                  YOUR FREE <span style={{ color: '#E71840' }}>DIGITAL AUDIT.</span>
+                </h1>
+              </AnimateIn>
+              <AnimateIn delay={0.15}>
+                <p className="mx-auto mt-6 max-w-2xl text-[1.1rem] leading-relaxed text-white/80" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+                  Discover exactly where your online presence stands and what&apos;s holding your business back.
+                </p>
+              </AnimateIn>
+            </div>
           </div>
         </section>
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Free Audit", href: "/free-audit" }]} />
 
         {/* ── What You'll Get ──────────────────────────────────── */}
         <section className="pb-20 lg:pb-28">
