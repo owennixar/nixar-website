@@ -33,7 +33,7 @@ export default function AboutHero() {
             </h1>
           </AnimateIn>
           <AnimateIn delay={0.35} direction="none">
-            <p className="mt-4 text-gray-400 text-lg max-w-xl" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+            <p className="mt-4 text-lg max-w-xl" style={{ color: '#FFFFFF', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
               Born in Frisco. Built for Growth. More than a marketing agency.
             </p>
           </AnimateIn>

@@ -59,22 +59,25 @@ export default function TeamPage() {
         {/* Team Members */}
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-[900px] mx-auto">
               {TEAM.map((person, i) => (
                 <AnimateIn key={person.name} delay={i * 0.1}>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm">
-                    <div className="aspect-square rounded-2xl overflow-hidden mb-6">
+                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm overflow-hidden">
+                    <div className="w-full overflow-hidden" style={{ height: '400px' }}>
                       <img
                         src={person.image}
                         alt={`${person.name}, ${person.title} at NIXAR Solutions`}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full"
+                        style={{ objectFit: 'cover', objectPosition: 'top center' }}
                       />
                     </div>
-                    <h2 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
-                      {person.name}
-                    </h2>
-                    <p className="mt-1 text-[0.85rem] font-600 text-[#E71840]">{person.title}</p>
-                    <p className="mt-4 text-[15px] leading-[1.8] text-white/60">{person.bio}</p>
+                    <div style={{ padding: '24px' }}>
+                      <h2 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
+                        {person.name}
+                      </h2>
+                      <p className="mt-1 text-[0.85rem] font-600 text-[#E71840]">{person.title}</p>
+                      <p className="mt-4 text-[15px] leading-[1.8] text-white/60">{person.bio}</p>
+                    </div>
                   </div>
                 </AnimateIn>
               ))}
