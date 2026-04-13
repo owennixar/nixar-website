@@ -21,9 +21,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Digital Audit | NIXAR Solutions",
+  title: "Free Digital Marketing Audit | SEO & Website Analysis | NIXAR Solutions Dallas",
   description:
-    "Get a free, no-obligation digital audit from NIXAR Solutions. We analyze your website performance, SEO health, social media presence, competitor positioning, and AI visibility — then deliver a custom action plan.",
+    "Get a free digital marketing audit from NIXAR Solutions. We'll analyze your SEO, website performance, social media, AI visibility, and competitors. No cost, no obligation.",
 };
 
 const auditCards = [

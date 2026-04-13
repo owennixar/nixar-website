@@ -8,9 +8,9 @@ import CtaBanner from "@/components/sections/CtaBanner";
 import PortfolioGrid from "./PortfolioGrid";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Our Work | NIXAR Solutions",
+  title: "Our Work | Digital Marketing Case Studies Dallas | NIXAR Solutions",
   description:
-    "See the results NIXAR Solutions has delivered for Dallas-Fort Worth businesses. Web development, digital marketing, and brand transformation case studies.",
+    "See real results from NIXAR Solutions. Case studies and portfolio of digital marketing, SEO, web design, and social media projects for Dallas-Fort Worth businesses.",
 };
 
 export default function PortfolioPage() {

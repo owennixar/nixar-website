@@ -29,9 +29,9 @@ export const services: Service[] = [
       "We don't post and pray. Every piece of content follows our ARISE standard (Authentic, Researched, Informative, Shareable, Engaging) and ties back to business objectives. We build content systems, not one-off posts — so your social presence compounds over time.",
     icon: "megaphone",
     tags: ["Content Strategy", "Community Management", "Analytics", "Paid Social"],
-    seoTitle: "Social Media Management Dallas | NIXAR Solutions",
+    seoTitle: "Social Media Marketing Agency Dallas TX | Management & Strategy | NIXAR Solutions",
     seoDescription:
-      "Strategic social media management for Dallas businesses. Content creation, community management, and analytics that drive real engagement and growth. ARISE standard content.",
+      "Professional social media marketing and management for Dallas businesses. Content strategy, community management, Instagram, TikTok, LinkedIn, and Facebook management. Get your free audit.",
   },
   {
     slug: "web-development",
@@ -47,9 +47,9 @@ export const services: Service[] = [
       "Every site we build is conversion-focused from wireframe to launch. We don't just make it look good — we engineer it to generate leads, rank on Google, and scale with your business. Performance budgets, accessibility standards, and SEO architecture are baked in from day one, not bolted on after.",
     icon: "code",
     tags: ["Next.js", "React", "Responsive Design", "Performance", "SEO"],
-    seoTitle: "Website Development Dallas | NIXAR Solutions",
+    seoTitle: "Website Design & Development Dallas TX | Custom Web Design | NIXAR Solutions",
     seoDescription:
-      "High-performance website development for Dallas businesses. Next.js, React, and modern frameworks. Conversion-focused design with built-in SEO. Fast-loading, accessible, beautiful.",
+      "Custom website design and development for Dallas businesses. Responsive, fast, SEO-optimized websites built with Next.js and modern technology. Free consultation available.",
   },
   {
     slug: "automation-ai-integration",
@@ -66,9 +66,9 @@ export const services: Service[] = [
     icon: "zap",
     tags: ["CRM Automation", "AI Voice Agents", "Workflow", "Lead Nurture"],
     isAIPowered: true,
-    seoTitle: "Business Automation & AI Integration Dallas | NIXAR Solutions",
+    seoTitle: "Marketing Automation & AI Integration Dallas | CRM & Workflow | NIXAR Solutions",
     seoDescription:
-      "Custom business automation and AI integration for Dallas companies. CRM systems, AI voice agents, workflow automation, and lead nurture systems that never sleep.",
+      "Marketing automation and AI integration services in Dallas. CRM setup, AI chatbots, workflow automation, missed call text-back, and lead nurturing systems for DFW businesses.",
   },
   {
     slug: "personalized-sales-support",
@@ -84,9 +84,9 @@ export const services: Service[] = [
       "We embed into your sales process as an extension of your team — monitoring, engaging, and qualifying leads around the clock so your closers only talk to ready buyers. Combining AI-powered qualification with human expertise, we ensure every lead gets the right response at the right time.",
     icon: "users",
     tags: ["Lead Qualification", "Appointment Setting", "Pipeline Management", "24/7 Support"],
-    seoTitle: "Sales Support & Lead Engagement Dallas | NIXAR Solutions",
+    seoTitle: "Sales Support & Lead Nurturing Dallas TX | 24/7 Coverage | NIXAR Solutions",
     seoDescription:
-      "24/7 personalized sales support for Dallas businesses. Lead qualification, appointment setting, and pipeline management. Speed-to-lead optimization that converts.",
+      "24/7 sales support and lead nurturing for Dallas businesses. Speed-to-lead optimization, appointment setting, pipeline management, and follow-up automation.",
   },
   {
     slug: "search-everywhere-optimization",
@@ -102,9 +102,9 @@ export const services: Service[] = [
       "We create a unified search strategy that ensures your brand appears wherever your customers look — traditional search, social search, voice search, and AI-generated answers. Technical SEO, content optimization, local SEO, link building, and platform-specific strategies all working together.",
     icon: "search",
     tags: ["Technical SEO", "Local SEO", "Content Strategy", "Link Building", "Voice Search"],
-    seoTitle: "SEO Agency Dallas | Search Everywhere Optimization | NIXAR Solutions",
+    seoTitle: "SEO Company Dallas TX | Local SEO & Search Engine Optimization | NIXAR Solutions",
     seoDescription:
-      "Comprehensive SEO services for Dallas businesses. Technical SEO, local search, content strategy, and multi-platform optimization. Rank everywhere your customers search.",
+      "Top-rated SEO company in Dallas, TX. Local SEO, technical SEO, Google Business Profile optimization, and search everywhere optimization for DFW businesses. Free SEO audit.",
   },
   {
     slug: "content-marketing",
@@ -120,9 +120,9 @@ export const services: Service[] = [
       "Every piece follows our ARISE standard — Authentic, Researched, Informative, Shareable, Engaging. We don't create content for content's sake. Every blog post, video, and social post serves a strategic purpose in your funnel. We build topical authority through content clusters that compound your organic visibility over time.",
     icon: "pen-tool",
     tags: ["Blog Content", "Video Production", "Email Marketing", "ARISE Standard"],
-    seoTitle: "Content Marketing Agency Dallas | NIXAR Solutions",
+    seoTitle: "Content Marketing Agency Dallas TX | Blog, Video & Social Content | NIXAR Solutions",
     seoDescription:
-      "Strategic content marketing for Dallas businesses. Blog posts, video, newsletters, and social content following the ARISE standard. 3x more leads than paid ads.",
+      "Content marketing agency in Dallas. Blog writing, video production, newsletter creation, social media content, and photography following the ARISE content standard.",
   },
   {
     slug: "ai-seo-geo",
@@ -140,9 +140,9 @@ export const services: Service[] = [
     tags: ["AI Search", "Entity Optimization", "Structured Data", "Citation Building"],
     isNew: true,
     isAIPowered: true,
-    seoTitle: "AI SEO & GEO Agency Dallas | Generative Engine Optimization | NIXAR Solutions",
+    seoTitle: "AI SEO & GEO Optimization Dallas | ChatGPT & AI Search Visibility | NIXAR Solutions",
     seoDescription:
-      "Get cited in ChatGPT, Perplexity, and AI search. NIXAR Solutions is a leading GEO (Generative Engine Optimization) agency in Dallas. AI search optimization for forward-thinking businesses.",
+      "Get your Dallas business cited in ChatGPT, Perplexity, Google AI Overviews, and Gemini. AI SEO and GEO optimization services from NIXAR Solutions in Frisco, TX.",
   },
   {
     slug: "ai-tailored-agents",
@@ -160,9 +160,9 @@ export const services: Service[] = [
     tags: ["Custom AI", "Chatbots", "Lead Qualification", "Workflow Automation"],
     isNew: true,
     isAIPowered: true,
-    seoTitle: "Custom AI Agents Dallas | AI Chatbots & Automation | NIXAR Solutions",
+    seoTitle: "AI Chatbots & Custom AI Agents Dallas TX | Business Automation | NIXAR Solutions",
     seoDescription:
-      "Custom-built AI agents for Dallas businesses. Intelligent chatbots, lead qualification bots, and workflow automation trained on your business data. Not generic — built for you.",
+      "Custom-built AI agents and chatbots for Dallas businesses. Customer service automation, lead qualification, appointment setting, and AI voice agents. Free consultation.",
   },
   {
     slug: "branding-brand-identity",
@@ -178,9 +178,9 @@ export const services: Service[] = [
       "We start with cross-functional brand alignment — unifying your engineering, sales, marketing, and customer success teams around a single brand identity BEFORE any external marketing begins. This is our core differentiator. We don't just design a logo — we build a brand system that scales.",
     icon: "palette",
     tags: ["Logo Design", "Brand Strategy", "Visual Identity", "Brand Guidelines"],
-    seoTitle: "Branding Agency Dallas | Brand Identity Design | NIXAR Solutions",
+    seoTitle: "Branding Agency Dallas TX | Logo Design & Brand Identity | NIXAR Solutions",
     seoDescription:
-      "Complete brand identity design for Dallas businesses. Logos, brand voice, visual guidelines, and cohesive identities. Cross-functional brand alignment that scales.",
+      "Full-service branding agency in Dallas. Logo design, brand guidelines, visual identity, brand voice development, and cohesive brand strategy for DFW businesses.",
   },
   {
     slug: "paid-advertising",
@@ -196,9 +196,9 @@ export const services: Service[] = [
       "Every dollar is accountable. We build campaigns around your unit economics, optimize for your actual business metrics (not vanity impressions), and provide transparent reporting so you always know exactly what your ad spend is producing. No long-term contracts — we earn your business every month.",
     icon: "bar-chart",
     tags: ["Google Ads", "Meta Ads", "LinkedIn Ads", "A/B Testing", "Conversion Tracking"],
-    seoTitle: "PPC & Paid Advertising Agency Dallas | NIXAR Solutions",
+    seoTitle: "PPC & Paid Advertising Agency Dallas TX | Google Ads & Meta Ads | NIXAR Solutions",
     seoDescription:
-      "ROI-driven paid advertising for Dallas businesses. Google Ads, Meta, LinkedIn, and more. Transparent reporting, accountable spend, and real business results.",
+      "ROI-driven PPC and paid advertising agency in Dallas. Google Ads, Meta Ads, LinkedIn Ads, YouTube Ads, and TikTok Ads management. Free ad account audit.",
   },
 ];
 

@@ -54,24 +54,24 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nixarsolutions.com"),
   title: {
     default:
-      "NIXAR Solutions | Marketing Agency Dallas | Digital Marketing Agency Dallas",
+      "Digital Marketing Agency Dallas TX | SEO, Web Design & AI Marketing | NIXAR Solutions",
     template: "%s | NIXAR Solutions",
   },
   description:
-    "NIXAR Solutions is a full-service digital marketing agency in Dallas-Fort Worth. We specialize in AI-powered SEO, web development, custom AI agents, branding, and growth strategies. 500+ projects delivered with 97%+ client satisfaction.",
+    "NIXAR Solutions is a full-service digital marketing agency in Dallas, TX. We offer SEO, web design, social media marketing, paid ads, AI automation, and branding for DFW businesses. Get your free audit today.",
   keywords: [
-    "marketing agency dallas",
     "digital marketing agency dallas",
-    "SEO agency Dallas",
-    "web development Dallas",
-    "AI marketing agency",
+    "marketing agency dallas tx",
+    "SEO company dallas",
+    "web design dallas",
+    "social media marketing dallas",
+    "AI marketing agency dallas",
     "Dallas marketing company",
     "DFW digital agency",
     "Frisco marketing agency",
-    "AI SEO agency",
-    "custom AI agents Dallas",
+    "PPC agency dallas",
+    "branding agency dallas",
     "GEO optimization",
-    "generative engine optimization",
   ],
   authors: [{ name: "NIXAR Solutions" }],
   creator: "NIXAR Solutions",
@@ -81,23 +81,23 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nixarsolutions.com",
     siteName: "NIXAR Solutions",
-    title: "NIXAR Solutions | Marketing Agency Dallas",
+    title: "Digital Marketing Agency Dallas TX | NIXAR Solutions",
     description:
-      "Full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, and growth strategies. 500+ projects. 97%+ satisfaction.",
+      "Full-service digital marketing agency in Dallas, TX. SEO, web design, social media marketing, paid ads, AI automation, and branding for DFW businesses.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "NIXAR Solutions - Marketing Agency Dallas",
+        alt: "NIXAR Solutions — Digital Marketing Agency Dallas TX",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NIXAR Solutions | Marketing Agency Dallas",
+    title: "Digital Marketing Agency Dallas TX | NIXAR Solutions",
     description:
-      "Full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, and custom AI agents.",
+      "Full-service digital marketing agency in Dallas, TX. SEO, web design, social media, paid ads, and AI marketing.",
     images: ["/og-image.jpg"],
   },
   robots: {

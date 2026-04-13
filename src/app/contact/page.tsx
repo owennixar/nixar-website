@@ -44,9 +44,9 @@ const contactFaqs: FAQ[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact Us | Get a Free Digital Audit | NIXAR Solutions",
+  title: "Contact NIXAR Solutions | Digital Marketing Agency Dallas TX | Free Consultation",
   description:
-    "Contact NIXAR Solutions for a free digital audit. Based in Frisco, TX, serving the entire Dallas-Fort Worth metroplex. Call 469-759-3638 or email hello@nixarsolutions.com.",
+    "Get in touch with NIXAR Solutions, a digital marketing agency in Dallas, TX. Request your free digital audit, schedule a consultation, or call us at 469-759-3638.",
 };
 
 export default function ContactPage() {

@@ -7,9 +7,9 @@ import JsonLd from "@/components/seo/JsonLd";
 import { faqSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Pricing | Transparent Marketing Plans | NIXAR Solutions",
+  title: "Digital Marketing Pricing Dallas | Transparent Agency Pricing | NIXAR Solutions",
   description:
-    "Explore NIXAR Solutions' marketing pricing tiers. Launch, Growth, and Transformation plans starting at $1,500/mo for Dallas-Fort Worth businesses.",
+    "Transparent digital marketing pricing from NIXAR Solutions in Dallas. SEO, social media, web design, and AI marketing packages starting at $1,500/month.",
 };
 
 const TIERS = [

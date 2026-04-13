@@ -77,7 +77,7 @@ export default function Footer() {
               <Logo height={28} />
             </Link>
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/45">
-              Dallas-Fort Worth&apos;s AI-Powered Digital Transformation Agency
+              Dallas-Fort Worth&apos;s Full-Service Digital Marketing Agency &mdash; SEO, Web Design, Social Media &amp; AI
             </p>
             {/* Social */}
             <div className="mt-6 flex gap-3">

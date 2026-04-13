@@ -32,9 +32,9 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: 
 };
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency Dallas TX | AI-Powered SEO & Web Design | NIXAR Solutions",
+  title: "Marketing Agency Dallas TX | Digital Marketing, SEO & Web Design | NIXAR Solutions",
   description:
-    "NIXAR Solutions is Dallas's premier digital marketing agency. AI-powered SEO, web development, social media, and full-funnel digital transformation for Dallas businesses.",
+    "NIXAR Solutions is a top-rated marketing agency in Dallas, TX offering SEO, web design, social media marketing, paid advertising, AI automation, and branding. Serving all of DFW. Free audit.",
 };
 
 export default function DallasPage() {

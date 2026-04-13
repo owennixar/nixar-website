@@ -47,7 +47,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: 
 const LARGE_SLUGS = new Set(["ai-seo-geo", "ai-tailored-agents"]);
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Services Dallas | SEO, Website Development, AI | NIXAR Solutions",
+  title: "Digital Marketing Services Dallas TX | SEO, Web Design, AI | NIXAR Solutions",
   description:
     "Explore NIXAR Solutions' full suite of digital marketing services — SEO, web development, AI agents, social media, paid ads, and more for Dallas-Fort Worth businesses.",
 };

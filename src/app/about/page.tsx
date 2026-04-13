@@ -18,9 +18,9 @@ import {
 } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "About NIXAR Solutions | Dallas Digital Transformation Agency",
+  title: "About NIXAR Solutions | Digital Marketing Agency in Frisco, TX Serving Dallas-Fort Worth",
   description:
-    "Founded in 2023 by Anwar Mirza and Owen Nixon, NIXAR Solutions is a Frisco TX-based digital transformation agency helping DFW businesses compete online.",
+    "Meet the team behind NIXAR Solutions. Founded in 2023 in Frisco, TX, we're a digital marketing agency transforming how DFW businesses grow online through SEO, web design, AI, and full-funnel strategy.",
 };
 
 export default function AboutPage() {

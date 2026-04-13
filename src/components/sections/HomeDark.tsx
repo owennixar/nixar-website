@@ -261,6 +261,7 @@ export default function HomeDark() {
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
+                <span className="sr-only">Digital Marketing Agency Dallas — </span>
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
@@ -278,8 +279,8 @@ export default function HomeDark() {
 
             <Reveal delay={0.3}>
               <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-white/70">
-                We don&apos;t just <span className="text-[#E71840]">market</span> — we transform businesses online
-                through strategy, design, AI, and relentless execution.
+                Dallas&apos;s full-service <span className="text-[#E71840]">digital marketing agency</span>. We don&apos;t just market — we transform businesses online
+                through SEO, web design, AI, and relentless execution.
               </p>
             </Reveal>
 
@@ -385,6 +386,17 @@ export default function HomeDark() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+           SEO KEYWORD PARAGRAPH
+           ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-12">
+        <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          <p className="text-[0.9rem] leading-[1.8] text-white/40">
+            As a full-service digital marketing agency in Dallas, NIXAR Solutions provides comprehensive SEO services, custom website design and development, social media marketing management, paid advertising across Google and Meta, content marketing, branding, and AI-powered marketing automation. Based in Frisco and serving the entire Dallas-Fort Worth metroplex, we help local businesses compete and win online.
+          </p>
         </div>
       </section>
 
