@@ -67,14 +67,14 @@ function StatBlock({
   const count = useCountUp(target, shouldStart);
   return (
     <div className="text-center">
-      <p className="font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-none text-[#1A1A1A]">
+      <p className="font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-none text-white">
         {count}
-        <span className="text-[var(--color-primary)]">{suffix}</span>
+        <span className="text-[#E71840]">{suffix}</span>
       </p>
-      <p className="mt-2 text-[15px] font-600 text-[var(--color-text)]">
+      <p className="mt-2 text-[15px] font-600 text-white">
         {label}
       </p>
-      <p className="mt-1.5 text-[12px] leading-snug text-[var(--color-text-muted)]">
+      <p className="mt-1.5 text-[12px] leading-snug text-white/40">
         {disclaimer}
       </p>
     </div>
@@ -102,7 +102,7 @@ export default function AboutStats() {
   }, []);
 
   return (
-    <section ref={ref} className="border-y border-[var(--color-border)] bg-[var(--color-bg-alt)] py-16 lg:py-20">
+    <section ref={ref} className="border-y border-white/10 bg-transparent py-16 lg:py-20">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 sm:grid-cols-3 sm:gap-8 lg:px-8">
         {STATS.map((stat) => (
           <StatBlock key={stat.label} {...stat} shouldStart={started} />

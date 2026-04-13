@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
+import BackgroundEffects from "@/components/ui/BackgroundEffects";
 import JsonLd from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schemas";
 import "./globals.css";
@@ -125,14 +126,17 @@ export default function RootLayout({
         <meta name="geo.region" content="US-TX" />
         <meta name="geo.placename" content="Frisco" />
       </head>
-      <body className="min-h-dvh flex flex-col antialiased">
+      <body className="min-h-dvh flex flex-col antialiased bg-[#0A0A0A] text-white">
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
+        <BackgroundEffects />
         <SmoothScroll>
-          <CustomCursor />
-          <IntroSequence />
-          <Navbar />
-          <div id="main-content">{children}</div>
-          <Footer />
+          <div className="relative z-[1]">
+            <CustomCursor />
+            <IntroSequence />
+            <Navbar />
+            <div id="main-content">{children}</div>
+            <Footer />
+          </div>
         </SmoothScroll>
       </body>
     </html>

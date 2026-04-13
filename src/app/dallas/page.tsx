@@ -78,7 +78,7 @@ export default function DallasPage() {
     <>
       <main>
         {/* ─── HERO ──────────────────────────────────────────── */}
-        <section id="dallas-hero" className="relative overflow-hidden bg-white pb-16 pt-12 lg:pt-16">
+        <section id="dallas-hero" className="relative overflow-hidden bg-transparent pb-16 pt-12 lg:pt-16">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="hero-orb" style={{ width: 500, height: 500, background: "rgba(231,24,64,0.05)", top: "-8%", right: "0%", animation: "orbFloat1 18s ease-in-out infinite" }} />
             <div className="hero-orb" style={{ width: 350, height: 350, background: "rgba(231,24,64,0.03)", bottom: "5%", left: "5%", animation: "orbFloat2 22s ease-in-out infinite" }} />
@@ -86,21 +86,21 @@ export default function DallasPage() {
 
           <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn delay={0.1} direction="none">
-              <div className="flex items-center gap-2 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <div className="flex items-center gap-2 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 <MapPin size={14} />
                 Dallas, Texas
               </div>
             </AnimateIn>
 
             <AnimateIn delay={0.2}>
-              <h1 className="mt-5 max-w-4xl font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5.5vw,4.5rem)] font-900 leading-[1.05] tracking-tight text-[#1A1A1A]">
+              <h1 className="mt-5 max-w-4xl font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5.5vw,4.5rem)] font-900 leading-[1.05] tracking-tight text-white">
                 Dallas&apos;s AI-Powered Digital{" "}
-                <span className="text-[var(--color-primary)]">Marketing Agency</span>
+                <span className="text-[#E71840]">Marketing Agency</span>
               </h1>
             </AnimateIn>
 
             <AnimateIn delay={0.35} direction="none">
-              <p className="mt-6 max-w-2xl text-[1.05rem] leading-[1.7] text-[var(--color-text-secondary)]">
+              <p className="mt-6 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
                 Dallas is home to 23 Fortune 500 headquarters and one of the most competitive
                 business markets in America. To stand out in this city, you need more than marketing
                 — you need digital transformation. NIXAR Solutions combines AI-powered SEO,
@@ -113,13 +113,13 @@ export default function DallasPage() {
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex h-[52px] items-center rounded-full bg-[var(--color-primary)] px-8 text-[15px] font-600 text-white shadow-lg shadow-[var(--color-primary-glow)] transition-all hover:bg-[var(--color-primary-hover)] hover:scale-[1.02]"
+                  className="inline-flex h-[52px] items-center rounded-full bg-[#E71840] px-8 text-[15px] font-600 text-white shadow-lg shadow-[#E71840]/20 transition-all hover:bg-[#C41535] hover:scale-[1.02]"
                 >
                   Get Free Dallas Market Audit
                 </a>
                 <a
                   href="#services"
-                  className="inline-flex h-[52px] items-center rounded-full border-2 border-[#1A1A1A] px-8 text-[15px] font-600 text-[#1A1A1A] transition-all hover:bg-[#1A1A1A] hover:text-white"
+                  className="inline-flex h-[52px] items-center rounded-full border-2 border-white/20 px-8 text-[15px] font-600 text-white transition-all hover:bg-white/10 hover:text-white"
                 >
                   Our Dallas Services
                 </a>
@@ -129,20 +129,20 @@ export default function DallasPage() {
         </section>
 
         {/* ─── WHY DALLAS BUSINESSES CHOOSE NIXAR ────────────── */}
-        <section className="bg-[var(--color-bg-alt)] py-24 lg:py-32">
+        <section className="bg-white/[0.02] py-24 lg:py-32">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
             <div>
               <AnimateIn direction="left" distance={30}>
-                <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+                <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                   The Dallas Market
                 </p>
-                <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+                <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-white">
                   Why Dallas Businesses Choose NIXAR
                 </h2>
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.1}>
-                <p className="mt-6 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
                   Dallas is not just big — it is brutally competitive. With a GDP exceeding $500
                   billion and industries spanning financial services, technology, healthcare,
                   telecommunications, energy, and real estate, the DFW metroplex attracts ambitious
@@ -153,7 +153,7 @@ export default function DallasPage() {
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.18}>
-                <p className="mt-4 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
                   In this environment, traditional marketing is not enough. Dallas businesses need
                   AI-powered strategies that can identify opportunities faster, optimize campaigns in
                   real time, and deliver measurable ROI on every dollar spent. NIXAR Solutions brings
@@ -163,7 +163,7 @@ export default function DallasPage() {
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.25}>
-                <p className="mt-4 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
                   Based in Frisco and serving the entire metroplex, we understand Dallas at a
                   neighborhood level. We know which search terms drive foot traffic in Deep Ellum
                   versus Uptown. We understand how B2B buying behavior differs in the Telecom Corridor
@@ -176,27 +176,27 @@ export default function DallasPage() {
             {/* Dallas stats sidebar */}
             <AnimateIn direction="right" distance={30} delay={0.15}>
               <div className="space-y-6">
-                <div className="rounded-2xl bg-white p-7 shadow-sm">
-                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[var(--color-primary)]">23</p>
-                  <p className="mt-1 text-[14px] font-600 text-[#1A1A1A]">Fortune 500 Headquarters</p>
-                  <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">More than any U.S. city except New York</p>
+                <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
+                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">23</p>
+                  <p className="mt-1 text-[14px] font-600 text-white">Fortune 500 Headquarters</p>
+                  <p className="mt-1 text-[13px] text-white/40">More than any U.S. city except New York</p>
                 </div>
-                <div className="rounded-2xl bg-white p-7 shadow-sm">
-                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[var(--color-primary)]">$500B+</p>
-                  <p className="mt-1 text-[14px] font-600 text-[#1A1A1A]">DFW Metroplex GDP</p>
-                  <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">4th largest metro economy in the U.S.</p>
+                <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
+                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">$500B+</p>
+                  <p className="mt-1 text-[14px] font-600 text-white">DFW Metroplex GDP</p>
+                  <p className="mt-1 text-[13px] text-white/40">4th largest metro economy in the U.S.</p>
                 </div>
-                <div className="rounded-2xl bg-white p-7 shadow-sm">
-                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[var(--color-primary)]">1.34M</p>
-                  <p className="mt-1 text-[14px] font-600 text-[#1A1A1A]">City Population</p>
-                  <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">7.6M in the DFW metroplex — massive addressable market</p>
+                <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
+                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">1.34M</p>
+                  <p className="mt-1 text-[14px] font-600 text-white">City Population</p>
+                  <p className="mt-1 text-[13px] text-white/40">7.6M in the DFW metroplex — massive addressable market</p>
                 </div>
-                <div className="rounded-2xl bg-white p-7 shadow-sm">
-                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[var(--color-primary)]">7</p>
-                  <p className="mt-1 text-[14px] font-600 text-[#1A1A1A]">Key Industries</p>
+                <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
+                  <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">7</p>
+                  <p className="mt-1 text-[14px] font-600 text-white">Key Industries</p>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {dallas.keyIndustries.map((ind) => (
-                      <span key={ind} className="rounded-full bg-[var(--color-bg-alt)] px-2.5 py-0.5 text-[11px] font-500 text-[var(--color-text-muted)]">
+                      <span key={ind} className="rounded-full bg-white/[0.02] px-2.5 py-0.5 text-[11px] font-500 text-white/40">
                         {ind}
                       </span>
                     ))}
@@ -208,16 +208,16 @@ export default function DallasPage() {
         </section>
 
         {/* ─── SERVICES FOR DALLAS ───────────────────────────── */}
-        <section id="services" className="bg-white py-24 lg:py-32">
+        <section id="services" className="bg-transparent py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Dallas Services
               </p>
-              <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+              <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-white">
                 Digital Marketing Services for Dallas Businesses
               </h2>
-              <p className="mt-3 max-w-2xl text-[15px] text-[var(--color-text-secondary)]">
+              <p className="mt-3 max-w-2xl text-[15px] text-white/60">
                 Every service tailored to the Dallas market — from local SEO targeting
                 Dallas-specific keywords to paid campaigns reaching DFW decision-makers.
               </p>
@@ -230,21 +230,21 @@ export default function DallasPage() {
                   <AnimateIn key={s.slug} delay={0.04 * i}>
                     <Link
                       href={`/services/${s.slug}`}
-                      className="group flex items-start gap-4 rounded-xl border border-transparent bg-[var(--color-bg-alt)] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--color-primary)] hover:shadow-md"
+                      className="group flex items-start gap-4 rounded-xl border border-transparent bg-white/[0.02] p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-[#E71840] hover:shadow-md"
                     >
                       {Icon && (
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[var(--color-primary-light)]">
-                          <Icon size={18} className="text-[var(--color-primary)]" />
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#E71840]/10">
+                          <Icon size={18} className="text-[#E71840]" />
                         </div>
                       )}
                       <div className="min-w-0">
-                        <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                        <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-white">
                           {s.shortTitle}
                           {s.isNew && (
-                            <span className="ml-2 rounded-full bg-[var(--color-primary)] px-1.5 py-0.5 text-[9px] font-700 uppercase text-white">New</span>
+                            <span className="ml-2 rounded-full bg-[#E71840] px-1.5 py-0.5 text-[9px] font-700 uppercase text-white">New</span>
                           )}
                         </h3>
-                        <p className="mt-1 text-[13px] leading-relaxed text-[var(--color-text-muted)]">
+                        <p className="mt-1 text-[13px] leading-relaxed text-white/40">
                           {s.description}
                         </p>
                       </div>
@@ -260,7 +260,7 @@ export default function DallasPage() {
         <section className="bg-[#0A0A0A] py-24 lg:py-32">
           <div className="mx-auto max-w-4xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Local SEO + AI Search
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-white">
@@ -300,7 +300,7 @@ export default function DallasPage() {
             <AnimateIn delay={0.25}>
               <a
                 href="#contact"
-                className="mt-8 inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-8 text-[14px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
+                className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[#E71840]/20"
               >
                 Get Your Free Dallas SEO Audit
               </a>
@@ -309,16 +309,16 @@ export default function DallasPage() {
         </section>
 
         {/* ─── SERVING THE ENTIRE DFW METROPLEX ──────────────── */}
-        <section className="bg-white py-24 lg:py-32">
+        <section className="bg-transparent py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn className="text-center">
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 DFW Coverage
               </p>
-              <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+              <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-white">
                 Serving the Entire DFW Metroplex
               </h2>
-              <p className="mx-auto mt-3 max-w-xl text-[15px] text-[var(--color-text-secondary)]">
+              <p className="mx-auto mt-3 max-w-xl text-[15px] text-white/60">
                 Based in Frisco, serving 20+ cities across Dallas-Fort Worth.
               </p>
             </AnimateIn>
@@ -328,13 +328,13 @@ export default function DallasPage() {
                 <AnimateIn key={city.slug} delay={0.03 * i}>
                   <Link
                     href={city.slug === "dallas" ? "/dallas" : `/${city.slug}`}
-                    className={`group flex items-center gap-2 rounded-xl p-3.5 text-[14px] font-500 transition-all hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)] ${
+                    className={`group flex items-center gap-2 rounded-xl p-3.5 text-[14px] font-500 transition-all hover:bg-[#E71840]/10 hover:text-[#E71840] ${
                       city.slug === "dallas"
-                        ? "bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-hover)] hover:text-white"
-                        : "bg-[var(--color-bg-alt)] text-[var(--color-text-secondary)]"
+                        ? "bg-[#E71840] text-white hover:bg-[#C41535] hover:text-white"
+                        : "bg-white/[0.02] text-white/60"
                     }`}
                   >
-                    <MapPin size={14} className={city.slug === "dallas" ? "text-white" : "text-[var(--color-text-muted)]"} />
+                    <MapPin size={14} className={city.slug === "dallas" ? "text-white" : "text-white/40"} />
                     {city.name}
                   </Link>
                 </AnimateIn>
@@ -344,10 +344,10 @@ export default function DallasPage() {
         </section>
 
         {/* ─── TESTIMONIALS ──────────────────────────────────── */}
-        <section className="bg-[var(--color-bg-alt)] py-24 lg:py-32">
+        <section className="bg-white/[0.02] py-24 lg:py-32">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-white">
                 What Dallas-Area Clients Say
               </h2>
             </AnimateIn>
@@ -355,22 +355,22 @@ export default function DallasPage() {
             <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {testimonials.map((t, i) => (
                 <AnimateIn key={i} delay={0.1 * i}>
-                  <div className="h-full rounded-2xl bg-white p-7 shadow-sm">
+                  <div className="h-full rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
                     <div className="flex gap-0.5">
                       {Array.from({ length: t.rating }).map((_, s) => (
-                        <svg key={s} width="16" height="16" viewBox="0 0 24 24" fill="var(--color-primary)">
+                        <svg key={s} width="16" height="16" viewBox="0 0 24 24" fill="#E71840">
                           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
                       ))}
                     </div>
-                    <p className="mt-4 text-[14px] italic leading-[1.7] text-[#333]">
+                    <p className="mt-4 text-[14px] italic leading-[1.7] text-white/70">
                       &ldquo;{t.quote}&rdquo;
                     </p>
-                    <div className="mt-4 border-t border-[var(--color-border)] pt-3">
-                      <p className="font-[family-name:var(--font-heading)] text-[14px] font-700 text-[#1A1A1A]">
+                    <div className="mt-4 border-t border-white/10 pt-3">
+                      <p className="font-[family-name:var(--font-heading)] text-[14px] font-700 text-white">
                         {t.author}
                       </p>
-                      <p className="text-[12px] text-[var(--color-text-muted)]">
+                      <p className="text-[12px] text-white/40">
                         {t.role}, {t.company}
                       </p>
                     </div>
@@ -402,7 +402,7 @@ export default function DallasPage() {
                     <p className="font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-700 text-white">
                       {item.stat}
                     </p>
-                    <p className="mt-2 text-[14px] text-[#666]">{item.label}</p>
+                    <p className="mt-2 text-[14px] text-white/40">{item.label}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -440,10 +440,10 @@ export default function DallasPage() {
         </section>
 
         {/* ─── FAQ ───────────────────────────────────────────── */}
-        <section className="bg-white py-24 lg:py-32">
+        <section className="bg-transparent py-24 lg:py-32">
           <div className="mx-auto max-w-3xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-white">
                 Dallas Digital Marketing FAQ
               </h2>
             </AnimateIn>
@@ -451,11 +451,11 @@ export default function DallasPage() {
             <div className="mt-10 space-y-5">
               {faqs.map((faq, i) => (
                 <AnimateIn key={i} delay={0.05 * i}>
-                  <div className="rounded-2xl bg-[var(--color-bg-alt)] p-6">
-                    <h3 className="font-[family-name:var(--font-heading)] text-[1rem] font-700 text-[#1A1A1A]">
+                  <div className="rounded-2xl bg-white/[0.02] p-6">
+                    <h3 className="font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-[var(--color-text-secondary)]">
+                    <p className="mt-3 text-[14px] leading-[1.75] text-white/60">
                       {faq.answer}
                     </p>
                   </div>

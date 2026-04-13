@@ -17,20 +17,20 @@ export default function PortfolioPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-white pb-8 pt-12 lg:pt-16">
+      <section className="pb-8 pt-32 lg:pt-40">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
               Portfolio
             </p>
           </AnimateIn>
           <AnimateIn delay={0.1}>
-            <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-[#1A1A1A]">
+            <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-white">
               Our Work
             </h1>
           </AnimateIn>
           <AnimateIn delay={0.2}>
-            <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-[var(--color-text-secondary)]">
+            <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
               Real projects, real results. Every engagement is tailored to the client&apos;s
               unique goals — from complete digital transformations to targeted growth campaigns.
             </p>

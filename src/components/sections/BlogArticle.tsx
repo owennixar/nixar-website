@@ -25,12 +25,15 @@ export default function BlogArticle({ content }: { content: string }) {
 
     /* ── H2 ────────────────────────────────────────────────────── */
     if (line.startsWith("## ")) {
+      const headingText = line.slice(3);
+      const headingId = headingText.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       elements.push(
         <h2
           key={i}
+          id={headingId}
           className="mt-14 mb-6 font-[family-name:var(--font-oswald)] text-[clamp(1.5rem,3vw,2rem)] font-700 uppercase leading-[1.2] text-white"
         >
-          {inline(line.slice(3))}
+          {inline(headingText)}
         </h2>
       );
       i++;

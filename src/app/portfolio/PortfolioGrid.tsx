@@ -7,10 +7,10 @@ import AnimateIn from "@/components/ui/AnimateIn";
 const FILTERS = ["All", "Digital Marketing", "Development", "Social Media"] as const;
 
 const GRADIENT_CLASSES = [
-  "from-rose-100 via-white to-slate-100",
-  "from-sky-100 via-white to-rose-50",
-  "from-slate-100 via-white to-amber-50",
-  "from-violet-50 via-white to-rose-100",
+  "from-[#1a1a2e] to-[#16213e]",
+  "from-[#2d1a1a] to-[#1a1a2e]",
+  "from-[#1a2e1a] to-[#1a1a2e]",
+  "from-[#2e2d1a] to-[#1a1a2e]",
 ];
 
 export default function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
@@ -22,10 +22,10 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
   }, [filter, projects]);
 
   return (
-    <section className="bg-white pb-24 pt-8 lg:pb-32">
+    <section className="pb-24 pt-8 lg:pb-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         {/* Filter tabs */}
-        <div className="flex flex-wrap gap-1 rounded-full bg-[var(--color-bg-alt)] p-1">
+        <div className="flex flex-wrap gap-1 rounded-full bg-white/[0.04] p-1">
           {FILTERS.map((f) => (
             <button
               key={f}
@@ -33,8 +33,8 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
               onClick={() => setFilter(f)}
               className={`rounded-full px-5 py-2 text-[13px] font-500 transition-all ${
                 filter === f
-                  ? "bg-[var(--color-primary)] text-white shadow-sm"
-                  : "text-[var(--color-text-secondary)] hover:text-[var(--color-text)]"
+                  ? "bg-[#E71840] text-white"
+                  : "text-white/50 hover:text-white"
               }`}
             >
               {f}
@@ -46,7 +46,6 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
         <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
           {filtered.map((project, i) => (
             <AnimateIn key={project.slug} delay={0.08 * i}>
-              {/* TODO: Replace gradient with nano-banana-2 generated project mockup */}
               <a
                 href={`/portfolio/${project.slug}`}
                 className="group relative block aspect-[16/10] overflow-hidden rounded-2xl"
@@ -58,14 +57,14 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
                 {/* Placeholder */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-white/80 shadow-sm">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                         <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                         <circle cx="9" cy="9" r="2" />
                         <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
                       </svg>
                     </div>
-                    <p className="mt-2 text-xs font-500 text-[var(--color-text-muted)]">Project Image</p>
+                    <p className="mt-2 text-xs font-500 text-white/30">Project Image</p>
                   </div>
                 </div>
 
@@ -95,7 +94,7 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
 
         {filtered.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-[var(--color-text-muted)]">No projects match this filter.</p>
+            <p className="text-white/40">No projects match this filter.</p>
           </div>
         )}
       </div>

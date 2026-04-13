@@ -30,13 +30,13 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="bg-white py-24 lg:py-32">
+    <section id="contact" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
             Get In Touch
           </p>
-          <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+          <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
             Let&apos;s Start a Conversation
           </h2>
         </AnimateIn>
@@ -45,14 +45,14 @@ export default function ContactForm() {
           {/* Form — left */}
           <AnimateIn direction="left" distance={30} className="lg:col-span-3">
             {submitted ? (
-              <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-[var(--color-border)] p-12 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                  <Check size={28} className="text-green-600" />
+              <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-12 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-500/10">
+                  <Check size={28} className="text-green-500" />
                 </div>
-                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl font-700 text-[#1A1A1A]">
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl font-700 text-white">
                   Message Sent!
                 </h3>
-                <p className="mt-2 text-[15px] text-[var(--color-text-muted)]">
+                <p className="mt-2 text-[15px] text-white/50">
                   We&apos;ll get back to you within 24 hours.
                 </p>
               </div>
@@ -67,13 +67,13 @@ export default function ContactForm() {
 
                 {/* Service dropdown */}
                 <div>
-                  <label htmlFor="service" className="mb-1.5 block text-[13px] font-500 text-[var(--color-text-secondary)]">
+                  <label htmlFor="service" className="mb-1.5 block text-[13px] font-500 text-white/50">
                     Service Interested In
                   </label>
                   <select
                     id="service"
                     name="service"
-                    className="h-12 w-full rounded-lg border border-[var(--color-border)] bg-white px-4 text-[14px] text-[var(--color-text)] outline-none transition-all focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary-light)]"
+                    className="h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20"
                   >
                     <option value="">Select a service</option>
                     {services.map((s) => (
@@ -87,7 +87,7 @@ export default function ContactForm() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="mb-1.5 block text-[13px] font-500 text-[var(--color-text-secondary)]">
+                  <label htmlFor="message" className="mb-1.5 block text-[13px] font-500 text-white/50">
                     Message <span className="text-[var(--color-primary)]">*</span>
                   </label>
                   <textarea
@@ -95,8 +95,8 @@ export default function ContactForm() {
                     name="message"
                     rows={5}
                     required
-                    className={`w-full rounded-lg border px-4 py-3 text-[14px] text-[var(--color-text)] outline-none transition-all focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary-light)] ${
-                      errors.message ? "border-red-400" : "border-[var(--color-border)]"
+                    className={`w-full rounded-lg border px-4 py-3 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
+                      errors.message ? "border-red-400" : "border-white/10"
                     }`}
                     placeholder="Tell us about your project..."
                   />
@@ -177,7 +177,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-[13px] font-500 text-[var(--color-text-secondary)]">
+      <label htmlFor={name} className="mb-1.5 block text-[13px] font-500 text-white/50">
         {label} {required && <span className="text-[var(--color-primary)]">*</span>}
       </label>
       <input
@@ -185,8 +185,8 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className={`h-12 w-full rounded-lg border px-4 text-[14px] text-[var(--color-text)] outline-none transition-all focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary-light)] ${
-          error ? "border-red-400" : "border-[var(--color-border)]"
+        className={`h-12 w-full rounded-lg border px-4 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
+          error ? "border-red-400" : "border-white/10"
         }`}
       />
       {error && <p className="mt-1 text-[12px] text-red-500">{error}</p>}

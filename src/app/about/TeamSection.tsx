@@ -22,22 +22,22 @@ function MemberCard({
         {/* Avatar placeholder */}
         {/* TODO: Replace with actual team headshots */}
         <div
-          className={`${size} flex items-center justify-center rounded-full bg-gradient-to-br from-[var(--color-bg-alt)] to-[var(--color-primary-light)] ring-2 ring-transparent transition-all duration-300 group-hover:ring-[var(--color-primary)] group-hover:shadow-[0_0_20px_var(--color-primary-glow)]`}
+          className={`${size} flex items-center justify-center rounded-full bg-gradient-to-br from-white/[0.04] to-[#E71840]/10 ring-2 ring-transparent transition-all duration-300 group-hover:ring-[#E71840] group-hover:shadow-[0_0_20px_rgba(231,24,64,0.2)]`}
         >
           <span
-            className={`font-[family-name:var(--font-heading)] ${textSize} font-800 text-[var(--color-text-muted)]`}
+            className={`font-[family-name:var(--font-heading)] ${textSize} font-800 text-white/40`}
           >
             {member.initials}
           </span>
         </div>
         <p
-          className={`mt-3 font-[family-name:var(--font-heading)] font-700 text-[#1A1A1A] ${
+          className={`mt-3 font-[family-name:var(--font-heading)] font-700 text-white ${
             large ? "text-[1.1rem]" : "text-[0.95rem]"
           }`}
         >
           {member.name}
         </p>
-        <p className="mt-0.5 text-[13px] text-[var(--color-text-muted)]">
+        <p className="mt-0.5 text-[13px] text-white/40">
           {member.role}
         </p>
       </div>
@@ -47,13 +47,13 @@ function MemberCard({
 
 export default function TeamSection() {
   return (
-    <section className="bg-[var(--color-bg-alt)] py-24 lg:py-32">
+    <section className="bg-white/[0.02] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
             Our People
           </p>
-          <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+          <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
             The NIXAR Team
           </h2>
         </AnimateIn>
@@ -68,7 +68,7 @@ export default function TeamSection() {
         {/* Board of Directors */}
         <div className="mt-16">
           <AnimateIn className="text-center">
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/40">
               Board of Directors
             </h3>
           </AnimateIn>
@@ -83,7 +83,7 @@ export default function TeamSection() {
         {consultants.length > 0 && (
           <div className="mt-16">
             <AnimateIn className="text-center">
-              <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+              <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/40">
                 Consultant
               </h3>
             </AnimateIn>

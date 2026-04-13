@@ -195,13 +195,13 @@ export default function ContactPage() {
         </section>
 
         {/* Serving DFW */}
-        <section className="bg-[var(--color-bg-alt)] py-20 lg:py-28">
+        <section className="py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-white">
                 Serving Dallas-Fort Worth
               </h2>
-              <p className="mt-2 text-[15px] text-[var(--color-text-secondary)]">
+              <p className="mt-2 text-[15px] text-white/60">
                 Based in Frisco, TX — serving 20+ cities across the DFW metroplex.
               </p>
             </AnimateIn>
@@ -211,9 +211,9 @@ export default function ContactPage() {
                 <AnimateIn key={city.slug} delay={0.02 * i}>
                   <Link
                     href={city.slug === "dallas" ? "/dallas" : `/${city.slug}`}
-                    className="flex items-center gap-2 rounded-lg bg-white px-3.5 py-2.5 text-[13px] font-500 text-[var(--color-text-secondary)] shadow-sm transition-all hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)]"
+                    className="flex items-center gap-2 rounded-lg bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-[13px] font-500 text-white/60 transition-all hover:bg-[#E71840]/10 hover:text-[#E71840]"
                   >
-                    <MapPin size={13} className="shrink-0 text-[var(--color-text-muted)]" />
+                    <MapPin size={13} className="shrink-0 text-white/40" />
                     {city.name}
                   </Link>
                 </AnimateIn>

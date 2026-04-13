@@ -60,7 +60,7 @@ export default async function CityPage({
     <>
       <main>
         {/* ─── HERO ────────────────────────────────────────── */}
-        <section className="relative overflow-hidden bg-white pb-16 pt-12 lg:pt-16">
+        <section className="relative overflow-hidden bg-transparent pb-16 pt-12 lg:pt-16">
           <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
             <div className="hero-orb" style={{ width: 400, height: 400, background: "rgba(231,24,64,0.04)", top: "-5%", right: "5%", animation: "orbFloat2 20s ease-in-out infinite" }} />
           </div>
@@ -70,12 +70,12 @@ export default async function CityPage({
               <div className="flex items-center gap-2">
                 <Link
                   href="/dallas"
-                  className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary)]"
+                  className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/40 transition-colors hover:text-[#E71840]"
                 >
                   DFW Metroplex
                 </Link>
-                <span className="text-[var(--color-border)]">/</span>
-                <span className="flex items-center gap-1.5 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+                <span className="text-white/10">/</span>
+                <span className="flex items-center gap-1.5 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                   <MapPin size={13} />
                   {city.name}, TX
                 </span>
@@ -83,14 +83,14 @@ export default async function CityPage({
             </AnimateIn>
 
             <AnimateIn delay={0.2}>
-              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-heading)] text-[clamp(2.25rem,5vw,4rem)] font-900 leading-[1.08] tracking-tight text-[#1A1A1A]">
+              <h1 className="mt-5 max-w-3xl font-[family-name:var(--font-heading)] text-[clamp(2.25rem,5vw,4rem)] font-900 leading-[1.08] tracking-tight text-white">
                 {city.name} Digital Marketing{" "}
-                <span className="text-[var(--color-primary)]">&amp; AI Solutions</span>
+                <span className="text-[#E71840]">&amp; AI Solutions</span>
               </h1>
             </AnimateIn>
 
             <AnimateIn delay={0.35} direction="none">
-              <p className="mt-5 max-w-2xl text-[1.05rem] leading-[1.7] text-[var(--color-text-secondary)]">
+              <p className="mt-5 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
                 NIXAR Solutions brings AI-powered digital marketing to {city.name}, TX.
                 From SEO and web development to custom AI agents and paid advertising —
                 we help {city.name} businesses compete and win in the digital space.
@@ -101,11 +101,11 @@ export default async function CityPage({
               <div className="mt-7 flex flex-wrap items-center gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-7 text-[14px] font-600 text-white shadow-lg shadow-[var(--color-primary-glow)] transition-all hover:bg-[var(--color-primary-hover)] hover:scale-[1.02]"
+                  className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-7 text-[14px] font-600 text-white shadow-lg shadow-[#E71840]/20 transition-all hover:bg-[#C41535] hover:scale-[1.02]"
                 >
                   Get Free {city.name} Market Audit
                 </a>
-                <span className="text-[13px] text-[var(--color-text-muted)]">
+                <span className="text-[13px] text-white/40">
                   {city.county} &middot; Population: {city.population}
                 </span>
               </div>
@@ -114,26 +114,26 @@ export default async function CityPage({
         </section>
 
         {/* ─── ABOUT THIS CITY ───────────────────────────────── */}
-        <section className="bg-[var(--color-bg-alt)] py-20 lg:py-28">
+        <section className="bg-white/[0.02] py-20 lg:py-28">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 lg:grid-cols-5 lg:gap-16 lg:px-8">
             <div className="lg:col-span-3">
               <AnimateIn direction="left" distance={30}>
-                <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+                <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                   The {city.name} Market
                 </p>
-                <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
+                <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 leading-tight tracking-tight text-white">
                   Why {city.name} Businesses Need Digital Transformation
                 </h2>
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.1}>
-                <p className="mt-6 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
                   {city.uniqueDescription}
                 </p>
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.18}>
-                <p className="mt-4 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
                   For {city.name} businesses, investing in digital marketing is not optional — it is
                   the difference between growth and stagnation. Whether you are a local service
                   provider trying to capture &ldquo;near me&rdquo; searches, a B2B company targeting
@@ -143,7 +143,7 @@ export default async function CityPage({
               </AnimateIn>
 
               <AnimateIn direction="left" distance={20} delay={0.25}>
-                <p className="mt-4 text-[15px] leading-[1.8] text-[var(--color-text-secondary)]">
+                <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
                   NIXAR Solutions is based in Frisco — right in the heart of the DFW metroplex — and
                   we understand the {city.name} market at a granular level. We know which keywords
                   drive local traffic, how {city.name} consumers research businesses, and what it
@@ -155,37 +155,37 @@ export default async function CityPage({
 
             {/* Industries sidebar */}
             <AnimateIn direction="right" distance={30} delay={0.15} className="lg:col-span-2">
-              <div className="rounded-2xl bg-white p-7 shadow-sm">
-                <h3 className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-[#1A1A1A]">
+              <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
+                <h3 className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-white">
                   Key Industries in {city.name}
                 </h3>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {city.keyIndustries.map((ind) => (
                     <span
                       key={ind}
-                      className="rounded-full bg-[var(--color-bg-alt)] px-3 py-1.5 text-[13px] font-500 text-[var(--color-text-secondary)]"
+                      className="rounded-full bg-white/[0.02] px-3 py-1.5 text-[13px] font-500 text-white/60"
                     >
                       {ind}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-8 border-t border-[var(--color-border)] pt-6">
-                  <h3 className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-[#1A1A1A]">
+                <div className="mt-8 border-t border-white/10 pt-6">
+                  <h3 className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-white">
                     {city.name} at a Glance
                   </h3>
                   <dl className="mt-3 space-y-3 text-[14px]">
                     <div className="flex justify-between">
-                      <dt className="text-[var(--color-text-muted)]">Population</dt>
-                      <dd className="font-600 text-[#1A1A1A]">{city.population}</dd>
+                      <dt className="text-white/40">Population</dt>
+                      <dd className="font-600 text-white">{city.population}</dd>
                     </div>
                     <div className="flex justify-between">
-                      <dt className="text-[var(--color-text-muted)]">County</dt>
-                      <dd className="font-600 text-[#1A1A1A]">{city.county}</dd>
+                      <dt className="text-white/40">County</dt>
+                      <dd className="font-600 text-white">{city.county}</dd>
                     </div>
                     <div className="flex justify-between">
-                      <dt className="text-[var(--color-text-muted)]">NIXAR HQ</dt>
-                      <dd className="font-600 text-[var(--color-primary)]">Frisco, TX</dd>
+                      <dt className="text-white/40">NIXAR HQ</dt>
+                      <dd className="font-600 text-[#E71840]">Frisco, TX</dd>
                     </div>
                   </dl>
                 </div>
@@ -249,13 +249,13 @@ export default async function CityPage({
         </section>
 
         {/* ─── SERVICES ──────────────────────────────────────── */}
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-transparent py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-800 tracking-tight text-white">
                 Our Services in {city.name}
               </h2>
-              <p className="mt-3 max-w-2xl text-[15px] text-[var(--color-text-secondary)]">
+              <p className="mt-3 max-w-2xl text-[15px] text-white/60">
                 Every service below is available to {city.name} businesses and tailored to
                 your local market dynamics.
               </p>
@@ -266,17 +266,17 @@ export default async function CityPage({
                 <AnimateIn key={s.slug} delay={0.05 * i}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="group flex items-center justify-between rounded-xl bg-[var(--color-bg-alt)] p-5 transition-all hover:bg-[var(--color-primary-light)]"
+                    className="group flex items-center justify-between rounded-xl bg-white/[0.02] p-5 transition-all hover:bg-[#E71840]/10"
                   >
                     <div>
-                      <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                      <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-white">
                         {s.shortTitle}
                       </h3>
-                      <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                      <p className="mt-1 text-[13px] text-white/40">
                         For {city.name} businesses
                       </p>
                     </div>
-                    <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                    <ArrowRight size={16} className="shrink-0 text-white/40 transition-colors group-hover:text-[#E71840]" />
                   </Link>
                 </AnimateIn>
               ))}
@@ -286,7 +286,7 @@ export default async function CityPage({
               <div className="mt-8">
                 <Link
                   href="/services"
-                  className="text-[14px] font-600 text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
+                  className="text-[14px] font-600 text-[#E71840] transition-colors hover:text-[#C41535]"
                 >
                   View all 10 services &rarr;
                 </Link>
@@ -296,10 +296,10 @@ export default async function CityPage({
         </section>
 
         {/* ─── NEARBY CITIES ─────────────────────────────────── */}
-        <section className="bg-[var(--color-bg-alt)] py-20 lg:py-28">
+        <section className="bg-white/[0.02] py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-white">
                 Also Serving Nearby Cities
               </h2>
             </AnimateIn>
@@ -309,7 +309,7 @@ export default async function CityPage({
               <AnimateIn delay={0.05}>
                 <Link
                   href="/dallas"
-                  className="flex items-center gap-2 rounded-full bg-[var(--color-primary)] px-5 py-2.5 text-[13px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)]"
+                  className="flex items-center gap-2 rounded-full bg-[#E71840] px-5 py-2.5 text-[13px] font-600 text-white transition-all hover:bg-[#C41535]"
                 >
                   <MapPin size={13} />
                   Dallas (Hub)
@@ -320,7 +320,7 @@ export default async function CityPage({
                 <AnimateIn key={nc.slug} delay={0.05 + 0.04 * i}>
                   <Link
                     href={nc.slug === "dallas" ? "/dallas" : `/${nc.slug}`}
-                    className="flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-[13px] font-500 text-[var(--color-text-secondary)] shadow-sm transition-all hover:bg-[var(--color-primary-light)] hover:text-[var(--color-primary)]"
+                    className="flex items-center gap-2 rounded-full bg-white/[0.04] backdrop-blur-sm border border-white/10 px-5 py-2.5 text-[13px] font-500 text-white/60 transition-all hover:bg-[#E71840]/10 hover:text-[#E71840]"
                   >
                     <MapPin size={13} />
                     {nc.name}
@@ -331,7 +331,7 @@ export default async function CityPage({
               <AnimateIn delay={0.3}>
                 <Link
                   href="/dallas"
-                  className="flex items-center gap-2 rounded-full border border-dashed border-[var(--color-border)] px-5 py-2.5 text-[13px] font-500 text-[var(--color-text-muted)] transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                  className="flex items-center gap-2 rounded-full border border-dashed border-white/10 px-5 py-2.5 text-[13px] font-500 text-white/40 transition-all hover:border-[#E71840] hover:text-[#E71840]"
                 >
                   View all 20 DFW cities &rarr;
                 </Link>
@@ -341,10 +341,10 @@ export default async function CityPage({
         </section>
 
         {/* ─── FAQ ───────────────────────────────────────────── */}
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-transparent py-20 lg:py-28">
           <div className="mx-auto max-w-3xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-white">
                 {city.name} Digital Marketing FAQ
               </h2>
             </AnimateIn>
@@ -352,11 +352,11 @@ export default async function CityPage({
             <div className="mt-8 space-y-5">
               {faqs.map((faq, i) => (
                 <AnimateIn key={i} delay={0.05 * i}>
-                  <div className="rounded-2xl bg-[var(--color-bg-alt)] p-6">
-                    <h3 className="font-[family-name:var(--font-heading)] text-[1rem] font-700 text-[#1A1A1A]">
+                  <div className="rounded-2xl bg-white/[0.02] p-6">
+                    <h3 className="font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-[var(--color-text-secondary)]">
+                    <p className="mt-3 text-[14px] leading-[1.75] text-white/60">
                       {faq.answer}
                     </p>
                   </div>
@@ -367,13 +367,13 @@ export default async function CityPage({
         </section>
 
         {/* ─── EXPLORE OUR SERVICES ─────────────────────────── */}
-        <section className="bg-[var(--color-bg-alt)] py-20 lg:py-28">
+        <section className="bg-white/[0.02] py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-[#1A1A1A]">
+              <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-white">
                 Explore Our Services
               </h2>
-              <p className="mt-3 max-w-2xl text-[15px] text-[var(--color-text-secondary)]">
+              <p className="mt-3 max-w-2xl text-[15px] text-white/60">
                 Learn more about how NIXAR Solutions can help your {city.name} business grow.
               </p>
             </AnimateIn>
@@ -382,51 +382,51 @@ export default async function CityPage({
               <AnimateIn delay={0.1}>
                 <Link
                   href="/services"
-                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-5 transition-all hover:bg-[#E71840]/10"
                 >
                   <div>
-                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-white">
                       All Services
                     </h3>
-                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                    <p className="mt-1 text-[13px] text-white/40">
                       SEO, AI agents, website dev &amp; more
                     </p>
                   </div>
-                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                  <ArrowRight size={16} className="shrink-0 text-white/40 transition-colors group-hover:text-[#E71840]" />
                 </Link>
               </AnimateIn>
 
               <AnimateIn delay={0.15}>
                 <Link
                   href="/free-audit"
-                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-5 transition-all hover:bg-[#E71840]/10"
                 >
                   <div>
-                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-white">
                       Free Audit
                     </h3>
-                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                    <p className="mt-1 text-[13px] text-white/40">
                       Get a free {city.name} market analysis
                     </p>
                   </div>
-                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                  <ArrowRight size={16} className="shrink-0 text-white/40 transition-colors group-hover:text-[#E71840]" />
                 </Link>
               </AnimateIn>
 
               <AnimateIn delay={0.2}>
                 <Link
                   href="/blog"
-                  className="glass-card group flex items-center justify-between rounded-xl bg-white p-5 shadow-sm transition-all hover:bg-[var(--color-primary-light)]"
+                  className="glass-card group flex items-center justify-between rounded-xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-5 transition-all hover:bg-[#E71840]/10"
                 >
                   <div>
-                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-[#1A1A1A]">
+                    <h3 className="font-[family-name:var(--font-heading)] text-[0.95rem] font-700 text-white">
                       Blog
                     </h3>
-                    <p className="mt-1 text-[13px] text-[var(--color-text-muted)]">
+                    <p className="mt-1 text-[13px] text-white/40">
                       Digital marketing insights &amp; tips
                     </p>
                   </div>
-                  <ArrowRight size={16} className="shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-primary)]" />
+                  <ArrowRight size={16} className="shrink-0 text-white/40 transition-colors group-hover:text-[#E71840]" />
                 </Link>
               </AnimateIn>
             </div>
