@@ -1,4 +1,4 @@
-import { founders, board, consultants } from "@/lib/data/team";
+import { founders, board } from "@/lib/data/team";
 import type { TeamMember } from "@/lib/data/team";
 import AnimateIn from "@/components/ui/AnimateIn";
 
@@ -78,21 +78,27 @@ export default function TeamSection() {
           </div>
         </div>
 
-        {/* Consultant */}
-        {consultants.length > 0 && (
-          <div className="mt-16">
-            <AnimateIn className="text-center">
-              <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/40">
-                Consultant
-              </h3>
-            </AnimateIn>
-            <div className="mt-8 flex justify-center">
-              {consultants.map((m, i) => (
-                <MemberCard key={m.name} member={m} delay={0.2 + i * 0.1} />
-              ))}
-            </div>
-          </div>
-        )}
+        {/* Partner Agency */}
+        <div className="mt-16">
+          <AnimateIn className="text-center">
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-[#E71840]">
+              Partner Agency
+            </h3>
+          </AnimateIn>
+          <AnimateIn delay={0.2} className="mt-8 flex justify-center">
+            <a
+              href="https://xlncdigital.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block max-w-[300px] rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E71840]/30 hover:shadow-[0_0_30px_rgba(231,24,64,0.1)]"
+            >
+              <span className="font-[family-name:var(--font-heading)] text-[1.5rem] font-700 uppercase tracking-wider text-white">
+                XLNC Digital
+              </span>
+              <p className="mt-2 text-[13px] text-[#E71840]">Partner Agency</p>
+            </a>
+          </AnimateIn>
+        </div>
       </div>
     </section>
   );

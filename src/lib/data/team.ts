@@ -1,7 +1,7 @@
 export interface TeamMember {
   name: string;
   role: string;
-  type: "founder" | "board" | "consultant";
+  type: "founder" | "board";
   initials: string;
   image: string;
 }
@@ -43,16 +43,9 @@ export const team: TeamMember[] = [
     image: "/images/team-michael.jpg",
   },
   {
-    name: "Mir Ali",
+    name: "Shahab Bokhari",
     role: "Board of Director",
     type: "board",
-    initials: "MA",
-    image: "/images/team-mir.jpg",
-  },
-  {
-    name: "Shahab Bokhari",
-    role: "Consultant",
-    type: "consultant",
     initials: "SB",
     image: "/images/team-shahab.jpg",
   },
@@ -60,4 +53,3 @@ export const team: TeamMember[] = [
 
 export const founders = team.filter((m) => m.type === "founder");
 export const board = team.filter((m) => m.type === "board");
-export const consultants = team.filter((m) => m.type === "consultant");
