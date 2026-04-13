@@ -92,10 +92,14 @@ export default function TeamSection() {
               rel="noopener noreferrer"
               className="group block max-w-[300px] rounded-2xl border border-white/10 bg-white/[0.04] p-8 text-center backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#E71840]/30 hover:shadow-[0_0_30px_rgba(231,24,64,0.1)]"
             >
-              <span className="font-[family-name:var(--font-heading)] text-[1.5rem] font-700 uppercase tracking-wider text-white">
-                XLNC Digital
-              </span>
-              <p className="mt-2 text-[13px] text-[#E71840]">Partner Agency</p>
+              <div className="flex justify-center">
+                <img
+                  src="/images/xlnc-logo.png"
+                  alt="XLNC Digital — Partner Agency"
+                  className="w-24 h-24 object-contain rounded-xl"
+                />
+              </div>
+              <p className="mt-4 text-[13px] text-[#E71840]">Partner Agency</p>
             </a>
           </AnimateIn>
         </div>
