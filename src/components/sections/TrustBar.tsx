@@ -1,3 +1,10 @@
+const SOCIALS = [
+  { name: "Facebook", href: "https://facebook.com/nixarsolutions", icon: "/images/social-facebook.png" },
+  { name: "Instagram", href: "https://instagram.com/nixarsolutions", icon: "/images/social-instagram.png" },
+  { name: "LinkedIn", href: "https://linkedin.com/company/nixarsolutions", icon: "/images/social-linkedin.png" },
+  { name: "TikTok", href: "https://tiktok.com/@nixarsolutions", icon: "/images/social-tiktok.png" },
+];
+
 export default function TrustBar() {
   return (
     <section
@@ -6,12 +13,20 @@ export default function TrustBar() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between flex-wrap gap-6">
-          <p className="text-gray-500 text-sm uppercase tracking-widest">Trusted By</p>
-          <div className="flex items-center gap-8 lg:gap-12 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
-            <span className="font-[family-name:var(--font-oswald)] text-lg text-white">Tire Geeks</span>
-            <span className="font-[family-name:var(--font-oswald)] text-lg text-white">SYB Builders</span>
-            <span className="font-[family-name:var(--font-oswald)] text-lg text-white hidden sm:inline">Lonestar Kart Park</span>
-            <span className="font-[family-name:var(--font-oswald)] text-lg text-white hidden md:inline">Nixon Jach Hubbard</span>
+          <p className="text-gray-500 text-sm uppercase tracking-widest">Follow Us On Our Socials!</p>
+          <div className="flex items-center gap-6 lg:gap-8">
+            {SOCIALS.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`NIXAR Solutions on ${s.name}`}
+                className="inline-block transition-transform duration-300 hover:scale-110 hover:brightness-110"
+              >
+                <img src={s.icon} alt={`${s.name} icon`} className="h-12 w-12 object-contain" loading="lazy" />
+              </a>
+            ))}
           </div>
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-2">
