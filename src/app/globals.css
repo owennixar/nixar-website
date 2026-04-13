@@ -7,18 +7,18 @@
   --color-primary-light: rgba(231, 24, 64, 0.08);
   --color-primary-glow: rgba(231, 24, 64, 0.25);
 
-  /* Neutrals */
+  /* Neutrals — dark theme */
   --color-black: #1A1A1A;
   --color-dark: #231F20;
-  --color-text: #111111;
-  --color-text-secondary: #444444;
-  --color-text-muted: #666666;
+  --color-text: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-text-muted: rgba(255, 255, 255, 0.4);
   --color-white: #FFFFFF;
-  --color-bg: #FFFFFF;
-  --color-bg-alt: #F8F8F8;
+  --color-bg: #0A0A0A;
+  --color-bg-alt: rgba(255, 255, 255, 0.02);
   --color-bg-dark: #0A0A0A;
-  --color-border: #E5E5E5;
-  --color-border-hover: #D0D0D0;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
 
   /* Fonts — set by next/font in layout.tsx */
   --font-heading: var(--font-bebas);
@@ -49,10 +49,10 @@
   --font-heading: var(--font-heading);
 }
 
-/* Base */
+/* Base — dark theme */
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: #0A0A0A;
+  color: #FFFFFF;
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

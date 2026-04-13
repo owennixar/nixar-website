@@ -168,7 +168,7 @@ export default function Navbar() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -8 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute left-1/2 top-full mt-3 w-[520px] -translate-x-1/2 rounded-xl bg-white p-5 shadow-[0_20px_60px_rgba(0,0,0,0.12)]"
+                          className="absolute left-1/2 top-full mt-3 w-[520px] -translate-x-1/2 rounded-xl bg-[#111] border border-white/10 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.5)] backdrop-blur-xl"
                           role="menu"
                         >
                           <div className="grid grid-cols-2 gap-1">
@@ -183,7 +183,7 @@ export default function Navbar() {
                                   className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--color-primary-light)]"
                                 >
                                   {Icon && (
-                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[var(--color-bg-alt)] text-[var(--color-text-secondary)]">
+                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/[0.06] text-white/60">
                                       <Icon size={16} />
                                     </div>
                                   )}

@@ -124,30 +124,30 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
 
                     {/* Row 1 */}
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
 
                     {/* Row 2 */}
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
 
                     {/* Row 3 */}
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                     <div className="rounded-lg h-10" style={{ backgroundColor: '#666666' }} />
                     <div className="bg-[#E71840] rounded-lg h-10" />
-                    <div className="bg-white rounded-lg h-10" />
+                    <div className="bg-white/80 rounded-lg h-10" />
                   </div>
 
                   {/* Legend */}
@@ -157,7 +157,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <span className="text-[#999] text-sm">Video Content</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 rounded bg-white" />
+                      <div className="w-4 h-4 rounded bg-white/80" />
                       <span className="text-[#999] text-sm">Post / Carousel</span>
                     </div>
                     <div className="flex items-center gap-2">
