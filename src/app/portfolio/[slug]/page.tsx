@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, Star } from "lucide-react";
-import { portfolio, getProjectBySlug } from "@/lib/data/portfolio";
+import { portfolio, getProjectBySlug, PORTFOLIO_IMAGES } from "@/lib/data/portfolio";
 import { testimonials } from "@/lib/data/testimonials";
 import { breadcrumbSchema, schemaToScript } from "@/lib/seo/schemas";
 import AnimateIn from "@/components/ui/AnimateIn";
@@ -72,15 +72,25 @@ export default async function PortfolioDetailPage({
             </Link>
           </AnimateIn>
 
-          {/* Gradient placeholder image */}
+          {/* Hero image */}
           <AnimateIn delay={0.1}>
-            <div
-              className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
-            >
-              <span className="font-[family-name:var(--font-heading)] text-[clamp(2rem,5vw,4rem)] font-800 tracking-tight text-white/20">
-                {project.name}
-              </span>
-            </div>
+            {PORTFOLIO_IMAGES[slug] ? (
+              <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl">
+                <img
+                  src={PORTFOLIO_IMAGES[slug].src}
+                  alt={PORTFOLIO_IMAGES[slug].alt}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            ) : (
+              <div
+                className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
+              >
+                <span className="font-[family-name:var(--font-heading)] text-[clamp(2rem,5vw,4rem)] font-800 tracking-tight text-white/20">
+                  {project.name}
+                </span>
+              </div>
+            )}
           </AnimateIn>
 
           {/* Title + tags */}
@@ -220,13 +230,24 @@ export default async function PortfolioDetailPage({
               href={`/portfolio/${nextProject.slug}`}
               className="group block"
             >
-              <div
-                className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${nextProject.gradient} flex items-center justify-center transition-transform group-hover:scale-[1.01]`}
-              >
-                <span className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,4vw,3rem)] font-800 tracking-tight text-white/20 transition-colors group-hover:text-white/30">
-                  {nextProject.name}
-                </span>
-              </div>
+              {PORTFOLIO_IMAGES[nextProject.slug] ? (
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl transition-transform group-hover:scale-[1.01]">
+                  <img
+                    src={PORTFOLIO_IMAGES[nextProject.slug].src}
+                    alt={PORTFOLIO_IMAGES[nextProject.slug].alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              ) : (
+                <div
+                  className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${nextProject.gradient} flex items-center justify-center transition-transform group-hover:scale-[1.01]`}
+                >
+                  <span className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,4vw,3rem)] font-800 tracking-tight text-white/20">
+                    {nextProject.name}
+                  </span>
+                </div>
+              )}
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="font-[family-name:var(--font-heading)] text-xl font-800 text-white">
                   {nextProject.name}

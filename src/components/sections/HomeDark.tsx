@@ -180,10 +180,10 @@ const BLOG_POSTS = [
    PORTFOLIO PLACEHOLDERS
    ═══════════════════════════════════════════════════════════════════════════ */
 const PORTFOLIO = [
-  { name: "Tire Wheel Center", cat: "Website Development & SEO", gradient: "from-[#1a1a2e] to-[#16213e]" },
-  { name: "SYB Builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]" },
-  { name: "RunMyProcess", cat: "Digital Strategy", gradient: "from-[#0f3460] to-[#1a1a2e]" },
-  { name: "DFW Local Business", cat: "Local SEO & Ads", gradient: "from-[#2d2d2d] to-[#1a1a1a]" },
+  { name: "Tire Geeks", cat: "Digital Marketing & SEO", gradient: "from-[#1a1a2e] to-[#16213e]", image: "/images/portfolio-tiregeeks.jpg" },
+  { name: "SYB Builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]", image: "/images/portfolio-syb.jpg" },
+  { name: "Lonestar Kart Park", cat: "Digital Marketing", gradient: "from-[#0f3460] to-[#1a1a2e]", image: "/images/portfolio-lonestar.jpg" },
+  { name: "Nixon Jach Hubbard", cat: "E-Commerce & Web Dev", gradient: "from-[#2d2d2d] to-[#1a1a1a]", image: "/images/portfolio-njh.webp" },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -670,15 +670,11 @@ function HorizontalPortfolio() {
             key={p.name}
             className="group relative mx-4 h-[70vh] w-[40vw] shrink-0 overflow-hidden rounded-2xl"
           >
-            <div
-              className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`}
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-[family-name:var(--font-oswald)] text-[4rem] font-700 uppercase text-white/[0.03] select-none">
-                  {p.name}
-                </span>
-              </div>
-            </div>
+            {p.image ? (
+              <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+            ) : (
+              <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`} />
+            )}
             <div className="portfolio-scanline absolute inset-0 pointer-events-none z-10" />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">

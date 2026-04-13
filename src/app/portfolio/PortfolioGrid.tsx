@@ -2,16 +2,10 @@
 
 import { useState, useMemo } from "react";
 import type { PortfolioProject } from "@/lib/data/portfolio";
+import { PORTFOLIO_IMAGES } from "@/lib/data/portfolio";
 import AnimateIn from "@/components/ui/AnimateIn";
 
 const FILTERS = ["All", "Digital Marketing", "Development", "Social Media"] as const;
-
-const GRADIENT_CLASSES = [
-  "from-[#1a1a2e] to-[#16213e]",
-  "from-[#2d1a1a] to-[#1a1a2e]",
-  "from-[#1a2e1a] to-[#1a1a2e]",
-  "from-[#2e2d1a] to-[#1a1a2e]",
-];
 
 export default function PortfolioGrid({ projects }: { projects: PortfolioProject[] }) {
   const [filter, setFilter] = useState<string>("All");
@@ -43,53 +37,60 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
         </div>
 
         {/* Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-          {filtered.map((project, i) => (
-            <AnimateIn key={project.slug} delay={0.08 * i}>
-              <a
-                href={`/portfolio/${project.slug}`}
-                className="group relative block aspect-[16/10] overflow-hidden rounded-2xl"
-              >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${GRADIENT_CLASSES[i % GRADIENT_CLASSES.length]} transition-transform duration-500 group-hover:scale-105`}
-                />
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {filtered.map((project, i) => {
+            const img = PORTFOLIO_IMAGES[project.slug];
+            return (
+              <AnimateIn key={project.slug} delay={0.08 * i}>
+                <a
+                  href={`/portfolio/${project.slug}`}
+                  className="group block overflow-hidden rounded-2xl"
+                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                >
+                  {/* Image */}
+                  <div className="relative h-64 w-full overflow-hidden">
+                    {img ? (
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
+                        <span className="font-[family-name:var(--font-heading)] text-2xl font-700 text-white/10">{project.name}</span>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  </div>
 
-                {/* Placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-xl bg-white/10">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                        <circle cx="9" cy="9" r="2" />
-                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                      </svg>
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="mb-3 flex flex-wrap gap-2">
+                      {project.services.map((s) => (
+                        <span
+                          key={s}
+                          className="rounded-full px-3 py-1 text-[11px] font-600"
+                          style={{ background: 'rgba(231,24,64,0.15)', color: '#E71840' }}
+                        >
+                          {s}
+                        </span>
+                      ))}
                     </div>
-                    <p className="mt-2 text-xs font-500 text-white/30">Project Image</p>
+                    <h3 className="font-[family-name:var(--font-heading)] text-xl font-700 text-white">
+                      {project.name}
+                    </h3>
+                    <p className="mt-2 text-[13px] leading-relaxed text-white/50 line-clamp-2">
+                      {project.description}
+                    </p>
+                    <span className="mt-4 inline-flex items-center text-[13px] font-600 text-[#E71840] transition-colors group-hover:text-white">
+                      View Case Study &rarr;
+                    </span>
                   </div>
-                </div>
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <div className="flex flex-wrap gap-2">
-                    {project.services.map((s) => (
-                      <span
-                        key={s}
-                        className="rounded-full bg-white/20 px-2.5 py-0.5 text-[11px] font-500 text-white backdrop-blur-sm"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="mt-2 font-[family-name:var(--font-heading)] text-xl font-700 text-white">
-                    {project.name}
-                  </h3>
-                  <p className="mt-1 text-[13px] text-white/70">
-                    {project.description}
-                  </p>
-                </div>
-              </a>
-            </AnimateIn>
-          ))}
+                </a>
+              </AnimateIn>
+            );
+          })}
         </div>
 
         {filtered.length === 0 && (
