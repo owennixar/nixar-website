@@ -180,10 +180,10 @@ const BLOG_POSTS = [
    PORTFOLIO PLACEHOLDERS
    ═══════════════════════════════════════════════════════════════════════════ */
 const PORTFOLIO = [
-  { name: "Tire Geeks", cat: "Digital Marketing & SEO", gradient: "from-[#1a1a2e] to-[#16213e]", image: "/images/portfolio-tiregeeks.jpg" },
-  { name: "SYB Builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]", image: "/images/portfolio-syb.jpg" },
-  { name: "Lonestar Kart Park", cat: "Digital Marketing", gradient: "from-[#0f3460] to-[#1a1a2e]", image: "/images/portfolio-lonestar.jpg" },
-  { name: "Nixon Jach Hubbard", cat: "E-Commerce & Web Dev", gradient: "from-[#2d2d2d] to-[#1a1a1a]", image: "/images/portfolio-njh.webp" },
+  { name: "Tire Geeks", slug: "tire-geeks", cat: "Digital Marketing & SEO", gradient: "from-[#1a1a2e] to-[#16213e]", image: "/images/portfolio-tiregeeks.jpg" },
+  { name: "SYB Builders", slug: "syb-builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]", image: "/images/portfolio-syb.jpg" },
+  { name: "Lonestar Kart Park", slug: "lonestar-kart-park", cat: "Digital Marketing", gradient: "from-[#0f3460] to-[#1a1a2e]", image: "/images/portfolio-lonestar.jpg" },
+  { name: "Nixon Jach Hubbard", slug: "nixon-jach-hubbard", cat: "E-Commerce & Web Dev", gradient: "from-[#2d2d2d] to-[#1a1a1a]", image: "/images/portfolio-njh.webp" },
 ];
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -666,12 +666,14 @@ function HorizontalPortfolio() {
 
         {/* Portfolio cards */}
         {PORTFOLIO.map((p) => (
-          <div
+          <Link
             key={p.name}
-            className="group relative mx-4 h-[70vh] w-[40vw] shrink-0 overflow-hidden rounded-2xl"
+            href={`/portfolio/${p.slug}`}
+            className="group relative mx-4 h-[70vh] w-[40vw] shrink-0 overflow-hidden rounded-2xl cursor-pointer transition-all duration-300 hover:-translate-y-2"
+            style={{ border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {p.image ? (
-              <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
+              <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
             ) : (
               <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`} />
             )}
@@ -684,7 +686,7 @@ function HorizontalPortfolio() {
                 {p.cat}
               </p>
               <span className="mt-4 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
-                View Project &rarr;
+                View Case Study &rarr;
               </span>
             </div>
             <div className="absolute bottom-0 left-0 right-0 px-5 py-3 lg:px-8">
@@ -692,7 +694,7 @@ function HorizontalPortfolio() {
                 {p.name} &mdash; {p.cat}
               </p>
             </div>
-          </div>
+          </Link>
         ))}
 
         {/* Spacer at end */}
