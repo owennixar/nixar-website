@@ -1,3 +1,25 @@
+export interface BlogAuthor {
+  name: string;
+  title: string;
+  bio: string;
+  linkedin: string;
+}
+
+export const AUTHORS: Record<string, BlogAuthor> = {
+  owen: {
+    name: "Owen Nixon",
+    title: "Co-Founder & Principal, NIXAR Solutions",
+    bio: "Owen Nixon is co-founder of NIXAR Solutions, a digital transformation agency in Frisco, TX. With over a decade of experience in digital marketing, web development, and AI-powered business solutions, Owen leads NIXAR's strategic vision and client delivery. He specializes in cross-functional brand alignment and emerging search technologies including GEO and AI SEO.",
+    linkedin: "https://linkedin.com/in/owennixon",
+  },
+  anwar: {
+    name: "Anwar Mirza",
+    title: "Co-Founder & Principal, NIXAR Solutions",
+    bio: "Anwar Mirza is co-founder of NIXAR Solutions, bringing extensive expertise in digital transformation, automation, and AI integration to Dallas-Fort Worth businesses. Anwar leads NIXAR's technical implementation and AI service development, helping businesses leverage cutting-edge technology for measurable growth.",
+    linkedin: "https://linkedin.com/in/anwarmirza",
+  },
+};
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -9,10 +31,13 @@ export interface BlogPost {
   lastUpdated: string;
   readTime: string;
   author: string;
+  authorKey?: "owen" | "anwar";
   featured: boolean;
   series: { name: string; part: number; total: number } | null;
   image: string;
   content: string;
+  keyTakeaways?: string[];
+  faqs?: { question: string; answer: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1333,6 +1358,19 @@ At NIXAR Solutions, we're based in Frisco and we work exclusively with DFW busin
 The Dallas-Fort Worth marketing landscape in 2026 is competitive, fast-moving, and full of opportunity. The businesses that win will be those that embrace a multi-channel strategy: strong local SEO as the foundation, GEO optimization for the growing AI search channel, strategic paid advertising, and authentic social media presence. The biggest immediate opportunity is GEO — the competitive landscape for AI search in DFW is wide open, and early movers will have a significant advantage. Start with your Google Business Profile, add schema markup, create authoritative content, and position your business for the future of search.`,
   },
 ];
+
+// Merge SEO supplementary data into posts
+import { BLOG_SEO_DATA } from "./blog-seo-data";
+
+// Enrich posts with SEO data (keyTakeaways, faqs, authorKey)
+blogPosts.forEach((post) => {
+  const seo = BLOG_SEO_DATA[post.slug];
+  if (seo) {
+    post.authorKey = seo.authorKey;
+    post.keyTakeaways = seo.keyTakeaways;
+    post.faqs = seo.faqs;
+  }
+});
 
 export function getFeaturedPosts() {
   return blogPosts.filter((p) => p.featured);

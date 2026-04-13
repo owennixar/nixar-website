@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { blogPosts, getRelatedPosts } from "@/lib/data/blog";
+import { blogPosts, getRelatedPosts, AUTHORS } from "@/lib/data/blog";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
 import BlogArticle from "@/components/sections/BlogArticle";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schemas";
 import { RelatedServicesSection } from "@/components/seo/InternalLinks";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -63,6 +63,7 @@ export default async function BlogPostPage({ params }: Props) {
       <JsonLd data={[
         articleSchema({ title: post.title, excerpt: post.excerpt, date: post.date, lastUpdated: post.lastUpdated, image: post.image, slug: post.slug }),
         breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }, { name: post.title, url: `/blog/${post.slug}` }]),
+        ...(post.faqs ? [faqSchema(post.faqs)] : []),
       ]} />
 
       {/* Background effects */}
@@ -131,26 +132,69 @@ export default async function BlogPostPage({ params }: Props) {
            ═══════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 py-16">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
+          {/* Key Takeaways */}
+          {post.keyTakeaways && post.keyTakeaways.length > 0 && (
+            <div className="article-summary mb-12 rounded-2xl border border-[#E71840]/20 p-6 lg:p-8" style={{ background: 'rgba(231,24,64,0.05)' }}>
+              <h2 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase text-[#E71840] mb-4">Key Takeaways</h2>
+              <ul className="space-y-3">
+                {post.keyTakeaways.map((t, i) => (
+                  <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-white/70">
+                    <span className="mt-1 text-[#E71840] shrink-0">&#9656;</span>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           <BlogArticle content={post.content} />
+
+          {/* FAQ Section */}
+          {post.faqs && post.faqs.length > 0 && (
+            <div className="mt-16 pt-8 border-t border-[#222]">
+              <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(1.5rem,3vw,2rem)] font-700 uppercase text-white mb-8">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-4">
+                {post.faqs.map((faq, i) => (
+                  <div key={i} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
+                    <h3 className="font-[family-name:var(--font-oswald)] text-[0.95rem] font-700 text-white">
+                      {faq.question}
+                    </h3>
+                    <p className="mt-2 text-[14px] leading-[1.75] text-white/60">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Related Services */}
           <RelatedServicesSection blogSlug={slug} />
 
           {/* About the Author */}
+          {(() => {
+            const authorData = post.authorKey ? AUTHORS[post.authorKey] : null;
+            const initials = authorData ? authorData.name.split(" ").map(n => n[0]).join("") : "N";
+            return (
           <div className="mt-16 pt-8 border-t border-[#222]">
             <div className="flex items-start gap-4 rounded-xl bg-white/[0.03] border border-white/10 p-6">
               <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center">
-                <span className="text-white/30 text-sm font-700">N</span>
+                <span className="text-white/30 text-sm font-700">{initials}</span>
               </div>
               <div>
-                <p className="text-[14px] font-600 text-white">NIXAR Solutions Team</p>
-                <p className="text-[13px] text-white/40">Dallas-Fort Worth&apos;s AI-powered digital transformation agency.</p>
+                <p className="text-[14px] font-600 text-white">{authorData?.name ?? "NIXAR Solutions Team"}</p>
+                <p className="text-[13px] text-white/40">{authorData?.title ?? "Dallas-Fort Worth's AI-powered digital transformation agency."}</p>
+                {authorData && <p className="mt-2 text-[13px] leading-relaxed text-white/50">{authorData.bio}</p>}
                 <Link href="/about/team" className="mt-2 inline-block text-[12px] font-600 text-[#E71840] hover:text-white transition-colors">
-                  Meet the team &rarr;
+                  {authorData ? `About ${authorData.name.split(" ")[0]}` : "Meet the team"} &rarr;
                 </Link>
               </div>
             </div>
           </div>
+            );
+          })()}
 
           {/* Share */}
           <div className="mt-8 pt-8 border-t border-[#222] flex items-center justify-between">
