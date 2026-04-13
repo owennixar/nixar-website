@@ -529,17 +529,16 @@ export default function HomeDark() {
                   href={`/blog/${post.slug}`}
                   className="glass-card group flex h-full flex-col !p-0 overflow-hidden"
                 >
-                  <ImageReveal className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
-                    <Image
+                  <div className="relative h-[200px] w-full overflow-hidden rounded-t-[24px]">
+                    <img
                       src={post.image}
                       alt={post.title}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
-                  </ImageReveal>
+                  </div>
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-8">
                     <span className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">

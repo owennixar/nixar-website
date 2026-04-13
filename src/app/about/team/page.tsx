@@ -15,14 +15,14 @@ const TEAM = [
   {
     name: "Owen Nixon",
     title: "Co-Founder & Principal",
+    image: "/images/team-owen.jpg",
     bio: "Owen Nixon is the co-founder of NIXAR Solutions, bringing deep expertise in web development, AI integration, and digital strategy to every client engagement. With a background spanning software engineering and digital marketing, Owen bridges the gap between technical implementation and business growth. He leads NIXAR's technology stack decisions, oversees website development projects, and architects the AI-powered tools that give NIXAR clients a competitive edge. Owen's approach is hands-on — he believes the best marketing strategies are built on a foundation of cutting-edge technology and data-driven decision-making. Before co-founding NIXAR, Owen built and scaled digital products across multiple industries, giving him a unique perspective on what makes businesses succeed online. His obsession with performance, clean code, and measurable outcomes ensures every NIXAR project is built to convert. Based in Frisco, Texas, Owen is committed to helping DFW businesses compete and win in the AI era.",
-    gradient: "from-[#1a1a2e] to-[#16213e]",
   },
   {
     name: "Anwar Mirza",
     title: "Co-Founder & Principal",
+    image: "/images/team-anwar.jpg",
     bio: "Anwar Mirza is the co-founder of NIXAR Solutions, bringing extensive experience in marketing strategy, brand development, and client relations. With a passion for understanding what makes businesses grow, Anwar leads NIXAR's strategic direction and ensures every client receives a customized approach tailored to their unique market position. He oversees brand identity projects, marketing strategy development, and client relationship management across the agency. Anwar's strength lies in translating complex business challenges into clear, actionable marketing roadmaps. He believes that great marketing starts with deep understanding — of the client's business, their customers, their competitors, and the opportunities that others miss. Before co-founding NIXAR, Anwar developed his marketing expertise across diverse industries, learning firsthand how different businesses require different approaches to growth. His commitment to transparency, measurable results, and long-term client partnerships defines the NIXAR culture. Based in the Dallas-Fort Worth area, Anwar is dedicated to making enterprise-level marketing strategies accessible to businesses of all sizes.",
-    gradient: "from-[#2d2d2d] to-[#1a1a1a]",
   },
 ];
 
@@ -63,10 +63,12 @@ export default function TeamPage() {
               {TEAM.map((person, i) => (
                 <AnimateIn key={person.name} delay={i * 0.1}>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm">
-                    <div className={`aspect-square rounded-2xl bg-gradient-to-br ${person.gradient} mb-6 flex items-center justify-center`}>
-                      <span className="font-[family-name:var(--font-oswald)] text-[4rem] font-700 text-white/10 select-none">
-                        {person.name.split(" ").map((n) => n[0]).join("")}
-                      </span>
+                    <div className="aspect-square rounded-2xl overflow-hidden mb-6">
+                      <img
+                        src={person.image}
+                        alt={`${person.name}, ${person.title} at NIXAR Solutions`}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <h2 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
                       {person.name}

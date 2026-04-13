@@ -19,16 +19,15 @@ function MemberCard({
   return (
     <AnimateIn delay={delay}>
       <div className="group flex flex-col items-center text-center">
-        {/* Avatar placeholder */}
-        {/* TODO: Replace with actual team headshots */}
         <div
-          className={`${size} flex items-center justify-center rounded-full bg-gradient-to-br from-white/[0.04] to-[#E71840]/10 ring-2 ring-transparent transition-all duration-300 group-hover:ring-[#E71840] group-hover:shadow-[0_0_20px_rgba(231,24,64,0.2)]`}
+          className={`${size} overflow-hidden rounded-full ring-2 ring-transparent transition-all duration-300 group-hover:ring-[#E71840] group-hover:shadow-[0_0_20px_rgba(231,24,64,0.2)]`}
         >
-          <span
-            className={`font-[family-name:var(--font-heading)] ${textSize} font-800 text-white/40`}
-          >
-            {member.initials}
-          </span>
+          <img
+            src={member.image}
+            alt={`${member.name}, ${member.role} at NIXAR Solutions`}
+            className="h-full w-full object-cover"
+            loading="lazy"
+          />
         </div>
         <p
           className={`mt-3 font-[family-name:var(--font-heading)] font-700 text-white ${
