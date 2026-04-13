@@ -39,6 +39,7 @@ const NAV_LINKS = [
   { label: "Services", href: "/services", hasDropdown: true },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
+  { label: "Resources", href: "/resources/glossary", hasDropdown: false },
   { label: "Contact", href: "/contact" },
 ] as const;
 

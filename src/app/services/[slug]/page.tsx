@@ -26,6 +26,7 @@ import {
   schemaToScript,
 } from "@/lib/seo/schemas";
 import AnimateIn from "@/components/ui/AnimateIn";
+import { DfwCitiesSection } from "@/components/seo/InternalLinks";
 import CtaBanner from "@/components/sections/CtaBanner";
 import UniqueServiceSections from "@/components/services/UniqueServiceSections";
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
@@ -285,7 +286,7 @@ export default async function ServicePage({
                     Understanding the Service
                   </p>
                   <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
-                    What Is {service.shortTitle}?
+                    What Is {service.shortTitle} and How Does It Work?
                   </h2>
                 </AnimateIn>
 
@@ -321,7 +322,7 @@ export default async function ServicePage({
                 The Business Case
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
-                Why Your Business Needs {service.shortTitle}
+                Why Does Your Business Need {service.shortTitle}?
               </h2>
             </AnimateIn>
 
@@ -347,7 +348,7 @@ export default async function ServicePage({
                 Our Approach
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
-                How NIXAR Delivers {service.shortTitle}
+                How Does NIXAR Handle {service.shortTitle}?
               </h2>
             </AnimateIn>
 
@@ -377,7 +378,7 @@ export default async function ServicePage({
                 Deliverables
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
-                What&apos;s Included
+                What&apos;s Included in {service.shortTitle} from NIXAR?
               </h2>
             </AnimateIn>
 
@@ -505,6 +506,7 @@ export default async function ServicePage({
           </div>
         </section>
 
+        <DfwCitiesSection />
         <CtaBanner />
       </main>
 

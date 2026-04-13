@@ -6,6 +6,9 @@ import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
 import NewsletterForm from "@/components/sections/NewsletterForm";
 import DecodedText from "@/components/ui/DecodedText";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
   title: "Blog | NIXAR Solutions",
@@ -108,6 +111,10 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <div className="relative z-10">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
+      </div>
 
       {/* ═══════════════════════════════════════════════════════════════
            SECTION: LATEST POSTS (Featured)
@@ -340,6 +347,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])]} />
     </main>
   );
 }

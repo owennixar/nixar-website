@@ -21,7 +21,7 @@ export interface ServiceDetail {
 export const serviceDetails: Record<string, ServiceDetail> = {
   "social-media-management": {
     whatIsExtended: [
-      "Social media management is far more than posting content on Instagram and hoping for likes. It is a disciplined, strategic practice that encompasses audience research, content planning, creative production, community engagement, reputation management, and performance analytics — all working together to turn your social channels into reliable business growth engines.",
+      "Social media management is the strategic practice of creating, scheduling, publishing, and analyzing content across platforms like Instagram, TikTok, LinkedIn, Facebook, and YouTube to build brand awareness, engage audiences, and drive measurable business results. It encompasses content strategy, community management, paid social advertising, analytics reporting, and reputation management.",
       "Think of it this way: your social media profiles are storefronts. Just as you would never leave a physical store unstaffed with dusty shelves, your online presence demands the same level of care and strategic thought. Every post, reply, and story is an interaction with a potential customer.",
       "At its core, social media management aligns your online voice with your business objectives. Whether the goal is brand awareness, lead generation, customer retention, or community building, every piece of content is crafted with intent and measured against outcomes — not vanity metrics.",
     ],
@@ -49,7 +49,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
   "web-development": {
     whatIsExtended: [
-      "Web development in 2024 is not what it was five years ago. Modern websites are application-level software built with frameworks like Next.js and React that deliver sub-second page loads, seamless interactions, and built-in SEO architecture. A website that loads in three seconds loses 53% of its visitors — and Google's Core Web Vitals directly impact your search rankings.",
+      "Website development is the full-cycle process of designing, building, and launching custom websites that serve as high-performance business tools — not just digital brochures. Modern website development uses frameworks like Next.js and React to deliver sub-second page loads, seamless interactions, built-in SEO architecture, and conversion-optimized user experiences.",
       "At NIXAR, we build websites that are conversion machines. Every pixel, every interaction, every page load time is engineered to move visitors toward a business outcome — whether that is filling out a contact form, making a purchase, or booking a consultation. Design is not decoration; it is strategy made visible.",
       "Our development process covers the full lifecycle: discovery and stakeholder interviews, information architecture, wireframing, visual design, front-end and back-end development, content integration, SEO optimization, QA testing, launch, and ongoing support.",
     ],

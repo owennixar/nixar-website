@@ -5,6 +5,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
+import JsonLd from "@/components/seo/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/seo/schemas";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -124,6 +126,7 @@ export default function RootLayout({
         <meta name="geo.placename" content="Frisco" />
       </head>
       <body className="min-h-dvh flex flex-col antialiased">
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         <SmoothScroll>
           <CustomCursor />
           <IntroSequence />

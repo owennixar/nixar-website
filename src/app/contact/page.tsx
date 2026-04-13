@@ -5,6 +5,9 @@ import { cities } from "@/lib/data/cities";
 import { localBusinessSchema, faqSchema, schemaToScript } from "@/lib/seo/schemas";
 import type { FAQ } from "@/lib/data/faq";
 import AnimateIn from "@/components/ui/AnimateIn";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { professionalServiceSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 import ContactForm from "@/components/sections/ContactForm";
 
 const contactFaqs: FAQ[] = [
@@ -85,6 +88,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} />
 
         {/* Reuse the homepage contact form section */}
         <ContactForm />
@@ -218,14 +223,11 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToScript(localBusinessSchema()) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToScript(faqSchema(contactFaqs)) }}
-      />
+      <JsonLd data={[
+        professionalServiceSchema(),
+        faqSchema(contactFaqs),
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Contact", url: "/contact" }]),
+      ]} />
     </>
   );
 }

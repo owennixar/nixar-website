@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 import AboutHero from "./AboutHero";
 import AboutStats from "./AboutStats";
 import OriginStory from "./OriginStory";
@@ -25,6 +28,7 @@ export default function AboutPage() {
     <>
       <main>
         <AboutHero />
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]} />
         <AboutStats />
         <OriginStory />
         <Timeline />
@@ -35,18 +39,7 @@ export default function AboutPage() {
         <CtaBanner />
       </main>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: schemaToScript(localBusinessSchema()),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: schemaToScript(organizationSchema()),
-        }}
-      />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }])]} />
     </>
   );
 }

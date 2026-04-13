@@ -24,6 +24,9 @@ import {
 } from "lucide-react";
 import { services } from "@/lib/data/services";
 import AnimateIn from "@/components/ui/AnimateIn";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 
@@ -88,6 +91,8 @@ export default function ServicesIndex() {
             </div>
           </div>
         </section>
+
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }]} />
 
         {/* Bento grid */}
         <section className="bg-[#0A0A0A] pb-24 pt-8 lg:pb-32">
@@ -371,6 +376,7 @@ export default function ServicesIndex() {
 
         <CtaBanner />
       </main>
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Services", url: "/services" }])]} />
     </>
   );
 }

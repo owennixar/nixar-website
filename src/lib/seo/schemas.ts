@@ -180,6 +180,127 @@ export function websiteSchema() {
   };
 }
 
+// ─── ProfessionalService Schema (richer than LocalBusiness) ──────────────────
+export function professionalServiceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: BUSINESS_NAME,
+    image: `${SITE_URL}/images/nixar-logo-dark.png`,
+    url: SITE_URL,
+    telephone: PHONE,
+    email: EMAIL,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Frisco",
+      addressRegion: "TX",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.1507,
+      longitude: -96.8236,
+    },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
+    areaServed: {
+      "@type": "GeoCircle",
+      geoMidpoint: { "@type": "GeoCoordinates", latitude: 32.7767, longitude: -96.797 },
+      geoRadius: "50",
+    },
+    priceRange: "$$",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "3",
+    },
+    founder: [
+      { "@type": "Person", name: "Owen Nixon" },
+      { "@type": "Person", name: "Anwar Mirza" },
+    ],
+    foundingDate: "2023",
+  };
+}
+
+// ─── Review Schema ───────────────────────────────────────────────────────────
+export function reviewSchema(review: { author: string; text: string; rating?: number }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    author: { "@type": "Person", name: review.author },
+    reviewBody: review.text,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(review.rating ?? 5),
+      bestRating: "5",
+    },
+    itemReviewed: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+    },
+  };
+}
+
+// ─── Article Schema (enhanced) ───────────────────────────────────────────────
+export function articleSchema(post: {
+  title: string;
+  excerpt: string;
+  date: string;
+  lastUpdated?: string;
+  image: string;
+  slug: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    author: { "@type": "Organization", name: BUSINESS_NAME },
+    publisher: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      logo: { "@type": "ImageObject", url: `${SITE_URL}/images/nixar-logo-dark.png` },
+    },
+    datePublished: post.date,
+    dateModified: post.lastUpdated ?? post.date,
+    image: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+  };
+}
+
+// ─── Person Schema ───────────────────────────────────────────────────────────
+export function personSchema(person: { name: string; jobTitle: string; description: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: person.name,
+    jobTitle: person.jobTitle,
+    worksFor: { "@type": "Organization", name: BUSINESS_NAME },
+    description: person.description,
+  };
+}
+
+// ─── DefinedTermSet Schema (for glossary) ────────────────────────────────────
+export function glossarySchema(terms: { name: string; definition: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "DefinedTermSet",
+    name: "Marketing Glossary",
+    description: "Definitions for SEO, GEO, AI SEO, PPC, and digital marketing terms.",
+    definedTerm: terms.map((t) => ({
+      "@type": "DefinedTerm",
+      name: t.name,
+      description: t.definition,
+    })),
+  };
+}
+
 // ─── Helper: render schema as script tag ──────────────────────────────────────
 export function schemaToScript(schema: Record<string, unknown>) {
   return JSON.stringify(schema);

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/ui/AnimateIn";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
@@ -61,8 +64,9 @@ const perks = [
 export default function CareersPage() {
   return (
     <main className="min-h-screen bg-[#0A0A0A]">
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Careers", href: "/careers" }]} />
       {/* Hero */}
-      <section className="pb-16 pt-12 lg:pt-16">
+      <section className="pb-16">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <AnimateIn>
             <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,6vw,4.5rem)] font-700 uppercase leading-[1.05] text-white">
@@ -172,6 +176,7 @@ export default function CareersPage() {
       </section>
 
       <CtaBanner />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Careers", url: "/careers" }])]} />
     </main>
   );
 }

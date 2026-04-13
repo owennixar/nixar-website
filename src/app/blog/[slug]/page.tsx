@@ -6,6 +6,10 @@ import { blogPosts, getRelatedPosts } from "@/lib/data/blog";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
 import BlogArticle from "@/components/sections/BlogArticle";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { articleSchema, breadcrumbSchema } from "@/lib/seo/schemas";
+import { RelatedServicesSection } from "@/components/seo/InternalLinks";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -54,39 +58,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(slug, 3);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    image: `https://nixarsolutions.com${post.image}`,
-    datePublished: post.date,
-    author: {
-      "@type": "Organization",
-      name: post.author,
-      url: "https://nixarsolutions.com",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "NIXAR Solutions",
-      url: "https://nixarsolutions.com",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://nixarsolutions.com/logo.svg",
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://nixarsolutions.com/blog/${post.slug}`,
-    },
-  };
-
   return (
     <main className="w-full bg-[#0A0A0A] relative overflow-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={[
+        articleSchema({ title: post.title, excerpt: post.excerpt, date: post.date, lastUpdated: post.lastUpdated, image: post.image, slug: post.slug }),
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }, { name: post.title, url: `/blog/${post.slug}` }]),
+      ]} />
 
       {/* Background effects */}
       <div className="pointer-events-none fixed inset-0 z-0">
@@ -133,14 +110,21 @@ export default async function BlogPostPage({ params }: Props) {
             {post.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-4 text-[0.75rem] text-[#999]">
-            <span>{post.author}</span>
+            <Link href="/about/team" className="hover:text-[#E71840] transition-colors">{post.author}</Link>
             <span>·</span>
             <span>{post.date}</span>
             <span>·</span>
             <span>{post.readTime}</span>
           </div>
+          {post.lastUpdated && (
+            <p className="mt-2 text-[0.7rem] text-[#666]">Last updated: {post.lastUpdated}</p>
+          )}
         </div>
       </section>
+
+      <div className="relative z-10">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
+      </div>
 
       {/* ═══════════════════════════════════════════════════════════════
            ARTICLE BODY
@@ -149,8 +133,27 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
           <BlogArticle content={post.content} />
 
+          {/* Related Services */}
+          <RelatedServicesSection blogSlug={slug} />
+
+          {/* About the Author */}
+          <div className="mt-16 pt-8 border-t border-[#222]">
+            <div className="flex items-start gap-4 rounded-xl bg-white/[0.03] border border-white/10 p-6">
+              <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center">
+                <span className="text-white/30 text-sm font-700">N</span>
+              </div>
+              <div>
+                <p className="text-[14px] font-600 text-white">NIXAR Solutions Team</p>
+                <p className="text-[13px] text-white/40">Dallas-Fort Worth&apos;s AI-powered digital transformation agency.</p>
+                <Link href="/about/team" className="mt-2 inline-block text-[12px] font-600 text-[#E71840] hover:text-white transition-colors">
+                  Meet the team &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+
           {/* Share */}
-          <div className="mt-16 pt-8 border-t border-[#222] flex items-center justify-between">
+          <div className="mt-8 pt-8 border-t border-[#222] flex items-center justify-between">
             <span className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#666]">
               Share this article
             </span>

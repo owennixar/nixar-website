@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/ui/AnimateIn";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 import CtaBanner from "@/components/sections/CtaBanner";
 import { testimonials } from "@/lib/data/testimonials";
 import { faqSchema, schemaToScript } from "@/lib/seo/schemas";
@@ -84,8 +87,9 @@ export default function FreeAuditPage() {
   return (
     <>
       <main className="bg-[#0a0a0a]">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Free Audit", href: "/free-audit" }]} />
         {/* ── Hero ─────────────────────────────────────────────── */}
-        <section className="pb-16 pt-12 lg:pb-24 lg:pt-16">
+        <section className="pb-16 lg:pb-24">
           <div className="mx-auto max-w-4xl px-5 text-center lg:px-8">
             <AnimateIn>
               <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,7vw,5rem)] font-700 uppercase leading-[1.05] tracking-tight">
@@ -271,13 +275,10 @@ export default function FreeAuditPage() {
         <CtaBanner />
       </main>
 
-      {/* FAQ Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: schemaToScript(faqSchema(faqs)),
-        }}
-      />
+      <JsonLd data={[
+        faqSchema(faqs),
+        breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Free Audit", url: "/free-audit" }]),
+      ]} />
     </>
   );
 }

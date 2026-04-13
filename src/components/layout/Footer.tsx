@@ -10,11 +10,17 @@ import { cities } from "@/lib/data/cities";
 const COMPANY_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
+  { label: "Team", href: "/about/team" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
+] as const;
+
+const RESOURCE_LINKS = [
   { label: "Free Audit", href: "/free-audit" },
+  { label: "Marketing Glossary", href: "/resources/glossary" },
+  { label: "SEO vs GEO vs AI SEO", href: "/resources/seo-vs-geo-vs-ai-seo" },
 ] as const;
 
 const SOCIAL_LINKS = [
@@ -63,7 +69,7 @@ export default function Footer() {
         </div>
 
         {/* ── Main grid ─────────────────────────────────────────────── */}
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:px-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 lg:px-8">
           {/* Column 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" aria-label="NIXAR Solutions — Home" className="flex items-center">
@@ -108,7 +114,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services — all 10 */}
+          {/* Column 3: Resources */}
+          <div>
+            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+              Resources
+            </h3>
+            <ul className="mt-5 space-y-3">
+              {RESOURCE_LINKS.map(({ label, href }) => (
+                <li key={label}>
+                  <Link
+                    href={href}
+                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Services — all 10 */}
           <div>
             <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
               Services

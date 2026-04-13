@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { portfolio } from "@/lib/data/portfolio";
 import AnimateIn from "@/components/ui/AnimateIn";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import JsonLd from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schemas";
 import CtaBanner from "@/components/sections/CtaBanner";
 import PortfolioGrid from "./PortfolioGrid";
 
@@ -35,10 +38,13 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Portfolio", href: "/portfolio" }]} dark={false} />
+
       {/* Filter + Grid */}
       <PortfolioGrid projects={portfolio} />
 
       <CtaBanner />
+      <JsonLd data={[breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Portfolio", url: "/portfolio" }])]} />
     </main>
   );
 }
