@@ -78,6 +78,19 @@ const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string; overlay?: 
   },
 };
 
+const SECTION_IMAGES: Record<string, string> = {
+  "social-media-management": "/images/section-social.jpg",
+  "web-development": "/images/section-webdev.jpg",
+  "automation-ai-integration": "/images/section-automation.jpg",
+  "personalized-sales-support": "/images/section-sales.jpg",
+  "search-everywhere-optimization": "/images/section-seo.jpg",
+  "content-marketing": "/images/section-content.jpg",
+  "ai-seo-geo": "/images/section-geo.jpg",
+  "ai-tailored-agents": "/images/section-agents.jpg",
+  "branding-brand-identity": "/images/section-branding.jpg",
+  "paid-advertising": "/images/section-ads.jpg",
+};
+
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   megaphone: Megaphone,
   code: Code,
@@ -330,10 +343,14 @@ export default async function ServicePage({
               </div>
 
               <AnimateIn direction="right" distance={30} delay={0.15} className="lg:col-span-2">
-                <div className="aspect-square rounded-2xl bg-gradient-to-br from-white/[0.06] via-[#E71840]/10 to-white/[0.03]">
-                  <div className="flex h-full items-center justify-center">
-                    {Icon && <Icon size={48} className="text-[#E71840]/30" />}
-                  </div>
+                <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <img
+                    src={SECTION_IMAGES[slug] || "/images/section-social.jpg"}
+                    alt={`${service.title} — NIXAR Solutions Dallas`}
+                    className="w-full h-full object-cover"
+                    style={{ minHeight: '300px', maxHeight: '500px' }}
+                    loading="lazy"
+                  />
                 </div>
               </AnimateIn>
             </div>

@@ -57,24 +57,14 @@ export default function OriginStory() {
           </AnimateIn>
         </div>
 
-        {/* Image placeholder */}
-        {/* TODO: Replace with nano-banana-2 generated founding story image */}
         <AnimateIn direction="right" distance={30} delay={0.15}>
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gradient-to-br from-white/[0.02] via-[#E71840]/10 to-white/[0.02] shadow-lg">
-            <div className="flex h-full items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 shadow-sm">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E71840" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                    <line x1="12" y1="22.08" x2="12" y2="12" />
-                  </svg>
-                </div>
-                <p className="mt-3 text-sm font-500 text-white/40">
-                  Founding Story Image
-                </p>
-              </div>
-            </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            <img
+              src="/images/founding-story.jpg"
+              alt="NIXAR Solutions team collaboration — founded in Frisco, TX"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
           </div>
         </AnimateIn>
       </div>
