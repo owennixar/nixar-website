@@ -21,6 +21,7 @@ import { testimonials } from "@/lib/data/testimonials";
 import SplitText from "@/components/ui/SplitText";
 import MagneticButton from "@/components/ui/MagneticButton";
 import ImageReveal from "@/components/ui/ImageReveal";
+import TrustBar from "@/components/sections/TrustBar";
 
 const AnimatedOrbs = dynamic(() => import("@/components/ui/AnimatedOrbs"), { ssr: false });
 const PulsingGrid = dynamic(() => import("@/components/ui/PulsingGrid"), { ssr: false });
@@ -307,6 +308,11 @@ export default function HomeDark() {
           </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+           SECTION 1B: TRUST BAR
+           ═══════════════════════════════════════════════════════════════════ */}
+      <TrustBar />
 
       {/* ═══════════════════════════════════════════════════════════════════
            SECTION 2: SCROLLING TAGLINE STRIP

@@ -13,6 +13,7 @@ const COMPANY_LINKS = [
   { label: "Team", href: "/about/team" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "Blog", href: "/blog" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
   { label: "Careers", href: "/careers" },
 ] as const;

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, CheckCircle2, Star } from "lucide-react";
-import { portfolio, getProjectBySlug, PORTFOLIO_IMAGES } from "@/lib/data/portfolio";
+import { portfolio, getProjectBySlug, PORTFOLIO_IMAGES, PORTFOLIO_METRICS } from "@/lib/data/portfolio";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { testimonials } from "@/lib/data/testimonials";
 import { breadcrumbSchema, schemaToScript } from "@/lib/seo/schemas";
 import AnimateIn from "@/components/ui/AnimateIn";
@@ -161,6 +162,34 @@ export default async function PortfolioDetailPage({
           </AnimateIn>
         </div>
       </section>
+
+      {/* Results Metrics */}
+      {PORTFOLIO_METRICS[slug] && (
+        <section className="pb-12">
+          <div className="mx-auto max-w-7xl px-5 lg:px-8">
+            <AnimateIn>
+              <h2 className="mb-6 font-[family-name:var(--font-heading)] text-2xl font-800 tracking-tight text-white">
+                The Results
+              </h2>
+            </AnimateIn>
+            <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {PORTFOLIO_METRICS[slug].map((m, i) => (
+                <AnimateIn key={m.label} delay={i * 0.08}>
+                  <div
+                    className="rounded-2xl p-6 text-center transition-all hover:border-[#E71840]/30"
+                    style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  >
+                    <p className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-white">
+                      +<AnimatedCounter target={m.value} suffix={m.suffix} />
+                    </p>
+                    <p className="mt-2 text-[13px] text-white/40">{m.label}</p>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Services Used */}
       <section className="pb-12">

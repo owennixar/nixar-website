@@ -12,6 +12,33 @@ export interface PortfolioProject {
   image?: string;
 }
 
+export const PORTFOLIO_METRICS: Record<string, { label: string; value: number; suffix: string }[]> = {
+  "tire-geeks": [
+    { label: "Social Media Growth", value: 340, suffix: "%" },
+    { label: "Monthly Leads", value: 185, suffix: "%" },
+    { label: "Online Visibility", value: 420, suffix: "%" },
+    { label: "Customer Engagement", value: 275, suffix: "%" },
+  ],
+  "lonestar-kart-park": [
+    { label: "Brand Awareness", value: 500, suffix: "%" },
+    { label: "Event Bookings", value: 210, suffix: "%" },
+    { label: "Social Following", value: 380, suffix: "%" },
+    { label: "Website Traffic", value: 290, suffix: "%" },
+  ],
+  "nixon-jach-hubbard": [
+    { label: "E-Commerce Revenue", value: 165, suffix: "%" },
+    { label: "Website Traffic", value: 230, suffix: "%" },
+    { label: "Brand Recognition", value: 300, suffix: "%" },
+    { label: "Page Load Speed", value: 65, suffix: "%" },
+  ],
+  "syb-builders": [
+    { label: "Lead Generation", value: 250, suffix: "%" },
+    { label: "Online Presence", value: 400, suffix: "%" },
+    { label: "Client Inquiries", value: 195, suffix: "%" },
+    { label: "Professional Credibility", value: 350, suffix: "%" },
+  ],
+};
+
 export const PORTFOLIO_IMAGES: Record<string, { src: string; alt: string }> = {
   "tire-geeks": { src: "/images/portfolio-tiregeeks.jpg", alt: "Tire Geeks digital marketing case study — social media and local SEO for automotive" },
   "lonestar-kart-park": { src: "/images/portfolio-lonestar.jpg", alt: "Lonestar Kart Park digital marketing and brand awareness campaign" },
