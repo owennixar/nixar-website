@@ -262,11 +262,11 @@ export default function HomeDark() {
             <Reveal delay={0.1}>
               <h1 className="mt-6">
                 <span className="sr-only">Digital Marketing Agency Dallas — </span>
-                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1 }}>
+                <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(2.5rem,10vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
                 <div style={{ overflow: 'visible', position: 'relative' }}>
-                  <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ display: 'inline-block', fontSize: 'clamp(3rem,8vw,7rem)', lineHeight: 1.1, whiteSpace: 'nowrap', padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
+                  <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ display: 'inline-block', fontSize: 'clamp(2rem,9vw,7rem)', lineHeight: 1.1, padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
                     <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                   </span>
                 </div>
@@ -298,7 +298,7 @@ export default function HomeDark() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2" style={{ zIndex: 2 }}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block" style={{ zIndex: 2 }}>
           <div className="flex flex-col items-center gap-2">
             <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-white/40">
               Scroll
