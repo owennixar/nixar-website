@@ -12,6 +12,9 @@ import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import JsonLd from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schemas";
+import ConsentBanner from "@/components/analytics/ConsentBanner";
+import Tracker from "@/components/analytics/Tracker";
+import { Suspense } from "react";
 import "./globals.css";
 
 const bebasNeue = Bebas_Neue({
@@ -146,6 +149,10 @@ export default function RootLayout({
             <ExitIntentPopup />
           </div>
         </SmoothScroll>
+        <Suspense fallback={null}>
+          <Tracker />
+        </Suspense>
+        <ConsentBanner />
       </body>
     </html>
   );
