@@ -14,7 +14,7 @@ export default function TrustBar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between flex-wrap gap-6">
           <p className="text-gray-500 text-sm uppercase tracking-widest">Follow Us On Our Socials!</p>
-          <div className="flex items-center gap-6 lg:gap-8">
+          <div className="flex items-center" style={{ gap: '2.5rem' }}>
             {SOCIALS.map((s) => (
               <a
                 key={s.name}
@@ -24,7 +24,7 @@ export default function TrustBar() {
                 aria-label={`NIXAR Solutions on ${s.name}`}
                 className="inline-block transition-transform duration-300 hover:scale-110 hover:brightness-110"
               >
-                <img src={s.icon} alt={`${s.name} icon`} className="h-12 w-12 object-contain" loading="lazy" />
+                <img src={s.icon} alt={`${s.name} icon`} className="object-contain" style={{ height: '90px', width: '90px' }} loading="lazy" />
               </a>
             ))}
           </div>
