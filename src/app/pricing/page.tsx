@@ -100,7 +100,7 @@ export default function PricingPage() {
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               {TIERS.map((tier, i) => (
-                <AnimateIn key={tier.name} delay={i * 0.1}>
+                <AnimateIn key={tier.name} delay={i * 0.1} className={tier.highlight ? "order-first md:order-none" : ""}>
                   <div
                     className={`relative flex h-full flex-col rounded-2xl p-8 ${
                       tier.highlight ? "border-2 border-[#E71840]" : "border border-white/10"

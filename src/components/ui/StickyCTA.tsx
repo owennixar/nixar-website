@@ -65,6 +65,7 @@ export default function StickyCTA() {
           background: 'rgba(10,10,10,0.95)',
           backdropFilter: 'blur(10px)',
           borderTop: '1px solid rgba(255,255,255,0.08)',
+          paddingBottom: 'env(safe-area-inset-bottom)',
         }}
       >
         <div className="flex items-center gap-3 px-4 py-3">

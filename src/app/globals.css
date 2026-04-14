@@ -79,6 +79,14 @@ html {
     max-width: 100%;
     height: auto;
   }
+  /* Keep content clear of the bottom StickyCTA bar on mobile */
+  main {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+  /* Prevent iOS zoom on input focus — inputs must be ≥16px */
+  input, select, textarea {
+    font-size: 16px;
+  }
 }
 
 * {
