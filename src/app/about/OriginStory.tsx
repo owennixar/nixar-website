@@ -3,8 +3,7 @@ import AnimateIn from "@/components/ui/AnimateIn";
 export default function OriginStory() {
   return (
     <section className="bg-transparent py-24 lg:py-32">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        {/* Text */}
+      <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div>
           <AnimateIn direction="left" distance={30}>
             <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
@@ -57,16 +56,6 @@ export default function OriginStory() {
           </AnimateIn>
         </div>
 
-        <AnimateIn direction="right" distance={30} delay={0.15}>
-          <div className="aspect-[4/3] overflow-hidden rounded-2xl shadow-lg" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
-            <img
-              src="/images/founding-story.jpg"
-              alt="NIXAR Solutions team collaboration — founded in Frisco, TX"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </AnimateIn>
       </div>
     </section>
   );
