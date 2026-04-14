@@ -198,7 +198,7 @@ export default function IntroSequence() {
         <span className={"intro-tagline" + (taglineVisible ? " reveal" : "")}>
           <span className="intro-tagline-dark">Know </span>
           <span className="intro-tagline-red">YOUR </span>
-          <span className="intro-tagline-dark">Potential<span className="text-[#E71840]">.</span></span>
+          <span className="intro-tagline-dark">Potential.</span>
         </span>
       </div>
     </div>
