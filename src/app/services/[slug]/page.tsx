@@ -144,176 +144,104 @@ export default async function ServicePage({
     <>
       <main className="bg-[#0A0A0A]">
         {/* ─── HERO ─────────────────────────────────────────────── */}
-        {heroImage ? (
-          <section className="relative w-full overflow-hidden" style={{ aspectRatio: '16/9' }}>
+        <section className="relative w-full min-h-[50vh] md:min-h-[75vh] flex items-end md:items-center overflow-hidden">
+          {heroImage ? (
             <img
               src={heroImage.src}
               alt={heroImage.alt}
               loading="eager"
               decoding="sync"
-              className="absolute top-0 left-0 w-full h-full"
-              style={{ objectFit: heroImage.overlay ? 'cover' : 'contain', objectPosition: 'center', zIndex: 0, backgroundColor: '#0A0A0A' }}
+              className="absolute inset-0 w-full h-full object-cover md:object-contain md:object-right"
+              style={{ zIndex: 0, backgroundColor: '#0A0A0A' }}
             />
-            {heroImage.overlay && (
-              <div
-                className="absolute inset-0"
-                style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.3) 100%)' }}
-              />
-            )}
-            <div className="absolute inset-0 flex items-center" style={{ zIndex: 2 }}>
-              <div className="max-w-7xl mx-auto px-6 w-full">
-                <div style={{ maxWidth: '500px' }}>
-                  <AnimateIn delay={0.05} direction="none">
-                    <Link
-                      href="/services"
-                      className="text-gray-500 text-sm mb-6 inline-block hover:text-white transition-colors"
-                    >
-                      &larr; All Services
-                    </Link>
-                  </AnimateIn>
-
-                  <div className="flex items-start gap-5">
-                    {Icon && (
-                      <AnimateIn delay={0.1} direction="none">
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#E71840]/10">
-                          <Icon size={26} className="text-[#E71840]" />
-                        </div>
-                      </AnimateIn>
-                    )}
-                    <div>
-                      <AnimateIn delay={0.15}>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,4.5vw,3.5rem)] font-bold uppercase leading-[1.1] tracking-tight text-white">
-                            {service.title}
-                          </h1>
-                          {service.isNew && (
-                            <span className="rounded-full bg-[#E71840] px-3 py-1 text-[11px] font-700 uppercase tracking-wider text-white">
-                              New
-                            </span>
-                          )}
-                        </div>
-                      </AnimateIn>
-                      <AnimateIn delay={0.25} direction="none">
-                        <p className="mt-4 text-[1.05rem] leading-[1.7] text-white/60">
-                          {service.description}
-                        </p>
-                      </AnimateIn>
-                      <AnimateIn delay={0.35} direction="none">
-                        <div className="mt-6 flex flex-wrap gap-3">
-                          <Link
-                            href="/free-audit"
-                            className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-7 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
-                          >
-                            Get Free Audit
-                          </Link>
-                          <a
-                            href="#included"
-                            className="inline-flex h-12 items-center rounded-full border-2 border-white/20 px-7 text-[14px] font-600 text-white transition-all hover:border-white/40"
-                          >
-                            What&apos;s Included
-                          </a>
-                        </div>
-                      </AnimateIn>
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <AnimateIn delay={0.4} direction="none">
-                    <div className="mt-8 flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-white/[0.06] px-3 py-1 text-[12px] font-500 text-white/40"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </AnimateIn>
-                </div>
-              </div>
-            </div>
-          </section>
-        ) : (
-          <section className="relative w-full overflow-hidden" style={{ height: '80vh', minHeight: '600px' }}>
+          ) : (
             <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
               <BackgroundEffects />
             </div>
-            <div className="absolute inset-0 flex items-center" style={{ zIndex: 2 }}>
-              <div className="max-w-7xl mx-auto px-6 w-full">
-                <div style={{ maxWidth: '500px' }}>
-                  <AnimateIn delay={0.05} direction="none">
-                    <Link
-                      href="/services"
-                      className="text-gray-500 text-sm mb-6 inline-block hover:text-white transition-colors"
-                    >
-                      &larr; All Services
-                    </Link>
-                  </AnimateIn>
+          )}
+          {/* Gradient: strong dark at bottom on mobile, left-to-right fade on desktop */}
+          <div
+            className="absolute inset-0 md:hidden"
+            style={{ zIndex: 1, background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.3) 100%)' }}
+          />
+          <div
+            className="absolute inset-0 hidden md:block"
+            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%)' }}
+          />
 
-                  <div className="flex items-start gap-5">
-                    {Icon && (
-                      <AnimateIn delay={0.1} direction="none">
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-[#E71840]/10">
-                          <Icon size={26} className="text-[#E71840]" />
-                        </div>
-                      </AnimateIn>
-                    )}
-                    <div>
-                      <AnimateIn delay={0.15}>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,4.5vw,3.5rem)] font-bold uppercase leading-[1.1] tracking-tight text-white">
-                            {service.title}
-                          </h1>
-                          {service.isNew && (
-                            <span className="rounded-full bg-[#E71840] px-3 py-1 text-[11px] font-700 uppercase tracking-wider text-white">
-                              New
-                            </span>
-                          )}
-                        </div>
-                      </AnimateIn>
-                      <AnimateIn delay={0.25} direction="none">
-                        <p className="mt-4 text-[1.05rem] leading-[1.7] text-white/60">
-                          {service.description}
-                        </p>
-                      </AnimateIn>
-                      <AnimateIn delay={0.35} direction="none">
-                        <div className="mt-6 flex flex-wrap gap-3">
-                          <Link
-                            href="/free-audit"
-                            className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-7 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
-                          >
-                            Get Free Audit
-                          </Link>
-                          <a
-                            href="#included"
-                            className="inline-flex h-12 items-center rounded-full border-2 border-white/20 px-7 text-[14px] font-600 text-white transition-all hover:border-white/40"
-                          >
-                            What&apos;s Included
-                          </a>
-                        </div>
-                      </AnimateIn>
-                    </div>
-                  </div>
+          <div className="relative w-full max-w-7xl mx-auto px-6 pb-10 md:pb-0 md:py-20" style={{ zIndex: 2 }}>
+            <div className="max-w-lg">
+              <AnimateIn delay={0.05} direction="none">
+                <Link href="/services" className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6 inline-block hover:text-white transition-colors">
+                  &larr; All Services
+                </Link>
+              </AnimateIn>
 
-                  {/* Tags */}
-                  <AnimateIn delay={0.4} direction="none">
-                    <div className="mt-8 flex flex-wrap gap-2">
-                      {service.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-white/[0.06] px-3 py-1 text-[12px] font-500 text-white/40"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+              <div className="flex items-center gap-3 mb-3 md:mb-4">
+                {Icon && (
+                  <AnimateIn delay={0.1} direction="none">
+                    <div className="flex h-10 w-10 md:h-12 md:w-12 shrink-0 items-center justify-center rounded-xl" style={{ background: 'rgba(231,24,64,0.15)' }}>
+                      <Icon size={20} className="text-[#E71840]" />
                     </div>
                   </AnimateIn>
-                </div>
+                )}
+                {service.isNew && (
+                  <span className="rounded-full bg-[#E71840] px-2 py-1 text-[11px] font-700 uppercase tracking-wider text-white">
+                    New
+                  </span>
+                )}
               </div>
+
+              <AnimateIn delay={0.15}>
+                <h1
+                  className="font-[family-name:var(--font-oswald)] font-bold uppercase leading-[1.1] tracking-tight text-white text-2xl md:text-4xl lg:text-5xl"
+                  style={{ textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}
+                >
+                  {service.title}
+                </h1>
+              </AnimateIn>
+
+              <AnimateIn delay={0.25} direction="none">
+                <p
+                  className="mt-3 md:mt-4 text-gray-300 text-sm md:text-base max-w-md leading-[1.6]"
+                  style={{ textShadow: '0 1px 5px rgba(0,0,0,0.5)' }}
+                >
+                  {service.description}
+                </p>
+              </AnimateIn>
+
+              <AnimateIn delay={0.35} direction="none">
+                <div className="mt-5 md:mt-6 flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/free-audit"
+                    className="inline-flex h-11 items-center justify-center rounded-full bg-[#E71840] px-6 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
+                  >
+                    Get Free Audit
+                  </Link>
+                  <a
+                    href="#included"
+                    className="inline-flex h-11 items-center justify-center rounded-full border-2 border-white/20 px-6 text-[14px] font-600 text-white transition-all hover:border-white/40"
+                  >
+                    What&apos;s Included
+                  </a>
+                </div>
+              </AnimateIn>
+
+              <AnimateIn delay={0.4} direction="none">
+                <div className="mt-4 md:mt-5 flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-white/[0.06] px-3 py-1 text-[12px] font-500 text-white/60"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </AnimateIn>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* ─── WHAT IS ──────────────────────────────────────────── */}
         <section className="bg-[#111] py-20 lg:py-28">
@@ -342,13 +270,13 @@ export default async function ServicePage({
                 )}
               </div>
 
-              <AnimateIn direction="right" distance={30} delay={0.15} className="lg:col-span-2">
+              <AnimateIn direction="right" distance={30} delay={0.15} className="order-first lg:order-last lg:col-span-2">
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <img
                     src={SECTION_IMAGES[slug] || "/images/section-social.jpg"}
                     alt={`${service.title} — NIXAR Solutions Dallas`}
-                    className="w-full h-full object-cover"
-                    style={{ minHeight: '300px', maxHeight: '500px' }}
+                    className="w-full h-auto object-cover rounded-xl"
+                    style={{ maxHeight: '350px' }}
                     loading="lazy"
                   />
                 </div>
