@@ -122,18 +122,25 @@ export default function AgencyComparison() {
   const sparklesRef = useRef<HTMLDivElement>(null);
   const moneyFlowRef = useRef<HTMLDivElement>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReducedMotion(mq.matches);
     const h = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
     mq.addEventListener("change", h);
-    return () => mq.removeEventListener("change", h);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      mq.removeEventListener("change", h);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   /* ─── GSAP SETUP ─────────────────────────────────────────────────────── */
   useEffect(() => {
-    if (reducedMotion) return;
+    if (reducedMotion || isMobile) return;
     const section = sectionRef.current;
     const pin = pinRef.current;
     if (!section || !pin) return;
@@ -422,12 +429,12 @@ export default function AgencyComparison() {
     }, section);
 
     return () => ctx.revert();
-  }, [reducedMotion]);
+  }, [reducedMotion, isMobile]);
 
   /* ═══════════════════════════════════════════════════════════════════════
      RENDER
      ═══════════════════════════════════════════════════════════════════════ */
-  if (reducedMotion) {
+  if (reducedMotion || isMobile) {
     return (
       <section className="relative bg-[#0A0A0A] py-24 px-5 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">

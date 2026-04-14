@@ -8,6 +8,7 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (window.innerWidth < 768) return // Native mobile scroll is already smooth; Lenis fights with it
 
     const lenis = new Lenis({
       duration: 1.2,

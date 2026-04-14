@@ -626,9 +626,18 @@ export default function HomeDark() {
 function HorizontalPortfolio() {
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (window.innerWidth < 768) return; // Mobile uses vertical grid instead
 
     let ctx: { revert: () => void } | null = null;
 
@@ -661,6 +670,35 @@ function HorizontalPortfolio() {
     init();
     return () => { ctx?.revert(); };
   }, []);
+
+  if (isMobile) {
+    return (
+      <section id="portfolio" className="relative py-16 px-6 overflow-hidden">
+        <div className="mb-10">
+          <h2 className="font-[family-name:var(--font-oswald)] text-4xl font-700 uppercase leading-none text-white">Selected Work</h2>
+          <p className="mt-3 text-[0.95rem] leading-[1.6] text-[#888]">Real projects, real results.</p>
+        </div>
+        <div className="grid grid-cols-1 gap-6">
+          {PORTFOLIO.map((p) => (
+            <Link key={p.name} href={`/portfolio/${p.slug}`} className="group block overflow-hidden rounded-2xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="relative aspect-video overflow-hidden">
+                {p.image ? (
+                  <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                ) : (
+                  <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`} />
+                )}
+              </div>
+              <div className="p-5">
+                <h3 className="font-[family-name:var(--font-oswald)] text-lg font-700 uppercase text-white">{p.name}</h3>
+                <p className="mt-1 text-[0.75rem] uppercase tracking-[0.1em] text-[#999]">{p.cat}</p>
+                <span className="mt-3 inline-block text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">View Case Study &rarr;</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section ref={sectionRef} id="portfolio" className="relative overflow-hidden">
