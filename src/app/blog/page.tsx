@@ -49,7 +49,7 @@ export default function BlogPage() {
       {/* ═══════════════════════════════════════════════════════════════
            HERO — VIDEO BACKGROUND
            ═══════════════════════════════════════════════════════════════ */}
-      <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '75vh' }}>
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           muted
@@ -62,8 +62,8 @@ export default function BlogPage() {
           <source src="/videos/blog-bg-compressed.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} />
-        <div className="relative text-center px-4" style={{ zIndex: 2 }}>
-          <div className="inline-block border border-red-500/30 rounded-full px-4 py-1 mb-6">
+        <div className="relative text-center px-6 max-w-3xl mx-auto" style={{ zIndex: 2 }}>
+          <div className="inline-block border border-red-500/30 rounded-full px-4 py-1.5 mb-6">
             <span
               className="text-xs uppercase tracking-widest"
               style={{ color: "#E71840" }}
@@ -71,7 +71,7 @@ export default function BlogPage() {
               ● NIXAR SOLUTIONS BLOG
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-oswald)] font-700 text-white text-5xl md:text-7xl leading-tight">
+          <h1 className="font-[family-name:var(--font-oswald)] font-700 text-white text-4xl md:text-7xl leading-tight">
             The{" "}
             <span
               className="italic"
@@ -86,7 +86,7 @@ export default function BlogPage() {
             <br />
             Marketing, <DecodedText />
           </h1>
-          <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto font-[family-name:var(--font-plus-jakarta)]">
+          <p className="mt-6 text-gray-300 text-base md:text-lg max-w-2xl mx-auto font-[family-name:var(--font-plus-jakarta)]">
             NIXAR Solutions breaks down emerging trends in AI, SEO, social media,
             and the Dallas marketing landscape — so you can stay ahead.
           </p>
@@ -95,16 +95,16 @@ export default function BlogPage() {
             <span style={{ color: "#E71840" }}>NIXAR Solutions</span> —
             Dallas&apos;s AI-forward marketing agency
           </p>
-          <div className="mt-8 flex gap-4 justify-center">
+          <div className="mt-8 flex gap-4 justify-center flex-col sm:flex-row">
             <a
               href="#blog-content"
-              className="px-8 py-3 bg-[#E71840] text-white font-semibold rounded-lg hover:bg-[#C41535] transition-colors"
+              className="px-8 py-3 bg-[#E71840] text-white font-semibold rounded-lg hover:bg-[#C41535] transition-colors text-center"
             >
               Read Latest ↓
             </a>
             <Link
               href="/contact"
-              className="px-8 py-3 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-white hover:text-white transition-colors"
+              className="px-8 py-3 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-white hover:text-white transition-colors text-center"
             >
               Work With Us
             </Link>
