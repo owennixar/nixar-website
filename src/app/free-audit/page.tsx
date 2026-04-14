@@ -89,7 +89,7 @@ export default function FreeAuditPage() {
       <main className="bg-[#0a0a0a]">
         {/* ── Hero Image ───────────────────────────────────────── */}
         <section className="relative w-full overflow-hidden" style={{ height: '50vh' }}>
-          <img src="/images/free-audit-hero.jpg" alt="Digital marketing audit dashboard analysis. NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/images/free-audit-hero.webp" alt="Digital marketing audit dashboard analysis. NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.85) 100%)' }} />
           <div className="relative h-full flex items-center justify-center text-center px-5" style={{ zIndex: 2 }}>
             <div>

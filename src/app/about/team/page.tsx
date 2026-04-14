@@ -15,13 +15,13 @@ const TEAM = [
   {
     name: "Owen Nixon",
     title: "Co-Founder & Principal",
-    image: "/images/team-owen.jpg",
+    image: "/images/team-owen.webp",
     bio: "Owen Nixon is the co-founder of NIXAR Solutions, bringing deep expertise in web development, AI integration, and digital strategy to every client engagement. With a background spanning software engineering and digital marketing, Owen bridges the gap between technical implementation and business growth. He leads NIXAR's technology stack decisions, oversees website development projects, and architects the AI-powered tools that give NIXAR clients a competitive edge. Owen's approach is hands-on. he believes the best marketing strategies are built on a foundation of cutting-edge technology and data-driven decision-making. Before co-founding NIXAR, Owen built and scaled digital products across multiple industries, giving him a unique perspective on what makes businesses succeed online. His obsession with performance, clean code, and measurable outcomes ensures every NIXAR project is built to convert. Based in Frisco, Texas, Owen is committed to helping DFW businesses compete and win in the AI era.",
   },
   {
     name: "Anwar Mirza",
     title: "Co-Founder & Principal",
-    image: "/images/team-anwar.jpg",
+    image: "/images/team-anwar.webp",
     bio: "Anwar Mirza is the co-founder of NIXAR Solutions, bringing extensive experience in marketing strategy, brand development, and client relations. With a passion for understanding what makes businesses grow, Anwar leads NIXAR's strategic direction and ensures every client receives a customized approach tailored to their unique market position. He oversees brand identity projects, marketing strategy development, and client relationship management across the agency. Anwar's strength lies in translating complex business challenges into clear, actionable marketing roadmaps. He believes that great marketing starts with deep understanding. of the client's business, their customers, their competitors, and the opportunities that others miss. Before co-founding NIXAR, Anwar developed his marketing expertise across diverse industries, learning firsthand how different businesses require different approaches to growth. His commitment to transparency, measurable results, and long-term client partnerships defines the NIXAR culture. Based in the Dallas-Fort Worth area, Anwar is dedicated to making enterprise-level marketing strategies accessible to businesses of all sizes.",
   },
 ];

@@ -159,21 +159,21 @@ const BLOG_POSTS = [
     category: "AI & SEO",
     title: "GEO: How Generative Engine Optimization Is Changing the Marketing Landscape in 2026",
     date: "March 17, 2026",
-    image: "/images/blog/geo-generative-engine-optimization-2026.jpg",
+    image: "/images/blog/geo-generative-engine-optimization-2026.webp",
   },
   {
     slug: "seo-vs-ai-seo-understanding-the-difference",
     category: "SEARCH STRATEGY",
     title: "SEO vs. AI SEO: Understanding the Difference and Why It Matters",
     date: "March 17, 2026",
-    image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.jpg",
+    image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.webp",
   },
   {
     slug: "manus-ai-changing-social-media-marketing",
     category: "SOCIAL MEDIA & AI",
     title: "How Manus AI Is Changing Social Media Marketing Forever",
     date: "March 17, 2026",
-    image: "/images/blog/manus-ai-changing-social-media-marketing.jpg",
+    image: "/images/blog/manus-ai-changing-social-media-marketing.webp",
   },
 ];
 
@@ -181,9 +181,9 @@ const BLOG_POSTS = [
    PORTFOLIO PLACEHOLDERS
    ═══════════════════════════════════════════════════════════════════════════ */
 const PORTFOLIO = [
-  { name: "Tire Geeks", slug: "tire-geeks", cat: "Digital Marketing & SEO", gradient: "from-[#1a1a2e] to-[#16213e]", image: "/images/portfolio-tiregeeks.jpg" },
-  { name: "SYB Builders", slug: "syb-builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]", image: "/images/portfolio-syb.jpg" },
-  { name: "Lonestar Kart Park", slug: "lonestar-kart-park", cat: "Digital Marketing", gradient: "from-[#0f3460] to-[#1a1a2e]", image: "/images/portfolio-lonestar.jpg" },
+  { name: "Tire Geeks", slug: "tire-geeks", cat: "Digital Marketing & SEO", gradient: "from-[#1a1a2e] to-[#16213e]", image: "/images/portfolio-tiregeeks.webp" },
+  { name: "SYB Builders", slug: "syb-builders", cat: "Branding & Website Development", gradient: "from-[#1a1a1a] to-[#2d2d2d]", image: "/images/portfolio-syb.webp" },
+  { name: "Lonestar Kart Park", slug: "lonestar-kart-park", cat: "Digital Marketing", gradient: "from-[#0f3460] to-[#1a1a2e]", image: "/images/portfolio-lonestar.webp" },
   { name: "Nixon Jach Hubbard", slug: "nixon-jach-hubbard", cat: "E-Commerce & Web Dev", gradient: "from-[#2d2d2d] to-[#1a1a1a]", image: "/images/portfolio-njh.webp" },
 ];
 

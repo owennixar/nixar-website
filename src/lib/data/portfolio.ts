@@ -40,10 +40,10 @@ export const PORTFOLIO_METRICS: Record<string, { label: string; value: number; s
 };
 
 export const PORTFOLIO_IMAGES: Record<string, { src: string; alt: string }> = {
-  "tire-geeks": { src: "/images/portfolio-tiregeeks.jpg", alt: "Tire Geeks digital marketing case study. social media and local SEO for automotive" },
-  "lonestar-kart-park": { src: "/images/portfolio-lonestar.jpg", alt: "Lonestar Kart Park digital marketing and brand awareness campaign" },
+  "tire-geeks": { src: "/images/portfolio-tiregeeks.webp", alt: "Tire Geeks digital marketing case study. social media and local SEO for automotive" },
+  "lonestar-kart-park": { src: "/images/portfolio-lonestar.webp", alt: "Lonestar Kart Park digital marketing and brand awareness campaign" },
   "nixon-jach-hubbard": { src: "/images/portfolio-njh.webp", alt: "Nixon Jach Hubbard e-commerce website development" },
-  "syb-builders": { src: "/images/portfolio-syb.jpg", alt: "SYB Builders construction website and digital marketing" },
+  "syb-builders": { src: "/images/portfolio-syb.webp", alt: "SYB Builders construction website and digital marketing" },
 };
 
 export const portfolio: PortfolioProject[] = [

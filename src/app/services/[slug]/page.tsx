@@ -33,62 +33,62 @@ import BackgroundEffects from "@/components/ui/BackgroundEffects";
 
 const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string; overlay?: boolean }> = {
   "social-media-management": {
-    src: "/images/service-social.png",
+    src: "/images/service-social.webp",
     alt: "iPhone displaying Instagram with floating social media icons",
   },
   "web-development": {
-    src: "/images/service-webdev.png",
+    src: "/images/service-webdev.webp",
     alt: "MacBook with floating code elements and web development icons",
   },
   "automation-ai-integration": {
-    src: "/images/service-ai.png",
+    src: "/images/service-ai.webp",
     alt: "Friendly white robot face with CRM and workflow automation elements",
   },
   "personalized-sales-support": {
-    src: "/images/service-sales.png",
+    src: "/images/service-sales.webp",
     alt: "Headset with sales funnel and lead generation elements",
   },
   "search-everywhere-optimization": {
-    src: "/images/service-seo.png",
+    src: "/images/service-seo.webp",
     alt: "Magnifying glass with Google, TikTok, and ChatGPT search icons",
   },
   "ai-tailored-agents": {
-    src: "/images/service-ai.png",
+    src: "/images/service-ai.webp",
     alt: "Friendly AI robot with automation and workflow elements",
   },
   "content-marketing": {
-    src: "/images/service-content.jpg",
+    src: "/images/service-content.webp",
     alt: "Content marketing strategy and editorial planning. NIXAR Solutions Dallas",
     overlay: true,
   },
   "ai-seo-geo": {
-    src: "/images/service-geo.jpg",
+    src: "/images/service-geo.webp",
     alt: "AI SEO and generative engine optimization. NIXAR Solutions Dallas",
     overlay: true,
   },
   "branding-brand-identity": {
-    src: "/images/service-branding.jpg",
+    src: "/images/service-branding.webp",
     alt: "Brand identity and visual design. NIXAR Solutions Dallas",
     overlay: true,
   },
   "paid-advertising": {
-    src: "/images/service-ads.jpg",
+    src: "/images/service-ads.webp",
     alt: "Paid advertising and performance marketing. NIXAR Solutions Dallas",
     overlay: true,
   },
 };
 
 const SECTION_IMAGES: Record<string, string> = {
-  "social-media-management": "/images/section-social.jpg",
-  "web-development": "/images/section-webdev.jpg",
-  "automation-ai-integration": "/images/section-automation.jpg",
-  "personalized-sales-support": "/images/section-sales.jpg",
-  "search-everywhere-optimization": "/images/section-seo.jpg",
-  "content-marketing": "/images/section-content.jpg",
-  "ai-seo-geo": "/images/section-geo.jpg",
-  "ai-tailored-agents": "/images/section-agents.jpg",
-  "branding-brand-identity": "/images/section-branding.jpg",
-  "paid-advertising": "/images/section-ads.jpg",
+  "social-media-management": "/images/section-social.webp",
+  "web-development": "/images/section-webdev.webp",
+  "automation-ai-integration": "/images/section-automation.webp",
+  "personalized-sales-support": "/images/section-sales.webp",
+  "search-everywhere-optimization": "/images/section-seo.webp",
+  "content-marketing": "/images/section-content.webp",
+  "ai-seo-geo": "/images/section-geo.webp",
+  "ai-tailored-agents": "/images/section-agents.webp",
+  "branding-brand-identity": "/images/section-branding.webp",
+  "paid-advertising": "/images/section-ads.webp",
 };
 
 const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -151,6 +151,7 @@ export default async function ServicePage({
               alt={heroImage.alt}
               loading="eager"
               decoding="sync"
+              fetchPriority="high"
               className="absolute inset-0 w-full h-full object-cover"
               style={{ zIndex: 0 }}
             />
@@ -269,7 +270,7 @@ export default async function ServicePage({
               <AnimateIn direction="right" distance={30} delay={0.15} className="order-first lg:order-last lg:col-span-2">
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <img
-                    src={SECTION_IMAGES[slug] || "/images/section-social.jpg"}
+                    src={SECTION_IMAGES[slug] || "/images/section-social.webp"}
                     alt={`${service.title}. NIXAR Solutions Dallas`}
                     className="w-full h-auto object-cover rounded-xl"
                     style={{ maxHeight: '350px' }}

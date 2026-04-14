@@ -54,7 +54,7 @@ export const blogPosts: BlogPost[] = [
     author: "NIXAR Solutions Team",
     featured: true,
     series: null,
-    image: "/images/blog/geo-generative-engine-optimization-2026.jpg",
+    image: "/images/blog/geo-generative-engine-optimization-2026.webp",
     content: `## What Is Generative Engine Optimization (GEO)?
 
 Generative Engine Optimization. GEO. is the practice of optimizing your digital content so that AI-powered search engines cite your brand in their generated answers. When someone asks ChatGPT, Perplexity, Google AI Overviews, or Gemini a question, these platforms don't just show a list of links. They generate comprehensive answers, often citing specific sources. GEO is how you become one of those cited sources.
@@ -138,7 +138,7 @@ GEO isn't replacing SEO. it's expanding what "search optimization" means. In 202
     author: "NIXAR Solutions Team",
     featured: true,
     series: null,
-    image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.jpg",
+    image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.webp",
     content: `## The Evolution of Search: From Keywords to AI
 
 Search has gone through three distinct eras. The first was the keyword stuffing era. cram as many keywords as possible into your page and watch the rankings climb. The second was the quality content era. Google's algorithm updates (Panda, Penguin, Hummingbird) rewarded genuine expertise and punished manipulation. Now we've entered the third era: the AI-generated answers era.
@@ -234,7 +234,7 @@ Traditional SEO isn't dead. it's still the foundation of search visibility. But 
     author: "NIXAR Solutions Team",
     featured: true,
     series: null,
-    image: "/images/blog/manus-ai-changing-social-media-marketing.jpg",
+    image: "/images/blog/manus-ai-changing-social-media-marketing.webp",
     content: `## What Happened: Meta's $2 Billion Bet on Manus AI
 
 In one of the most significant acquisitions in the marketing technology space, Meta acquired Manus AI for approximately $2 billion. Manus AI, known for building autonomous AI agents capable of complex multi-step tasks, now sits at the heart of Meta's advertising platform. the same platform that powers Facebook and Instagram ads for over 10 million active advertisers.
@@ -322,7 +322,7 @@ Meta's acquisition of Manus AI marks the beginning of a new era in social media 
     author: "NIXAR Solutions Team",
     featured: false,
     series: { name: "Beginner's Guide", part: 1, total: 5 },
-    image: "/images/blog/seo-101.jpg",
+    image: "/images/blog/seo-101.webp",
     content: `## What Is SEO and Why Should You Care?
 
 SEO. Search Engine Optimization. is the practice of making your website show up when people search for things related to your business. When someone types "best pizza in Frisco" or "marketing agency Dallas" into Google, SEO is what determines which businesses appear at the top of the results.
@@ -429,7 +429,7 @@ SEO is the practice of making your website visible when people search for what y
     author: "NIXAR Solutions Team",
     featured: false,
     series: { name: "Beginner's Guide", part: 2, total: 5 },
-    image: "/images/blog/geo-101.jpg",
+    image: "/images/blog/geo-101.webp",
     content: `## What Is GEO? (The Simple Version)
 
 When you ask ChatGPT, Perplexity, or Google's AI a question, it generates an answer. That answer often cites specific sources. websites, articles, businesses. Generative Engine Optimization (GEO) is how you become one of those cited sources.
@@ -521,7 +521,7 @@ GEO is how you get your business cited in AI-generated answers. It's new, it's g
     author: "NIXAR Solutions Team",
     featured: false,
     series: { name: "Beginner's Guide", part: 3, total: 5 },
-    image: "/images/blog/ai-seo-101.jpg",
+    image: "/images/blog/ai-seo-101.webp",
     content: `## The Dual-Search Reality of 2026
 
 Here's the reality every business needs to accept: in 2026, people search for information in two fundamentally different ways. They type queries into Google and browse a list of results. And they ask AI platforms like ChatGPT, Perplexity, and Gemini to generate direct answers.
@@ -709,7 +709,7 @@ Paid social media advertising is accessible, affordable, and one of the most eff
     author: "NIXAR Solutions Team",
     featured: false,
     series: { name: "Beginner's Guide", part: 5, total: 5 },
-    image: "/images/blog/social-content-101.jpg",
+    image: "/images/blog/social-content-101.webp",
     content: `## Why Most Social Media Content Fails
 
 Before we talk about what works, let's understand why most social media content underperforms. The most common reasons:
@@ -807,7 +807,7 @@ Social media success in 2026 comes down to three things: understanding what your
     author: "NIXAR Solutions Team",
     featured: false,
     series: null,
-    image: "/images/blog/agentic-ai-marketing-2026.jpg",
+    image: "/images/blog/agentic-ai-marketing-2026.webp",
     content: `## What Is Agentic AI?
 
 Agentic AI represents a fundamental leap beyond the AI tools most marketers use today. While current AI tools respond to prompts. you ask, they answer. agentic AI operates with autonomy. You set a goal, and the AI independently plans the steps, executes them, monitors results, and adjusts its approach.
@@ -897,7 +897,7 @@ Agentic AI is the next frontier in marketing technology. It's moving from concep
     author: "NIXAR Solutions Team",
     featured: false,
     series: null,
-    image: "/images/blog/chatgpt-ads-what-marketers-need-to-know-2026.jpg",
+    image: "/images/blog/chatgpt-ads-what-marketers-need-to-know-2026.webp",
     content: `## What Happened: Advertising Comes to ChatGPT
 
 OpenAI officially launched advertising within ChatGPT for users on the Free and Go subscription tiers. This is a watershed moment in digital marketing. ChatGPT, with over 800 million weekly active users, has become one of the most-used platforms on the internet. and it now has ads.
@@ -989,7 +989,7 @@ ChatGPT advertising represents the most significant new ad channel since TikTok.
     author: "NIXAR Solutions Team",
     featured: false,
     series: null,
-    image: "/images/blog/zero-click-search-death-of-the-click-2026.jpg",
+    image: "/images/blog/zero-click-search-death-of-the-click-2026.webp",
     content: `## What Is Zero-Click Search?
 
 A zero-click search occurs when a user's query is answered directly on the search engine results page (SERP). without the user ever clicking through to a website. The answer appears in a featured snippet, knowledge panel, AI Overview, People Also Ask box, or local map pack, and the user gets what they need without visiting any website.
@@ -1085,7 +1085,7 @@ Zero-click search is not the death of SEO. it's the evolution of SEO. The click 
     author: "NIXAR Solutions Team",
     featured: false,
     series: null,
-    image: "/images/blog/micro-communities-new-marketing-channel-2026.jpg",
+    image: "/images/blog/micro-communities-new-marketing-channel-2026.webp",
     content: `## The Decline of Mass Social Media Reach
 
 The golden age of organic social media reach is over. Facebook organic reach has dropped to approximately 5.2%. Instagram's algorithmic feed prioritizes entertainment content from accounts users don't follow over posts from brands they follow. TikTok's algorithm is powerful but unpredictable. a brand can go viral one day and get zero views the next.
@@ -1273,7 +1273,7 @@ AI is no longer just a marketing tool. it's becoming a customer. AI agents are e
     author: "NIXAR Solutions Team",
     featured: false,
     series: null,
-    image: "/images/blog/dallas-marketing-landscape-2026.jpg",
+    image: "/images/blog/dallas-marketing-landscape-2026.webp",
     content: `## DFW by the Numbers
 
 The Dallas-Fort Worth metroplex continues to be one of the fastest-growing metropolitan areas in the United States. With a population exceeding 8 million and consistent year-over-year growth, DFW represents both massive opportunity and fierce competition for businesses.

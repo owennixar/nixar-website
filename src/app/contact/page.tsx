@@ -56,7 +56,7 @@ export default function ContactPage() {
         {/* Hero */}
         <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
           <img
-            src="/images/contact-hero.png"
+            src="/images/contact-hero.webp"
             alt="Contact NIXAR Solutions. Dallas digital marketing agency"
             loading="eager"
             decoding="sync"

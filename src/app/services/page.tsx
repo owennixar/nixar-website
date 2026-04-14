@@ -59,7 +59,7 @@ export default function ServicesIndex() {
         {/* Hero */}
         <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
           <img
-            src="/images/services-hero.png"
+            src="/images/services-hero.webp"
             alt="Fleet of rockets launching with digital marketing icons"
             loading="eager"
             decoding="sync"
@@ -250,31 +250,31 @@ export default function ServicesIndex() {
               {([
                 {
                   Icon: UtensilsCrossed,
-                  image: "/images/industry-restaurant.jpg",
+                  image: "/images/industry-restaurant.webp",
                   name: "Restaurants & Food Service",
                   desc: "Menu optimization, local SEO, social media that drives reservations.",
                 },
                 {
                   Icon: HardHat,
-                  image: "/images/industry-construction.jpg",
+                  image: "/images/industry-construction.webp",
                   name: "Construction & Home Services",
                   desc: "Lead generation, project portfolios, and local search dominance.",
                 },
                 {
                   Icon: Heart,
-                  image: "/images/industry-healthcare.jpg",
+                  image: "/images/industry-healthcare.webp",
                   name: "Healthcare & Medical",
                   desc: "Patient acquisition, HIPAA-aware marketing, and reputation management.",
                 },
                 {
                   Icon: Building,
-                  image: "/images/industry-realestate.jpg",
+                  image: "/images/industry-realestate.webp",
                   name: "Real Estate",
                   desc: "Property marketing, agent branding, and listing visibility.",
                 },
                 {
                   Icon: ShoppingCart,
-                  image: "/images/industry-ecommerce.jpg",
+                  image: "/images/industry-ecommerce.webp",
                   name: "E-Commerce & Retail",
                   desc: "Product SEO, shopping ads, and conversion optimization.",
                 },
@@ -286,13 +286,13 @@ export default function ServicesIndex() {
                 },
                 {
                   Icon: Car,
-                  image: "/images/industry-automotive.jpg",
+                  image: "/images/industry-automotive.webp",
                   name: "Automotive",
                   desc: "Local search, inventory marketing, and service department leads.",
                 },
                 {
                   Icon: Cpu,
-                  image: "/images/industry-tech.jpg",
+                  image: "/images/industry-tech.webp",
                   name: "Technology & SaaS",
                   desc: "Product marketing, demand generation, and technical content.",
                 },

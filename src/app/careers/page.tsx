@@ -66,7 +66,7 @@ export default function CareersPage() {
     <main className="min-h-screen bg-[#0A0A0A]">
       {/* Hero Image */}
       <section className="relative w-full overflow-hidden" style={{ height: '50vh' }}>
-        <img src="/images/careers-hero.jpg" alt="Creative team collaborating at NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/images/careers-hero.webp" alt="Creative team collaborating at NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.8) 100%)' }} />
       </section>
       <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Careers", href: "/careers" }]} />
