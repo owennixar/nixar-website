@@ -12,9 +12,9 @@ export default function TrustBar() {
       style={{ borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between flex-wrap gap-6">
-          <p className="text-gray-500 text-sm uppercase tracking-widest">Follow Us On Our Socials!</p>
-          <div className="flex items-center" style={{ gap: '2.5rem' }}>
+        <div className="flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between md:flex-wrap md:gap-6">
+          <p className="text-gray-500 text-sm uppercase tracking-widest text-center">Follow Us On Our Socials!</p>
+          <div className="flex items-center justify-center flex-wrap" style={{ gap: '2rem' }}>
             {SOCIALS.map((s) => (
               <a
                 key={s.name}
@@ -28,13 +28,13 @@ export default function TrustBar() {
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center justify-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <span className="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <span className="text-white text-sm font-600">4.9/5</span>
             </div>
-            <span className="text-gray-600 hidden sm:inline">|</span>
-            <span className="text-gray-400 text-sm hidden sm:inline">97% Client Satisfaction</span>
+            <span className="text-gray-600">|</span>
+            <span className="text-gray-400 text-sm">97% Client Satisfaction</span>
           </div>
         </div>
       </div>
