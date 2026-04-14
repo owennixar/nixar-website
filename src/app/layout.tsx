@@ -14,6 +14,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schemas";
 import ConsentBanner from "@/components/analytics/ConsentBanner";
 import Tracker from "@/components/analytics/Tracker";
+import MetaPixel from "@/components/analytics/MetaPixel";
 import { Suspense } from "react";
 import "./globals.css";
 
@@ -152,6 +153,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <Tracker />
         </Suspense>
+        <MetaPixel />
         <ConsentBanner />
       </body>
     </html>

@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { CONSENT_COOKIE } from "@/lib/security/session";
+import { CONSENT_COOKIE, verifyVisitorId, VISITOR_COOKIE } from "@/lib/security/session";
+import { supabaseAdmin } from "@/lib/db/supabase";
+import { createHash } from "node:crypto";
 
 export const runtime = "nodejs";
 
@@ -23,6 +25,20 @@ export async function POST(req: NextRequest) {
   const analytics = VALID.has(body.analytics as string) ? body.analytics! : "denied";
   const marketing = VALID.has(body.marketing as string) ? body.marketing! : "denied";
   const consent: Consent = { analytics, marketing, ts: Date.now() };
+
+  const visitorId = verifyVisitorId(req.cookies.get(VISITOR_COOKIE)?.value);
+  if (visitorId) {
+    const fwd = req.headers.get("x-forwarded-for") || "";
+    const ip = fwd.split(",")[0].trim();
+    const ipHash = ip ? createHash("sha256").update(ip).digest("hex") : null;
+    await supabaseAdmin().from("consent_log").insert({
+      visitor_id: visitorId,
+      analytics,
+      marketing,
+      ip_hash: ipHash,
+      ua: req.headers.get("user-agent")?.slice(0, 256) || null,
+    });
+  }
 
   const res = NextResponse.json({ ok: true, consent });
   res.cookies.set(CONSENT_COOKIE, JSON.stringify(consent), {
