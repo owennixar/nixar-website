@@ -54,38 +54,35 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
+        <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
           <img
             src="/images/contact-hero.png"
-            alt="Two astronauts handshaking in space representing partnership"
+            alt="Contact NIXAR Solutions — Dallas digital marketing agency"
             loading="eager"
             decoding="sync"
-            className="absolute top-0 left-0 w-full h-full"
-            style={{ objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }}
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ zIndex: 0 }}
           />
           <div
             className="absolute inset-0"
-            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.8) 0%, rgba(10,10,10,0.3) 60%, rgba(10,10,10,0.1) 100%)' }}
+            style={{ zIndex: 1, background: 'linear-gradient(to bottom, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.8) 70%, rgba(10,10,10,0.95) 100%)' }}
           />
-          <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
-            <div className="max-w-7xl mx-auto px-6 w-full">
+          <div className="relative text-center px-6 max-w-2xl mx-auto" style={{ zIndex: 2 }}>
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
-                Contact
+              <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#E71840' }}>
+                Let&apos;s Talk
               </p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <h1 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.5rem,5vw,4rem)] font-900 leading-[1.05] tracking-tight text-white">
-                Let&apos;s Talk
+              <h1 className="font-[family-name:var(--font-heading)] font-900 text-white uppercase text-3xl md:text-5xl lg:text-6xl tracking-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+                Get In Touch
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/70">
-                Ready to transform your digital presence? Get in touch for a free audit
-                and discover how NIXAR can grow your business.
+              <p className="mt-4 text-gray-300 text-sm md:text-base max-w-lg mx-auto">
+                Ready to transform your digital presence? Reach out and let&apos;s build something extraordinary together.
               </p>
             </AnimateIn>
-            </div>
           </div>
         </section>
 

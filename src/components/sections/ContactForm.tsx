@@ -33,10 +33,7 @@ export default function ContactForm() {
     <section id="contact" className="py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
-            Get In Touch
-          </p>
-          <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
+          <h2 className="font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
             Let&apos;s Start a Conversation
           </h2>
         </AnimateIn>
