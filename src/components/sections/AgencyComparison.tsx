@@ -434,7 +434,48 @@ export default function AgencyComparison() {
   /* ═══════════════════════════════════════════════════════════════════════
      RENDER
      ═══════════════════════════════════════════════════════════════════════ */
-  if (reducedMotion || isMobile) {
+  if (isMobile) {
+    return (
+      <section className="relative bg-[#0A0A0A] py-20 px-6">
+        <div className="text-center mb-12">
+          <h2 className="font-[family-name:var(--font-oswald)] font-700 text-3xl text-white uppercase leading-none">
+            THE NIXAR <span style={{ color: '#E71840' }}>WAY.</span>
+          </h2>
+          <p className="text-gray-400 mt-4 text-sm max-w-sm mx-auto">
+            A connected strategy where every channel works together toward growth.
+          </p>
+        </div>
+        <div className="flex justify-center mb-8">
+          <div className="text-center px-6 py-4 rounded-xl" style={{ background: 'rgba(231,24,64,0.1)', border: '1px solid rgba(231,24,64,0.2)' }}>
+            <p className="text-white font-[family-name:var(--font-oswald)] font-700 text-sm uppercase tracking-wider">STRATEGY</p>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-3 mb-8">
+          {[
+            { label: 'Attract', items: ['Branding', 'Content', 'SEO'] },
+            { label: 'Engage', items: ['Social', 'Website', 'Email'] },
+            { label: 'Convert', items: ['Paid Ads', 'Analytics', 'AI Agents'] },
+          ].map((col) => (
+            <div key={col.label} className="text-center">
+              <p className="text-xs uppercase tracking-wider mb-3" style={{ color: '#E71840' }}>{col.label}</p>
+              <div className="space-y-3">
+                {col.items.map((item) => (
+                  <div key={item} className="py-3 px-2 rounded-lg text-xs text-white font-medium" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>{item}</div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <div className="text-center px-6 py-4 rounded-xl" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)' }}>
+            <p className="text-white font-[family-name:var(--font-oswald)] font-700 text-sm uppercase tracking-wider">GROWTH</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (reducedMotion) {
     return (
       <section className="relative bg-[#0A0A0A] py-24 px-5 lg:px-8">
         <div className="mx-auto max-w-5xl text-center">
