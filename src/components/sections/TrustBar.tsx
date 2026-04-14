@@ -24,7 +24,7 @@ export default function TrustBar() {
                 aria-label={`NIXAR Solutions on ${s.name}`}
                 className="inline-block transition-transform duration-300 hover:scale-110 hover:brightness-110"
               >
-                <img src={s.icon} alt={`${s.name} icon`} className="object-contain" style={{ height: '80px', width: 'auto' }} loading="lazy" />
+                <img src={s.icon} alt={`${s.name} icon`} className="object-contain" style={{ height: s.name === 'LinkedIn' ? '100px' : '80px', width: 'auto' }} loading="lazy" />
               </a>
             ))}
           </div>
