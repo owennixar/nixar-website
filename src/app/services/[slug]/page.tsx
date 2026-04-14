@@ -151,8 +151,8 @@ export default async function ServicePage({
               alt={heroImage.alt}
               loading="eager"
               decoding="sync"
-              className="absolute inset-0 w-full h-full object-cover md:object-contain md:object-right"
-              style={{ zIndex: 0, backgroundColor: '#0A0A0A' }}
+              className="absolute inset-0 w-full h-full object-cover"
+              style={{ zIndex: 0 }}
             />
           ) : (
             <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -161,12 +161,8 @@ export default async function ServicePage({
           )}
           {/* Gradient: strong dark at bottom on mobile, left-to-right fade on desktop */}
           <div
-            className="absolute inset-0 md:hidden"
-            style={{ zIndex: 1, background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.3) 100%)' }}
-          />
-          <div
-            className="absolute inset-0 hidden md:block"
-            style={{ zIndex: 1, background: 'linear-gradient(to right, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%)' }}
+            className="absolute inset-0"
+            style={{ zIndex: 1, background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.6) 40%, rgba(10,10,10,0.2) 80%, rgba(10,10,10,0.4) 100%)' }}
           />
 
           <div className="relative w-full max-w-7xl mx-auto px-6 pb-10 md:pb-0 md:py-20" style={{ zIndex: 2 }}>
