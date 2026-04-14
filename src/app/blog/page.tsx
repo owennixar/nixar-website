@@ -47,7 +47,7 @@ export default function BlogPage() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════
-           HERO — VIDEO BACKGROUND
+           HERO. VIDEO BACKGROUND
            ═══════════════════════════════════════════════════════════════ */}
       <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
         <video
@@ -88,11 +88,11 @@ export default function BlogPage() {
           </h1>
           <p className="mt-6 text-gray-300 text-base md:text-lg max-w-2xl mx-auto font-[family-name:var(--font-plus-jakarta)]">
             NIXAR Solutions breaks down emerging trends in AI, SEO, social media,
-            and the Dallas marketing landscape — so you can stay ahead.
+            and the Dallas marketing landscape. so you can stay ahead.
           </p>
           <p className="mt-3 text-xs text-gray-600 tracking-wider">
             Powered by{" "}
-            <span style={{ color: "#E71840" }}>NIXAR Solutions</span> —
+            <span style={{ color: "#E71840" }}>NIXAR Solutions</span> , 
             Dallas&apos;s AI-forward marketing agency
           </p>
           <div className="mt-8 flex gap-4 justify-center flex-col sm:flex-row">
@@ -193,7 +193,7 @@ export default function BlogPage() {
             New to <span className="text-[#E71840]">Marketing?</span> Start Here
           </h2>
           <p className="mt-4 text-[1rem] text-[#888] max-w-2xl font-[family-name:var(--font-plus-jakarta)]">
-            Our beginner&apos;s guide series walks you through the fundamentals —
+            Our beginner&apos;s guide series walks you through the fundamentals , 
             no experience needed. Start with Part 1 and work your way through.
           </p>
 
@@ -338,7 +338,7 @@ export default function BlogPage() {
             </h2>
             <p className="mt-4 text-[0.95rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
               Get weekly insights on marketing, AI, and digital strategy delivered
-              to your inbox. No spam — just signal.
+              to your inbox. No spam. just signal.
             </p>
             <NewsletterForm />
             <p className="mt-4 text-[0.7rem] text-[#555]">

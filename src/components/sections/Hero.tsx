@@ -16,7 +16,7 @@ export default function Hero() {
         minHeight: '100vh',
       }}
     >
-      {/* Gradient overlay — dark left, transparent right */}
+      {/* Gradient overlay. dark left, transparent right */}
       <div style={{
         position: 'absolute',
         inset: 0,
@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <AnimateIn delay={0.1} direction="none">
             <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/60">
-              NIXAR Solutions — Frisco, TX
+              NIXAR Solutions. Frisco, TX
             </p>
           </AnimateIn>
 
@@ -44,7 +44,7 @@ export default function Hero() {
 
           <AnimateIn delay={0.5} direction="none">
             <p className="mt-6 max-w-xl text-[1.1rem] leading-[1.7] font-400 text-white/70">
-              At NIXAR Solutions, we are more than a traditional digital marketing agency — we are
+              At NIXAR Solutions, we are more than a traditional digital marketing agency. we are
               a digital transformation agency. We transform our clients&apos; online presence through
               strategic marketing, engaging content, high-converting websites, SEO, social media
               management, and ROI-driven paid ads.

@@ -53,7 +53,7 @@ export default function SitemapPage() {
           <AnimateIn>
             <div className="glass-card p-8 lg:p-10">
               <div className="grid gap-10 lg:grid-cols-3">
-                {/* Column 1 — Main Pages */}
+                {/* Column 1. Main Pages */}
                 <div>
                   <h2 className={headingClass}>MAIN PAGES</h2>
                   <ul className="space-y-2">
@@ -67,7 +67,7 @@ export default function SitemapPage() {
                   </ul>
                 </div>
 
-                {/* Column 2 — Services */}
+                {/* Column 2. Services */}
                 <div>
                   <h2 className={headingClass}>SERVICES</h2>
                   <ul className="space-y-2">
@@ -84,7 +84,7 @@ export default function SitemapPage() {
                   </ul>
                 </div>
 
-                {/* Column 3 — Locations */}
+                {/* Column 3. Locations */}
                 <div>
                   <h2 className={headingClass}>LOCATIONS</h2>
                   <ul className="space-y-2">

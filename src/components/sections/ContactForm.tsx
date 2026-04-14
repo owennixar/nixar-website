@@ -39,7 +39,7 @@ export default function ContactForm() {
         </AnimateIn>
 
         <div className="mt-14 grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-12">
-          {/* Form — left */}
+          {/* Form. left */}
           <AnimateIn direction="left" distance={30} className="lg:col-span-3">
             {submitted ? (
               <div className="flex min-h-[400px] flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] p-12 text-center">
@@ -112,7 +112,7 @@ export default function ContactForm() {
             )}
           </AnimateIn>
 
-          {/* Contact info card — right */}
+          {/* Contact info card. right */}
           <AnimateIn direction="right" distance={30} delay={0.15} className="lg:col-span-2">
             <div className="rounded-2xl bg-[#0A0A0A] p-8 text-white lg:p-10">
               <h3 className="font-[family-name:var(--font-heading)] text-lg font-700">
@@ -133,7 +133,7 @@ export default function ContactForm() {
                   value="hello@nixarsolutions.com"
                   href="mailto:hello@nixarsolutions.com"
                 />
-                <ContactRow icon={Clock} label="Hours" value="Mon – Fri: 9am – 6pm CST" />
+                <ContactRow icon={Clock} label="Hours" value="Mon, Fri: 9am, 6pm CST" />
               </div>
 
               {/* Social */}

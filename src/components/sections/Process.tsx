@@ -14,13 +14,13 @@ const STEPS = [
     num: "02",
     title: "Strategy",
     description:
-      "We build a custom roadmap aligned to your goals — not a recycled template, but a strategy engineered for your specific growth trajectory",
+      "We build a custom roadmap aligned to your goals. not a recycled template, but a strategy engineered for your specific growth trajectory",
   },
   {
     num: "03",
     title: "Execution",
     description:
-      "Our team handles the build-out across every channel — design, development, content, ads, SEO — with weekly reporting and full transparency",
+      "Our team handles the build-out across every channel. design, development, content, ads, SEO. with weekly reporting and full transparency",
   },
   {
     num: "04",
@@ -66,7 +66,7 @@ export default function Process() {
 
         {/* Steps grid */}
         <div className="relative mt-16 grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
-          {/* Connecting line — desktop */}
+          {/* Connecting line. desktop */}
           <div className="pointer-events-none absolute left-0 right-0 top-[60px] hidden h-[2px] bg-[var(--color-border)] md:block" aria-hidden="true">
             <div
               className="h-full bg-[var(--color-primary)] transition-all duration-700 ease-out"
@@ -74,7 +74,7 @@ export default function Process() {
             />
           </div>
 
-          {/* Connecting line — mobile (vertical) */}
+          {/* Connecting line. mobile (vertical) */}
           <div className="pointer-events-none absolute bottom-0 left-[30px] top-0 w-[2px] bg-[var(--color-border)] md:hidden" aria-hidden="true">
             <div
               className="w-full bg-[var(--color-primary)] transition-all duration-700 ease-out"

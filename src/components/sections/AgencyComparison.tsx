@@ -277,7 +277,7 @@ export default function AgencyComparison() {
         tl.to(keepScrollRef.current, { opacity: 0, duration: 0.3 }, 0.7);
       }
 
-      /* ── "NOW IMAGINE THIS." FLASH (removed — replaced by Phase 2 text) ── */
+      /* ── "NOW IMAGINE THIS." FLASH (removed. replaced by Phase 2 text) ── */
 
       /* ── STRATEGY NODE ───────────────────────────────────────────── */
       if (strategyRef.current) {

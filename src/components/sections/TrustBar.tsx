@@ -14,7 +14,7 @@ export default function TrustBar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between md:flex-wrap md:gap-6">
           <p className="text-gray-500 text-sm uppercase tracking-widest text-center">Follow Us On Our Socials!</p>
-          <div className="flex items-center justify-center flex-nowrap" style={{ gap: '1.25rem' }}>
+          <div className="flex items-end justify-center flex-nowrap" style={{ gap: '1.25rem' }}>
             {SOCIALS.map((s) => (
               <a
                 key={s.name}

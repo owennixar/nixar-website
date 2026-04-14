@@ -73,7 +73,7 @@ export default function Footer() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-16 sm:grid-cols-2 lg:grid-cols-5 lg:gap-8 lg:px-8">
           {/* Column 1: Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" aria-label="NIXAR Solutions — Home" className="flex items-center">
+            <Link href="/" aria-label="NIXAR Solutions. Home" className="flex items-center">
               <Logo height={28} />
             </Link>
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/45">
@@ -134,7 +134,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Services — all 10 */}
+          {/* Column 4: Services. all 10 */}
           <div>
             <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
               Services
@@ -153,7 +153,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Serving DFW — top 12 cities */}
+          {/* Column 4: Serving DFW. top 12 cities */}
           <div>
             <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
               Serving DFW

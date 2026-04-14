@@ -83,7 +83,7 @@ function useCountUp(target: number, shouldStart: boolean, duration = 2000) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   REVEAL WRAPPER — fade up on scroll
+   REVEAL WRAPPER. fade up on scroll
    ═══════════════════════════════════════════════════════════════════════════ */
 function Reveal({
   children,
@@ -141,12 +141,12 @@ const PROCESS_STEPS = [
   {
     num: "03",
     title: "Execution",
-    desc: "Our team builds, launches, and optimizes every asset — website, campaigns, content, automations.",
+    desc: "Our team builds, launches, and optimizes every asset. website, campaigns, content, automations.",
   },
   {
     num: "04",
     title: "Support",
-    desc: "Ongoing optimization, reporting, and scaling. We don't disappear after launch — we grow with you.",
+    desc: "Ongoing optimization, reporting, and scaling. We don't disappear after launch. we grow with you.",
   },
 ];
 
@@ -220,7 +220,7 @@ export default function HomeDark() {
       {/* All content above ambient layers */}
       <div className="relative z-10">
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 1: HERO — 100vh
+           SECTION 1: HERO. 100vh
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
@@ -255,18 +255,18 @@ export default function HomeDark() {
               <p
                 className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-white/60"
               >
-                NIXAR Solutions — Frisco, TX
+                NIXAR Solutions. Frisco, TX
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
-                <span className="sr-only">Digital Marketing Agency Dallas — </span>
+                <span className="sr-only">Digital Marketing Agency Dallas. </span>
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(2.5rem,10vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
                 <div style={{ overflow: 'visible', position: 'relative' }}>
-                  <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840]" style={{ display: 'inline-block', fontSize: 'clamp(2rem,9vw,7rem)', lineHeight: 1.1, padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
+                  <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840] md:whitespace-nowrap" style={{ display: 'inline-block', fontSize: 'clamp(2rem,7vw,6rem)', lineHeight: 1.1, padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
                     <SplitText text="Transformation." delay={0.4} stagger={0.03} />
                   </span>
                 </div>
@@ -279,7 +279,7 @@ export default function HomeDark() {
 
             <Reveal delay={0.3}>
               <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-white/70">
-                Dallas&apos;s full-service <span className="text-[#E71840]">digital marketing agency</span>. We don&apos;t just market — we transform businesses online
+                Dallas&apos;s full-service <span className="text-[#E71840]">digital marketing agency</span>. We don&apos;t just market. we transform businesses online
                 through SEO, web design, AI, and relentless execution.
               </p>
             </Reveal>
@@ -338,14 +338,14 @@ export default function HomeDark() {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 3: THE DIFFERENCE — Other Agencies vs NIXAR Way
+           SECTION 3: THE DIFFERENCE. Other Agencies vs NIXAR Way
            ═══════════════════════════════════════════════════════════════════ */}
       </div>{/* Close z-10 wrapper temporarily for full-bleed pinned section */}
       <AgencyComparison />
       <div className="relative z-10">{/* Re-open z-10 wrapper */}
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 4: SERVICES — GLASS CARD GRID
+           SECTION 4: SERVICES. GLASS CARD GRID
            ═══════════════════════════════════════════════════════════════════ */}
       <section id="services" className="py-24 lg:py-32">
         <Reveal className="mx-auto max-w-7xl px-5 lg:px-8">
@@ -401,7 +401,7 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 6: PORTFOLIO — HORIZONTAL SCROLL
+           SECTION 6: PORTFOLIO. HORIZONTAL SCROLL
            ═══════════════════════════════════════════════════════════════════ */}
       <HorizontalPortfolio />
 
@@ -434,7 +434,7 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 8: TESTIMONIALS — STACKED EDITORIAL QUOTES
+           SECTION 8: TESTIMONIALS. STACKED EDITORIAL QUOTES
            ═══════════════════════════════════════════════════════════════════ */}
       <section id="testimonials" className="py-24 lg:py-32">
         <Reveal className="px-5 lg:px-8 mb-16">
@@ -472,7 +472,7 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 9: PROCESS — VERTICAL TIMELINE
+           SECTION 9: PROCESS. VERTICAL TIMELINE
            ═══════════════════════════════════════════════════════════════════ */}
       <section id="process" ref={processObs.ref} className="py-24 lg:py-32">
         <Reveal className="px-5 lg:px-8 mb-16">
@@ -509,7 +509,7 @@ export default function HomeDark() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════════
-           SECTION 10: BLOG — LATEST INSIGHTS
+           SECTION 10: BLOG. LATEST INSIGHTS
            ═══════════════════════════════════════════════════════════════════ */}
       <section id="blog" className="py-24 lg:py-32">
         <Reveal className="mx-auto max-w-7xl px-5 lg:px-8">

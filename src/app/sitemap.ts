@@ -57,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/dallas`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.9 },
   ];
 
-  // City pages (excluding dallas — it has its own route)
+  // City pages (excluding dallas. it has its own route)
   const cityPages: MetadataRoute.Sitemap = cities
     .filter((city) => city.slug !== "dallas")
     .map((city) => ({

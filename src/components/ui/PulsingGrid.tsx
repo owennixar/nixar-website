@@ -35,7 +35,7 @@ export default function PulsingGrid() {
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
 
-        {/* Pulse wave — radial gradient that expands */}
+        {/* Pulse wave. radial gradient that expands */}
         <div className="pulse-wave" />
       </div>
 

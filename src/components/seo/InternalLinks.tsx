@@ -2,7 +2,7 @@ import Link from "next/link";
 import { services } from "@/lib/data/services";
 
 /**
- * "We Serve All of DFW" — internal links to city pages.
+ * "We Serve All of DFW". internal links to city pages.
  * Add to service pages for local SEO.
  */
 export function DfwCitiesSection() {

@@ -57,7 +57,7 @@ export default function ContactPage() {
         <section className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
           <img
             src="/images/contact-hero.png"
-            alt="Contact NIXAR Solutions — Dallas digital marketing agency"
+            alt="Contact NIXAR Solutions. Dallas digital marketing agency"
             loading="eager"
             decoding="sync"
             className="absolute inset-0 w-full h-full object-cover"
@@ -199,7 +199,7 @@ export default function ContactPage() {
                 Serving Dallas-Fort Worth
               </h2>
               <p className="mt-2 text-[15px] text-white/60">
-                Based in Frisco, TX — serving 20+ cities across the DFW metroplex.
+                Based in Frisco, TX. serving 20+ cities across the DFW metroplex.
               </p>
             </AnimateIn>
 

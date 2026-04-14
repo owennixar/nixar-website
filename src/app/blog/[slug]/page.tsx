@@ -73,7 +73,7 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* ═══════════════════════════════════════════════════════════════
-           HERO — Image background
+           HERO. Image background
            ═══════════════════════════════════════════════════════════════ */}
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-end overflow-hidden">
         <Image

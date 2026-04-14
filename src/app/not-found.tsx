@@ -17,7 +17,7 @@ export default function NotFound() {
       </div>
 
       <p className="mt-6 max-w-md text-[1rem] leading-relaxed text-[var(--color-text-secondary)]">
-        Looks like this page took a wrong turn. No worries — let&apos;s get you back
+        Looks like this page took a wrong turn. No worries. let&apos;s get you back
         to where the transformation happens.
       </p>
 

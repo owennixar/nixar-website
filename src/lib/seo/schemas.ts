@@ -163,7 +163,7 @@ export function websiteSchema() {
     name: BUSINESS_NAME,
     url: SITE_URL,
     description:
-      "NIXAR Solutions — Full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, and growth strategies.",
+      "NIXAR Solutions. Full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, and growth strategies.",
     publisher: {
       "@type": "Organization",
       name: BUSINESS_NAME,

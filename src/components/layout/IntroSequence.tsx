@@ -56,7 +56,7 @@ export default function IntroSequence() {
     addTimer(() => setWhiteBg(true), 100);
     // 300ms: tagline blur-in
     addTimer(() => setTaglineVisible(true), 300);
-    // 1300ms: hard cut — unmount everything (1s on screen)
+    // 1300ms: hard cut. unmount everything (1s on screen)
     addTimer(() => finish(), 1300);
   }, [clearAllTimers, addTimer, finish]);
 
@@ -163,7 +163,7 @@ export default function IntroSequence() {
           <div className="intro-vignette" />
           <div className="intro-grain" />
 
-          {/* Text — hard cut visibility via scene state */}
+          {/* Text. hard cut visibility via scene state */}
           <div className="intro-text-layer">
             {scene === "scene1" && (
               <span className="intro-scene-text">

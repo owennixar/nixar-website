@@ -119,12 +119,12 @@ export default function Navbar() {
           <Link
             href="/"
             className="relative z-10 shrink-0 flex items-center"
-            aria-label="NIXAR Solutions — Home"
+            aria-label="NIXAR Solutions. Home"
           >
             <Logo height={32} />
           </Link>
 
-          {/* Desktop nav links — centered */}
+          {/* Desktop nav links. centered */}
           <div className="hidden items-center gap-7 lg:flex" role="menubar">
             {NAV_LINKS.map(({ label, href, ...rest }) => {
               const hasDropdown = "hasDropdown" in rest && rest.hasDropdown;

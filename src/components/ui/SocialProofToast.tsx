@@ -33,20 +33,20 @@ export default function SocialProofToast() {
     // Don't show on mobile
     if (window.innerWidth < 768) return
 
-    // Start after 5 seconds
+    // Start after 10 seconds
     const startTimer = setTimeout(() => {
       setVisible(true)
       // Hide after 4s
       setTimeout(() => setVisible(false), 4000)
-    }, 5000)
+    }, 10000)
 
-    // Cycle every 15 seconds
+    // Cycle every 2 minutes
     const interval = setInterval(() => {
       if (dismissed) return
       setCurrent((prev) => (prev + 1) % MESSAGES.length)
       setVisible(true)
       setTimeout(() => setVisible(false), 4000)
-    }, 15000)
+    }, 120000)
 
     return () => {
       clearTimeout(startTimer)

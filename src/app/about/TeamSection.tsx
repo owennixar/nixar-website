@@ -57,7 +57,7 @@ export default function TeamSection() {
           </h2>
         </AnimateIn>
 
-        {/* Co-Founders — large */}
+        {/* Co-Founders. large */}
         <div className="mt-14 flex flex-wrap justify-center gap-16">
           {founders.map((m, i) => (
             <MemberCard key={m.name} member={m} large delay={0.1 + i * 0.1} />
@@ -94,7 +94,7 @@ export default function TeamSection() {
             >
               <img
                 src="/images/xlnc-logo.png"
-                alt="XLNC Digital — Partner Agency"
+                alt="XLNC Digital. Partner Agency"
                 className="w-20 h-20 object-contain rounded-xl mx-auto"
               />
               <p className="mt-3 text-sm" style={{ color: '#E71840' }}>Partner Agency</p>

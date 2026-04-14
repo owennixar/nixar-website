@@ -1,6 +1,6 @@
 import type { Variants } from "framer-motion";
 
-// Fade up — default entrance animation
+// Fade up. default entrance animation
 export const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -10,7 +10,7 @@ export const fadeUp: Variants = {
   },
 };
 
-// Fade in — no vertical movement
+// Fade in. no vertical movement
 export const fadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
@@ -39,7 +39,7 @@ export const slideInRight: Variants = {
   },
 };
 
-// Scale up — for cards, images
+// Scale up. for cards, images
 export const scaleUp: Variants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: {
@@ -49,7 +49,7 @@ export const scaleUp: Variants = {
   },
 };
 
-// Stagger container — use with children that have their own variants
+// Stagger container. use with children that have their own variants
 export const staggerContainer: Variants = {
   hidden: {},
   visible: {
@@ -60,7 +60,7 @@ export const staggerContainer: Variants = {
   },
 };
 
-// Stagger item — pair with staggerContainer
+// Stagger item. pair with staggerContainer
 export const staggerItem: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {

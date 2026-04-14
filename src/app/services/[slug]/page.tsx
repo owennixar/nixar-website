@@ -58,22 +58,22 @@ const SERVICE_HERO_IMAGES: Record<string, { src: string; alt: string; overlay?: 
   },
   "content-marketing": {
     src: "/images/service-content.jpg",
-    alt: "Content marketing strategy and editorial planning — NIXAR Solutions Dallas",
+    alt: "Content marketing strategy and editorial planning. NIXAR Solutions Dallas",
     overlay: true,
   },
   "ai-seo-geo": {
     src: "/images/service-geo.jpg",
-    alt: "AI SEO and generative engine optimization — NIXAR Solutions Dallas",
+    alt: "AI SEO and generative engine optimization. NIXAR Solutions Dallas",
     overlay: true,
   },
   "branding-brand-identity": {
     src: "/images/service-branding.jpg",
-    alt: "Brand identity and visual design — NIXAR Solutions Dallas",
+    alt: "Brand identity and visual design. NIXAR Solutions Dallas",
     overlay: true,
   },
   "paid-advertising": {
     src: "/images/service-ads.jpg",
-    alt: "Paid advertising and performance marketing — NIXAR Solutions Dallas",
+    alt: "Paid advertising and performance marketing. NIXAR Solutions Dallas",
     overlay: true,
   },
 };
@@ -274,7 +274,7 @@ export default async function ServicePage({
                 <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
                   <img
                     src={SECTION_IMAGES[slug] || "/images/section-social.jpg"}
-                    alt={`${service.title} — NIXAR Solutions Dallas`}
+                    alt={`${service.title}. NIXAR Solutions Dallas`}
                     className="w-full h-auto object-cover rounded-xl"
                     style={{ maxHeight: '350px' }}
                     loading="lazy"

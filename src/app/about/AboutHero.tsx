@@ -7,7 +7,7 @@ export default function AboutHero() {
     <section className="relative w-full overflow-hidden" style={{ height: '75vh' }}>
       <img
         src="/images/dallas-skyline.jpg"
-        alt="Dallas Texas skyline at sunset — NIXAR Solutions digital marketing agency"
+        alt="Dallas Texas skyline at sunset. NIXAR Solutions digital marketing agency"
         loading="eager"
         decoding="sync"
         className="absolute top-0 left-0 w-full h-full"

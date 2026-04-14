@@ -49,7 +49,7 @@ export default async function CityPage({
   const { city: slug } = await params;
   const city = getCityBySlug(slug);
 
-  // Only render for valid city slugs (not "dallas" — that has its own route)
+  // Only render for valid city slugs (not "dallas". that has its own route)
   if (!city || city.slug === "dallas") notFound();
 
   const nearbyCities = getNearbyCities(slug);
@@ -92,7 +92,7 @@ export default async function CityPage({
             <AnimateIn delay={0.35} direction="none">
               <p className="mt-5 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
                 NIXAR Solutions brings AI-powered digital marketing to {city.name}, TX.
-                From SEO and web development to custom AI agents and paid advertising —
+                From SEO and web development to custom AI agents and paid advertising , 
                 we help {city.name} businesses compete and win in the digital space.
               </p>
             </AnimateIn>
@@ -134,7 +134,7 @@ export default async function CityPage({
 
               <AnimateIn direction="left" distance={20} delay={0.18}>
                 <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
-                  For {city.name} businesses, investing in digital marketing is not optional — it is
+                  For {city.name} businesses, investing in digital marketing is not optional. it is
                   the difference between growth and stagnation. Whether you are a local service
                   provider trying to capture &ldquo;near me&rdquo; searches, a B2B company targeting
                   corporate decision-makers, or a retailer competing with national chains, your online
@@ -144,7 +144,7 @@ export default async function CityPage({
 
               <AnimateIn direction="left" distance={20} delay={0.25}>
                 <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
-                  NIXAR Solutions is based in Frisco — right in the heart of the DFW metroplex — and
+                  NIXAR Solutions is based in Frisco. right in the heart of the DFW metroplex. and
                   we understand the {city.name} market at a granular level. We know which keywords
                   drive local traffic, how {city.name} consumers research businesses, and what it
                   takes to stand out in {city.county}. Our AI-powered approach means faster results
@@ -212,7 +212,7 @@ export default async function CityPage({
                   </h3>
                   <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
                     With {city.population} residents and thousands of businesses competing
-                    for attention, standing out online isn&apos;t optional — it&apos;s survival.
+                    for attention, standing out online isn&apos;t optional. it&apos;s survival.
                     The businesses investing in digital marketing today will own the market
                     tomorrow.
                   </p>

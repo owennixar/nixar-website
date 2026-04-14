@@ -30,7 +30,7 @@ export default function PortfolioPage() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/80" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                Real projects, real results. Every engagement is tailored to the client&apos;s unique goals — from complete digital transformations to targeted growth campaigns.
+                Real projects, real results. Every engagement is tailored to the client&apos;s unique goals. from complete digital transformations to targeted growth campaigns.
               </p>
             </AnimateIn>
           </div>
