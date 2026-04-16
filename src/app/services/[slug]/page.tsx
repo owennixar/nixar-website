@@ -169,7 +169,7 @@ export default async function ServicePage({
           <div className="relative w-full max-w-7xl mx-auto px-6 pb-10 md:pb-0 md:py-20" style={{ zIndex: 2 }}>
             <div className="max-w-lg">
               <AnimateIn delay={0.05} direction="none">
-                <Link href="/services" className="text-gray-400 text-xs md:text-sm mb-4 md:mb-6 inline-block hover:text-white transition-colors">
+                <Link href="/services" className="text-gray-400 text-base md:text-base mb-4 md:mb-6 inline-block hover:text-white transition-colors">
                   &larr; All Services
                 </Link>
               </AnimateIn>
@@ -183,7 +183,7 @@ export default async function ServicePage({
                   </AnimateIn>
                 )}
                 {service.isNew && (
-                  <span className="rounded-full bg-[#E71840] px-2 py-1 text-[11px] font-700 uppercase tracking-wider text-white">
+                  <span className="rounded-full bg-[#E71840] px-2 py-1 text-[16px] font-700 uppercase tracking-wider text-white">
                     New
                   </span>
                 )}
@@ -200,7 +200,7 @@ export default async function ServicePage({
 
               <AnimateIn delay={0.25} direction="none">
                 <p
-                  className="mt-3 md:mt-4 text-gray-300 text-sm md:text-base max-w-md leading-[1.6]"
+                  className="mt-3 md:mt-4 text-gray-300 text-base md:text-base max-w-md leading-[1.6]"
                   style={{ textShadow: '0 1px 5px rgba(0,0,0,0.5)' }}
                 >
                   {service.description}
@@ -211,13 +211,13 @@ export default async function ServicePage({
                 <div className="mt-5 md:mt-6 flex flex-col sm:flex-row gap-3">
                   <Link
                     href="/free-audit"
-                    className="inline-flex h-11 items-center justify-center rounded-full bg-[#E71840] px-6 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
+                    className="inline-flex h-11 items-center justify-center rounded-full bg-[#E71840] px-6 text-[16px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
                   >
                     Get Free Audit
                   </Link>
                   <a
                     href="#included"
-                    className="inline-flex h-11 items-center justify-center rounded-full border-2 border-white/20 px-6 text-[14px] font-600 text-white transition-all hover:border-white/40"
+                    className="inline-flex h-11 items-center justify-center rounded-full border-2 border-white/20 px-6 text-[16px] font-600 text-white transition-all hover:border-white/40"
                   >
                     What&apos;s Included
                   </a>
@@ -229,7 +229,7 @@ export default async function ServicePage({
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white/[0.06] px-3 py-1 text-[12px] font-500 text-white/60"
+                      className="rounded-full bg-white/[0.06] px-3 py-1 text-[16px] font-500 text-white/85"
                     >
                       {tag}
                     </span>
@@ -246,7 +246,7 @@ export default async function ServicePage({
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
               <div className="lg:col-span-3">
                 <AnimateIn direction="left" distance={30}>
-                  <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+                  <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                     Understanding the Service
                   </p>
                   <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
@@ -257,12 +257,12 @@ export default async function ServicePage({
                 {detail ? (
                   detail.whatIsExtended.map((p, i) => (
                     <AnimateIn key={i} direction="left" distance={20} delay={0.1 + i * 0.08}>
-                      <p className="mt-5 text-[15px] leading-[1.8] text-white/60">{p}</p>
+                      <p className="mt-5 text-[16px] leading-[1.8] text-white/85">{p}</p>
                     </AnimateIn>
                   ))
                 ) : (
                   <AnimateIn direction="left" distance={20} delay={0.1}>
-                    <p className="mt-5 text-[15px] leading-[1.8] text-white/60">{service.whatItIs}</p>
+                    <p className="mt-5 text-[16px] leading-[1.8] text-white/85">{service.whatItIs}</p>
                   </AnimateIn>
                 )}
               </div>
@@ -286,7 +286,7 @@ export default async function ServicePage({
         <section className="bg-[#0A0A0A] py-20 lg:py-28">
           <div className="mx-auto max-w-4xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+              <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 The Business Case
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
@@ -297,12 +297,12 @@ export default async function ServicePage({
             {detail ? (
               detail.whyExtended.map((p, i) => (
                 <AnimateIn key={i} delay={0.1 + i * 0.08}>
-                  <p className="mt-5 text-[15px] leading-[1.8] text-white/60">{p}</p>
+                  <p className="mt-5 text-[16px] leading-[1.8] text-white/85">{p}</p>
                 </AnimateIn>
               ))
             ) : (
               <AnimateIn delay={0.1}>
-                <p className="mt-5 text-[15px] leading-[1.8] text-white/60">{service.whyNeeded}</p>
+                <p className="mt-5 text-[16px] leading-[1.8] text-white/85">{service.whyNeeded}</p>
               </AnimateIn>
             )}
           </div>
@@ -312,7 +312,7 @@ export default async function ServicePage({
         <section className="bg-[#111] py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+              <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Our Approach
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
@@ -327,7 +327,7 @@ export default async function ServicePage({
                     <span className="font-[family-name:var(--font-oswald)] text-3xl font-bold text-[#E71840]/20">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-white/60">{p}</p>
+                    <p className="mt-3 text-[16px] leading-[1.75] text-white/85">{p}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -342,7 +342,7 @@ export default async function ServicePage({
         <section id="included" className="bg-[#0A0A0A] py-20 lg:py-28">
           <div className="mx-auto max-w-4xl px-5 lg:px-8">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+              <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 Deliverables
               </p>
               <h2 className="mt-4 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-bold uppercase leading-tight tracking-tight text-white">
@@ -355,7 +355,7 @@ export default async function ServicePage({
                 <AnimateIn key={item} delay={0.05 * i}>
                   <div className="flex items-start gap-3 rounded-xl bg-white/[0.04] px-5 py-4">
                     <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-[#E71840]" />
-                    <span className="text-[14px] leading-relaxed text-white/70">{item}</span>
+                    <span className="text-[16px] leading-relaxed text-white/70">{item}</span>
                   </div>
                 </AnimateIn>
               ))}
@@ -365,7 +365,7 @@ export default async function ServicePage({
               <div className="mt-10 text-center">
                 <Link
                   href="/free-audit"
-                  className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
+                  className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[16px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[rgba(231,24,64,0.25)]"
                 >
                   Get Started Today
                 </Link>
@@ -395,10 +395,10 @@ export default async function ServicePage({
                     </svg>
                   ))}
                 </div>
-                <p className="mt-3 font-[family-name:var(--font-oswald)] text-[15px] font-700 text-white">
+                <p className="mt-3 font-[family-name:var(--font-oswald)] text-[16px] font-700 text-white">
                   {testimonial.author}
                 </p>
-                <p className="text-[13px] text-white/40">
+                <p className="text-[16px] text-white/75">
                   {testimonial.role}, {testimonial.company}
                 </p>
               </AnimateIn>
@@ -423,7 +423,7 @@ export default async function ServicePage({
                       <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 text-white">
                         {faq.question}
                       </h3>
-                      <p className="mt-3 text-[14px] leading-[1.75] text-white/60">
+                      <p className="mt-3 text-[16px] leading-[1.75] text-white/85">
                         {faq.answer}
                       </p>
                     </div>
@@ -460,10 +460,10 @@ export default async function ServicePage({
                       <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1rem] font-700 text-white">
                         {s.title}
                       </h3>
-                      <p className="mt-1.5 text-[13px] leading-relaxed text-white/40">
+                      <p className="mt-1.5 text-[16px] leading-relaxed text-white/75">
                         {s.description}
                       </p>
-                      <span className="mt-auto pt-4 text-[12px] font-600 text-[#E71840]">
+                      <span className="mt-auto pt-4 text-[16px] font-600 text-[#E71840]">
                         Learn More &rarr;
                       </span>
                     </Link>

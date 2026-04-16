@@ -1,4 +1,4 @@
-import { founders, board } from "@/lib/data/team";
+import { founders, executives, board } from "@/lib/data/team";
 import type { TeamMember } from "@/lib/data/team";
 import AnimateIn from "@/components/ui/AnimateIn";
 
@@ -31,12 +31,12 @@ function MemberCard({
         </div>
         <p
           className={`mt-3 font-[family-name:var(--font-heading)] font-700 text-white ${
-            large ? "text-[1.1rem]" : "text-[0.95rem]"
+            large ? "text-[1.1rem]" : "text-[1rem]"
           }`}
         >
           {member.name}
         </p>
-        <p className="mt-0.5 text-[13px] text-white/40">
+        <p className="mt-0.5 text-[16px] text-white/75">
           {member.role}
         </p>
       </div>
@@ -49,7 +49,7 @@ export default function TeamSection() {
     <section className="bg-white/[0.02] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
             Our People
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
@@ -64,10 +64,26 @@ export default function TeamSection() {
           ))}
         </div>
 
+        {/* Executive Leadership */}
+        {executives.length > 0 && (
+          <div className="mt-16">
+            <AnimateIn className="text-center">
+              <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
+                Executive Leadership
+              </h3>
+            </AnimateIn>
+            <div className="mt-8 flex flex-wrap justify-center gap-12 lg:gap-16">
+              {executives.map((m, i) => (
+                <MemberCard key={m.name} member={m} large delay={0.15 + i * 0.1} />
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Board of Directors */}
         <div className="mt-16">
           <AnimateIn className="text-center">
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/40">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
               Board of Directors
             </h3>
           </AnimateIn>
@@ -81,7 +97,7 @@ export default function TeamSection() {
         {/* Partner Agency */}
         <div className="mt-16">
           <AnimateIn className="text-center">
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-[#E71840]">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-[#E71840]">
               Partner Agency
             </h3>
           </AnimateIn>
@@ -97,7 +113,7 @@ export default function TeamSection() {
                 alt="XLNC Digital. Partner Agency"
                 className="w-20 h-20 object-contain rounded-xl mx-auto"
               />
-              <p className="mt-3 text-sm" style={{ color: '#E71840' }}>Partner Agency</p>
+              <p className="mt-3 text-base" style={{ color: '#E71840' }}>Partner Agency</p>
             </a>
           </AnimateIn>
         </div>

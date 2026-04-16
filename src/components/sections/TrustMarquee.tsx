@@ -8,7 +8,7 @@ export default function TrustMarquee() {
         {[0, 1].map((n) => (
           <span
             key={n}
-            className="inline-block text-[12px] font-600 uppercase tracking-[0.12em] text-[#777]"
+            className="inline-block text-[16px] font-600 uppercase tracking-[0.12em] text-[#777]"
             aria-hidden={n === 1}
           >
             {text}

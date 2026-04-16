@@ -43,7 +43,7 @@ export default function ComparisonPage() {
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/85">
                 Understanding the three pillars of modern search visibility.
               </p>
             </AnimateIn>
@@ -60,26 +60,26 @@ export default function ComparisonPage() {
                 <table className="w-full min-w-[700px]">
                   <thead>
                     <tr className="border-b border-white/10">
-                      <th className="px-6 py-4 text-left text-[13px] font-600 text-white/40">Feature</th>
-                      <th className="px-6 py-4 text-left text-[13px] font-700 uppercase tracking-wider text-white">Traditional SEO</th>
-                      <th className="px-6 py-4 text-left text-[13px] font-700 uppercase tracking-wider text-[#E71840]">GEO</th>
-                      <th className="px-6 py-4 text-left text-[13px] font-700 uppercase tracking-wider text-white">AI SEO</th>
+                      <th className="px-6 py-4 text-left text-[16px] font-600 text-white/75">Feature</th>
+                      <th className="px-6 py-4 text-left text-[16px] font-700 uppercase tracking-wider text-white">Traditional SEO</th>
+                      <th className="px-6 py-4 text-left text-[16px] font-700 uppercase tracking-wider text-[#E71840]">GEO</th>
+                      <th className="px-6 py-4 text-left text-[16px] font-700 uppercase tracking-wider text-white">AI SEO</th>
                     </tr>
                   </thead>
                   <tbody>
                     {COMPARISON_ROWS.map((row, i) => (
                       <tr key={row.feature} className={i % 2 === 0 ? "bg-white/[0.02]" : ""}>
-                        <td className="px-6 py-4 text-[14px] font-600 text-white/70">{row.feature}</td>
-                        <td className="px-6 py-4 text-[14px] text-white/50">{row.seo}</td>
-                        <td className="px-6 py-4 text-[14px] text-white/50">{row.geo}</td>
-                        <td className="px-6 py-4 text-[14px] text-white/50">{row.ai}</td>
+                        <td className="px-6 py-4 text-[16px] font-600 text-white/70">{row.feature}</td>
+                        <td className="px-6 py-4 text-[16px] text-white/85">{row.seo}</td>
+                        <td className="px-6 py-4 text-[16px] text-white/85">{row.geo}</td>
+                        <td className="px-6 py-4 text-[16px] text-white/85">{row.ai}</td>
                       </tr>
                     ))}
                     <tr className="border-t border-white/10">
-                      <td className="px-6 py-4 text-[14px] font-600 text-white/70">NIXAR Service</td>
-                      <td className="px-6 py-4"><Link href="/services/search-everywhere-optimization" className="text-[14px] text-[#E71840] hover:text-white transition-colors">SEO &rarr;</Link></td>
-                      <td className="px-6 py-4"><Link href="/services/ai-seo-geo" className="text-[14px] text-[#E71840] hover:text-white transition-colors">AI SEO & GEO &rarr;</Link></td>
-                      <td className="px-6 py-4 text-[14px] text-white/50">Full-spectrum optimization</td>
+                      <td className="px-6 py-4 text-[16px] font-600 text-white/70">NIXAR Service</td>
+                      <td className="px-6 py-4"><Link href="/services/search-everywhere-optimization" className="text-[16px] text-[#E71840] hover:text-white transition-colors">SEO &rarr;</Link></td>
+                      <td className="px-6 py-4"><Link href="/services/ai-seo-geo" className="text-[16px] text-[#E71840] hover:text-white transition-colors">AI SEO & GEO &rarr;</Link></td>
+                      <td className="px-6 py-4 text-[16px] text-white/85">Full-spectrum optimization</td>
                     </tr>
                   </tbody>
                 </table>
@@ -109,7 +109,7 @@ export default function ComparisonPage() {
                     </h3>
                     <ul className="mt-4 space-y-2">
                       {card.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2 text-[14px] text-white/50">
+                        <li key={item} className="flex items-start gap-2 text-[16px] text-white/85">
                           <span className="mt-1 text-[#E71840]">&#9656;</span>
                           {item}
                         </li>
@@ -129,7 +129,7 @@ export default function ComparisonPage() {
               <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase text-white">
                 Why NIXAR Recommends <span className="text-[#E71840]">All Three</span>
               </h2>
-              <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
+              <p className="mt-6 text-[16px] leading-[1.8] text-white/85">
                 Search is no longer one platform. Your customers search on Google, ask ChatGPT, browse TikTok, and query Perplexity. A business that only optimizes for traditional SEO is invisible on half the platforms their customers use. NIXAR&apos;s integrated approach ensures you&apos;re visible everywhere. in blue links, AI answers, social search, and voice results. One strategy, full coverage, measurable results.
               </p>
             </AnimateIn>
@@ -151,7 +151,7 @@ export default function ComparisonPage() {
                     <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-white/60">{faq.answer}</p>
+                    <p className="mt-3 text-[16px] leading-[1.75] text-white/85">{faq.answer}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -162,7 +162,7 @@ export default function ComparisonPage() {
         {/* Internal Links */}
         <section className="py-12">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <h2 className="font-[family-name:var(--font-oswald)] text-[1.2rem] font-700 uppercase text-white/40 mb-6">Related Resources</h2>
+            <h2 className="font-[family-name:var(--font-oswald)] text-[1.2rem] font-700 uppercase text-white/75 mb-6">Related Resources</h2>
             <div className="flex flex-wrap gap-3">
               {[
                 { label: "SEO Services", href: "/services/search-everywhere-optimization" },
@@ -171,7 +171,7 @@ export default function ComparisonPage() {
                 { label: "What Is GEO? (Blog)", href: "/blog/geo-generative-engine-optimization-2026" },
                 { label: "Marketing Glossary", href: "/resources/glossary" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[13px] font-500 text-white/60 transition-all hover:border-[#E71840]/40 hover:text-white">
+                <Link key={link.href} href={link.href} className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[16px] font-500 text-white/85 transition-all hover:border-[#E71840]/40 hover:text-white">
                   {link.label}
                 </Link>
               ))}
@@ -185,7 +185,7 @@ export default function ComparisonPage() {
             <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,4vw,3rem)] font-700 uppercase text-white">
               Get Your Free <span className="text-[#E71840]">Search Visibility Audit</span>
             </h2>
-            <Link href="/free-audit" className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535]">
+            <Link href="/free-audit" className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[16px] font-600 text-white transition-all hover:bg-[#C41535]">
               Start Your Audit
             </Link>
           </div>

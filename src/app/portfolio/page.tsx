@@ -23,7 +23,7 @@ export default function PortfolioPage() {
         <div className="relative h-full flex items-end pb-12" style={{ zIndex: 2 }}>
           <div className="max-w-7xl mx-auto px-6 w-full">
             <AnimateIn>
-              <p className="text-sm uppercase tracking-widest mb-2" style={{ color: '#E71840', textShadow: '0 0 20px rgba(231,24,64,0.5)' }}>Portfolio</p>
+              <p className="text-base uppercase tracking-widest mb-2" style={{ color: '#E71840', textShadow: '0 0 20px rgba(231,24,64,0.5)' }}>Portfolio</p>
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <h1 className="font-[family-name:var(--font-oswald)] font-bold text-white uppercase" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', textShadow: '0 2px 20px rgba(0,0,0,0.8)' }}>Our Work</h1>

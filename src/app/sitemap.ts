@@ -57,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/dallas`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.9 },
   ];
 
+  // Country market pages
+  const countryPages: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/colombia`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${SITE_URL}/brazil`, lastModified: now, changeFrequency: "monthly" as const, priority: 0.8 },
+  ];
+
   // City pages (excluding dallas. it has its own route)
   const cityPages: MetadataRoute.Sitemap = cities
     .filter((city) => city.slug !== "dallas")
@@ -67,5 +73,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  return [...staticPages, ...dallasPage, ...servicePages, ...portfolioPages, ...blogPages, ...cityPages];
+  return [...staticPages, ...dallasPage, ...countryPages, ...servicePages, ...portfolioPages, ...blogPages, ...cityPages];
 }

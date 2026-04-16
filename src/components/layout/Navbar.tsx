@@ -103,7 +103,7 @@ export default function Navbar() {
       {/* Skip to content */}
       <a
         href="#main-content"
-        className="fixed left-4 top-4 z-[60] -translate-y-20 rounded-lg bg-[var(--color-primary)] px-4 py-2 text-sm font-600 text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
+        className="fixed left-4 top-4 z-[60] -translate-y-20 rounded-lg bg-[var(--color-primary)] px-4 py-2 text-base font-600 text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
       >
         Skip to content
       </a>
@@ -115,10 +115,10 @@ export default function Navbar() {
       >
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 lg:px-8">
 
-          {/* Logo */}
+          {/* Logo — clickable home link */}
           <Link
             href="/"
-            className="relative z-10 shrink-0 flex items-center"
+            className="relative z-20 shrink-0 flex items-center cursor-pointer transition-opacity duration-200 hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E71840] focus-visible:ring-offset-4 focus-visible:ring-offset-[#0A0A0A] rounded"
             aria-label="NIXAR Solutions. Home"
           >
             <Logo height={32} />
@@ -149,7 +149,7 @@ export default function Navbar() {
                       }}
                       aria-expanded={servicesOpen}
                       aria-haspopup="true"
-                      className="nav-link group flex items-center gap-1 text-[14px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840]"
+                      className="nav-link group flex items-center gap-1 text-[16px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840]"
                     >
                       {label}
                       <ChevronDown
@@ -183,16 +183,16 @@ export default function Navbar() {
                                   className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-[var(--color-primary-light)]"
                                 >
                                   {Icon && (
-                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/[0.06] text-white/60">
+                                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white/[0.06] text-white/85">
                                       <Icon size={16} />
                                     </div>
                                   )}
                                   <div className="min-w-0">
-                                    <span className="block text-[13px] font-500 text-[var(--color-text)] leading-tight">
+                                    <span className="block text-[16px] font-500 text-[var(--color-text)] leading-tight">
                                       {service.shortTitle}
                                     </span>
                                     {service.isNew && (
-                                      <span className="text-[10px] font-600 uppercase tracking-wider text-[var(--color-primary)]">
+                                      <span className="text-[16px] font-600 uppercase tracking-wider text-[var(--color-primary)]">
                                         New
                                       </span>
                                     )}
@@ -213,7 +213,7 @@ export default function Navbar() {
                   key={label}
                   href={href}
                   role="menuitem"
-                  className="nav-link relative text-[14px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[#E71840] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E71840] focus-visible:ring-offset-4 focus-visible:rounded-sm"
+                  className="nav-link relative text-[16px] font-500 uppercase tracking-[0.05em] text-[#FFFFFF] transition-colors hover:text-[#E71840] after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:w-0 after:bg-[#E71840] after:transition-all after:duration-200 hover:after:w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E71840] focus-visible:ring-offset-4 focus-visible:rounded-sm"
                 >
                   {label}
                 </Link>
@@ -225,7 +225,7 @@ export default function Navbar() {
           <div className="hidden items-center gap-5 lg:flex">
             <a
               href="tel:4697593638"
-              className="flex items-center gap-1.5 text-[13px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
+              className="flex items-center gap-1.5 text-[16px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
               aria-label="Call us at 469-759-3638"
             >
               <Phone size={14} />
@@ -233,7 +233,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/free-audit"
-              className="inline-flex h-10 items-center rounded-full bg-[var(--color-primary)] px-6 text-[13px] font-600 text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-[0_8px_24px_var(--color-primary-glow)]"
+              className="inline-flex h-10 items-center rounded-full bg-[var(--color-primary)] px-6 text-[16px] font-600 text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-[0_8px_24px_var(--color-primary-glow)]"
             >
               Get Free Audit
             </Link>

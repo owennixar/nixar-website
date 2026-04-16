@@ -57,7 +57,7 @@ function StatCard({ stat, shouldAnimate, delay }: { stat: StatItem; shouldAnimat
         <span className="font-[family-name:var(--font-oswald)] text-[3rem] lg:text-[4rem] font-bold text-white leading-none block">
           {stat.display ? stat.display : `${count}${stat.suffix}`}
         </span>
-        <p className="text-[14px] text-[#666] mt-2">{stat.label}</p>
+        <p className="text-[16px] text-[#666] mt-2">{stat.label}</p>
       </div>
     </AnimateIn>
   );

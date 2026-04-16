@@ -49,25 +49,25 @@ export default function ExitIntentPopup() {
       >
         <button
           onClick={() => setShow(false)}
-          className="absolute top-4 right-4 text-white/30 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-white/75 hover:text-white transition-colors"
           aria-label="Close"
         >
           <X size={20} />
         </button>
 
         <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(1.5rem,4vw,2rem)] font-700 uppercase leading-tight">
-          <span className="text-white/50">Wait &mdash; </span>
+          <span className="text-white/85">Wait &mdash; </span>
           <span className="text-white">don&apos;t leave without your </span>
           <span className="text-[#E71840]">free audit.</span>
         </h2>
 
-        <p className="mt-4 text-[15px] text-white/50">
+        <p className="mt-4 text-[16px] text-white/85">
           Discover exactly what&apos;s holding your business back online. Takes 30 seconds.
         </p>
 
         <Link
           href="/free-audit"
-          className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-[#E71840] text-[14px] font-600 text-white transition-all hover:bg-[#C41535]"
+          className="mt-6 inline-flex h-12 w-full items-center justify-center rounded-full bg-[#E71840] text-[16px] font-600 text-white transition-all hover:bg-[#C41535]"
           onClick={() => setShow(false)}
         >
           Get My Free Audit
@@ -75,7 +75,7 @@ export default function ExitIntentPopup() {
 
         <button
           onClick={() => setShow(false)}
-          className="mt-4 block w-full text-[13px] text-white/30 transition-colors hover:text-white/50"
+          className="mt-4 block w-full text-[16px] text-white/75 transition-colors hover:text-white/85"
         >
           No thanks, I&apos;ll figure it out myself
         </button>

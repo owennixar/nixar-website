@@ -4,12 +4,21 @@ import { useState, useEffect, useCallback } from 'react'
 import { X } from 'lucide-react'
 
 const MESSAGES = [
-  { city: 'Plano', action: 'just requested a free audit' },
-  { city: 'Dallas', action: 'started a social media campaign' },
-  { city: 'Frisco', action: 'launched their new website' },
-  { city: 'McKinney', action: 'just requested a free audit' },
-  { city: 'Fort Worth', action: 'started an SEO campaign' },
-  { city: 'Allen', action: 'signed up for content marketing' },
+  { city: 'Plano, TX', action: 'just requested a free audit' },
+  { city: 'Miami, FL', action: 'launched their new website' },
+  { city: 'Frisco, TX', action: 'started a social media campaign' },
+  { city: 'Sacramento, CA', action: 'signed up for AI SEO' },
+  { city: 'Dallas, TX', action: 'started an SEO campaign' },
+  { city: 'Bogotá, Colombia', action: 'just requested a free audit' },
+  { city: 'McKinney, TX', action: 'launched their new website' },
+  { city: 'College Station, TX', action: 'signed up for content marketing' },
+  { city: 'São Paulo, Brazil', action: 'started a branding engagement' },
+  { city: 'Fort Worth, TX', action: 'signed up for paid ads' },
+  { city: 'Medellín, Colombia', action: 'booked a strategy call' },
+  { city: 'Allen, TX', action: 'launched an AI agent' },
+  { city: 'Rio de Janeiro, Brazil', action: 'started a website redesign' },
+  { city: 'Cartagena, Colombia', action: 'just requested a free audit' },
+  { city: 'Brasília, Brazil', action: 'signed up for AI automation' },
 ]
 
 export default function SocialProofToast() {
@@ -74,7 +83,7 @@ export default function SocialProofToast() {
       >
         <button
           onClick={dismiss}
-          className="absolute top-2 right-2 text-white/30 hover:text-white/60 transition-colors"
+          className="absolute top-2 right-2 text-white/75 hover:text-white/85 transition-colors"
           aria-label="Dismiss"
         >
           <X size={12} />
@@ -82,12 +91,12 @@ export default function SocialProofToast() {
         <div className="flex items-start gap-3">
           <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#E71840] animate-pulse" />
           <div>
-            <p className="text-[13px] leading-relaxed">
-              <span className="text-white/50">A business in </span>
+            <p className="text-[16px] leading-relaxed">
+              <span className="text-white/85">A business in </span>
               <span className="font-600 text-white">{msg.city}</span>
-              <span className="text-white/50"> {msg.action}</span>
+              <span className="text-white/85"> {msg.action}</span>
             </p>
-            <p className="mt-1 text-[11px] text-white/30">Just now</p>
+            <p className="mt-1 text-[16px] text-white/75">Just now</p>
           </div>
         </div>
       </div>

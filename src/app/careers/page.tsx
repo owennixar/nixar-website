@@ -81,7 +81,7 @@ export default function CareersPage() {
             </h1>
           </AnimateIn>
           <AnimateIn delay={0.15}>
-            <p className="mt-6 max-w-2xl text-[17px] leading-[1.7] text-white/60">
+            <p className="mt-6 max-w-2xl text-[17px] leading-[1.7] text-white/85">
               We&apos;re always looking for talented people who want to
               transform how businesses grow online.
             </p>
@@ -93,7 +93,7 @@ export default function CareersPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <AnimateIn>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
               What we look for
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase text-white">
@@ -108,7 +108,7 @@ export default function CareersPage() {
                   <h3 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase tracking-wide text-white">
                     {value.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-[1.8] text-[#999]">
+                  <p className="mt-3 text-[16px] leading-[1.8] text-[#999]">
                     {value.description}
                   </p>
                 </div>
@@ -122,7 +122,7 @@ export default function CareersPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <AnimateIn>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
               Open positions
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase text-white">
@@ -132,12 +132,12 @@ export default function CareersPage() {
 
           <AnimateIn delay={0.15}>
             <div className="glass-card mt-10 p-8 lg:p-10">
-              <p className="text-[15px] leading-[1.8] text-[#999]">
+              <p className="text-[16px] leading-[1.8] text-[#999]">
                 We&apos;re growing fast. While we don&apos;t have specific
                 openings listed right now, we&apos;re always interested in
                 hearing from talented people.
               </p>
-              <p className="mt-4 text-[15px] leading-[1.8] text-white/80">
+              <p className="mt-4 text-[16px] leading-[1.8] text-white/80">
                 Send your resume and a note about what excites you to{" "}
                 <a
                   href="mailto:hello@nixarsolutions.com"
@@ -155,7 +155,7 @@ export default function CareersPage() {
       <section className="pb-24">
         <div className="mx-auto max-w-5xl px-5 lg:px-8">
           <AnimateIn>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
               Why NIXAR
             </p>
             <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(1.75rem,3.5vw,2.5rem)] font-700 uppercase text-white">
@@ -170,7 +170,7 @@ export default function CareersPage() {
                   <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-wide text-white">
                     {perk.title}
                   </h3>
-                  <p className="mt-2 text-[15px] leading-[1.7] text-[#999]">
+                  <p className="mt-2 text-[16px] leading-[1.7] text-[#999]">
                     {perk.description}
                   </p>
                 </div>

@@ -224,10 +224,10 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <section
         id="hero"
-        className="relative w-full flex items-center"
-        style={{ height: '85vh', clipPath: 'inset(0)', overflow: 'visible' }}
+        className="relative w-full flex items-center overflow-hidden"
+        style={{ height: 'calc(100vh - 72px)', minHeight: '640px' }}
       >
-        {/* Background Image */}
+        {/* Background Image — anchored to top so astronaut/planet is preserved */}
         <Image
           src="/images/hero-bg.webp"
           alt=""
@@ -236,7 +236,7 @@ export default function HomeDark() {
           priority
           sizes="100vw"
           className="object-cover"
-          style={{ zIndex: 0 }}
+          style={{ zIndex: 0, objectPosition: 'center top' }}
         />
 
         {/* Dark Overlay */}
@@ -253,7 +253,7 @@ export default function HomeDark() {
           <div style={{ maxWidth: '800px' }}>
             <Reveal>
               <p
-                className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-white/60"
+                className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-[0.2em] text-white/85"
               >
                 NIXAR Solutions. Frisco, TX
               </p>
@@ -288,7 +288,7 @@ export default function HomeDark() {
               <MagneticButton>
                 <a
                   href="#contact"
-                  className="mt-8 inline-flex h-[52px] items-center border border-white px-8 text-[13px] font-600 uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-white hover:text-[#0A0A0A]"
+                  className="mt-8 inline-flex h-[52px] items-center border border-white px-8 text-[16px] font-600 uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-white hover:text-[#0A0A0A]"
                 >
                   Get Free Audit
                 </a>
@@ -300,7 +300,7 @@ export default function HomeDark() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block" style={{ zIndex: 2 }}>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-white/40">
+            <span className="text-[16px] font-500 uppercase tracking-[0.15em] text-white/75">
               Scroll
             </span>
             <div className="h-[30px] w-[2px] overflow-hidden bg-white/20">
@@ -323,7 +323,7 @@ export default function HomeDark() {
           {[0, 1].map((n) => (
             <span
               key={n}
-              className="inline-block text-[0.75rem] font-500 uppercase tracking-[0.15em]"
+              className="inline-block text-[1rem] font-500 uppercase tracking-[0.15em]"
               aria-hidden={n === 1}
             >
               {MARQUEE_ITEMS.map((item, idx) => (
@@ -354,36 +354,41 @@ export default function HomeDark() {
           </h2>
         </Reveal>
 
-        <div className="mx-auto mt-12 max-w-7xl px-5 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICE_CARDS.map((s, i) => (
-              <Reveal key={s.slug} delay={i * 0.1} className="h-full">
-                <Link
-                  href={`/services/${s.slug}`}
-                  className="glass-card group flex h-full flex-col justify-between"
-                >
-                  <div>
-                    {s.Icon && <s.Icon size={28} color="#E71840" className="mb-3" />}
-                    <span className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-[#E71840]">
-                      {s.num}
+        {/* Horizontal floating carousel — continuous marquee, pauses on hover */}
+        <div className="services-marquee-viewport mt-12 overflow-hidden">
+          <div className="services-marquee-track flex w-max gap-6">
+            {[0, 1].map((loop) => (
+              <div key={loop} className="flex shrink-0 gap-6 pr-6" aria-hidden={loop === 1}>
+                {SERVICE_CARDS.map((s) => (
+                  <Link
+                    key={`${loop}-${s.slug}`}
+                    href={`/services/${s.slug}`}
+                    className="services-card glass-card group flex w-[320px] shrink-0 flex-col justify-between"
+                    tabIndex={loop === 1 ? -1 : 0}
+                  >
+                    <div>
+                      {s.Icon && <s.Icon size={28} color="#E71840" className="mb-3" />}
+                      <span className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-[#E71840]">
+                        {s.num}
+                      </span>
+                      <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1.3rem] font-700 uppercase text-white flex items-center gap-2">
+                        {s.title}
+                        {s.isNew && (
+                          <span className="text-[1rem] font-600 uppercase tracking-wider text-[#E71840]">
+                            NEW
+                          </span>
+                        )}
+                      </h3>
+                      <p className="mt-3 text-[1rem] leading-[1.6] text-white/75">
+                        {s.desc}
+                      </p>
+                    </div>
+                    <span className="mt-6 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                      Learn More &rarr;
                     </span>
-                    <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1.3rem] font-700 uppercase text-white flex items-center gap-2">
-                      {s.title}
-                      {s.isNew && (
-                        <span className="text-[0.6rem] font-600 uppercase tracking-wider text-[#E71840]">
-                          NEW
-                        </span>
-                      )}
-                    </h3>
-                    <p className="mt-3 text-[0.9rem] leading-[1.6] text-[#888]">
-                      {s.desc}
-                    </p>
-                  </div>
-                  <span className="mt-6 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
-                    Learn More &rarr;
-                  </span>
-                </Link>
-              </Reveal>
+                  </Link>
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -394,7 +399,7 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <section className="py-12">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
-          <p className="text-[0.9rem] leading-[1.8] text-white/40">
+          <p className="text-[1rem] leading-[1.8] text-white/75">
             As a full-service digital marketing agency in Dallas, NIXAR Solutions provides comprehensive SEO services, custom website design and development, social media marketing management, paid advertising across Google and Meta, content marketing, branding, and AI-powered marketing automation. Based in Frisco and serving the entire Dallas-Fort Worth metroplex, we help local businesses compete and win online.
           </p>
         </div>
@@ -459,7 +464,7 @@ export default function HomeDark() {
                 <p className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase text-white">
                   {t.author}
                 </p>
-                <p className="mt-1 text-[0.85rem] text-[#666]">
+                <p className="mt-1 text-[1rem] text-[#666]">
                   {t.role}, {t.company}
                 </p>
               </div>
@@ -500,7 +505,7 @@ export default function HomeDark() {
               <h3 className="mt-1 font-[family-name:var(--font-oswald)] text-[1.8rem] font-700 uppercase text-white">
                 {step.title}
               </h3>
-              <p className="mt-2 max-w-lg text-[0.95rem] leading-[1.7] text-[#888]">
+              <p className="mt-2 max-w-lg text-[1rem] leading-[1.7] text-[#888]">
                 {step.desc}
               </p>
             </Reveal>
@@ -541,14 +546,14 @@ export default function HomeDark() {
                   </div>
                   {/* Content */}
                   <div className="flex flex-1 flex-col p-8">
-                    <span className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+                    <span className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                       {post.category}
                     </span>
                     <h3 className="mt-3 font-[family-name:var(--font-oswald)] text-[1.2rem] font-700 uppercase leading-[1.3] text-white">
                       {post.title}
                     </h3>
-                    <p className="mt-2 text-[0.8rem] text-[#666]">{post.date}</p>
-                    <span className="mt-auto pt-6 text-[0.75rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                    <p className="mt-2 text-[1rem] text-[#666]">{post.date}</p>
+                    <span className="mt-auto pt-6 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
                       Read More &rarr;
                     </span>
                   </div>
@@ -584,7 +589,7 @@ export default function HomeDark() {
             <MagneticButton>
               <a
                 href="mailto:hello@nixarsolutions.com"
-                className="mt-10 inline-flex h-[56px] items-center border border-[#E71840] px-10 text-[13px] font-600 uppercase tracking-[0.15em] text-[#E71840] transition-all duration-300 hover:bg-[#E71840] hover:text-white"
+                className="mt-10 inline-flex h-[56px] items-center border border-[#E71840] px-10 text-[16px] font-600 uppercase tracking-[0.15em] text-[#E71840] transition-all duration-300 hover:bg-[#E71840] hover:text-white"
               >
                 Get Free Audit
               </a>
@@ -598,18 +603,18 @@ export default function HomeDark() {
            ═══════════════════════════════════════════════════════════════════ */}
       <div className="border-t border-[#222] py-8">
         <div className="mx-auto flex flex-col items-center justify-center gap-6 px-5 sm:flex-row sm:gap-10 lg:px-8">
-          <span className="text-[0.8rem] uppercase tracking-[0.1em] text-[#666]">
+          <span className="text-[1rem] uppercase tracking-[0.1em] text-[#666]">
             Frisco, TX
           </span>
           <a
             href="tel:4697593638"
-            className="text-[0.8rem] uppercase tracking-[0.1em] text-[#666] transition-colors hover:text-white"
+            className="text-[1rem] uppercase tracking-[0.1em] text-[#666] transition-colors hover:text-white"
           >
             469-759-3638
           </a>
           <a
             href="mailto:hello@nixarsolutions.com"
-            className="text-[0.8rem] uppercase tracking-[0.1em] text-[#666] transition-colors hover:text-white"
+            className="text-[1rem] uppercase tracking-[0.1em] text-[#666] transition-colors hover:text-white"
           >
             hello@nixarsolutions.com
           </a>
@@ -676,7 +681,7 @@ function HorizontalPortfolio() {
       <section id="portfolio" className="relative py-16 px-6 overflow-hidden">
         <div className="mb-10">
           <h2 className="font-[family-name:var(--font-oswald)] text-4xl font-700 uppercase leading-none text-white">Selected Work</h2>
-          <p className="mt-3 text-[0.95rem] leading-[1.6] text-[#888]">Real projects, real results.</p>
+          <p className="mt-3 text-[1rem] leading-[1.6] text-[#888]">Real projects, real results.</p>
         </div>
         <div className="grid grid-cols-1 gap-6">
           {PORTFOLIO.map((p) => (
@@ -690,8 +695,8 @@ function HorizontalPortfolio() {
               </div>
               <div className="p-5">
                 <h3 className="font-[family-name:var(--font-oswald)] text-lg font-700 uppercase text-white">{p.name}</h3>
-                <p className="mt-1 text-[0.75rem] uppercase tracking-[0.1em] text-[#999]">{p.cat}</p>
-                <span className="mt-3 inline-block text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">View Case Study &rarr;</span>
+                <p className="mt-1 text-[1rem] uppercase tracking-[0.1em] text-[#999]">{p.cat}</p>
+                <span className="mt-3 inline-block text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">View Case Study &rarr;</span>
               </div>
             </Link>
           ))}
@@ -734,20 +739,25 @@ function HorizontalPortfolio() {
             )}
             <div className="portfolio-scanline absolute inset-0 pointer-events-none z-10" />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
+              <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-800 uppercase text-white">
                 {p.name}
               </h3>
-              <p className="mt-1 text-[0.8rem] uppercase tracking-[0.1em] text-[#999]">
+              <p className="mt-1 text-[1rem] uppercase tracking-[0.1em] text-white/85">
                 {p.cat}
               </p>
-              <span className="mt-4 text-[0.8rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
+              <span className="mt-4 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840]">
                 View Case Study &rarr;
               </span>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 px-5 py-3 lg:px-8">
-              <p className="text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
-                {p.name} &mdash; {p.cat}
-              </p>
+            <div className="absolute bottom-4 left-4 right-4 lg:bottom-5 lg:left-5 lg:right-5">
+              <div className="inline-block rounded-xl bg-white px-4 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-black/5">
+                <p className="text-[1rem] font-800 uppercase tracking-[0.08em] text-[#0A0A0A] leading-tight">
+                  {p.name}
+                </p>
+                <p className="mt-1 text-[1rem] font-600 uppercase tracking-[0.08em] text-[#E71840] leading-tight">
+                  {p.cat}
+                </p>
+              </div>
             </div>
           </Link>
         ))}
@@ -781,7 +791,7 @@ function StatItem({
         {count}
         <span className="text-[#E71840]">{suffix}</span>
       </p>
-      <p className="mt-3 text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
+      <p className="mt-3 text-[1rem] font-500 uppercase tracking-[0.1em] text-[#666]">
         {label}
       </p>
     </div>

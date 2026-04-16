@@ -76,7 +76,7 @@ export default function GlossaryPage() {
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/85">
                 Definitions for SEO, GEO, AI SEO, PPC, and every marketing term you need to know.
               </p>
             </AnimateIn>
@@ -93,10 +93,10 @@ export default function GlossaryPage() {
                 <a
                   key={l}
                   href={grouped[l] ? `#letter-${l}` : undefined}
-                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-xs font-700 transition-colors ${
+                  className={`inline-flex h-8 w-8 items-center justify-center rounded-full text-base font-700 transition-colors ${
                     grouped[l]
-                      ? "border border-white/15 text-white/60 hover:border-[#E71840] hover:text-[#E71840]"
-                      : "border border-white/5 text-white/15 cursor-default"
+                      ? "border border-white/15 text-white/85 hover:border-[#E71840] hover:text-[#E71840]"
+                      : "border border-white/5 text-white/75 cursor-default"
                   }`}
                 >
                   {l}
@@ -120,13 +120,13 @@ export default function GlossaryPage() {
                       <h3 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase text-white">
                         {t.term}
                       </h3>
-                      <p className="mt-2 text-[15px] leading-[1.8] text-white/60">
+                      <p className="mt-2 text-[16px] leading-[1.8] text-white/85">
                         {t.definition}
                       </p>
                       {t.link && (
                         <Link
                           href={t.link}
-                          className="mt-3 inline-block text-[13px] font-600 text-[#E71840] transition-colors hover:text-white"
+                          className="mt-3 inline-block text-[16px] font-600 text-[#E71840] transition-colors hover:text-white"
                         >
                           Learn more &rarr;
                         </Link>
@@ -145,10 +145,10 @@ export default function GlossaryPage() {
             <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(2rem,4vw,3rem)] font-700 uppercase text-white">
               Need Help with <span className="text-[#E71840]">Your Marketing?</span>
             </h2>
-            <p className="mt-4 text-white/60">
+            <p className="mt-4 text-white/85">
               Get a free audit and see how NIXAR can grow your business.
             </p>
-            <Link href="/free-audit" className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535]">
+            <Link href="/free-audit" className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[16px] font-600 text-white transition-all hover:bg-[#C41535]">
               Get Free Audit
             </Link>
           </div>

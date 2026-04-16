@@ -33,7 +33,7 @@ export default function Differentiators() {
     <section className="bg-transparent py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
             Why NIXAR
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">
@@ -52,7 +52,7 @@ export default function Differentiators() {
                 <h3 className="mt-5 font-[family-name:var(--font-heading)] text-[1.15rem] font-700 text-white">
                   {title}
                 </h3>
-                <p className="mt-2.5 text-[15px] leading-[1.7] text-white/60">
+                <p className="mt-2.5 text-[16px] leading-[1.7] text-white/85">
                   {description}
                 </p>
               </div>

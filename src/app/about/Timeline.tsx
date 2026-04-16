@@ -107,7 +107,7 @@ export default function Timeline() {
                     <span className="font-[family-name:var(--font-oswald)] text-[2rem] font-bold text-[#E71840] leading-none">
                       {item.year}
                     </span>
-                    <p className="text-white/70 text-[15px] mt-2 leading-relaxed">
+                    <p className="text-white/70 text-[16px] mt-2 leading-relaxed">
                       {item.description}
                     </p>
                   </div>

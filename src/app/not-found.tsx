@@ -24,20 +24,20 @@ export default function NotFound() {
       <div className="mt-8 flex flex-wrap justify-center gap-4">
         <Link
           href="/"
-          className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-7 text-[14px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
+          className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-7 text-[16px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
         >
           Back to Home
         </Link>
         <Link
           href="/services"
-          className="inline-flex h-12 items-center rounded-full border-2 border-[var(--color-border)] px-7 text-[14px] font-600 text-[#1A1A1A] transition-all hover:border-[#1A1A1A]"
+          className="inline-flex h-12 items-center rounded-full border-2 border-[var(--color-border)] px-7 text-[16px] font-600 text-[#1A1A1A] transition-all hover:border-[#1A1A1A]"
         >
           View Services
         </Link>
       </div>
 
       {/* Quick links */}
-      <div className="mt-12 flex flex-wrap justify-center gap-6 text-[13px]">
+      <div className="mt-12 flex flex-wrap justify-center gap-6 text-[16px]">
         <Link href="/about" className="text-[var(--color-text-muted)] transition-colors hover:text-[var(--color-primary)]">
           About
         </Link>

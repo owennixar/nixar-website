@@ -69,7 +69,7 @@ export default function ContactPage() {
           />
           <div className="relative text-center px-6 max-w-2xl mx-auto" style={{ zIndex: 2 }}>
             <AnimateIn>
-              <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#E71840' }}>
+              <p className="text-base uppercase tracking-widest mb-4" style={{ color: '#E71840' }}>
                 Let&apos;s Talk
               </p>
             </AnimateIn>
@@ -79,7 +79,7 @@ export default function ContactPage() {
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="mt-4 text-gray-300 text-sm md:text-base max-w-lg mx-auto">
+              <p className="mt-4 text-gray-300 text-base md:text-base max-w-lg mx-auto">
                 Ready to transform your digital presence? Reach out and let&apos;s build something extraordinary together.
               </p>
             </AnimateIn>
@@ -130,7 +130,7 @@ export default function ContactPage() {
                     <h3 className="mt-4 font-[family-name:var(--font-heading)] text-[1.1rem] font-700 text-white">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-[1.6] text-[#999]">
+                    <p className="mt-2 text-[16px] leading-[1.6] text-[#999]">
                       {item.desc}
                     </p>
                   </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                     <h3 className="font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-[1.7] text-[#999]">
+                    <p className="mt-2 text-[16px] leading-[1.7] text-[#999]">
                       {faq.answer}
                     </p>
                   </div>
@@ -176,13 +176,13 @@ export default function ContactPage() {
                   Office Hours
                 </h3>
                 <div className="mt-5 space-y-2">
-                  <p className="text-[15px] text-white">
+                  <p className="text-[16px] text-white">
                     Monday &ndash; Friday: 9:00 AM &ndash; 6:00 PM CST
                   </p>
-                  <p className="text-[15px] text-white/60">
+                  <p className="text-[16px] text-white/85">
                     Saturday &ndash; Sunday: By appointment
                   </p>
-                  <p className="mt-3 text-[14px] font-600 text-[#E71840]">
+                  <p className="mt-3 text-[16px] font-600 text-[#E71840]">
                     Emergency support: 24/7 for active clients
                   </p>
                 </div>
@@ -198,7 +198,7 @@ export default function ContactPage() {
               <h2 className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,3vw,2rem)] font-800 tracking-tight text-white">
                 Serving Dallas-Fort Worth
               </h2>
-              <p className="mt-2 text-[15px] text-white/60">
+              <p className="mt-2 text-[16px] text-white/85">
                 Based in Frisco, TX. serving 20+ cities across the DFW metroplex.
               </p>
             </AnimateIn>
@@ -208,9 +208,9 @@ export default function ContactPage() {
                 <AnimateIn key={city.slug} delay={0.02 * i}>
                   <Link
                     href={city.slug === "dallas" ? "/dallas" : `/${city.slug}`}
-                    className="flex items-center gap-2 rounded-lg bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-[13px] font-500 text-white/60 transition-all hover:bg-[#E71840]/10 hover:text-[#E71840]"
+                    className="flex items-center gap-2 rounded-lg bg-white/[0.04] border border-white/10 px-3.5 py-2.5 text-[16px] font-500 text-white/85 transition-all hover:bg-[#E71840]/10 hover:text-[#E71840]"
                   >
-                    <MapPin size={13} className="shrink-0 text-white/40" />
+                    <MapPin size={13} className="shrink-0 text-white/75" />
                     {city.name}
                   </Link>
                 </AnimateIn>

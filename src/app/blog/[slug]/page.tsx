@@ -87,22 +87,22 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="relative z-10 mx-auto max-w-4xl px-5 lg:px-8 pb-12 w-full">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840] hover:text-white transition-colors mb-6"
+            className="inline-flex items-center gap-2 text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840] hover:text-white transition-colors mb-6"
           >
             &larr; Back to Blog
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-4">
             <span
-              className="rounded-full px-3 py-1 text-[0.6rem] font-700 uppercase tracking-wider"
+              className="rounded-full px-3 py-1 text-[1rem] font-700 uppercase tracking-wider"
               style={badgeBg(post.badgeColor)}
             >
               {post.badge}
             </span>
-            <span className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+            <span className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
               {post.category}
             </span>
             {post.series && (
-              <span className="text-[0.6rem] uppercase tracking-wider text-[#10B981] border border-[#10B981]/30 rounded-full px-3 py-1">
+              <span className="text-[1rem] uppercase tracking-wider text-[#10B981] border border-[#10B981]/30 rounded-full px-3 py-1">
                 Part {post.series.part} of {post.series.total}
               </span>
             )}
@@ -110,7 +110,7 @@ export default async function BlogPostPage({ params }: Props) {
           <h1 className="font-[family-name:var(--font-oswald)] text-[clamp(1.8rem,4vw,3rem)] font-700 uppercase leading-[1.1] text-white">
             {post.title}
           </h1>
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-[0.75rem] text-[#999]">
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-[1rem] text-[#999]">
             <Link href="/about/team" className="hover:text-[#E71840] transition-colors">{post.author}</Link>
             <span>·</span>
             <span>{post.date}</span>
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
             <span>{post.readTime}</span>
           </div>
           {post.lastUpdated && (
-            <p className="mt-2 text-[0.7rem] text-[#666]">Last updated: {post.lastUpdated}</p>
+            <p className="mt-2 text-[1rem] text-[#666]">Last updated: {post.lastUpdated}</p>
           )}
         </div>
       </section>
@@ -138,7 +138,7 @@ export default async function BlogPostPage({ params }: Props) {
               <h2 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase text-[#E71840] mb-4">Key Takeaways</h2>
               <ul className="space-y-3">
                 {post.keyTakeaways.map((t, i) => (
-                  <li key={i} className="flex items-start gap-3 text-[15px] leading-relaxed text-white/70">
+                  <li key={i} className="flex items-start gap-3 text-[16px] leading-relaxed text-white/70">
                     <span className="mt-1 text-[#E71840] shrink-0">&#9656;</span>
                     {t}
                   </li>
@@ -158,10 +158,10 @@ export default async function BlogPostPage({ params }: Props) {
               <div className="space-y-4">
                 {post.faqs.map((faq, i) => (
                   <div key={i} className="rounded-xl border border-white/10 bg-white/[0.03] p-5">
-                    <h3 className="font-[family-name:var(--font-oswald)] text-[0.95rem] font-700 text-white">
+                    <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-[1.75] text-white/60">
+                    <p className="mt-2 text-[16px] leading-[1.75] text-white/85">
                       {faq.answer}
                     </p>
                   </div>
@@ -181,13 +181,13 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="mt-16 pt-8 border-t border-[#222]">
             <div className="flex items-start gap-4 rounded-xl bg-white/[0.03] border border-white/10 p-6">
               <div className="h-12 w-12 shrink-0 rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] flex items-center justify-center">
-                <span className="text-white/30 text-sm font-700">{initials}</span>
+                <span className="text-white/75 text-base font-700">{initials}</span>
               </div>
               <div>
-                <p className="text-[14px] font-600 text-white">{authorData?.name ?? "NIXAR Solutions Team"}</p>
-                <p className="text-[13px] text-white/40">{authorData?.title ?? "Dallas-Fort Worth's AI-powered digital transformation agency."}</p>
-                {authorData && <p className="mt-2 text-[13px] leading-relaxed text-white/50">{authorData.bio}</p>}
-                <Link href="/about/team" className="mt-2 inline-block text-[12px] font-600 text-[#E71840] hover:text-white transition-colors">
+                <p className="text-[16px] font-600 text-white">{authorData?.name ?? "NIXAR Solutions Team"}</p>
+                <p className="text-[16px] text-white/75">{authorData?.title ?? "Dallas-Fort Worth's AI-powered digital transformation agency."}</p>
+                {authorData && <p className="mt-2 text-[16px] leading-relaxed text-white/85">{authorData.bio}</p>}
+                <Link href="/about/team" className="mt-2 inline-block text-[16px] font-600 text-[#E71840] hover:text-white transition-colors">
                   {authorData ? `About ${authorData.name.split(" ")[0]}` : "Meet the team"} &rarr;
                 </Link>
               </div>
@@ -198,7 +198,7 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Share */}
           <div className="mt-8 pt-8 border-t border-[#222] flex items-center justify-between">
-            <span className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#666]">
+            <span className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#666]">
               Share this article
             </span>
             <div className="flex gap-3">
@@ -206,7 +206,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-base"
                 aria-label="Share on X"
               >
                 𝕏
@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-base"
                 aria-label="Share on LinkedIn"
               >
                 in
@@ -224,7 +224,7 @@ export default async function BlogPostPage({ params }: Props) {
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://nixarsolutions.com/blog/${post.slug}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-xs"
+                className="w-9 h-9 rounded-full border border-[#333] flex items-center justify-center text-[#888] hover:border-[#E71840] hover:text-[#E71840] transition-colors text-base"
                 aria-label="Share on Facebook"
               >
                 f
@@ -261,13 +261,13 @@ export default async function BlogPostPage({ params }: Props) {
                     <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <span className="text-[0.6rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+                    <span className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                       {rel.category}
                     </span>
                     <h3 className="mt-2 font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase leading-[1.3] text-white">
                       {rel.title}
                     </h3>
-                    <span className="mt-auto pt-4 text-[0.7rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                    <span className="mt-auto pt-4 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
                       Read Article &rarr;
                     </span>
                   </div>
@@ -287,7 +287,7 @@ export default async function BlogPostPage({ params }: Props) {
             Ready to Transform Your{" "}
             <span className="text-[#E71840]">Digital Presence?</span>
           </h2>
-          <p className="mt-4 text-[0.95rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
+          <p className="mt-4 text-[1rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
             Get your free audit and discover what&apos;s possible for your business.
           </p>
           <div className="mt-8 flex gap-4 justify-center">

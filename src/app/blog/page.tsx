@@ -65,7 +65,7 @@ export default function BlogPage() {
         <div className="relative text-center px-6 max-w-3xl mx-auto" style={{ zIndex: 2 }}>
           <div className="inline-block border border-red-500/30 rounded-full px-4 py-1.5 mb-6">
             <span
-              className="text-xs uppercase tracking-widest"
+              className="text-base uppercase tracking-widest"
               style={{ color: "#E71840" }}
             >
               ● NIXAR SOLUTIONS BLOG
@@ -90,7 +90,7 @@ export default function BlogPage() {
             NIXAR Solutions breaks down emerging trends in AI, SEO, social media,
             and the Dallas marketing landscape. so you can stay ahead.
           </p>
-          <p className="mt-3 text-xs text-gray-600 tracking-wider">
+          <p className="mt-3 text-base text-gray-300 tracking-wider">
             Powered by{" "}
             <span style={{ color: "#E71840" }}>NIXAR Solutions</span> , 
             Dallas&apos;s AI-forward marketing agency
@@ -121,7 +121,7 @@ export default function BlogPage() {
            ═══════════════════════════════════════════════════════════════ */}
       <section id="blog-content" className="relative z-10 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-[0.65rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
             LATEST POSTS
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,5vw,4rem)] font-700 uppercase leading-none text-white">
@@ -147,14 +147,14 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#E71840]" />
                   <span
-                    className="absolute top-4 left-4 rounded-full px-3 py-1 text-[0.6rem] font-700 uppercase tracking-wider"
+                    className="absolute top-4 left-4 rounded-full px-3 py-1 text-[1rem] font-700 uppercase tracking-wider"
                     style={badgeBg(post.badgeColor)}
                   >
                     {post.badge}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-8">
-                  <div className="flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.1em] text-[#666]">
+                  <div className="flex items-center gap-3 text-[1rem] uppercase tracking-[0.1em] text-[#666]">
                     <span className="text-[#E71840] font-600">
                       {post.category}
                     </span>
@@ -164,14 +164,14 @@ export default function BlogPage() {
                   <h3 className="mt-3 font-[family-name:var(--font-oswald)] text-[1.2rem] font-700 uppercase leading-[1.3] text-white">
                     {post.title}
                   </h3>
-                  <p className="mt-2 text-[0.85rem] leading-relaxed text-[#888]">
+                  <p className="mt-2 text-[1rem] leading-relaxed text-[#888]">
                     {post.excerpt}
                   </p>
-                  <div className="mt-auto pt-6 flex items-center justify-between text-[0.7rem] text-[#666]">
+                  <div className="mt-auto pt-6 flex items-center justify-between text-[1rem] text-[#666]">
                     <span>{post.author}</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <span className="mt-4 text-[0.75rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
+                  <span className="mt-4 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
                     Read Article &rarr;
                   </span>
                 </div>
@@ -186,7 +186,7 @@ export default function BlogPage() {
            ═══════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 py-24 lg:py-32 border-t border-[#1a1a1a]">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-[0.65rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
             BEGINNER&apos;S GUIDE SERIES
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,5vw,4rem)] font-700 uppercase leading-none text-white">
@@ -202,7 +202,7 @@ export default function BlogPage() {
             {Array.from({ length: 5 }, (_, i) => (
               <div key={i} className="flex items-center gap-2">
                 <div
-                  className="w-8 h-8 rounded-full flex items-center justify-center text-[0.7rem] font-700 border transition-colors"
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-[1rem] font-700 border transition-colors"
                   style={{
                     borderColor: "#E71840",
                     backgroundColor: "rgba(231,24,64,0.1)",
@@ -243,16 +243,16 @@ export default function BlogPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <span className="text-[0.6rem] font-700 uppercase tracking-wider text-[#10B981]">
+                  <span className="text-[1rem] font-700 uppercase tracking-wider text-[#10B981]">
                     Part {post.series!.part} of {post.series!.total}
                   </span>
                   <h3 className="mt-2 font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase leading-[1.3] text-white">
                     {post.title}
                   </h3>
-                  <p className="mt-2 text-[0.8rem] leading-relaxed text-[#888] line-clamp-3">
+                  <p className="mt-2 text-[1rem] leading-relaxed text-[#888] line-clamp-3">
                     {post.excerpt}
                   </p>
-                  <span className="mt-auto pt-4 text-[0.7rem] font-600 uppercase tracking-[0.1em] text-[#10B981] transition-colors group-hover:text-white">
+                  <span className="mt-auto pt-4 text-[1rem] font-600 uppercase tracking-[0.1em] text-[#10B981] transition-colors group-hover:text-white">
                     Start Reading &rarr;
                   </span>
                 </div>
@@ -267,7 +267,7 @@ export default function BlogPage() {
            ═══════════════════════════════════════════════════════════════ */}
       <section className="relative z-10 py-24 lg:py-32 border-t border-[#1a1a1a]">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <p className="text-[0.65rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.2em] text-[#E71840]">
             MORE FROM NIXAR
           </p>
           <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(2.5rem,5vw,4rem)] font-700 uppercase leading-none text-white">
@@ -300,7 +300,7 @@ export default function BlogPage() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <div className="flex items-center gap-3 text-[0.6rem] uppercase tracking-[0.1em] text-[#666]">
+                  <div className="flex items-center gap-3 text-[1rem] uppercase tracking-[0.1em] text-[#666]">
                     <span className="text-[#E71840] font-600">
                       {post.category}
                     </span>
@@ -310,10 +310,10 @@ export default function BlogPage() {
                   <h3 className="mt-2 font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase leading-[1.3] text-white">
                     {post.title}
                   </h3>
-                  <p className="mt-2 text-[0.8rem] leading-relaxed text-[#888] line-clamp-2">
+                  <p className="mt-2 text-[1rem] leading-relaxed text-[#888] line-clamp-2">
                     {post.excerpt}
                   </p>
-                  <div className="mt-auto pt-4 flex items-center justify-between text-[0.65rem] text-[#666]">
+                  <div className="mt-auto pt-4 flex items-center justify-between text-[1rem] text-[#666]">
                     <span>{post.author} · {post.readTime}</span>
                     <span className="font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
                       Read Article &rarr;
@@ -336,12 +336,12 @@ export default function BlogPage() {
               Stay Ahead of the{" "}
               <span className="text-[#E71840]">Curve</span>
             </h2>
-            <p className="mt-4 text-[0.95rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
+            <p className="mt-4 text-[1rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
               Get weekly insights on marketing, AI, and digital strategy delivered
               to your inbox. No spam. just signal.
             </p>
             <NewsletterForm />
-            <p className="mt-4 text-[0.7rem] text-[#555]">
+            <p className="mt-4 text-[1rem] text-[#555]">
               We respect your privacy. Unsubscribe anytime.
             </p>
           </div>

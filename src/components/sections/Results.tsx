@@ -49,7 +49,7 @@ function StatBlock({ target, suffix, label, shouldStart }: {
         <span className="text-[var(--color-primary)]">{suffix}</span>
       </p>
       <div className="mx-auto mt-3 h-[2px] w-8 bg-[var(--color-primary)]" />
-      <p className="mt-3 text-[14px] font-500 text-white/50">{label}</p>
+      <p className="mt-3 text-[16px] font-500 text-white/85">{label}</p>
     </div>
   );
 }
@@ -85,7 +85,7 @@ export default function Results() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
         <div className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
             Track Record
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-white">

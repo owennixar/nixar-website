@@ -49,7 +49,7 @@ export default function ContactForm() {
                 <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl font-700 text-white">
                   Message Sent!
                 </h3>
-                <p className="mt-2 text-[15px] text-white/50">
+                <p className="mt-2 text-[16px] text-white/85">
                   We&apos;ll get back to you within 24 hours.
                 </p>
               </div>
@@ -64,13 +64,13 @@ export default function ContactForm() {
 
                 {/* Service dropdown */}
                 <div>
-                  <label htmlFor="service" className="mb-1.5 block text-[13px] font-500 text-white/50">
+                  <label htmlFor="service" className="mb-1.5 block text-[16px] font-500 text-white/85">
                     Service Interested In
                   </label>
                   <select
                     id="service"
                     name="service"
-                    className="h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20"
+                    className="h-12 w-full rounded-lg border border-white/10 bg-white/[0.04] px-4 text-[16px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20"
                   >
                     <option value="">Select a service</option>
                     {services.map((s) => (
@@ -84,7 +84,7 @@ export default function ContactForm() {
 
                 {/* Message */}
                 <div>
-                  <label htmlFor="message" className="mb-1.5 block text-[13px] font-500 text-white/50">
+                  <label htmlFor="message" className="mb-1.5 block text-[16px] font-500 text-white/85">
                     Message <span className="text-[var(--color-primary)]">*</span>
                   </label>
                   <textarea
@@ -92,19 +92,19 @@ export default function ContactForm() {
                     name="message"
                     rows={5}
                     required
-                    className={`w-full rounded-lg border px-4 py-3 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
+                    className={`w-full rounded-lg border px-4 py-3 text-[16px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
                       errors.message ? "border-red-400" : "border-white/10"
                     }`}
                     placeholder="Tell us about your project..."
                   />
                   {errors.message && (
-                    <p className="mt-1 text-[12px] text-red-500">{errors.message}</p>
+                    <p className="mt-1 text-[16px] text-red-500">{errors.message}</p>
                   )}
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-8 text-[15px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
+                  className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-8 text-[16px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
                 >
                   Send Message
                 </button>
@@ -145,7 +145,7 @@ export default function ContactForm() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={name}
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[12px] font-600 text-white/40 transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[16px] font-600 text-white/75 transition-all hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                   >
                     {name[0]}
                   </a>
@@ -174,7 +174,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-1.5 block text-[13px] font-500 text-white/50">
+      <label htmlFor={name} className="mb-1.5 block text-[16px] font-500 text-white/85">
         {label} {required && <span className="text-[var(--color-primary)]">*</span>}
       </label>
       <input
@@ -182,11 +182,11 @@ function Field({
         name={name}
         type={type}
         required={required}
-        className={`h-12 w-full rounded-lg border px-4 text-[14px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
+        className={`h-12 w-full rounded-lg border px-4 text-[16px] text-white outline-none transition-all focus:border-[#E71840] focus:ring-2 focus:ring-[#E71840]/20 bg-white/[0.04] ${
           error ? "border-red-400" : "border-white/10"
         }`}
       />
-      {error && <p className="mt-1 text-[12px] text-red-500">{error}</p>}
+      {error && <p className="mt-1 text-[16px] text-red-500">{error}</p>}
     </div>
   );
 }
@@ -209,10 +209,10 @@ function ContactRow({
         <Icon size={18} className="text-[var(--color-primary)]" />
       </div>
       <div>
-        <p className="text-[12px] font-500 uppercase tracking-wider text-white/30">{label}</p>
+        <p className="text-[16px] font-500 uppercase tracking-wider text-white/75">{label}</p>
         <ValueTag
           {...(href ? { href } : {})}
-          className="mt-0.5 text-[14px] text-white/70 transition-colors hover:text-white"
+          className="mt-0.5 text-[16px] text-white/70 transition-colors hover:text-white"
         >
           {value}
         </ValueTag>

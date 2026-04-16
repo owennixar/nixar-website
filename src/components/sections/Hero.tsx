@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Text block */}
         <div className="max-w-3xl">
           <AnimateIn delay={0.1} direction="none">
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/60">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-white/85">
               NIXAR Solutions. Frisco, TX
             </p>
           </AnimateIn>
@@ -55,13 +55,13 @@ export default function Hero() {
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="inline-flex h-[52px] items-center rounded-full bg-[var(--color-primary)] px-8 text-[15px] font-600 text-white shadow-lg shadow-[var(--color-primary-glow)] transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-xl hover:shadow-[var(--color-primary-glow)]"
+                className="inline-flex h-[52px] items-center rounded-full bg-[var(--color-primary)] px-8 text-[16px] font-600 text-white shadow-lg shadow-[var(--color-primary-glow)] transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-xl hover:shadow-[var(--color-primary-glow)]"
               >
                 Get Free Digital Audit
               </a>
               <a
                 href="#portfolio"
-                className="inline-flex h-[52px] items-center rounded-full border-2 border-white/80 px-8 text-[15px] font-600 text-white transition-all duration-200 hover:bg-white hover:text-[#0a0a0a]"
+                className="inline-flex h-[52px] items-center rounded-full border-2 border-white/80 px-8 text-[16px] font-600 text-white transition-all duration-200 hover:bg-white hover:text-[#0a0a0a]"
               >
                 See Our Work
               </a>
@@ -69,11 +69,11 @@ export default function Hero() {
           </AnimateIn>
 
           <AnimateIn delay={0.8} direction="none">
-            <div className="mt-8 flex flex-wrap items-center gap-3 text-[0.8rem] font-500 text-white/50">
+            <div className="mt-8 flex flex-wrap items-center gap-3 text-[1rem] font-500 text-white/85">
               <span>20+ Years Experience</span>
-              <span className="text-white/30">•</span>
+              <span className="text-white/75">•</span>
               <span>500+ Projects</span>
-              <span className="text-white/30">•</span>
+              <span className="text-white/75">•</span>
               <span>97% Satisfaction</span>
             </div>
           </AnimateIn>
@@ -84,7 +84,7 @@ export default function Hero() {
       <div style={{ position: 'absolute', bottom: 32, left: '50%', transform: 'translateX(-50%)', zIndex: 2 }}>
         <AnimateIn delay={1.0} direction="none">
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[11px] font-500 uppercase tracking-[0.15em] text-white/40">Scroll</span>
+            <span className="text-[16px] font-500 uppercase tracking-[0.15em] text-white/75">Scroll</span>
             <div className="h-[30px] w-[2px] overflow-hidden bg-white/20">
               <div className="hero-scroll-line h-[30px] w-full bg-white/40" />
             </div>

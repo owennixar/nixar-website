@@ -4,11 +4,11 @@ import IntroSequence from "@/components/layout/IntroSequence";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
-import CustomCursor from "@/components/ui/CustomCursor";
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
 import StickyCTA from "@/components/ui/StickyCTA";
 import SocialProofToast from "@/components/ui/SocialProofToast";
 import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
+import AdaWidget from "@/components/ui/AdaWidget";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import JsonLd from "@/components/seo/JsonLd";
 import { organizationSchema, websiteSchema } from "@/lib/seo/schemas";
@@ -140,7 +140,6 @@ export default function RootLayout({
         <SmoothScroll>
           <div className="relative z-[1]">
             <ScrollProgressBar />
-            <CustomCursor />
             <IntroSequence />
             <Navbar />
             <div id="main-content">{children}</div>
@@ -148,6 +147,7 @@ export default function RootLayout({
             <StickyCTA />
             <SocialProofToast />
             <ExitIntentPopup />
+            <AdaWidget />
           </div>
         </SmoothScroll>
         <Suspense fallback={null}>

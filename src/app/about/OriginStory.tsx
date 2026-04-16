@@ -6,7 +6,7 @@ export default function OriginStory() {
       <div className="mx-auto max-w-4xl px-5 lg:px-8">
         <div>
           <AnimateIn direction="left" distance={30}>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
               Our Story
             </p>
           </AnimateIn>
@@ -18,7 +18,7 @@ export default function OriginStory() {
           </AnimateIn>
 
           <AnimateIn direction="left" distance={30} delay={0.2}>
-            <p className="mt-6 text-base leading-[1.8] text-white/60">
+            <p className="mt-6 text-base leading-[1.8] text-white/85">
               NIXAR Solutions was founded by Anwar Mirza and Owen Nixon in 2023.
               Originally founded as an attempt to help grow Anwar&apos;s uncle&apos;s
               local tire shop bring in new clients during the slow season, it
@@ -36,19 +36,19 @@ export default function OriginStory() {
           <AnimateIn direction="left" distance={30} delay={0.3}>
             <div className="mt-8 flex items-center gap-6">
               <div>
-                <p className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-white">
+                <p className="font-[family-name:var(--font-heading)] text-[16px] font-700 text-white">
                   Anwar Mirza
                 </p>
-                <p className="text-[13px] text-white/40">
+                <p className="text-[16px] text-white/75">
                   Co-Founder
                 </p>
               </div>
               <div className="h-8 w-px bg-white/10" />
               <div>
-                <p className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-white">
+                <p className="font-[family-name:var(--font-heading)] text-[16px] font-700 text-white">
                   Owen Nixon
                 </p>
-                <p className="text-[13px] text-white/40">
+                <p className="text-[16px] text-white/75">
                   Co-Founder
                 </p>
               </div>

@@ -62,7 +62,7 @@ export default function PrivacyPolicyPage() {
             </h1>
           </AnimateIn>
           <AnimateIn delay={0.15}>
-            <p className="mt-6 text-[15px] text-white/40">
+            <p className="mt-6 text-[16px] text-white/75">
               Last updated: April 2026
             </p>
           </AnimateIn>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                 <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(1.25rem,2.5vw,1.5rem)] font-700 uppercase text-white">
                   {section.title}
                 </h2>
-                <p className="mt-4 text-[15px] leading-[1.8] text-[#999]">
+                <p className="mt-4 text-[16px] leading-[1.8] text-[#999]">
                   {section.content}
                 </p>
               </div>

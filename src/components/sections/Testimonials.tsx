@@ -31,7 +31,7 @@ export default function Testimonials() {
     <section id="testimonials" className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
             Testimonials
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
@@ -72,16 +72,16 @@ export default function Testimonials() {
                     </div>
 
                     {/* Quote */}
-                    <p className="relative z-10 mt-4 text-[15px] italic leading-[1.7] text-[#333]">
+                    <p className="relative z-10 mt-4 text-[16px] italic leading-[1.7] text-[#333]">
                       &ldquo;{t.quote}&rdquo;
                     </p>
 
                     {/* Author */}
                     <div className="relative z-10 mt-6 border-t border-[var(--color-border)] pt-4">
-                      <p className="font-[family-name:var(--font-heading)] text-[15px] font-700 text-[#1A1A1A]">
+                      <p className="font-[family-name:var(--font-heading)] text-[16px] font-700 text-[#1A1A1A]">
                         {t.author}
                       </p>
-                      <p className="text-[13px] text-[var(--color-text-muted)]">
+                      <p className="text-[16px] text-[var(--color-text-muted)]">
                         {t.role}, {t.company}
                       </p>
                     </div>

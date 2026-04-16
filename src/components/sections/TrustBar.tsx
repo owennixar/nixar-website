@@ -13,8 +13,8 @@ export default function TrustBar() {
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between md:flex-wrap md:gap-6">
-          <p className="text-gray-500 text-sm uppercase tracking-widest text-center">Follow Us On Our Socials!</p>
-          <div className="flex items-end justify-center flex-nowrap" style={{ gap: '1.25rem' }}>
+          <p className="text-gray-300 text-base uppercase tracking-widest text-center">Follow Us On Our Socials!</p>
+          <div className="flex items-center justify-center flex-nowrap gap-4 sm:gap-5">
             {SOCIALS.map((s) => (
               <a
                 key={s.name}
@@ -22,13 +22,12 @@ export default function TrustBar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`NIXAR Solutions on ${s.name}`}
-                className="inline-block transition-transform duration-300 hover:scale-110 hover:brightness-110"
+                className="inline-flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center transition-transform duration-300 hover:scale-110 hover:brightness-110"
               >
                 <img
                   src={s.icon}
                   alt={`${s.name} icon`}
-                  className={`object-contain ${s.name === 'LinkedIn' ? 'h-16 sm:h-24' : 'h-14 sm:h-20'}`}
-                  style={{ width: 'auto' }}
+                  className="h-full w-full object-contain"
                   loading="lazy"
                 />
               </a>
@@ -37,10 +36,10 @@ export default function TrustBar() {
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <span className="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span className="text-white text-sm font-600">4.9/5</span>
+              <span className="text-white text-base font-600">4.9/5</span>
             </div>
-            <span className="text-gray-600">|</span>
-            <span className="text-gray-400 text-sm">97% Client Satisfaction</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-gray-400 text-base">97% Client Satisfaction</span>
           </div>
         </div>
       </div>

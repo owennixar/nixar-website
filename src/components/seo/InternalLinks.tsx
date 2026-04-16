@@ -18,7 +18,7 @@ export function DfwCitiesSection() {
   return (
     <section className="bg-[#0A0A0A] py-12">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <h2 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-wider text-white/30 mb-4">
+        <h2 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-wider text-white/75 mb-4">
           We Serve All of DFW
         </h2>
         <div className="flex flex-wrap gap-3">
@@ -26,7 +26,7 @@ export function DfwCitiesSection() {
             <Link
               key={city.href}
               href={city.href}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[13px] font-500 text-white/50 transition-all hover:border-[#E71840]/40 hover:text-white"
+              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[16px] font-500 text-white/85 transition-all hover:border-[#E71840]/40 hover:text-white"
             >
               {city.name}
             </Link>
@@ -72,7 +72,7 @@ export function RelatedServicesSection({ blogSlug }: { blogSlug: string }) {
 
   return (
     <div className="mt-12 pt-8 border-t border-[#222]">
-      <h2 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase text-white/40 mb-4">
+      <h2 className="font-[family-name:var(--font-oswald)] text-[1.1rem] font-700 uppercase text-white/75 mb-4">
         Related Services
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -82,13 +82,13 @@ export function RelatedServicesSection({ blogSlug }: { blogSlug: string }) {
             href={`/services/${service!.slug}`}
             className="rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all hover:border-[#E71840]/30"
           >
-            <h3 className="font-[family-name:var(--font-oswald)] text-[0.95rem] font-700 uppercase text-white">
+            <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase text-white">
               {service!.title}
             </h3>
-            <p className="mt-1 text-[13px] leading-relaxed text-white/40 line-clamp-2">
+            <p className="mt-1 text-[16px] leading-relaxed text-white/75 line-clamp-2">
               {service!.description}
             </p>
-            <span className="mt-2 inline-block text-[12px] font-600 text-[#E71840]">
+            <span className="mt-2 inline-block text-[16px] font-600 text-[#E71840]">
               Learn more &rarr;
             </span>
           </Link>

@@ -56,7 +56,7 @@ export default function Process() {
     <section ref={sectionRef} className="bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn className="text-center">
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
             Our Process
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
@@ -96,7 +96,7 @@ export default function Process() {
                   <h3 className="font-[family-name:var(--font-heading)] text-[1.15rem] font-700 text-[#1A1A1A]">
                     {step.title}
                   </h3>
-                  <p className="mt-2 text-[14px] leading-[1.7] text-[var(--color-text-secondary)]">
+                  <p className="mt-2 text-[16px] leading-[1.7] text-[var(--color-text-secondary)]">
                     {step.description}
                   </p>
                 </div>

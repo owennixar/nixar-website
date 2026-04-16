@@ -1,8 +1,7 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, ArrowUp } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { services } from "@/lib/data/services";
 import { cities } from "@/lib/data/cities";
@@ -37,30 +36,17 @@ const MARQUEE_TEXT =
 const TOP_CITIES = cities.slice(0, 12);
 
 export default function Footer() {
-  const [showBackToTop, setShowBackToTop] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setShowBackToTop(window.scrollY > 500);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
-
   return (
     <>
       <footer className="bg-[#0A0A0A] text-white" role="contentinfo">
         {/* ── Marquee strip ─────────────────────────────────────────── */}
-        <div className="overflow-hidden border-b border-white/[0.06] py-4">
+        <div className="overflow-hidden border-b border-white/[0.06] py-5">
           <div className="footer-marquee-track flex whitespace-nowrap">
             {/* Duplicate for seamless loop */}
             {[0, 1].map((n) => (
               <span
                 key={n}
-                className="inline-block font-[family-name:var(--font-heading)] text-sm font-700 uppercase tracking-[0.15em] text-white/20"
+                className="inline-block font-[family-name:var(--font-heading)] text-[1.25rem] font-700 uppercase tracking-[0.15em] text-white/90"
                 aria-hidden={n === 1}
               >
                 {MARQUEE_TEXT}
@@ -76,7 +62,7 @@ export default function Footer() {
             <Link href="/" aria-label="NIXAR Solutions. Home" className="flex items-center">
               <Logo height={28} />
             </Link>
-            <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/45">
+            <p className="mt-5 max-w-xs text-[16px] leading-relaxed text-white/85">
               Dallas-Fort Worth&apos;s Full-Service Digital Marketing Agency &mdash; SEO, Web Design, Social Media &amp; AI
             </p>
             {/* Social */}
@@ -88,7 +74,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/35 transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/75 transition-all duration-200 hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]"
                 >
                   <Icon />
                 </a>
@@ -98,7 +84,7 @@ export default function Footer() {
 
           {/* Column 2: Company */}
           <div>
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
               Company
             </h3>
             <ul className="mt-5 space-y-3">
@@ -106,7 +92,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {label}
                   </Link>
@@ -117,7 +103,7 @@ export default function Footer() {
 
           {/* Column 3: Resources */}
           <div>
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
               Resources
             </h3>
             <ul className="mt-5 space-y-3">
@@ -125,7 +111,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {label}
                   </Link>
@@ -136,7 +122,7 @@ export default function Footer() {
 
           {/* Column 4: Services. all 10 */}
           <div>
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
               Services
             </h3>
             <ul className="mt-5 space-y-3">
@@ -144,7 +130,7 @@ export default function Footer() {
                 <li key={slug}>
                   <Link
                     href={`/services/${slug}`}
-                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {shortTitle}
                   </Link>
@@ -155,7 +141,7 @@ export default function Footer() {
 
           {/* Column 4: Serving DFW. top 12 cities */}
           <div>
-            <h3 className="text-[11px] font-600 uppercase tracking-[0.2em] text-white/25">
+            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
               Serving DFW
             </h3>
             <ul className="mt-5 space-y-3">
@@ -163,7 +149,7 @@ export default function Footer() {
                 <li key={slug}>
                   <Link
                     href={`/${slug}`}
-                    className="text-[14px] text-white/55 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {name}
                   </Link>
@@ -176,20 +162,20 @@ export default function Footer() {
         {/* ── Contact strip ─────────────────────────────────────────── */}
         <div className="border-t border-white/[0.06]">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-6 px-5 py-8 sm:flex-row sm:gap-10 lg:px-8">
-            <span className="flex items-center gap-2 text-[14px] text-white/55">
+            <span className="flex items-center gap-2 text-[16px] text-white/85">
               <MapPin size={15} className="text-[var(--color-primary)]" />
               Frisco, TX
             </span>
             <a
               href="tel:4697593638"
-              className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-white"
+              className="flex items-center gap-2 text-[16px] text-white/85 transition-colors hover:text-white"
             >
               <Phone size={15} className="text-[var(--color-primary)]" />
               469-759-3638
             </a>
             <a
               href="mailto:hello@nixarsolutions.com"
-              className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-white"
+              className="flex items-center gap-2 text-[16px] text-white/85 transition-colors hover:text-white"
             >
               <Mail size={15} className="text-[var(--color-primary)]" />
               hello@nixarsolutions.com
@@ -199,24 +185,24 @@ export default function Footer() {
 
         {/* ── Bottom bar ────────────────────────────────────────────── */}
         <div className="border-t border-[#222]">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-[12px] text-white/25 md:flex-row lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-[16px] text-white/75 md:flex-row lg:px-8">
             <p>&copy; 2026 NIXAR Solutions. All Rights Reserved.</p>
             <div className="flex gap-6">
               <Link
                 href="/privacy-policy"
-                className="transition-colors hover:text-white/50"
+                className="transition-colors hover:text-white/85"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="transition-colors hover:text-white/50"
+                className="transition-colors hover:text-white/85"
               >
                 Terms &amp; Conditions
               </Link>
               <Link
                 href="/sitemap-page"
-                className="transition-colors hover:text-white/50"
+                className="transition-colors hover:text-white/85"
               >
                 Sitemap
               </Link>
@@ -224,20 +210,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
-      {/* ── Back to top button ──────────────────────────────────────── */}
-      <button
-        type="button"
-        onClick={scrollToTop}
-        aria-label="Back to top"
-        className={`fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full bg-[#E71840] shadow-lg shadow-[#E71840]/20 transition-all duration-300 hover:shadow-xl ${
-          showBackToTop
-            ? "translate-y-0 opacity-100"
-            : "pointer-events-none translate-y-4 opacity-0"
-        }`}
-      >
-        <ArrowUp size={18} className="text-white" />
-      </button>
     </>
   );
 }

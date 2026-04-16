@@ -128,7 +128,7 @@ export default function FreeAuditPage() {
                     <h3 className="font-[family-name:var(--font-oswald)] text-lg font-700 text-white">
                       {card.title}
                     </h3>
-                    <p className="text-[15px] leading-relaxed text-[#999]">
+                    <p className="text-[16px] leading-relaxed text-[#999]">
                       {card.description}
                     </p>
                   </div>
@@ -151,32 +151,32 @@ export default function FreeAuditPage() {
                   <input
                     type="text"
                     placeholder="Name"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <input
                     type="tel"
                     placeholder="Phone"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <input
                     type="text"
                     placeholder="Business Name"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <input
                     type="url"
                     placeholder="Website URL"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <textarea
                     rows={4}
                     placeholder="Tell us about your business goals"
-                    className="resize-none rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/30 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
+                    className="resize-none rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
                   />
                   <button
                     type="button"
@@ -192,7 +192,7 @@ export default function FreeAuditPage() {
                     (text) => (
                       <span
                         key={text}
-                        className="flex items-center gap-2 text-sm text-white/50"
+                        className="flex items-center gap-2 text-base text-white/85"
                       >
                         <CheckCircle2 size={16} />
                         {text}
@@ -218,7 +218,7 @@ export default function FreeAuditPage() {
               {testimonials.slice(0, 3).map((t, i) => (
                 <AnimateIn key={t.author} delay={i * 0.1}>
                   <div className="glass-card flex h-full flex-col justify-between p-6">
-                    <p className="text-[15px] italic leading-relaxed text-white/70">
+                    <p className="text-[16px] italic leading-relaxed text-white/70">
                       &ldquo;{t.quote}&rdquo;
                     </p>
                     <div className="mt-6">
@@ -233,7 +233,7 @@ export default function FreeAuditPage() {
                         ))}
                       </div>
                       <p className="font-600 text-white">{t.author}</p>
-                      <p className="text-sm text-white/50">
+                      <p className="text-base text-white/85">
                         {t.role}, {t.company}
                       </p>
                     </div>
@@ -260,7 +260,7 @@ export default function FreeAuditPage() {
                     <h3 className="font-[family-name:var(--font-oswald)] text-lg font-700 text-white">
                       {faq.question}
                     </h3>
-                    <p className="mt-3 text-[15px] leading-relaxed text-[#999]">
+                    <p className="mt-3 text-[16px] leading-relaxed text-[#999]">
                       {faq.answer}
                     </p>
                   </div>

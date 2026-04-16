@@ -50,13 +50,25 @@
 }
 
 /* Base — dark theme */
+html {
+  font-size: 16px; /* ADA baseline — do not drop below */
+}
+
 body {
   background: #0A0A0A;
   color: #FFFFFF;
   font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Enforce 16px floor on interactive + body text so nothing slips below ADA min */
+p, li, label, input, textarea, select, button, a, span, td, th {
+  font-size: inherit;
 }
 
 /* Bebas Neue headings — uppercase by design, add tracking */
@@ -348,9 +360,32 @@ img, video {
   75% { transform: rotate(4deg) translate(15px, 5px); }
 }
 
-/* Footer marquee */
+/* Footer marquee — slower for readability */
 .footer-marquee-track {
-  animation: marqueeScroll 30s linear infinite;
+  animation: marqueeScroll 55s linear infinite;
+}
+
+/* ── Services floating carousel ──────────────────────────────────── */
+.services-marquee-viewport {
+  mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+.services-marquee-track {
+  animation: marqueeScroll 60s linear infinite;
+  will-change: transform;
+}
+.services-marquee-track:hover {
+  animation-play-state: paused;
+}
+.services-card {
+  animation: serviceFloat 6s ease-in-out infinite;
+}
+.services-card:nth-child(2n) { animation-delay: -1.5s; }
+.services-card:nth-child(3n) { animation-delay: -3s; }
+.services-card:nth-child(4n) { animation-delay: -4.5s; }
+@keyframes serviceFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
 @keyframes marqueeScroll {
@@ -368,4 +403,32 @@ img, video {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* ── ADA widget overrides ──────────────────────────────────────── */
+html.ada-reduce-motion *,
+html.ada-reduce-motion *::before,
+html.ada-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html.ada-high-contrast {
+  filter: contrast(1.25);
+}
+html.ada-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+html.ada-high-contrast .glass-card,
+html.ada-high-contrast [class*="bg-white/"] {
+  background: #111 !important;
+  border-color: #fff !important;
+}
+
+html.ada-underline-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
 }

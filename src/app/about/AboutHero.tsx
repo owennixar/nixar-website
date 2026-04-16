@@ -20,7 +20,7 @@ export default function AboutHero() {
       <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
         <div className="max-w-7xl mx-auto px-6 w-full">
           <AnimateIn delay={0.1} direction="none">
-            <p className="text-sm uppercase tracking-widest mb-4" style={{ color: '#E71840', textShadow: '0 0 20px rgba(231,24,64,0.5)' }}>
+            <p className="text-base uppercase tracking-widest mb-4" style={{ color: '#E71840', textShadow: '0 0 20px rgba(231,24,64,0.5)' }}>
               About Us
             </p>
           </AnimateIn>

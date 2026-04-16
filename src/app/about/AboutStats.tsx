@@ -75,7 +75,7 @@ function StatBlock({
         <span className="text-[#E71840]">{suffix}</span>
       </p>
       <p className="mt-3 text-lg font-600 text-white">{label}</p>
-      <p className="mt-2 text-sm leading-snug text-white/40 max-w-xs">{disclaimer}</p>
+      <p className="mt-2 text-base leading-snug text-white/75 max-w-xs">{disclaimer}</p>
     </div>
   );
 }
@@ -103,7 +103,7 @@ export default function AboutStats() {
   return (
     <section ref={ref} className="border-y border-white/10 bg-transparent py-16 lg:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <p className="text-center text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+        <p className="text-center text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
           By The Numbers
         </p>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-stretch">

@@ -7,7 +7,7 @@ export default function About() {
         {/* Text. 60% */}
         <div className="lg:col-span-3">
           <AnimateIn direction="left" distance={30}>
-            <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+            <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
               About NIXAR
             </p>
           </AnimateIn>
@@ -39,7 +39,7 @@ export default function About() {
           <AnimateIn direction="left" distance={30} delay={0.4}>
             <a
               href="#about"
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-600 text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
+              className="mt-6 inline-flex items-center gap-1 text-[16px] font-600 text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
             >
               About Us
               <span aria-hidden="true">&rarr;</span>
@@ -61,7 +61,7 @@ export default function About() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
                 </div>
-                <p className="mt-2 text-sm font-500 text-[var(--color-text-muted)]">Team Photo</p>
+                <p className="mt-2 text-base font-500 text-[var(--color-text-muted)]">Team Photo</p>
               </div>
             </div>
           </div>

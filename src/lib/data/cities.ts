@@ -8,6 +8,12 @@ export interface City {
   nearbyCities: string[];
   seoTitle: string;
   seoDescription: string;
+  /** State abbreviation for non-DFW US markets (e.g., "FL", "CA"). Undefined for DFW TX cities. */
+  state?: string;
+  /** Region label used in breadcrumbs. Defaults to "DFW Metroplex" when undefined. */
+  region?: string;
+  /** When true, this market is outside DFW and the [city] template should render non-DFW copy. */
+  isExpansion?: boolean;
 }
 
 export const cities: City[] = [
@@ -411,6 +417,79 @@ export const cities: City[] = [
     seoTitle: "Marketing Agency Grand Prairie TX | Digital Marketing | NIXAR Solutions",
     seoDescription:
       "Marketing agency for Grand Prairie, TX. NIXAR Solutions delivers SEO, web development, and digital marketing for Grand Prairie's centrally located, diverse business community.",
+  },
+  /* ── Expansion markets ────────────────────────────────────────── */
+  {
+    slug: "miami",
+    name: "Miami",
+    state: "FL",
+    region: "Florida",
+    isExpansion: true,
+    county: "Miami-Dade County",
+    population: "450,000+",
+    uniqueDescription:
+      "Miami is the gateway between North America and Latin America. a bilingual, bicultural economic hub where tech, finance, logistics, hospitality, and real estate converge. Since the pandemic-era Miami tech wave, the city has attracted venture capital, crypto firms, and founders relocating from Silicon Valley and New York. Brickell operates as the financial district, Wynwood as the creative corridor, and Coral Gables as the cross-border corporate base. Miami's customer base is uniquely multilingual. effective digital marketing here demands Spanish-first content strategies, a deep understanding of Latin American buyer behavior, and AI SEO that ranks in both English and Spanish. NIXAR Solutions brings the Colombian heritage and bilingual fluency to serve Miami businesses competing for Latin American market share.",
+    keyIndustries: [
+      "Financial Services",
+      "Tech & Web3",
+      "International Trade",
+      "Hospitality & Tourism",
+      "Real Estate",
+      "Healthcare",
+      "Media & Entertainment",
+    ],
+    nearbyCities: [],
+    seoTitle: "Marketing Agency Miami FL | Bilingual SEO & Web Design | NIXAR Solutions",
+    seoDescription:
+      "NIXAR Solutions serves Miami businesses with AI-powered SEO, bilingual web development, and Latin America-focused digital marketing. Colombian heritage, Miami-ready execution.",
+  },
+  {
+    slug: "sacramento",
+    name: "Sacramento",
+    state: "CA",
+    region: "California",
+    isExpansion: true,
+    county: "Sacramento County",
+    population: "530,000+",
+    uniqueDescription:
+      "Sacramento is California's capital and a fast-growing alternative to the Bay Area for tech, healthcare, and government-adjacent businesses. With the University of California Davis, Sutter Health, Kaiser Permanente, and a booming startup ecosystem in the Midtown and East Sacramento corridors, the city has become a strategic base for companies priced out of San Francisco and Silicon Valley. Sacramento's proximity to both the Bay Area and Northern California's agricultural economy creates a unique digital marketing challenge. businesses need to rank locally, regionally, and across adjacent metros. NIXAR Solutions brings AI SEO, conversion-focused web design, and multi-market campaign strategy to Sacramento companies ready to scale beyond their home market.",
+    keyIndustries: [
+      "Government & Public Sector",
+      "Healthcare",
+      "Education & Research",
+      "AgTech",
+      "Clean Energy",
+      "Tech & Startups",
+      "Real Estate",
+    ],
+    nearbyCities: [],
+    seoTitle: "Marketing Agency Sacramento CA | AI SEO & Web Design | NIXAR Solutions",
+    seoDescription:
+      "NIXAR Solutions delivers AI-powered SEO, web development, and growth marketing for Sacramento, CA businesses. Scale beyond your home market with a multi-metro digital strategy.",
+  },
+  {
+    slug: "college-station",
+    name: "College Station",
+    state: "TX",
+    region: "Texas A&M / Brazos Valley",
+    isExpansion: true,
+    county: "Brazos County",
+    population: "125,000+",
+    uniqueDescription:
+      "College Station is home to Texas A&M University, one of the largest and most research-active universities in the United States, and the anchor of the Brazos Valley economy. The city's economy centers on education, research, biotech, agriculture technology, and the businesses that serve a student population of 75,000+. From student-facing service companies to spin-out startups commercializing A&M research, College Station businesses need digital marketing that speaks to both a transient student market and the long-term professional community. NIXAR Solutions serves College Station businesses with AI SEO, conversion-focused web development, and campus-aware brand strategy. Being Texas-based means we understand the Aggie market in a way out-of-state agencies simply cannot.",
+    keyIndustries: [
+      "Higher Education",
+      "Biotech & Research",
+      "AgTech",
+      "Healthcare",
+      "Real Estate & Student Housing",
+      "Hospitality & Retail",
+      "Tech Commercialization",
+    ],
+    nearbyCities: [],
+    seoTitle: "Marketing Agency College Station TX | SEO & Web Design | NIXAR Solutions",
+    seoDescription:
+      "NIXAR Solutions serves College Station, TX and the Brazos Valley with AI SEO, web development, and brand strategy. Built for Aggie-market businesses and A&M-adjacent companies.",
   },
 ];
 

@@ -41,7 +41,7 @@ export default function Values() {
                 <h3 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-bold text-white uppercase mt-2">
                   {value.title}
                 </h3>
-                <p className="text-[15px] text-[#999] mt-3 leading-relaxed">
+                <p className="text-[16px] text-[#999] mt-3 leading-relaxed">
                   {value.description}
                 </p>
               </div>

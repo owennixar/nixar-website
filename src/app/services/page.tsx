@@ -73,7 +73,7 @@ export default function ServicesIndex() {
           <div className="relative h-full flex items-center" style={{ zIndex: 2 }}>
             <div className="max-w-7xl mx-auto px-6 w-full">
             <AnimateIn>
-              <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+              <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 What We Do
               </p>
             </AnimateIn>
@@ -83,7 +83,7 @@ export default function ServicesIndex() {
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.2}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/85">
                 End-to-end digital solutions. from branding and website development to AI automation and
                 paid advertising. One team. Full accountability. Measurable results.
               </p>
@@ -116,7 +116,7 @@ export default function ServicesIndex() {
                     >
                       {/* Badge */}
                       {service.isNew && (
-                        <span className="absolute right-5 top-5 rounded-full bg-[#E71840] px-2.5 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
+                        <span className="absolute right-5 top-5 rounded-full bg-[#E71840] px-2.5 py-0.5 text-[16px] font-700 uppercase tracking-wider text-white">
                           New
                         </span>
                       )}
@@ -144,8 +144,8 @@ export default function ServicesIndex() {
                         {service.title}
                       </h2>
                       <p
-                        className={`mt-2 leading-[1.65] text-white/50 ${
-                          isLarge ? "text-[15px]" : "text-[14px]"
+                        className={`mt-2 leading-[1.65] text-white/85 ${
+                          isLarge ? "text-[16px]" : "text-[16px]"
                         }`}
                       >
                         {service.description}
@@ -157,7 +157,7 @@ export default function ServicesIndex() {
                           {service.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[11px] font-500 text-white/40"
+                              className="rounded-full bg-white/[0.06] px-2.5 py-0.5 text-[16px] font-500 text-white/75"
                             >
                               {tag}
                             </span>
@@ -166,7 +166,7 @@ export default function ServicesIndex() {
                       )}
 
                       {/* Learn more */}
-                      <span className="mt-auto pt-5 text-[13px] font-600 text-[#E71840]">
+                      <span className="mt-auto pt-5 text-[16px] font-600 text-[#E71840]">
                         Learn More &rarr;
                       </span>
                     </Link>
@@ -217,7 +217,7 @@ export default function ServicesIndex() {
                     <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1.1rem] font-700 text-white">
                       {step.title}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-[1.6] text-[#999]">
+                    <p className="mt-2 text-[16px] leading-[1.6] text-[#999]">
                       {step.desc}
                     </p>
                   </div>
@@ -305,7 +305,7 @@ export default function ServicesIndex() {
                       <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">
                         {industry.name}
                       </h3>
-                      <p className="mt-1.5 text-[13px] leading-[1.6] text-[#999]">
+                      <p className="mt-1.5 text-[16px] leading-[1.6] text-[#999]">
                         {industry.desc}
                       </p>
                     </div>
@@ -329,14 +329,14 @@ export default function ServicesIndex() {
               <div className="glass-card mt-12 overflow-hidden p-0">
                 {/* Header */}
                 <div className="flex items-center border-b border-white/10">
-                  <div className="w-[40%] px-5 py-4 text-[13px] font-600 text-white/50" />
-                  <div className="flex-1 border-b-2 border-[#E71840] bg-white/[0.04] px-4 py-4 text-center font-[family-name:var(--font-heading)] text-[0.85rem] font-700 uppercase tracking-wider text-white">
+                  <div className="w-[40%] px-5 py-4 text-[16px] font-600 text-white/85" />
+                  <div className="flex-1 border-b-2 border-[#E71840] bg-white/[0.04] px-4 py-4 text-center font-[family-name:var(--font-heading)] text-[1rem] font-700 uppercase tracking-wider text-white">
                     NIXAR
                   </div>
-                  <div className="flex-1 px-4 py-4 text-center text-[0.8rem] font-600 text-white/50">
+                  <div className="flex-1 px-4 py-4 text-center text-[1rem] font-600 text-white/85">
                     Typical Agency
                   </div>
-                  <div className="flex-1 px-4 py-4 text-center text-[0.8rem] font-600 text-white/50">
+                  <div className="flex-1 px-4 py-4 text-center text-[1rem] font-600 text-white/85">
                     DIY
                   </div>
                 </div>
@@ -358,7 +358,7 @@ export default function ServicesIndex() {
                       i % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"
                     }`}
                   >
-                    <div className="w-[40%] px-5 py-3.5 text-[14px] text-white/70">
+                    <div className="w-[40%] px-5 py-3.5 text-[16px] text-white/70">
                       {row.label}
                     </div>
                     <div className="flex flex-1 items-center justify-center bg-white/[0.02] py-3.5">

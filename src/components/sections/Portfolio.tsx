@@ -7,7 +7,7 @@ export default function Portfolio() {
     <section id="portfolio" className="bg-[var(--color-bg-alt)] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn>
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
             Portfolio
           </p>
           <h2 className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,3rem)] font-800 leading-tight tracking-tight text-[#1A1A1A]">
@@ -40,7 +40,7 @@ export default function Portfolio() {
                     {project.services.map((s) => (
                       <span
                         key={s}
-                        className="rounded-full bg-white/20 px-2.5 py-0.5 text-[11px] font-500 text-white backdrop-blur-sm"
+                        className="rounded-full bg-white/20 px-2.5 py-0.5 text-[16px] font-500 text-white backdrop-blur-sm"
                       >
                         {s}
                       </span>
@@ -49,7 +49,7 @@ export default function Portfolio() {
                   <h3 className="mt-2 font-[family-name:var(--font-heading)] text-xl font-700 text-white">
                     {project.name}
                   </h3>
-                  <span className="mt-1 text-[13px] font-500 text-white/80">
+                  <span className="mt-1 text-[16px] font-500 text-white/80">
                     View Project &rarr;
                   </span>
                 </div>
@@ -62,7 +62,7 @@ export default function Portfolio() {
         <AnimateIn delay={0.3} className="mt-12 text-center">
           <Link
             href="/portfolio"
-            className="inline-flex h-12 items-center rounded-full border-2 border-[#1A1A1A] px-8 text-[14px] font-600 text-[#1A1A1A] transition-all hover:bg-[#1A1A1A] hover:text-white"
+            className="inline-flex h-12 items-center rounded-full border-2 border-[#1A1A1A] px-8 text-[16px] font-600 text-[#1A1A1A] transition-all hover:bg-[#1A1A1A] hover:text-white"
           >
             View All Work &rarr;
           </Link>

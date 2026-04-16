@@ -28,9 +28,9 @@ const legalPages = [
 ];
 
 const headingClass =
-  "text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)] mb-4";
+  "text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)] mb-4";
 const linkClass =
-  "text-[14px] text-white/50 hover:text-[var(--color-primary)] transition-colors";
+  "text-[16px] text-white/85 hover:text-[var(--color-primary)] transition-colors";
 
 export default function SitemapPage() {
   return (

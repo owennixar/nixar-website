@@ -6,9 +6,9 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import { personSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Our Team | Owen Nixon & Anwar Mirza | NIXAR Solutions",
+  title: "Our Team | Owen Nixon, Anwar Mirza & Murilo Leite Filho | NIXAR Solutions",
   description:
-    "Meet the co-founders of NIXAR Solutions. Owen Nixon and Anwar Mirza lead Dallas-Fort Worth's AI-powered digital transformation agency.",
+    "Meet the leadership of NIXAR Solutions. Co-founders Owen Nixon and Anwar Mirza, and CTO Murilo Leite Filho lead Dallas-Fort Worth's AI-powered digital transformation agency.",
 };
 
 const TEAM = [
@@ -23,6 +23,12 @@ const TEAM = [
     title: "Co-Founder & Principal",
     image: "/images/team-anwar.webp",
     bio: "Anwar Mirza is the co-founder of NIXAR Solutions, bringing extensive experience in marketing strategy, brand development, and client relations. With a passion for understanding what makes businesses grow, Anwar leads NIXAR's strategic direction and ensures every client receives a customized approach tailored to their unique market position. He oversees brand identity projects, marketing strategy development, and client relationship management across the agency. Anwar's strength lies in translating complex business challenges into clear, actionable marketing roadmaps. He believes that great marketing starts with deep understanding. of the client's business, their customers, their competitors, and the opportunities that others miss. Before co-founding NIXAR, Anwar developed his marketing expertise across diverse industries, learning firsthand how different businesses require different approaches to growth. His commitment to transparency, measurable results, and long-term client partnerships defines the NIXAR culture. Based in the Dallas-Fort Worth area, Anwar is dedicated to making enterprise-level marketing strategies accessible to businesses of all sizes.",
+  },
+  {
+    name: "Murilo Leite Filho",
+    title: "Chief Technology Officer",
+    image: "/images/team-murilo.jpg",
+    bio: "Murilo Leite Filho is the Chief Technology Officer of NIXAR Solutions, leading engineering, infrastructure, and AI systems across the agency. Brazilian by heritage and global in outlook, Murilo brings a rare combination of technical depth and cross-border perspective. His engineering leadership shapes how NIXAR architects websites, how we design AI automation, and how we approach performance in markets with diverse network and device conditions. Murilo oversees the technology stack that powers every NIXAR client engagement. from AI-powered SEO tooling and custom agent development to the web platforms that clients rely on for growth. His philosophy is pragmatic: ship fast, measure everything, and never sacrifice craft for speed. Having Brazilian engineering leadership at NIXAR is not decorative. it is strategic, and it is central to how NIXAR serves clients in Brazil, Latin America, and any market where bilingual, bicultural execution is the difference between winning and being ignored.",
   },
 ];
 
@@ -47,7 +53,7 @@ export default function TeamPage() {
               </h1>
             </AnimateIn>
             <AnimateIn delay={0.1}>
-              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
+              <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/85">
                 The people behind Dallas-Fort Worth&apos;s AI-powered marketing agency.
               </p>
             </AnimateIn>
@@ -59,7 +65,7 @@ export default function TeamPage() {
         {/* Team Members */}
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-5 lg:px-8">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-[900px] mx-auto">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-[1200px] mx-auto">
               {TEAM.map((person, i) => (
                 <AnimateIn key={person.name} delay={i * 0.1}>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-sm overflow-hidden">
@@ -75,8 +81,8 @@ export default function TeamPage() {
                       <h2 className="font-[family-name:var(--font-oswald)] text-[1.5rem] font-700 uppercase text-white">
                         {person.name}
                       </h2>
-                      <p className="mt-1 text-[0.85rem] font-600 text-[#E71840]">{person.title}</p>
-                      <p className="mt-4 text-[15px] leading-[1.8] text-white/60">{person.bio}</p>
+                      <p className="mt-1 text-[1rem] font-600 text-[#E71840]">{person.title}</p>
+                      <p className="mt-4 text-[16px] leading-[1.8] text-white/85">{person.bio}</p>
                     </div>
                   </div>
                 </AnimateIn>
@@ -100,7 +106,7 @@ export default function TeamPage() {
                     <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase text-white">
                       {v.title}
                     </h3>
-                    <p className="mt-2 text-[14px] leading-relaxed text-white/50">{v.desc}</p>
+                    <p className="mt-2 text-[16px] leading-relaxed text-white/85">{v.desc}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -118,10 +124,10 @@ export default function TeamPage() {
             </AnimateIn>
             <AnimateIn delay={0.1}>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <Link href="/contact" className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535]">
+                <Link href="/contact" className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[16px] font-600 text-white transition-all hover:bg-[#C41535]">
                   Work With Us
                 </Link>
-                <Link href="/portfolio" className="inline-flex h-12 items-center rounded-full border-2 border-white/20 px-8 text-[14px] font-600 text-white transition-all hover:border-white/40">
+                <Link href="/portfolio" className="inline-flex h-12 items-center rounded-full border-2 border-white/20 px-8 text-[16px] font-600 text-white transition-all hover:border-white/40">
                   See Our Work
                 </Link>
               </div>
@@ -134,6 +140,7 @@ export default function TeamPage() {
         data={[
           personSchema({ name: "Owen Nixon", jobTitle: "Co-Founder & Principal", description: "Co-founder of NIXAR Solutions with expertise in web development, AI integration, and digital strategy." }),
           personSchema({ name: "Anwar Mirza", jobTitle: "Co-Founder & Principal", description: "Co-founder of NIXAR Solutions with expertise in marketing strategy, brand development, and client relations." }),
+          personSchema({ name: "Murilo Leite Filho", jobTitle: "Chief Technology Officer", description: "CTO of NIXAR Solutions leading engineering, infrastructure, and AI systems with Brazilian heritage and cross-border technical leadership." }),
           breadcrumbSchema([{ name: "Home", url: "/" }, { name: "About", url: "/about" }, { name: "Team", url: "/about/team" }]),
         ]}
       />

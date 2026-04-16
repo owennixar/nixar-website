@@ -66,7 +66,7 @@ export default async function PortfolioDetailPage({
           <AnimateIn>
             <Link
               href="/portfolio"
-              className="group mb-8 inline-flex items-center gap-2 text-sm font-500 text-white/50 transition-colors hover:text-white"
+              className="group mb-8 inline-flex items-center gap-2 text-base font-500 text-white/85 transition-colors hover:text-white"
             >
               <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
               Back to Portfolio
@@ -87,7 +87,7 @@ export default async function PortfolioDetailPage({
               <div
                 className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${project.gradient} flex items-center justify-center`}
               >
-                <span className="font-[family-name:var(--font-heading)] text-[clamp(2rem,5vw,4rem)] font-800 tracking-tight text-white/20">
+                <span className="font-[family-name:var(--font-heading)] text-[clamp(2rem,5vw,4rem)] font-800 tracking-tight text-white/75">
                   {project.name}
                 </span>
               </div>
@@ -105,7 +105,7 @@ export default async function PortfolioDetailPage({
               {project.services.map((service) => (
                 <span
                   key={service}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-500 text-white/60"
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-base font-500 text-white/85"
                 >
                   {service}
                 </span>
@@ -120,10 +120,10 @@ export default async function PortfolioDetailPage({
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm lg:p-12">
-              <p className="mb-4 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+              <p className="mb-4 text-[1rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
                 The Challenge
               </p>
-              <p className="text-[1.1rem] leading-[1.8] text-white/60">
+              <p className="text-[1.1rem] leading-[1.8] text-white/85">
                 {project.challenge}
               </p>
             </div>
@@ -136,10 +136,10 @@ export default async function PortfolioDetailPage({
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm lg:p-12">
-              <p className="mb-4 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/40">
+              <p className="mb-4 text-[1rem] font-600 uppercase tracking-[0.15em] text-white/75">
                 Our Solution
               </p>
-              <p className="text-[1.1rem] leading-[1.8] text-white/60">
+              <p className="text-[1.1rem] leading-[1.8] text-white/85">
                 {project.solution}
               </p>
             </div>
@@ -152,10 +152,10 @@ export default async function PortfolioDetailPage({
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
             <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm lg:p-12">
-              <p className="mb-4 text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/40">
+              <p className="mb-4 text-[1rem] font-600 uppercase tracking-[0.15em] text-white/75">
                 The Results
               </p>
-              <p className="text-[1.1rem] leading-[1.8] text-white/60">
+              <p className="text-[1.1rem] leading-[1.8] text-white/85">
                 {project.results}
               </p>
             </div>
@@ -182,7 +182,7 @@ export default async function PortfolioDetailPage({
                     <p className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 leading-none text-white">
                       +<AnimatedCounter target={m.value} suffix={m.suffix} />
                     </p>
-                    <p className="mt-2 text-[13px] text-white/40">{m.label}</p>
+                    <p className="mt-2 text-[16px] text-white/75">{m.label}</p>
                   </div>
                 </AnimateIn>
               ))}
@@ -205,7 +205,7 @@ export default async function PortfolioDetailPage({
                 <Link
                   key={link.slug}
                   href={`/services/${link.slug}`}
-                  className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-500 text-white/70 transition-all hover:border-[#E71840]/40 hover:bg-[#E71840]/10 hover:text-white"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2.5 text-base font-500 text-white/70 transition-all hover:border-[#E71840]/40 hover:bg-[#E71840]/10 hover:text-white"
                 >
                   <CheckCircle2 size={14} className="text-[#E71840]" />
                   {link.title}
@@ -236,7 +236,7 @@ export default async function PortfolioDetailPage({
                 </blockquote>
                 <div className="mt-6">
                   <p className="font-600 text-white">{testimonial.author}</p>
-                  <p className="text-sm text-white/40">
+                  <p className="text-base text-white/75">
                     {testimonial.role}, {testimonial.company}
                   </p>
                 </div>
@@ -250,7 +250,7 @@ export default async function PortfolioDetailPage({
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
           <AnimateIn>
-            <p className="mb-6 text-center text-[0.75rem] font-600 uppercase tracking-[0.15em] text-white/40">
+            <p className="mb-6 text-center text-[1rem] font-600 uppercase tracking-[0.15em] text-white/75">
               Next Project
             </p>
           </AnimateIn>
@@ -272,7 +272,7 @@ export default async function PortfolioDetailPage({
                 <div
                   className={`aspect-[16/9] w-full rounded-2xl bg-gradient-to-br ${nextProject.gradient} flex items-center justify-center transition-transform group-hover:scale-[1.01]`}
                 >
-                  <span className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,4vw,3rem)] font-800 tracking-tight text-white/20">
+                  <span className="font-[family-name:var(--font-heading)] text-[clamp(1.5rem,4vw,3rem)] font-800 tracking-tight text-white/75">
                     {nextProject.name}
                   </span>
                 </div>
@@ -281,7 +281,7 @@ export default async function PortfolioDetailPage({
                 <h3 className="font-[family-name:var(--font-heading)] text-xl font-800 text-white">
                   {nextProject.name}
                 </h3>
-                <span className="inline-flex items-center gap-2 text-sm font-500 text-white/50 transition-colors group-hover:text-[#E71840]">
+                <span className="inline-flex items-center gap-2 text-base font-500 text-white/85 transition-colors group-hover:text-[#E71840]">
                   View Project
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </span>

@@ -431,17 +431,17 @@ export default function AgencyComparison() {
   const MobileStatic = (
     <section className="block md:hidden relative py-16 px-6" style={{ background: '#0A0A0A' }}>
       <div className="text-center mb-10">
-        <p className="text-sm uppercase tracking-widest mb-3" style={{ color: '#E71840' }}>Our Approach</p>
+        <p className="text-base uppercase tracking-widest mb-3" style={{ color: '#E71840' }}>Our Approach</p>
         <h2 className="font-[family-name:var(--font-oswald)] font-700 text-2xl text-white uppercase">
           THE NIXAR <span style={{ color: '#E71840' }}>WAY.</span>
         </h2>
-        <p className="text-gray-400 mt-3 text-sm max-w-xs mx-auto">
+        <p className="text-gray-400 mt-3 text-base max-w-xs mx-auto">
           Every channel connected. Every dollar tracked. One unified strategy driving growth.
         </p>
       </div>
       <div className="flex justify-center mb-6">
         <div className="text-center px-8 py-4 rounded-xl" style={{ background: 'rgba(231,24,64,0.1)', border: '1px solid rgba(231,24,64,0.25)' }}>
-          <p className="font-[family-name:var(--font-oswald)] font-700 text-white text-sm uppercase tracking-wider">STRATEGY</p>
+          <p className="font-[family-name:var(--font-oswald)] font-700 text-white text-base uppercase tracking-wider">STRATEGY</p>
         </div>
       </div>
       <div className="flex justify-center mb-6">
@@ -454,10 +454,10 @@ export default function AgencyComparison() {
           { label: 'Convert', items: ['Paid Ads', 'Analytics', 'AI Agents'] },
         ].map((col) => (
           <div key={col.label} className="text-center">
-            <p className="text-[10px] uppercase tracking-wider mb-2 font-bold" style={{ color: '#E71840' }}>{col.label}</p>
+            <p className="text-[16px] uppercase tracking-wider mb-2 font-bold" style={{ color: '#E71840' }}>{col.label}</p>
             <div className="space-y-2">
               {col.items.map((item) => (
-                <div key={item} className="py-2.5 px-1 rounded-lg text-[11px] text-white font-medium" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>{item}</div>
+                <div key={item} className="py-2.5 px-1 rounded-lg text-[16px] text-white font-medium" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>{item}</div>
               ))}
             </div>
           </div>
@@ -468,7 +468,7 @@ export default function AgencyComparison() {
       </div>
       <div className="flex justify-center">
         <div className="text-center px-8 py-4 rounded-xl" style={{ background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.25)' }}>
-          <p className="font-[family-name:var(--font-oswald)] font-700 text-white text-sm uppercase tracking-wider">GROWTH</p>
+          <p className="font-[family-name:var(--font-oswald)] font-700 text-white text-base uppercase tracking-wider">GROWTH</p>
         </div>
       </div>
     </section>
@@ -488,7 +488,7 @@ export default function AgencyComparison() {
             {CHANNELS.map((ch) => (
               <div key={ch.id} className="flex flex-col items-center gap-2 rounded-xl border border-[rgba(231,24,64,0.25)] bg-[rgba(231,24,64,0.06)] p-5 backdrop-blur-[40px]">
                 <ch.Icon size={24} color="#E71840" />
-                <span className="text-[0.75rem] font-600 uppercase tracking-wider text-white">{ch.label}</span>
+                <span className="text-[1rem] font-600 uppercase tracking-wider text-white">{ch.label}</span>
               </div>
             ))}
           </div>
@@ -570,7 +570,7 @@ export default function AgencyComparison() {
           className="absolute bottom-16 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1 pointer-events-none"
           style={{ opacity: 0 }}
         >
-          <span className="text-[0.65rem] font-700 uppercase tracking-[0.2em] text-[#E71840]">Keep Scrolling</span>
+          <span className="text-[1rem] font-700 uppercase tracking-[0.2em] text-[#E71840]">Keep Scrolling</span>
           <ChevronDown size={16} color="#E71840" className="animate-bounce" />
         </div>
 
@@ -618,7 +618,7 @@ export default function AgencyComparison() {
             <TrendingUp size={24} color="#22C55E" />
             <span className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-wider text-white">Growth</span>
           </div>
-          <p ref={statsRef} className="mt-3 text-[0.6rem] font-500 text-[#666]" style={{ opacity: 0 }}>
+          <p ref={statsRef} className="mt-3 text-[1rem] font-500 text-[#666]" style={{ opacity: 0 }}>
             20+ Years &bull; 500+ Projects &bull; 97% Satisfaction
           </p>
           {/* Pulse ring from Growth */}
@@ -638,7 +638,7 @@ export default function AgencyComparison() {
           ].map((col) => (
             <span
               key={col.label}
-              className="absolute font-[family-name:var(--font-oswald)] text-[0.6rem] font-700 uppercase tracking-[0.2em] text-[#E71840]"
+              className="absolute font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-[0.2em] text-[#E71840]"
               style={{ left: `${col.x}%`, top: "22%", transform: "translateX(-50%)" }}
             >
               {col.label}
@@ -694,7 +694,7 @@ export default function AgencyComparison() {
               }}
             >
               <ch.Icon size={24} style={{ color: "var(--icon-color)" }} />
-              <span className="text-[0.7rem] font-600 uppercase tracking-wider" style={{ color: "var(--text-color)" }}>
+              <span className="text-[1rem] font-600 uppercase tracking-wider" style={{ color: "var(--text-color)" }}>
                 {ch.label}
               </span>
             </div>

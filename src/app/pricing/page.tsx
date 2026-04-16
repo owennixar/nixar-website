@@ -108,21 +108,21 @@ export default function PricingPage() {
                     style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(20px)' }}
                   >
                     {tier.highlight && (
-                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#E71840] px-4 py-1 text-[11px] font-700 uppercase tracking-wider text-white">
+                      <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-[#E71840] px-4 py-1 text-[16px] font-700 uppercase tracking-wider text-white">
                         Most Popular
                       </span>
                     )}
                     <h2 className="font-[family-name:var(--font-oswald)] text-[1.3rem] font-700 uppercase text-white">
                       {tier.name}
                     </h2>
-                    <p className="mt-1 text-[13px] text-white/40">{tier.desc}</p>
+                    <p className="mt-1 text-[16px] text-white/75">{tier.desc}</p>
                     <p className="mt-6">
                       <span className="font-[family-name:var(--font-oswald)] text-[2.5rem] font-700 text-white">{tier.price}</span>
-                      <span className="text-white/40 text-sm">/mo</span>
+                      <span className="text-white/75 text-base">/mo</span>
                     </p>
                     <ul className="mt-6 flex-1 space-y-3">
                       {tier.features.map((f) => (
-                        <li key={f} className="flex items-start gap-2 text-[14px] text-white/60">
+                        <li key={f} className="flex items-start gap-2 text-[16px] text-white/85">
                           <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#E71840]" />
                           {f}
                         </li>
@@ -130,7 +130,7 @@ export default function PricingPage() {
                     </ul>
                     <Link
                       href="/contact"
-                      className={`mt-8 inline-flex h-12 w-full items-center justify-center rounded-full text-[14px] font-600 transition-all ${
+                      className={`mt-8 inline-flex h-12 w-full items-center justify-center rounded-full text-[16px] font-600 transition-all ${
                         tier.highlight
                           ? "bg-[#E71840] text-white hover:bg-[#C41535]"
                           : "border border-white/20 text-white hover:bg-white/10"
@@ -147,7 +147,7 @@ export default function PricingPage() {
 
         {/* Custom */}
         <section className="py-12 text-center">
-          <p className="text-white/50">Not sure which plan is right?</p>
+          <p className="text-white/85">Not sure which plan is right?</p>
           <Link href="/free-audit" className="mt-3 inline-flex items-center text-[#E71840] font-600 hover:text-white transition-colors">
             Get a free consultation &rarr;
           </Link>
@@ -166,7 +166,7 @@ export default function PricingPage() {
                 <AnimateIn key={i} delay={i * 0.05}>
                   <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
                     <h3 className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 text-white">{faq.question}</h3>
-                    <p className="mt-3 text-[14px] leading-[1.75] text-white/60">{faq.answer}</p>
+                    <p className="mt-3 text-[16px] leading-[1.75] text-white/85">{faq.answer}</p>
                   </div>
                 </AnimateIn>
               ))}

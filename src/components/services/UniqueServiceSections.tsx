@@ -82,7 +82,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       </h3>
                       <ul className="space-y-2">
                         {platform.points.map((point) => (
-                          <li key={point} className="text-[#999] text-sm flex items-start gap-2">
+                          <li key={point} className="text-[#999] text-base flex items-start gap-2">
                             <span className="text-[#E71840] mt-1">&#9656;</span>
                             {point}
                           </li>
@@ -115,7 +115,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       (day) => (
                         <div
                           key={day}
-                          className="text-center text-white/60 text-xs font-bold uppercase pb-3 border-b border-white/10"
+                          className="text-center text-white/85 text-base font-bold uppercase pb-3 border-b border-white/10"
                         >
                           {day}
                         </div>
@@ -154,15 +154,15 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                   <div className="flex flex-wrap gap-6 mt-6 pt-4 border-t border-white/10">
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded bg-[#E71840]" />
-                      <span className="text-[#999] text-sm">Video Content</span>
+                      <span className="text-[#999] text-base">Video Content</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded bg-white/80" />
-                      <span className="text-[#999] text-sm">Post / Carousel</span>
+                      <span className="text-[#999] text-base">Post / Carousel</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-4 h-4 rounded" style={{ backgroundColor: '#666666' }} />
-                      <span className="text-[#999] text-sm">Story / Engagement</span>
+                      <span className="text-[#999] text-base">Story / Engagement</span>
                     </div>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <span className="text-[#E71840] font-bold text-lg block mb-1">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-[family-name:var(--font-oswald)] text-white text-sm font-bold uppercase">
+                      <span className="font-[family-name:var(--font-oswald)] text-white text-base font-bold uppercase">
                         {step}
                       </span>
                     </div>
@@ -294,7 +294,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-lg font-bold text-white uppercase mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -313,7 +313,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
 
               <AnimateIn direction="up" delay={0.2}>
                 <div className="glass-card rounded-2xl p-8 md:p-12 text-center max-w-3xl mx-auto">
-                  <p className="text-white/60 text-lg mb-2">
+                  <p className="text-white/85 text-lg mb-2">
                     If you save <span className="text-white font-bold">10 hours/week</span> at{" "}
                     <span className="text-white font-bold">$50/hr</span>&hellip;
                   </p>
@@ -430,7 +430,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-lg font-bold text-[#E71840] uppercase mb-1">
                         {item.stage}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -473,7 +473,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase mb-2">
                         {platform.name}
                       </h3>
-                      <p className="text-[#999] text-xs">{platform.note}</p>
+                      <p className="text-[#999] text-base">{platform.note}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -519,7 +519,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                         <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase mb-2">
                           {item.title}
                         </h3>
-                        <p className="text-[#999] text-sm">{item.desc}</p>
+                        <p className="text-[#999] text-base">{item.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -582,7 +582,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-3">
                         {item.word}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -616,7 +616,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-2">
                         {item.name}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -653,11 +653,11 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                 ].map((step, i) => (
                   <AnimateIn key={step} direction="up" delay={i * 0.12} className="flex items-center">
                     <div className="glass-card rounded-2xl p-5 text-center flex-1 relative border border-white/5">
-                      <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-sm">
+                      <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-base">
                         {step}
                       </span>
                       {i === 3 && (
-                        <span className="block text-[#E71840] text-xs mt-1 font-bold">
+                        <span className="block text-[#E71840] text-base mt-1 font-bold">
                           &#9733; GOAL
                         </span>
                       )}
@@ -684,7 +684,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <span className="text-[#E71840] font-bold text-lg">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-sm">
+                      <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-base">
                         {step}
                       </span>
                     </div>
@@ -716,7 +716,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-2">
                         {platform.name}
                       </h3>
-                      <p className="text-[#999] text-sm">{platform.desc}</p>
+                      <p className="text-[#999] text-base">{platform.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -796,7 +796,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-3">
                         {agent.type}
                       </h3>
-                      <p className="text-[#999] text-sm">{agent.desc}</p>
+                      <p className="text-[#999] text-base">{agent.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -826,7 +826,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                           key={item}
                           className="bg-white/5 rounded-xl p-3 text-center border border-white/10"
                         >
-                          <span className="text-white text-xs font-bold uppercase">
+                          <span className="text-white text-base font-bold uppercase">
                             {item}
                           </span>
                         </div>
@@ -847,7 +847,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                           key={item}
                           className="bg-white/5 rounded-xl p-3 text-center border border-white/10"
                         >
-                          <span className="text-white text-xs font-bold uppercase">
+                          <span className="text-white text-base font-bold uppercase">
                             {item}
                           </span>
                         </div>
@@ -871,7 +871,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <AnimateIn direction="left" delay={0.1}>
                   <div className="glass-card rounded-2xl p-8 h-full border border-white/5">
-                    <h3 className="font-[family-name:var(--font-oswald)] text-white/60 font-bold uppercase text-xl mb-6">
+                    <h3 className="font-[family-name:var(--font-oswald)] text-white/85 font-bold uppercase text-xl mb-6">
                       Off-the-Shelf Chatbots
                     </h3>
                     <ul className="space-y-3">
@@ -881,7 +881,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                         "No integration with your existing systems",
                         "One-size-fits-all with no competitive edge",
                       ].map((con) => (
-                        <li key={con} className="flex items-start gap-3 text-[#999] text-sm">
+                        <li key={con} className="flex items-start gap-3 text-[#999] text-base">
                           <span className="text-red-500 mt-0.5 shrink-0">&#10007;</span>
                           {con}
                         </li>
@@ -902,7 +902,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                         "Learns your processes and improves over time",
                         "A true competitive advantage no one else has",
                       ].map((pro) => (
-                        <li key={pro} className="flex items-start gap-3 text-[#999] text-sm">
+                        <li key={pro} className="flex items-start gap-3 text-[#999] text-base">
                           <span className="text-green-500 mt-0.5 shrink-0">&#10003;</span>
                           {pro}
                         </li>
@@ -946,7 +946,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-2">
                         {item.name}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -998,7 +998,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-xl mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -1038,7 +1038,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-lg mb-2">
                         {platform.name}
                       </h3>
-                      <p className="text-[#999] text-sm">{platform.desc}</p>
+                      <p className="text-[#999] text-base">{platform.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}
@@ -1069,7 +1069,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                     ].map((item) => (
                       <div key={item.label}>
                         <div className="flex justify-between items-center mb-2">
-                          <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-sm">
+                          <span className="font-[family-name:var(--font-oswald)] text-white font-bold uppercase text-base">
                             {item.label}
                           </span>
                           <span className="text-[#E71840] font-bold">
@@ -1126,7 +1126,7 @@ export default function UniqueServiceSections({ slug }: { slug: string }) {
                       <h3 className="font-[family-name:var(--font-oswald)] text-[#E71840] font-bold uppercase text-lg mb-2">
                         {item.mistake}
                       </h3>
-                      <p className="text-[#999] text-sm">{item.desc}</p>
+                      <p className="text-[#999] text-base">{item.desc}</p>
                     </div>
                   </AnimateIn>
                 ))}

@@ -18,7 +18,7 @@ export default function Services() {
     <section id="services" className="bg-[var(--color-bg-alt)] py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <AnimateIn>
-          <p className="text-[0.75rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
+          <p className="text-[1rem] font-600 uppercase tracking-[0.15em] text-[var(--color-primary)]">
             What We Offer
           </p>
         </AnimateIn>
@@ -63,7 +63,7 @@ export default function Services() {
                         {service.title}
                       </span>
                       {service.isNew && (
-                        <span className="shrink-0 rounded-full bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
+                        <span className="shrink-0 rounded-full bg-[var(--color-primary)] px-2 py-0.5 text-[16px] font-700 uppercase tracking-wider text-white">
                           New
                         </span>
                       )}
@@ -89,14 +89,14 @@ export default function Services() {
                         className="overflow-hidden"
                       >
                         <div className="pb-6 pl-[calc(2.5rem+1rem)] sm:pl-[calc(3rem+1.5rem)] md:pl-[calc(4rem+1.5rem)]">
-                          <p className="max-w-2xl text-[15px] leading-[1.7] text-[var(--color-text-secondary)]">
+                          <p className="max-w-2xl text-[16px] leading-[1.7] text-[var(--color-text-secondary)]">
                             {service.description}
                           </p>
                           <ul className="mt-4 flex flex-wrap gap-2">
                             {service.tags.map((tag) => (
                               <li
                                 key={tag}
-                                className="rounded-full bg-white px-3 py-1 text-[12px] font-500 text-[var(--color-text-secondary)]"
+                                className="rounded-full bg-white px-3 py-1 text-[16px] font-500 text-[var(--color-text-secondary)]"
                               >
                                 {tag}
                               </li>
@@ -104,7 +104,7 @@ export default function Services() {
                           </ul>
                           <Link
                             href={`/services/${service.slug}`}
-                            className="mt-4 inline-flex items-center gap-1 text-[14px] font-600 text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
+                            className="mt-4 inline-flex items-center gap-1 text-[16px] font-600 text-[var(--color-primary)] transition-colors hover:text-[var(--color-primary-hover)]"
                           >
                             Learn More <span aria-hidden="true">&rarr;</span>
                           </Link>
@@ -121,7 +121,7 @@ export default function Services() {
         <AnimateIn delay={0.3} className="mt-12 text-center">
           <Link
             href="/services"
-            className="inline-flex h-12 items-center rounded-full border-2 border-[#1A1A1A] px-8 text-[14px] font-600 text-[#1A1A1A] transition-all hover:bg-[#1A1A1A] hover:text-white"
+            className="inline-flex h-12 items-center rounded-full border-2 border-[#1A1A1A] px-8 text-[16px] font-600 text-[#1A1A1A] transition-all hover:bg-[#1A1A1A] hover:text-white"
           >
             View All Services &rarr;
           </Link>

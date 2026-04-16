@@ -1,7 +1,7 @@
 export interface TeamMember {
   name: string;
   role: string;
-  type: "founder" | "board";
+  type: "founder" | "executive" | "board";
   initials: string;
   image: string;
 }
@@ -20,6 +20,13 @@ export const team: TeamMember[] = [
     type: "founder",
     initials: "ON",
     image: "/images/team-owen.webp",
+  },
+  {
+    name: "Murilo Leite Filho",
+    role: "Chief Technology Officer",
+    type: "executive",
+    initials: "ML",
+    image: "/images/team-murilo.jpg",
   },
   {
     name: "Azam Mirza",
@@ -52,4 +59,5 @@ export const team: TeamMember[] = [
 ];
 
 export const founders = team.filter((m) => m.type === "founder");
+export const executives = team.filter((m) => m.type === "executive");
 export const board = team.filter((m) => m.type === "board");

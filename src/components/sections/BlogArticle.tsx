@@ -64,7 +64,7 @@ export default function BlogArticle({ content }: { content: string }) {
       elements.push(
         <blockquote
           key={`bq-${i}`}
-          className="my-6 border-l-4 border-[#E71840] pl-6 text-[0.95rem] italic leading-[1.8] text-[#aaa]"
+          className="my-6 border-l-4 border-[#E71840] pl-6 text-[1rem] italic leading-[1.8] text-[#aaa]"
         >
           {inline(quoteLines.join(" "))}
         </blockquote>
@@ -86,13 +86,13 @@ export default function BlogArticle({ content }: { content: string }) {
         const body = rows.slice(1).map(parseCells);
         elements.push(
           <div key={`tbl-${i}`} className="my-8 overflow-x-auto">
-            <table className="w-full text-left text-[0.85rem]">
+            <table className="w-full text-left text-[1rem]">
               <thead>
                 <tr className="border-b border-[#333]">
                   {headers.map((h, ci) => (
                     <th
                       key={ci}
-                      className="py-3 px-4 font-700 uppercase tracking-wider text-[#E71840] text-[0.7rem]"
+                      className="py-3 px-4 font-700 uppercase tracking-wider text-[#E71840] text-[1rem]"
                     >
                       {inline(h)}
                     </th>
@@ -127,7 +127,7 @@ export default function BlogArticle({ content }: { content: string }) {
       elements.push(
         <ul key={`ul-${i}`} className="my-4 ml-5 list-disc space-y-2">
           {items.map((item, ii) => (
-            <li key={ii} className="text-[0.95rem] leading-[1.8] text-[#ccc]">
+            <li key={ii} className="text-[1rem] leading-[1.8] text-[#ccc]">
               {inline(item)}
             </li>
           ))}
@@ -146,7 +146,7 @@ export default function BlogArticle({ content }: { content: string }) {
       elements.push(
         <ol key={`ol-${i}`} className="my-4 ml-5 list-decimal space-y-2">
           {items.map((item, ii) => (
-            <li key={ii} className="text-[0.95rem] leading-[1.8] text-[#ccc]">
+            <li key={ii} className="text-[1rem] leading-[1.8] text-[#ccc]">
               {inline(item)}
             </li>
           ))}
@@ -159,7 +159,7 @@ export default function BlogArticle({ content }: { content: string }) {
     elements.push(
       <p
         key={i}
-        className="my-4 text-[0.95rem] leading-[1.9] text-[#ccc] font-[family-name:var(--font-plus-jakarta)]"
+        className="my-4 text-[1rem] leading-[1.9] text-[#ccc] font-[family-name:var(--font-plus-jakarta)]"
       >
         {inline(line)}
       </p>

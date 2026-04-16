@@ -25,10 +25,10 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
               key={f}
               type="button"
               onClick={() => setFilter(f)}
-              className={`rounded-full px-5 py-2 text-[13px] font-500 transition-all ${
+              className={`rounded-full px-5 py-2 text-[16px] font-500 transition-all ${
                 filter === f
                   ? "bg-[#E71840] text-white"
-                  : "text-white/50 hover:text-white"
+                  : "text-white/85 hover:text-white"
               }`}
             >
               {f}
@@ -58,7 +58,7 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#1a1a2e] to-[#16213e]">
-                        <span className="font-[family-name:var(--font-heading)] text-2xl font-700 text-white/10">{project.name}</span>
+                        <span className="font-[family-name:var(--font-heading)] text-2xl font-700 text-white/75">{project.name}</span>
                       </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -70,7 +70,7 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
                       {project.services.map((s) => (
                         <span
                           key={s}
-                          className="rounded-full px-3 py-1 text-[11px] font-600"
+                          className="rounded-full px-3 py-1 text-[16px] font-600"
                           style={{ background: 'rgba(231,24,64,0.15)', color: '#E71840' }}
                         >
                           {s}
@@ -80,10 +80,10 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
                     <h3 className="font-[family-name:var(--font-heading)] text-xl font-700 text-white">
                       {project.name}
                     </h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-white/50 line-clamp-2">
+                    <p className="mt-2 text-[16px] leading-relaxed text-white/85 line-clamp-2">
                       {project.description}
                     </p>
-                    <span className="mt-4 inline-flex items-center text-[13px] font-600 text-[#E71840] transition-colors group-hover:text-white">
+                    <span className="mt-4 inline-flex items-center text-[16px] font-600 text-[#E71840] transition-colors group-hover:text-white">
                       View Case Study &rarr;
                     </span>
                   </div>
@@ -95,7 +95,7 @@ export default function PortfolioGrid({ projects }: { projects: PortfolioProject
 
         {filtered.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-white/40">No projects match this filter.</p>
+            <p className="text-white/75">No projects match this filter.</p>
           </div>
         )}
       </div>
