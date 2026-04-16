@@ -49,11 +49,9 @@
   --font-heading: var(--font-heading);
 }
 
-/* Base — dark theme */
-html {
-  font-size: 16px; /* ADA baseline — do not drop below */
-}
-
+/* Base — dark theme. html font-size is intentionally NOT set so the browser's
+   default (typically 16px) is respected — this preserves user-level
+   accessibility zoom preferences. All type uses rem so everything scales. */
 body {
   background: #0A0A0A;
   color: #FFFFFF;
@@ -64,11 +62,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-}
-
-/* Enforce 16px floor on interactive + body text so nothing slips below ADA min */
-p, li, label, input, textarea, select, button, a, span, td, th {
-  font-size: inherit;
 }
 
 /* Bebas Neue headings — uppercase by design, add tracking */
