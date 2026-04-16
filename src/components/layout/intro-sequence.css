@@ -178,6 +178,97 @@
 .intro-tagline-dark { color: #1A1A1A; }
 .intro-tagline-red  { color: #E71840; }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   SKIP HINT — bottom-right of cinema frame, pulses like the scroll indicator
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.intro-skip-hint {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-oswald), 'Oswald', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  animation: skipHintFade 0.8s ease-out 1.2s both;
+}
+
+@media (min-width: 768px) {
+  .intro-skip-hint {
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0.875rem;
+  }
+}
+
+.intro-skip-hint__label {
+  display: inline-block;
+}
+
+.intro-skip-hint__dot {
+  position: relative;
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E71840;
+  box-shadow: 0 0 8px rgba(231, 24, 64, 0.6);
+}
+
+.intro-skip-hint__pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(231, 24, 64, 0.7);
+  animation: skipPulse 1.6s ease-out infinite;
+}
+
+@keyframes skipHintFade {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes skipPulse {
+  0%   { transform: scale(1);   opacity: 0.9; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   CLICK/TAP RIPPLE — expanding ring at point of touch
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.intro-ripple {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  margin-top: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  background: rgba(231, 24, 64, 0.25);
+  pointer-events: none;
+  z-index: 20;
+  animation: introRipple 0.32s ease-out forwards;
+}
+
+@keyframes introRipple {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(22);
+    opacity: 0;
+  }
+}
+
 /* ── Reduced motion ──────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .intro-overlay {

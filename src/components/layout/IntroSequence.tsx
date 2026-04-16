@@ -3,9 +3,11 @@
 import { useEffect, useState, useRef, useCallback } from "react";
 import "./intro-sequence.css";
 
-const SESSION_KEY = "nixar-intro-played";
+const STORAGE_KEY = "nixar-intro-last-played";
+const REPLAY_AFTER_MS = 60 * 60 * 1000; // 1 hour
 
 type Scene = null | "scene1" | "scene2" | "scene3";
+type Ripple = { id: number; x: number; y: number };
 
 export default function IntroSequence() {
   const [active, setActive] = useState(false);
@@ -14,6 +16,7 @@ export default function IntroSequence() {
   const [whiteBg, setWhiteBg] = useState(false);
   const [taglineVisible, setTaglineVisible] = useState(false);
   const [videoHidden, setVideoHidden] = useState(false);
+  const [ripples, setRipples] = useState<Ripple[]>([]);
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const stallTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -64,9 +67,15 @@ export default function IntroSequence() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    if (sessionStorage.getItem(SESSION_KEY)) return;
 
-    sessionStorage.setItem(SESSION_KEY, "1");
+    try {
+      const last = localStorage.getItem(STORAGE_KEY);
+      if (last && Date.now() - parseInt(last, 10) < REPLAY_AFTER_MS) return;
+      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    } catch {
+      /* ignore — plays anyway */
+    }
+
     document.body.style.overflow = "hidden";
 
     const meta = document.querySelector('meta[name="theme-color"]');
@@ -133,10 +142,26 @@ export default function IntroSequence() {
     };
   }, [active, runTaglineSequence, finish, clearAllTimers]);
 
-  // Tap/click anywhere → skip straight to homepage
-  const handleSkip = useCallback(() => {
-    if (active) finish();
-  }, [active, finish]);
+  // Tap/click anywhere → ripple feedback, then skip
+  const handleSkip = useCallback(
+    (e: React.MouseEvent | React.TouchEvent) => {
+      if (!active) return;
+      const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
+      const point =
+        "touches" in e && e.touches.length
+          ? e.touches[0]
+          : "changedTouches" in e && e.changedTouches.length
+          ? e.changedTouches[0]
+          : (e as React.MouseEvent);
+      const x = (point as { clientX: number }).clientX - rect.left;
+      const y = (point as { clientY: number }).clientY - rect.top;
+      const id = Date.now();
+      setRipples((r) => [...r, { id, x, y }]);
+      // Let the ripple play briefly before unmounting
+      addTimer(() => finish(), 260);
+    },
+    [active, finish, addTimer]
+  );
 
   if (!active) return null;
 
@@ -148,6 +173,18 @@ export default function IntroSequence() {
       onClick={handleSkip}
       onTouchEnd={handleSkip}
     >
+      {/* Click/tap ripples */}
+      {ripples.map((r) => (
+        <span
+          key={r.id}
+          className="intro-ripple"
+          style={{ left: r.x, top: r.y }}
+          onAnimationEnd={() =>
+            setRipples((list) => list.filter((x) => x.id !== r.id))
+          }
+        />
+      ))}
+
       {/* ═══ CINEMATIC VIDEO FRAME ═══ */}
       {!videoHidden && (
         <div className="intro-cinema-frame">
@@ -183,6 +220,14 @@ export default function IntroSequence() {
                 Online.
               </span>
             )}
+          </div>
+
+          {/* Skip hint — pulsing like the scroll indicator on the homepage */}
+          <div className="intro-skip-hint" aria-hidden="true">
+            <span className="intro-skip-hint__label">Tap to skip</span>
+            <span className="intro-skip-hint__dot">
+              <span className="intro-skip-hint__pulse" />
+            </span>
           </div>
         </div>
       )}
