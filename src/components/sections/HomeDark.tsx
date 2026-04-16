@@ -398,8 +398,8 @@ export default function HomeDark() {
            SEO KEYWORD PARAGRAPH
            ═══════════════════════════════════════════════════════════════════ */}
       <section className="pt-2 pb-6">
-        <div className="mx-auto max-w-4xl px-5 lg:px-8">
-          <p className="text-[1.15rem] leading-[1.75] text-white/90">
+        <div className="mx-auto max-w-[64rem] px-5 lg:px-8">
+          <p className="text-[1.32rem] leading-[1.7] text-white/90">
             As a full-service digital marketing agency in Dallas, NIXAR Solutions provides comprehensive SEO services, custom website design and development, social media marketing management, paid advertising across Google and Meta, content marketing, branding, and AI-powered marketing automation. Based in Frisco and serving the entire Dallas-Fort Worth metroplex, we help local businesses compete and win online.
           </p>
         </div>
