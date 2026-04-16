@@ -28,7 +28,7 @@ export default function TrustBar() {
                   src={s.icon}
                   alt={`${s.name} icon`}
                   className="h-full w-full object-contain"
-                  style={s.name === "LinkedIn" ? { transform: "scale(1.3)" } : undefined}
+                  style={s.name === "LinkedIn" ? { transform: "translateX(-4px) rotate(-6deg) scale(1.3)" } : undefined}
                   loading="lazy"
                 />
               </a>
