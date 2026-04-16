@@ -36,7 +36,7 @@ function MemberCard({
         >
           {member.name}
         </p>
-        <p className="mt-0.5 text-[16px] text-white/75">
+        <p className="mt-0.5 whitespace-pre-line text-[14px] leading-snug text-white/75">
           {member.role}
         </p>
       </div>
@@ -87,7 +87,7 @@ export default function TeamSection() {
               Board of Directors
             </h3>
           </AnimateIn>
-          <div className="mt-8 flex flex-wrap justify-center gap-10 lg:gap-14">
+          <div className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-4 lg:gap-10">
             {board.map((m, i) => (
               <MemberCard key={m.name} member={m} delay={0.15 + i * 0.08} />
             ))}

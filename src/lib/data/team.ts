@@ -30,14 +30,14 @@ export const team: TeamMember[] = [
   },
   {
     name: "Azam Mirza",
-    role: "Co-Founder, Akorbi · CEO, Tire Geeks & Azaaki",
+    role: "Co-Founder, Akorbi\nCEO, Tire Geeks\nCEO, Azaaki",
     type: "board",
     initials: "AZ",
     image: "/images/team-azam.webp",
   },
   {
     name: "Claudia Mirza",
-    role: "Co-Founder, Akorbi · Founder, Fluenta · CEO, Run My Process",
+    role: "Co-Founder, Akorbi\nFounder, Fluenta\nCEO, Run My Process",
     type: "board",
     initials: "CM",
     image: "/images/team-claudia.webp",
