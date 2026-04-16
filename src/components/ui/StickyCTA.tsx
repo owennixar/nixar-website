@@ -63,6 +63,22 @@ export default function StickyCTA() {
         )}
       </div>
 
+      {/* Mobile: floating back-to-top FAB above the sticky bar */}
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Back to top"
+          className="fixed right-4 z-[55] flex h-12 w-12 items-center justify-center rounded-full bg-white text-[#0A0A0A] shadow-[0_6px_20px_rgba(0,0,0,0.45)] transition-opacity duration-300 md:hidden"
+          style={{
+            bottom: 'calc(5rem + env(safe-area-inset-bottom))',
+            opacity: visible ? 1 : 0,
+            pointerEvents: visible ? 'auto' : 'none',
+          }}
+        >
+          <ArrowUp size={20} strokeWidth={2.5} />
+        </button>
+      )}
+
       {/* Mobile: full-width bar */}
       <div
         className="fixed bottom-0 left-0 right-0 z-50 md:hidden transition-all duration-500"
@@ -88,15 +104,6 @@ export default function StickyCTA() {
           >
             Free Audit
           </Link>
-          {showBackToTop && (
-            <button
-              onClick={scrollToTop}
-              aria-label="Back to top"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-[#0A0A0A]"
-            >
-              <ArrowUp size={18} strokeWidth={2.5} />
-            </button>
-          )}
         </div>
       </div>
     </>
