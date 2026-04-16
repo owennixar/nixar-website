@@ -22,12 +22,13 @@ export async function middleware(req: NextRequest) {
 
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src 'self' data: https://fonts.gstatic.com",
     "img-src 'self' data: blob: https:",
     "media-src 'self' blob:",
-    "connect-src 'self' https://www.google-analytics.com",
+    // connect-src: Supabase for admin + auth, Facebook for pixel beacons
+    "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.facebook.com https://connect.facebook.net",
     "frame-ancestors 'none'",
     "base-uri 'self'",
     "form-action 'self'",

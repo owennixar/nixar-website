@@ -4,9 +4,11 @@ import { useState, type FormEvent } from "react";
 import { MapPin, Phone, Mail, Clock, Check } from "lucide-react";
 import { services } from "@/lib/data/services";
 import AnimateIn from "@/components/ui/AnimateIn";
+import { trackFormSubmit } from "@/lib/analytics/track-client";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = (form: FormData) => {
@@ -19,14 +21,27 @@ export default function ContactForm() {
     return errs;
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const errs = validate(form);
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
-    }
+    if (Object.keys(errs).length !== 0) return;
+
+    setSubmitting(true);
+    await trackFormSubmit({
+      form: "contact",
+      name: String(form.get("name") ?? ""),
+      email: String(form.get("email") ?? ""),
+      phone: String(form.get("phone") ?? "") || undefined,
+      fields: {
+        company: String(form.get("company") ?? "") || undefined,
+        service: String(form.get("service") ?? "") || undefined,
+        message: String(form.get("message") ?? "").slice(0, 2000),
+      },
+    });
+    setSubmitting(false);
+    setSubmitted(true);
   };
 
   return (
@@ -104,9 +119,10 @@ export default function ContactForm() {
 
                 <button
                   type="submit"
-                  className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-8 text-[16px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)]"
+                  disabled={submitting}
+                  className="inline-flex h-12 items-center rounded-full bg-[var(--color-primary)] px-8 text-[16px] font-600 text-white transition-all hover:bg-[var(--color-primary-hover)] hover:shadow-lg hover:shadow-[var(--color-primary-glow)] disabled:opacity-60"
                 >
-                  Send Message
+                  {submitting ? "Sending…" : "Send Message"}
                 </button>
               </form>
             )}

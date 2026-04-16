@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Netlify auto-detects Next.js App Router via @netlify/plugin-nextjs,
+# which is installed automatically. No explicit plugin declaration needed.
+#
+# Scheduled functions (for /api/cron/meta-pull) are defined per-function
+# in netlify/functions/*.ts via `export const config = { schedule: "..." }`.

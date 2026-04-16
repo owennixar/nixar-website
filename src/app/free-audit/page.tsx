@@ -7,6 +7,7 @@ import { breadcrumbSchema } from "@/lib/seo/schemas";
 import CtaBanner from "@/components/sections/CtaBanner";
 import { testimonials } from "@/lib/data/testimonials";
 import { faqSchema, schemaToScript } from "@/lib/seo/schemas";
+import FreeAuditForm from "./FreeAuditForm";
 import {
   Globe,
   Search,
@@ -14,7 +15,6 @@ import {
   BarChart3,
   Brain,
   FileText,
-  CheckCircle2,
   Phone,
   Mail,
   MapPin,
@@ -147,59 +147,7 @@ export default function FreeAuditPage() {
                   GET YOUR FREE AUDIT
                 </h2>
 
-                <form className="flex flex-col gap-4">
-                  <input
-                    type="text"
-                    placeholder="Name"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <input
-                    type="tel"
-                    placeholder="Phone"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Business Name"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <input
-                    type="url"
-                    placeholder="Website URL"
-                    className="rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your business goals"
-                    className="resize-none rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-white placeholder:text-white/75 outline-none focus:border-[var(--color-primary)]/40 transition-colors"
-                  />
-                  <button
-                    type="button"
-                    className="mt-2 h-12 rounded-full bg-[var(--color-primary)] px-8 font-600 text-white transition-colors hover:bg-[var(--color-primary-hover)]"
-                  >
-                    Get My Free Audit
-                  </button>
-                </form>
-
-                {/* Trust signals */}
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-                  {["No cost.", "No obligation.", "Just clarity."].map(
-                    (text) => (
-                      <span
-                        key={text}
-                        className="flex items-center gap-2 text-base text-white/85"
-                      >
-                        <CheckCircle2 size={16} />
-                        {text}
-                      </span>
-                    )
-                  )}
-                </div>
+                <FreeAuditForm />
               </div>
             </AnimateIn>
           </div>

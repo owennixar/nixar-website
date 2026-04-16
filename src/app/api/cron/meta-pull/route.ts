@@ -9,7 +9,7 @@ function isAuthorized(req: NextRequest): boolean {
   const secret = process.env.CRON_SECRET;
   if (!secret) return false;
   const header = req.headers.get("x-cron-secret");
-  // Vercel Cron also sends its own Bearer; accept either
+  // Accept either x-cron-secret header or Authorization: Bearer <secret>
   const bearer = req.headers.get("authorization")?.replace(/^Bearer\s+/i, "");
   return header === secret || bearer === secret;
 }
