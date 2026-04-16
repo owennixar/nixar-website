@@ -70,6 +70,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 html {
+  /* Baseline bumped to 120% of browser default so the site feels roomier.
+     Still relative to the browser's root, so any user-level zoom scales
+     this value proportionally. The ADA widget can override via inline style. */
+  font-size: 120%;
   scroll-behavior: auto; /* Let Lenis handle smooth scroll, not CSS */
   overflow-x: hidden;
   max-width: 100vw;

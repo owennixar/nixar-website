@@ -16,7 +16,7 @@ type Prefs = {
 }
 
 const DEFAULT: Prefs = {
-  fontScale: 1,
+  fontScale: 1.2,
   highContrast: false,
   underlineLinks: false,
   reduceMotion: false,
@@ -24,14 +24,10 @@ const DEFAULT: Prefs = {
 
 function applyPrefs(prefs: Prefs) {
   const root = document.documentElement
-  // Only override the root font-size when the user has actively scaled up.
-  // Otherwise leave it alone so the browser's own default (and any user-level
-  // zoom/font-size preference) is preserved.
-  if (prefs.fontScale === 1) {
-    root.style.removeProperty('font-size')
-  } else {
-    root.style.fontSize = `${prefs.fontScale * 100}%`
-  }
+  // Always set the inline font-size so the user's choice wins over the CSS
+  // baseline (120%). Values are percentages of the browser default so
+  // user-level zoom is still respected.
+  root.style.fontSize = `${prefs.fontScale * 100}%`
   root.classList.toggle('ada-high-contrast', prefs.highContrast)
   root.classList.toggle('ada-underline-links', prefs.underlineLinks)
   root.classList.toggle('ada-reduce-motion', prefs.reduceMotion)
@@ -50,9 +46,11 @@ export default function AdaWidget() {
         const parsed = { ...DEFAULT, ...JSON.parse(saved) } as Prefs
         setPrefs(parsed)
         applyPrefs(parsed)
+      } else {
+        applyPrefs(DEFAULT)
       }
     } catch {
-      /* ignore */
+      applyPrefs(DEFAULT)
     }
   }, [])
 
