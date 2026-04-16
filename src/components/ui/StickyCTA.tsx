@@ -2,13 +2,12 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { X, ArrowUp } from 'lucide-react'
+import { ArrowUp } from 'lucide-react'
 
-const CONTROL_SIZE = 48 // px — shared height/width for pill + circle buttons
+const CONTROL_SIZE = 48 // px — shared height for pill + circle buttons
 
 export default function StickyCTA() {
   const [visible, setVisible] = useState(false)
-  const [dismissed, setDismissed] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   useEffect(() => {
@@ -22,18 +21,13 @@ export default function StickyCTA() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Dismiss hides for the current page session only (no persistence) — aggressive CTA reappears on reload.
-  const dismiss = () => setDismissed(true)
-
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
-  if (dismissed) return null
-
   return (
     <>
-      {/* Desktop: floating control group — CTA pill + back-to-top + dismiss, all same height, evenly spaced */}
+      {/* Desktop: floating control group — CTA pill + back-to-top */}
       <div
         className="fixed bottom-6 right-6 z-50 hidden md:flex items-center gap-3 transition-all duration-500"
         style={{
@@ -67,19 +61,6 @@ export default function StickyCTA() {
             <ArrowUp size={18} strokeWidth={2.5} />
           </button>
         )}
-
-        <button
-          onClick={dismiss}
-          aria-label="Dismiss"
-          className="flex shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25"
-          style={{
-            height: CONTROL_SIZE,
-            width: CONTROL_SIZE,
-            backdropFilter: 'blur(8px)',
-          }}
-        >
-          <X size={18} strokeWidth={2.5} />
-        </button>
       </div>
 
       {/* Mobile: full-width bar */}
