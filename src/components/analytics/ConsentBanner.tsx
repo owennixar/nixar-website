@@ -14,12 +14,26 @@ export default function ConsentBanner() {
   }, []);
 
   async function save(analytics: Choice, marketing: Choice) {
-    await fetch("/api/consent", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ analytics, marketing }),
-    });
+    // Write a client-readable cookie up front so the banner stays hidden
+    // even if the server response is slow or the Secure flag is stripped
+    // on non-HTTPS dev. This guarantees a one-click dismiss.
+    const consent = { analytics, marketing, ts: Date.now() };
+    document.cookie = `nx_consent=${encodeURIComponent(
+      JSON.stringify(consent),
+    )}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+
     setVisible(false);
+
+    try {
+      await fetch("/api/consent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ analytics, marketing }),
+      });
+    } catch {
+      /* server log is best-effort; client cookie already persisted */
+    }
+
     if (analytics === "granted") window.location.reload();
   }
 

@@ -206,6 +206,13 @@ export default function Footer() {
               >
                 Sitemap
               </Link>
+              <Link
+                href="/admin/dashboard"
+                prefetch={false}
+                className="transition-colors hover:text-[var(--color-primary)]"
+              >
+                Admin
+              </Link>
             </div>
           </div>
         </div>

@@ -17,6 +17,7 @@ import {
   BarChart3,
   Phone,
   ChevronDown,
+  Lock,
 } from "lucide-react";
 import { services } from "@/lib/data/services";
 
@@ -221,8 +222,17 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Desktop right: phone + CTA */}
+          {/* Desktop right: admin + phone + CTA */}
           <div className="hidden items-center gap-5 xl:flex">
+            <Link
+              href="/admin/dashboard"
+              prefetch={false}
+              aria-label="Admin portal"
+              title="Admin portal"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 text-white/55 transition-colors hover:border-[#E71840] hover:text-[#E71840]"
+            >
+              <Lock size={13} />
+            </Link>
             <a
               href="tel:4697593638"
               className="flex items-center gap-1.5 whitespace-nowrap text-[16px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
@@ -338,6 +348,17 @@ export default function Navbar() {
                   className="flex h-14 w-full items-center justify-center rounded-full bg-[var(--color-primary)] text-base font-600 text-white transition-all hover:bg-[var(--color-primary-hover)]"
                 >
                   Get Free Audit
+                </Link>
+
+                {/* Admin (internal) */}
+                <Link
+                  href="/admin/dashboard"
+                  prefetch={false}
+                  onClick={closeMobile}
+                  className="flex items-center justify-center gap-2 text-sm text-white/45 transition-colors hover:text-[#E71840]"
+                >
+                  <Lock size={13} />
+                  Admin portal
                 </Link>
               </motion.div>
             </div>
