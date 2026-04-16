@@ -397,9 +397,9 @@ export default function HomeDark() {
       {/* ═══════════════════════════════════════════════════════════════════
            SEO KEYWORD PARAGRAPH
            ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-12">
+      <section className="pt-2 pb-6">
         <div className="mx-auto max-w-4xl px-5 lg:px-8">
-          <p className="text-[1rem] leading-[1.8] text-white/75">
+          <p className="text-[1.15rem] leading-[1.75] text-white/90">
             As a full-service digital marketing agency in Dallas, NIXAR Solutions provides comprehensive SEO services, custom website design and development, social media marketing management, paid advertising across Google and Meta, content marketing, branding, and AI-powered marketing automation. Based in Frisco and serving the entire Dallas-Fort Worth metroplex, we help local businesses compete and win online.
           </p>
         </div>
@@ -678,10 +678,10 @@ function HorizontalPortfolio() {
 
   if (isMobile) {
     return (
-      <section id="portfolio" className="relative py-16 px-6 overflow-hidden">
+      <section id="portfolio" className="relative pt-8 pb-16 px-6 overflow-hidden">
         <div className="mb-10">
           <h2 className="font-[family-name:var(--font-oswald)] text-4xl font-700 uppercase leading-none text-white">Selected Work</h2>
-          <p className="mt-3 text-[1rem] leading-[1.6] text-[#888]">Real projects, real results.</p>
+          <p className="mt-3 text-[1.2rem] leading-[1.6] text-white/85">Real projects, real results.</p>
         </div>
         <div className="grid grid-cols-1 gap-6">
           {PORTFOLIO.map((p) => (
@@ -718,7 +718,7 @@ function HorizontalPortfolio() {
             <h2 className="font-[family-name:var(--font-oswald)] text-[clamp(3rem,6vw,5rem)] font-700 uppercase leading-none text-white">
               Selected Work
             </h2>
-            <p className="mt-4 max-w-md text-[1rem] leading-[1.7] text-[#888]">
+            <p className="mt-4 max-w-md text-[1.2rem] leading-[1.7] text-white/85">
               Real projects, real results. Scroll to explore our portfolio.
             </p>
           </Reveal>
