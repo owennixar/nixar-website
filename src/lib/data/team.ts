@@ -44,7 +44,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Michael S. Nixon",
-    role: "Founding Partner, Nixon Jach Hubbard",
+    role: "Founding Partner, Nixon Jach Hubbard\nSuper Lawyers, 2012-2024\nAV Preeminent Rated",
     type: "board",
     initials: "MN",
     image: "/images/team-michael.webp",
