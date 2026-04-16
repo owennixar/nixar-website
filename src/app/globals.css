@@ -432,3 +432,9 @@ html.ada-underline-links a {
   text-decoration: underline !important;
   text-underline-offset: 3px;
 }
+
+/* ── ADA launcher positioning — shifts above social proof toast ── */
+.ada-launcher { bottom: 1.5rem; }
+.ada-panel    { bottom: 6rem; }
+body[data-toast-visible="true"] .ada-launcher { bottom: 9rem; }
+body[data-toast-visible="true"] .ada-panel    { bottom: 14rem; }

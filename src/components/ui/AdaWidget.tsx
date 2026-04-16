@@ -76,14 +76,14 @@ export default function AdaWidget() {
 
   return (
     <>
-      {/* Launcher button — fixed bottom-left */}
+      {/* Launcher button — fixed bottom-left, shifts up when social proof toast is visible */}
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Close accessibility menu' : 'Open accessibility menu'}
         aria-expanded={open}
         aria-controls="ada-panel"
-        className="fixed bottom-6 left-6 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-[#0057B8] text-white shadow-[0_4px_20px_rgba(0,87,184,0.4)] transition-transform hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
+        className="ada-launcher fixed left-6 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-[#0057B8] text-white shadow-[0_4px_20px_rgba(0,87,184,0.4)] transition-[bottom,transform] duration-300 hover:scale-110 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
       >
         <Accessibility size={22} strokeWidth={2.25} />
       </button>
@@ -94,7 +94,7 @@ export default function AdaWidget() {
           id="ada-panel"
           role="dialog"
           aria-label="Accessibility options"
-          className="fixed bottom-24 left-6 z-[60] w-[320px] rounded-2xl bg-[#0A0A0A] text-white shadow-[0_20px_60px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
+          className="ada-panel fixed left-6 z-[60] w-[320px] rounded-2xl bg-[#0A0A0A] text-white shadow-[0_20px_60px_rgba(0,0,0,0.6)] ring-1 ring-white/10 transition-[bottom] duration-300"
         >
           <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
             <div className="flex items-center gap-2">

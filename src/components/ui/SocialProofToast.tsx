@@ -63,6 +63,11 @@ export default function SocialProofToast() {
     }
   }, [dismissed])
 
+  // Broadcast visibility so other floating UI (ADA widget) can shift out of the way.
+  useEffect(() => {
+    document.body.dataset.toastVisible = visible && !dismissed ? 'true' : 'false'
+  }, [visible, dismissed])
+
   if (dismissed) return null
 
   const msg = MESSAGES[current]

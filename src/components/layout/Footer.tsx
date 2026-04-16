@@ -62,7 +62,7 @@ export default function Footer() {
             <Link href="/" aria-label="NIXAR Solutions. Home" className="flex items-center">
               <Logo height={28} />
             </Link>
-            <p className="mt-5 max-w-xs text-[16px] leading-relaxed text-white/85">
+            <p className="mt-5 max-w-xs text-[1.05rem] leading-relaxed text-white">
               Dallas-Fort Worth&apos;s Full-Service Digital Marketing Agency &mdash; SEO, Web Design, Social Media &amp; AI
             </p>
             {/* Social */}
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Column 2: Company */}
           <div>
-            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
+            <h3 className="text-[1.15rem] font-700 uppercase tracking-[0.2em] text-white">
               Company
             </h3>
             <ul className="mt-5 space-y-3">
@@ -92,7 +92,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[1.1rem] font-500 text-white transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {label}
                   </Link>
@@ -103,7 +103,7 @@ export default function Footer() {
 
           {/* Column 3: Resources */}
           <div>
-            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
+            <h3 className="text-[1.15rem] font-700 uppercase tracking-[0.2em] text-white">
               Resources
             </h3>
             <ul className="mt-5 space-y-3">
@@ -111,7 +111,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link
                     href={href}
-                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[1.1rem] font-500 text-white transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {label}
                   </Link>
@@ -122,7 +122,7 @@ export default function Footer() {
 
           {/* Column 4: Services. all 10 */}
           <div>
-            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
+            <h3 className="text-[1.15rem] font-700 uppercase tracking-[0.2em] text-white">
               Services
             </h3>
             <ul className="mt-5 space-y-3">
@@ -130,7 +130,7 @@ export default function Footer() {
                 <li key={slug}>
                   <Link
                     href={`/services/${slug}`}
-                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[1.1rem] font-500 text-white transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {shortTitle}
                   </Link>
@@ -141,7 +141,7 @@ export default function Footer() {
 
           {/* Column 4: Serving DFW. top 12 cities */}
           <div>
-            <h3 className="text-[16px] font-600 uppercase tracking-[0.2em] text-white/75">
+            <h3 className="text-[1.15rem] font-700 uppercase tracking-[0.2em] text-white">
               Serving DFW
             </h3>
             <ul className="mt-5 space-y-3">
@@ -149,7 +149,7 @@ export default function Footer() {
                 <li key={slug}>
                   <Link
                     href={`/${slug}`}
-                    className="text-[16px] text-white/85 transition-colors duration-200 hover:text-[var(--color-primary)]"
+                    className="text-[1.1rem] font-500 text-white transition-colors duration-200 hover:text-[var(--color-primary)]"
                   >
                     {name}
                   </Link>
@@ -162,22 +162,22 @@ export default function Footer() {
         {/* ── Contact strip ─────────────────────────────────────────── */}
         <div className="border-t border-white/[0.06]">
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-6 px-5 py-8 sm:flex-row sm:gap-10 lg:px-8">
-            <span className="flex items-center gap-2 text-[16px] text-white/85">
-              <MapPin size={15} className="text-[var(--color-primary)]" />
+            <span className="flex items-center gap-2 text-[1.1rem] font-500 text-white">
+              <MapPin size={18} className="text-[var(--color-primary)]" />
               Frisco, TX
             </span>
             <a
               href="tel:4697593638"
-              className="flex items-center gap-2 text-[16px] text-white/85 transition-colors hover:text-white"
+              className="flex items-center gap-2 text-[1.1rem] font-500 text-white transition-colors hover:text-[var(--color-primary)]"
             >
-              <Phone size={15} className="text-[var(--color-primary)]" />
+              <Phone size={18} className="text-[var(--color-primary)]" />
               469-759-3638
             </a>
             <a
               href="mailto:hello@nixarsolutions.com"
-              className="flex items-center gap-2 text-[16px] text-white/85 transition-colors hover:text-white"
+              className="flex items-center gap-2 text-[1.1rem] font-500 text-white transition-colors hover:text-[var(--color-primary)]"
             >
-              <Mail size={15} className="text-[var(--color-primary)]" />
+              <Mail size={18} className="text-[var(--color-primary)]" />
               hello@nixarsolutions.com
             </a>
           </div>
@@ -185,24 +185,24 @@ export default function Footer() {
 
         {/* ── Bottom bar ────────────────────────────────────────────── */}
         <div className="border-t border-[#222]">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-[16px] text-white/75 md:flex-row lg:px-8">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-6 text-[1rem] text-white/90 md:flex-row lg:px-8">
             <p>&copy; 2026 NIXAR Solutions. All Rights Reserved.</p>
             <div className="flex gap-6">
               <Link
                 href="/privacy-policy"
-                className="transition-colors hover:text-white/85"
+                className="transition-colors hover:text-[var(--color-primary)]"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="transition-colors hover:text-white/85"
+                className="transition-colors hover:text-[var(--color-primary)]"
               >
                 Terms &amp; Conditions
               </Link>
               <Link
                 href="/sitemap-page"
-                className="transition-colors hover:text-white/85"
+                className="transition-colors hover:text-[var(--color-primary)]"
               >
                 Sitemap
               </Link>

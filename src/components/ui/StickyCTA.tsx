@@ -12,12 +12,8 @@ export default function StickyCTA() {
   const [showBackToTop, setShowBackToTop] = useState(false)
 
   useEffect(() => {
-    if (sessionStorage.getItem('stickyCTADismissed')) {
-      setDismissed(true)
-      return
-    }
     const onScroll = () => {
-      const threshold = window.innerWidth >= 768 ? window.innerHeight : window.innerHeight * 0.5
+      const threshold = window.innerWidth >= 768 ? window.innerHeight * 0.6 : window.innerHeight * 0.4
       setVisible(window.scrollY > threshold)
       setShowBackToTop(window.scrollY > 500)
     }
@@ -26,10 +22,8 @@ export default function StickyCTA() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const dismiss = () => {
-    setDismissed(true)
-    sessionStorage.setItem('stickyCTADismissed', 'true')
-  }
+  // Dismiss hides for the current page session only (no persistence) — aggressive CTA reappears on reload.
+  const dismiss = () => setDismissed(true)
 
   const scrollToTop = useCallback(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
