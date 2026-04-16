@@ -125,7 +125,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links. centered */}
-          <div className="hidden items-center gap-7 lg:flex" role="menubar">
+          <div className="hidden items-center gap-7 xl:flex" role="menubar">
             {NAV_LINKS.map(({ label, href, ...rest }) => {
               const hasDropdown = "hasDropdown" in rest && rest.hasDropdown;
 
@@ -222,10 +222,10 @@ export default function Navbar() {
           </div>
 
           {/* Desktop right: phone + CTA */}
-          <div className="hidden items-center gap-5 lg:flex">
+          <div className="hidden items-center gap-5 xl:flex">
             <a
               href="tel:4697593638"
-              className="flex items-center gap-1.5 text-[16px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
+              className="flex items-center gap-1.5 whitespace-nowrap text-[16px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
               aria-label="Call us at 469-759-3638"
             >
               <Phone size={14} />
@@ -233,7 +233,7 @@ export default function Navbar() {
             </a>
             <Link
               href="/free-audit"
-              className="inline-flex h-10 items-center rounded-full bg-[var(--color-primary)] px-6 text-[16px] font-600 text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-[0_8px_24px_var(--color-primary-glow)]"
+              className="inline-flex h-10 items-center whitespace-nowrap rounded-full bg-[var(--color-primary)] px-6 text-[16px] font-600 text-white transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-[0_8px_24px_var(--color-primary-glow)]"
             >
               Get Free Audit
             </Link>
@@ -243,7 +243,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen((v) => !v)}
-            className="relative z-[110] flex h-11 w-11 flex-col items-center justify-center gap-[6px] lg:hidden"
+            className="relative z-[110] flex h-11 w-11 flex-col items-center justify-center gap-[6px] xl:hidden"
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -273,7 +273,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-[#0A0A0A] lg:hidden"
+            className="fixed inset-0 z-[100] bg-[#0A0A0A] xl:hidden"
           >
             <div className="flex h-full flex-col justify-between px-6 pb-8 pt-24">
               {/* Nav links */}
