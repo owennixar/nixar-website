@@ -30,6 +30,331 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "perplexity-vs-google-where-to-optimize-first-2026",
+    title: "Perplexity vs Google: Where Should DFW Businesses Optimize First?",
+    excerpt: "Two search platforms, two very different audiences, and limited optimization time. Here's a decision framework for DFW businesses choosing where to focus first — and why the answer often surprises people.",
+    summary: "Google still drives the largest share of intent-rich search traffic, while Perplexity is the platform research-heavy buyers use to compare options before committing. For most DFW businesses, the right starting point depends less on platform popularity and more on where your customers actually make decisions. This guide walks through the trade-offs and gives a practical framework for choosing.",
+    category: "AI & SEO",
+    badge: "STRATEGY",
+    badgeColor: "#8B5CF6",
+    date: "May 7, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "10 min read",
+    authorSlug: "anwar-mirza",
+    featured: false,
+    series: null,
+    image: "/images/blog/perplexity-vs-google-where-to-optimize-first-2026.webp",
+    content: `## The Choice Most DFW Businesses Are Making Wrong
+
+When local businesses ask us where they should focus their AI search investment, the question usually arrives in a binary form: Google or Perplexity? It's a reasonable instinct. Optimization budgets are finite, attention is finite, and most teams want to pick one channel and execute well rather than spread thin across both.
+
+The instinct toward focus is correct. The binary framing is not. Google and Perplexity are not substitutes for each other — they serve different stages of the buyer journey, attract different audiences, and reward different content strategies. The right question isn't "which is better." It's "which one matches where my customers are right now, given the decision they're trying to make."
+
+For most DFW businesses, the answer to that question depends on a handful of factors that have very little to do with which platform is currently most popular. This guide walks through those factors and gives you a framework for deciding where to start.
+
+## What Each Platform Is Actually For
+
+Understanding the strategic role of each platform is the foundation for any optimization decision. The platforms market themselves as competitors, but in practice they're complementary tools that serve different purposes.
+
+**Google** remains the default discovery engine. When a DFW homeowner needs a roof inspection after a hailstorm, they don't open Perplexity — they search "roof inspection near me" on Google. Google's strengths are local intent, transactional intent, and the breadth of audience. The Map Pack, Local Pack, and Google Business Profile listings are all unique to Google's ecosystem and irreplaceable for any business that depends on physical proximity to customers.
+
+**Perplexity** plays a different role. It's a research engine. Users come to Perplexity when they need synthesized information across multiple sources — comparing service providers, evaluating tools, understanding a topic before they buy. The audience skews toward higher-intent buyers who do their homework before committing. Perplexity's citation-style answers reward authoritative content that holds up to scrutiny.
+
+The other meaningful difference is the answer format itself. Google returns a list of links and lets users decide what to read. Perplexity returns a synthesized answer with cited sources. The optimization implication is significant: ranking #1 on Google still requires the user to click. Being cited in Perplexity puts your business directly inside the answer, often without requiring a click at all.
+
+For more on the broader shift toward AI-driven search, our piece on [SEO vs AI SEO](/blog/seo-vs-ai-seo-understanding-the-difference) covers the underlying dynamics.
+
+## Where Each Platform Wins
+
+Different industries see different value from each platform, and getting this match right is what separates effective optimization from wasted effort.
+
+**Google wins for businesses with local, urgent, or transactional intent.** A Frisco plumber, a Plano dentist, a Dallas restaurant — any business where the customer is ready to act now and is choosing primarily on proximity, availability, and reviews. The Google Map Pack and traditional organic results are where these decisions happen. Perplexity is rarely consulted for this kind of query because the user doesn't need synthesis — they need a phone number and an open appointment.
+
+**Perplexity wins for businesses where customers do meaningful research before deciding.** B2B services, considered consumer purchases, professional services, complex products, and anything with a long sales cycle. A DFW manufacturing firm evaluating a marketing agency, a homeowner researching solar installation options, a small business comparing CRM tools — these buyers are often using Perplexity because they need a structured, sourced overview before they shortlist.
+
+There is overlap. A homeowner researching roofing contractors might use both. A B2B buyer might still validate a vendor by reading their Google reviews after Perplexity introduces them. The platforms compound, which is part of why optimizing for both eventually becomes the right strategy. But the starting point — the platform that pays back optimization effort fastest for your specific business — depends on which behavior dominates among your customers.
+
+## Audience Differences That Matter for DFW
+
+The audiences themselves differ in ways that affect how each platform should be approached. Understanding these differences is what lets a small business avoid wasting time optimizing for the wrong audience.
+
+Google's user base is essentially the entire internet — everyone who searches for anything, ever. The audience is enormous and unfiltered. That's a strength when your offer has broad appeal and a weakness when your buyer is a specific kind of person. The competitive landscape on Google reflects this scale: ranking for high-intent local terms in DFW means competing against well-funded national chains, established local incumbents, and aggressive challenger brands all at once.
+
+Perplexity's user base is smaller and skews more toward knowledge workers, researchers, and professionals making considered decisions. The user base is also more digitally sophisticated — they expect cited sources, factual claims, and content that holds up to follow-up questions. The competitive landscape is correspondingly different: most local DFW competitors aren't optimizing for Perplexity at all yet, which means a thoughtful effort can produce visible results faster than the same effort on Google.
+
+The implication for DFW businesses is that the right channel often depends on which audience matches your buyer profile. A consumer-facing business with a local market is usually better served putting their first dollar into Google. A B2B service or considered-purchase business is often better served putting that same dollar into Perplexity.
+
+## A Decision Framework
+
+The choice of where to optimize first comes down to a few questions about your business and your customers. The framework we use with clients is straightforward.
+
+**Question 1: Is your customer's decision urgent or considered?** If they need your service today (urgent), Google's local results are where the decision happens. If they're researching for weeks before deciding (considered), Perplexity is increasingly part of that research process.
+
+**Question 2: Do customers compare you against alternatives before deciding?** If yes — and especially if the comparison happens online rather than in conversation — Perplexity matters more. Its synthesis-style answers are designed for exactly this kind of comparison work.
+
+**Question 3: How much weight do reviews and proximity carry in the decision?** If reviews and physical location dominate (typical for restaurants, contractors, dentists, retail), Google is your primary channel. If credentials, methodology, or expertise matter more (typical for B2B services, consultants, specialized providers), Perplexity rewards your effort more efficiently.
+
+**Question 4: What do your closed-won customers say in their first conversation?** This is the most underused signal. If new customers say "I found you on Google," your Google channel is working. If they say "I came across you while researching," that research often happened on AI platforms. Ask the question explicitly in your sales process. The answer tells you where to invest.
+
+If you're still uncertain after running these questions, default to Google first. The audience size, intent quality, and Map Pack-driven local visibility are usually the stronger starting point for DFW businesses generally. Perplexity becomes the second priority once your Google foundation is solid.
+
+## What Optimizing for Each Looks Like
+
+The work of optimizing for each platform overlaps substantially, which is why doing both eventually becomes the natural path. But the priorities differ.
+
+For Google, the priorities are Google Business Profile completeness, consistent NAP across directories, review velocity, technical site health, and content that targets specific local-intent keywords. The Map Pack rewards businesses that look established, active, and well-reviewed. The organic results reward sites with topical depth and strong technical foundations.
+
+For Perplexity, the priorities are different. Schema markup is more important — the platform relies heavily on structured data to identify entities and citations. Content needs to be source-quality: factual, well-cited, structured as direct answers to specific questions. Third-party mentions in industry publications, trade press, and authoritative sites contribute disproportionately because Perplexity weights citation patterns when deciding which sources to surface.
+
+Both platforms reward authoritative, accurate, well-structured content. The difference is the path content takes to readers. Google sends them to your site to read it. Perplexity quotes it directly inside its answer. That has implications for how content is written — Google content can build to a conclusion, Perplexity content needs the conclusion in the first paragraph for the model to extract it.
+
+## The Honest Answer: You Probably Need Both Eventually
+
+The framework above gets you a starting point. But the strategic reality is that most DFW businesses will eventually need to optimize for both platforms — because both are part of the same broader shift toward AI-driven search, and because the two are increasingly interconnected.
+
+Google's AI Overviews already pull from a citation graph that overlaps significantly with Perplexity's. ChatGPT, Gemini, and Bing's Copilot all draw on similar sources. A business that's authoritative on one platform tends to become authoritative on all of them, because the underlying signals — entity clarity, content quality, third-party citations, schema completeness — apply universally.
+
+The right framing isn't Google vs Perplexity. It's: where does my optimization dollar pay back fastest right now, given my customer base, and what's the natural sequence to expand into the other platforms once I've earned visibility on the first?
+
+For more on the underlying mechanics, our analysis of [zero-click search dynamics](/blog/zero-click-search-death-of-the-click-2026) covers how the AI search shift changes the value of being cited rather than ranked.
+
+## Key Takeaways
+
+- Google and Perplexity serve different points in the buyer journey — Google for urgent and transactional intent, Perplexity for research and considered decisions.
+- For most local consumer-facing DFW businesses, Google remains the stronger starting point because of Map Pack visibility and review-driven local intent.
+- For B2B and considered-purchase businesses in DFW, Perplexity often pays back optimization effort faster because the competitive landscape is much less saturated.
+- The four questions to ask: Is the decision urgent or considered? Do customers compare? How much do reviews and proximity matter? What do closed-won customers say about how they found you?
+- Both platforms eventually matter. The right move is to start where your customers are now and expand once the foundation is solid.
+
+## Final Take
+
+The question of where to optimize first isn't really about platforms — it's about your customers and where they're already making decisions. Get the audience match right and the platform choice becomes obvious. Get it wrong and you spend months optimizing for an audience that isn't yours.
+
+Our team handles end-to-end [Search Everywhere Optimization](/services/search-everywhere-optimization), which means we work across Google, Perplexity, ChatGPT, Gemini, and emerging AI search platforms with a coordinated strategy rather than fragmented efforts. If you'd like an honest assessment of which channels matter most for your specific business, [request a free audit](/free-audit) and we'll lay out the priorities based on what we find.`,
+  },
+  {
+    slug: "schema-types-local-business-2026",
+    title: "The 7 Schema Types Every Local Business Needs in 2026",
+    excerpt: "Schema markup is the language AI and search engines use to understand your website. These seven types cover roughly 95% of what a local business actually needs — implemented correctly, they unlock rich results, AI citations, and Map Pack visibility.",
+    summary: "Schema markup tells Google and AI search engines what each piece of your website is. Local businesses need seven core schema types: Organization, LocalBusiness, FAQPage, Article, BreadcrumbList, Person, and either Service or Product. Implemented correctly, they drive rich results, AI citations, and Map Pack visibility. Implemented poorly or not at all, they leave free visibility on the table.",
+    category: "Technical SEO",
+    badge: "TECHNICAL",
+    badgeColor: "#3B82F6",
+    date: "May 3, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "10 min read",
+    authorSlug: "owen-nixon",
+    featured: false,
+    series: null,
+    image: "/images/blog/schema-types-local-business-2026.webp",
+    content: `## Why Schema Markup Matters in 2026
+
+Schema markup is the structured-data vocabulary search engines and AI models use to understand your content. It's invisible to visitors but critical to machines. A page without schema is a page Google has to interpret. A page with schema is a page Google understands.
+
+That distinction matters more in 2026 than it did even two years ago. AI Overviews, Perplexity, ChatGPT, and Gemini all draw heavily on structured data when generating answers. Rich results in Google search — review stars, FAQ accordions, business hours panels, breadcrumb trails — are gated behind schema. The Map Pack favors businesses with complete LocalBusiness schema. Article schema helps blog content earn knowledge-panel and AI Overview citations.
+
+The honest truth: most local business websites we audit have either no schema or partial schema with broken fields. Both are nearly equivalent to having none. Get this right and you unlock visibility your competitors are forfeiting.
+
+For more on the broader AI search shift, see our [GEO 101 guide](/blog/geo-101). This post covers the seven schema types that get you the most upside per unit effort.
+
+## 1. Organization Schema (Sitewide)
+
+Every site needs Organization schema in the root layout so it loads on every page. This is what tells search engines and AI models who you are as an entity.
+
+Required fields: \`name\`, \`url\`, \`logo\`, \`sameAs\` (your social profiles), \`address\`, and \`contactPoint\`. The \`@id\` field is what lets you reference this entity from other schema blocks (e.g., a BlogPosting whose publisher is your Organization).
+
+For service-area businesses, layer \`areaServed\` on top — listing the cities or regions you cover. This is one of the strongest entity signals AI models use when answering "best [service] in [city]" queries. The [Schema.org Organization documentation](https://schema.org/Organization) is the canonical reference.
+
+## 2. LocalBusiness Schema (Location Pages)
+
+LocalBusiness extends Organization with location-specific fields: \`geo\` (latitude/longitude), \`openingHoursSpecification\`, \`priceRange\`, and \`areaServed\` scoped to that location. If your business has a physical storefront, this is what powers Google's business hours panel, the Map Pack listing details, and the rich-result presentation in AI answers.
+
+Use LocalBusiness on city/location pages — not on every page sitewide. A site that emits LocalBusiness on the homepage and on each city landing page is signaling clearly: "This is the parent entity, and these are the locations." A site that emits LocalBusiness everywhere creates noise.
+
+For service-area businesses with no storefront, use \`serviceArea\` instead of \`address\` to specify the geographic region you cover. Don't fake a street address. Google penalizes that, and so do AI models that cross-reference business listings.
+
+## 3. FAQPage Schema (Every Page With Q&A)
+
+FAQPage schema is the highest-ROI schema for AI visibility. AI models extract FAQ pairs verbatim. When someone asks ChatGPT a question and your FAQ schema contains a near-match answer, the model cites you.
+
+Add FAQPage schema anywhere you have a Q&A section: service pages, location pages, blog posts, even the homepage if it has frequently-asked questions. Every \`Question\` needs a clear \`name\` and an \`acceptedAnswer\` with \`text\` containing the full answer.
+
+Two rules to follow strictly. First, the FAQ in your schema must be visible on the page — don't ship "hidden" FAQ schema with answers users can't see. Google flags this and may issue a manual action. Second, write the questions the way users actually phrase them. "How long does roof inspection take?" works. "Roof inspection time" does not.
+
+For tactical guidance on FAQ structure, our [How to Get Cited by ChatGPT guide](/blog/how-to-get-cited-by-chatgpt-2026) covers the question-first content pattern in detail.
+
+## 4. Article / BlogPosting Schema (Every Blog Post)
+
+Every blog post needs BlogPosting schema (or Article — they're nearly equivalent, but BlogPosting is more specific for blog content and Google generally prefers it). Required fields: \`headline\`, \`description\`, \`image\`, \`datePublished\`, \`dateModified\`, \`author\` (a Person sub-schema, not just a string), \`publisher\` (linked to your Organization via \`@id\`), and \`mainEntityOfPage\`.
+
+The author field is one of the most under-implemented in our audits. Most blogs ship \`author: "John Smith"\` as a string. AI models can't link that string to a person entity. The fix: emit \`author\` as a full Person sub-schema with \`name\`, \`url\` (linking to a real author bio page), and \`sameAs\` (their LinkedIn or social profile). This builds an author authority graph the model can use to evaluate trustworthiness.
+
+\`dateModified\` is also frequently broken. Many sites set it to the publish date and never update it. Update \`dateModified\` whenever the post is meaningfully revised. AI models favor freshness and use this field.
+
+## 5. BreadcrumbList Schema (Interior Pages)
+
+BreadcrumbList tells search engines and AI models how a page fits into your site's hierarchy. It's what produces the breadcrumb trail you see in Google search results ("nixarsolutions.com › Blog › Schema Types"). Without it, the URL appears as the navigation context, which looks lazy and parses worse.
+
+Required fields: \`itemListElement\` as an array, with each item containing \`position\`, \`name\`, and \`item\` (the URL). Match the breadcrumb visible on the page exactly. If your visible breadcrumbs don't show on the page, add them — both for users and for the schema to be valid.
+
+Apply BreadcrumbList to every interior page: blog posts, service pages, city pages, portfolio pages, individual product or case-study pages. Skip it on the homepage and root navigation pages.
+
+## 6. Person Schema (Author Bios and Team Pages)
+
+Person schema describes the humans associated with your business. It's what enables AI models to attribute authorship correctly and link your blog content to author authority.
+
+Required at minimum: \`name\`, \`jobTitle\`, \`worksFor\` (linked to your Organization), and \`description\`. Strongly recommended: \`url\` (their bio page on your site), \`image\`, and \`sameAs\` (LinkedIn, Twitter, professional profiles).
+
+The most common mistake is shipping Person schema only on the team page. The schema needs to live where the author is referenced — that means inside BlogPosting schema as the \`author\` field, on the team listing page, and on individual author bio pages. The same person should resolve to the same entity in every place they appear, which is what \`@id\` is for.
+
+## 7. Service or Product Schema (What You Sell)
+
+Depending on what your business sells, you need either Service schema (for services like marketing, consulting, or home services) or Product schema (for retail, e-commerce, or anything with a SKU).
+
+Service schema requires \`name\`, \`description\`, \`provider\` (your Organization), and either \`areaServed\` (for service-area businesses) or \`address\` (for in-person services). Add \`offers\` if you publish pricing or starting-from price ranges. Add \`hasOfferCatalog\` if you offer multiple service tiers.
+
+Product schema is more complex and includes \`offers\`, \`aggregateRating\`, \`review\`, \`brand\`, \`sku\`, \`price\`, and \`availability\`. Get this wrong and Google won't show your products in shopping results. Get it right and you earn rich-card placements with star ratings, prices, and stock status — all of which dramatically increase click-through rates.
+
+## How to Implement Schema (The Short Version)
+
+The actual implementation matters as much as the choice of schemas. A few practical rules from our work building these for clients:
+
+**Use JSON-LD, not Microdata or RDFa.** Google's preferred format, easier to maintain, and easier for AI models to parse. Inject it as a \`<script type="application/ld+json">\` block in the page head or body.
+
+**Validate every schema before shipping.** Use Google's Rich Results Test for visible-result validation and the [Schema.org Validator](https://validator.schema.org/) for deeper structural checks. Both will catch missing required fields, type mismatches, and circular references.
+
+**Cross-link entities with \`@id\`.** When your BlogPosting has a publisher field, that publisher should be a reference (\`@id\`) to the Organization schema you've already defined elsewhere. This builds a coherent entity graph instead of repeating the same data across schemas.
+
+**Keep schema in code, not in CMS plugins.** WordPress plugins ship broken or outdated schema constantly. Either use a plugin from a maintainer who keeps it current, or hand-write the schema in a server-rendered template. The cost of broken schema is invisible — you don't get rich results, but you don't get an error either.
+
+**Update schema when the page updates.** \`dateModified\`, prices, hours, services offered — any time the underlying data changes, the schema needs to reflect it.
+
+## Common Mistakes That Break Schema
+
+A few patterns we see breaking otherwise-good implementations:
+
+**Schema content that doesn't match visible content.** Example: FAQ schema with five questions, but only three appear on the page. Google flags this. Fix: every Q&A in schema must be visible to users.
+
+**Wrong schema type for the page.** Using Article schema on a service page, or LocalBusiness on a blog post. Match the schema to what the page actually is.
+
+**Mixing structured data formats.** A page that emits Microdata in the HTML and JSON-LD in the head will confuse parsers. Pick one (JSON-LD) and stick with it.
+
+**Missing required fields.** Most schema types have a small set of required fields. The Schema.org docs list them. The Rich Results Test will flag them. Don't ship without checking.
+
+**Using schema as a ranking hack.** Schema doesn't directly raise rankings. It enables rich results, AI citations, and entity recognition — all of which improve visibility downstream. Treat it as infrastructure, not a magic boost.
+
+## Key Takeaways
+
+- Local businesses need seven core schema types: Organization, LocalBusiness, FAQPage, BlogPosting, BreadcrumbList, Person, and Service or Product.
+- Schema is what enables rich results, AI citations, Map Pack details, and knowledge-panel content — not a ranking lever directly, but infrastructure that unlocks all of those.
+- Use JSON-LD format, validate before shipping, and keep schema content in sync with what users actually see on the page.
+- The author field in BlogPosting is the most commonly broken — emit it as a full Person sub-schema linked to a real bio page, not just a string.
+- Most local sites we audit have partial schema. Complete, validated schema is one of the highest-impact technical SEO investments a small business can make.
+
+## Final Take
+
+Schema is not a 2026 silver bullet. It's the foundation that makes everything else work — AI citations, Map Pack rankings, rich results, authoritative author signals. The seven types above will cover roughly 95% of what a local business actually needs. Get them in place, validate them, and update them when your underlying data changes.
+
+If you'd rather skip the implementation work, our [AI SEO and GEO services](/services/ai-seo-geo) include comprehensive schema buildouts as part of every engagement — covering the seven types above plus any specialized schemas (Event, Recipe, JobPosting) your business needs. [Request a free audit](/free-audit) and we'll tell you exactly which schemas are missing or broken on your site today.`,
+  },
+  {
+    slug: "how-to-get-cited-by-chatgpt-2026",
+    title: "How to Get Cited by ChatGPT: A Practical Guide for SMBs (2026)",
+    excerpt: "Most small businesses are invisible inside ChatGPT's answers. Here's the seven-step playbook we use at NIXAR to get clients cited by name in AI responses — without enterprise budgets.",
+    summary: "Getting cited by ChatGPT means appearing inside AI-generated answers when someone asks a question your business can answer. The mechanics come down to entity clarity, structured content, schema markup, and authoritative third-party mentions. Most SMBs aren't doing the basics yet — which is exactly why early movers are getting picked up first.",
+    category: "AI & SEO",
+    badge: "HOW-TO",
+    badgeColor: "#10B981",
+    date: "April 29, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "9 min read",
+    authorSlug: "owen-nixon",
+    featured: false,
+    series: null,
+    image: "/images/blog/how-to-get-cited-by-chatgpt-2026.webp",
+    content: `## What Does It Mean to "Get Cited by ChatGPT"?
+
+When someone asks ChatGPT a question, the model generates an answer in plain language. For factual or research-style queries, that answer often names specific brands, websites, or businesses as sources. Sometimes those names appear inline. Sometimes they appear in a sidebar of cited links. Either way, when a user reads the answer, your name is on the page.
+
+That's a citation. And in 2026, it functions a lot like a top-three Google ranking did in 2015 — except the user often never clicks through. They just read your name and move on with the answer.
+
+For SMBs, that's both a problem and an opportunity. The problem: if you're not cited, you're invisible. The opportunity: most of your local competitors aren't optimizing for this yet. The shelf is wide open if you move now.
+
+## Why ChatGPT Citations Matter for Small Businesses
+
+The size of the audience is what makes this urgent. ChatGPT [reportedly serves more than 800 million weekly active users](https://openai.com/), and a meaningful share of those interactions are commercial — "best [service] in [city]," "should I go with [Brand A] or [Brand B]," "what's a good [tool] for a small team." Those are intent-rich queries the same way Google searches are intent-rich. They convert.
+
+The catch is that the user behavior is different. On Google, search and click are separate steps. Inside ChatGPT, the answer is the destination. If your name is in the answer, you're top-of-mind. If it isn't, you're not in the conversation at all.
+
+The other reason this matters: AI search results compound. ChatGPT, Perplexity, and Gemini all draw on overlapping datasets and similar signals. A business that gets cited in one tends to get cited in the others. Once you're in the consideration set, the platforms keep referencing you.
+
+For more on the broader shift, see our breakdown of [Generative Engine Optimization](/blog/geo-generative-engine-optimization-2026) — that piece covers why the channel exists. This one covers how to win in it.
+
+## How ChatGPT Decides Who to Cite
+
+There's no public algorithm document, but the patterns from working with ChatGPT, Perplexity, and Gemini outputs are consistent enough to reverse-engineer. Models tend to favor sources that meet four criteria:
+
+**The model can identify your business as an entity.** That means your name, address, services, and category are described consistently across your website, Google Business Profile, LinkedIn, industry directories, and Wikipedia-style references. If the model has to guess what kind of business you are, it skips you.
+
+**Your content directly answers the question that was asked.** AI models extract sentences and paragraphs. Content built as a wall of marketing copy is hard to extract. Content structured as "Question → direct answer in the next sentence → supporting detail" is exactly the format models grab.
+
+**Schema markup tells the model what each piece of your site is.** [Schema.org's documentation](https://schema.org/) is the open standard. Organization, LocalBusiness, FAQPage, HowTo, and Article schemas all help models parse your pages without guessing.
+
+**Independent sources reference you.** Self-claims don't get you cited. Industry sites, trade publications, news mentions, podcast appearances, and customer-generated content (case studies, reviews on third-party platforms) all create the citation graph that AI models trust.
+
+## The 7-Step Playbook
+
+Here's the sequence we run for clients. It works for SMBs because it doesn't require an enterprise content engine — just discipline.
+
+**1. Add comprehensive JSON-LD schema to every page.** Start with Organization schema sitewide, LocalBusiness on city/location pages, FAQPage on every page that has Q&A, Article on every blog post, and Person schema on author bios. Validate with Google's Rich Results Test before you ship. Most sites we audit have either no schema or partial schema with broken fields — both are nearly equivalent to having none.
+
+**2. Restructure your top pages around questions.** Audit the H2s on your most important pages. If they read like brochure headlines ("Our Approach to Excellence"), rewrite them as the actual questions a buyer would ask ("How do you measure success on our campaigns?"). Then answer the question in the first sentence underneath. Models extract that first sentence. Bury the answer two paragraphs down and you forfeit the citation.
+
+**3. Build entity consistency across the web.** Pick one canonical name, address, phone format, and primary description. Then audit every place you appear: Google Business Profile, Bing Places, Apple Maps, Facebook, Instagram, LinkedIn, Yelp, the Better Business Bureau, industry-specific directories. Mismatches confuse models. If your website says "NIXAR Solutions" and your Yelp listing says "Nixar Solutions LLC," that's two entities to a model. Pick one. Update everywhere.
+
+**4. Earn third-party citations on purpose.** This is the slowest step and the one most SMBs skip. Pitch local trade publications. Get listed in industry "best of" roundups. Partner with adjacent (non-competitor) businesses on co-marketed content. Submit to relevant podcasts. Each independent reference tightens the citation graph that models use to decide who's authoritative on a topic.
+
+**5. Cite your own claims.** When you publish a stat, link to the source. When you make a definitive statement, ground it in a study, a government dataset, or a recognized industry source. AI models favor content that demonstrates the same source behavior the model itself uses. It's circular and it works.
+
+**6. Go deep on a few topics, not shallow on many.** Topical authority compounds. Five comprehensive guides on local SEO will outperform fifty thin articles across thirty unrelated topics. Pick three to five core topics where you genuinely have a perspective. Publish 8-12 pieces per topic. Cross-link them. The model will start treating you as the authority on those topics specifically.
+
+**7. Monitor citations monthly.** Run the same five queries every month. Note which businesses are cited. Track changes. When you start showing up, double down on the content that earned the citation. When you don't, check whether the model's answer references things your site doesn't say — that's your content gap.
+
+## What This Looks Like in Practice for a DFW SMB
+
+A North Dallas roofer we worked with had a clean website, a strong Google Business Profile, and zero presence in AI search. Six months in, the steps that moved the needle were unglamorous: complete schema markup across every page, FAQ sections on each service page answering the literal questions homeowners type into ChatGPT ("how long does a roof inspection take after a hailstorm?"), rewriting the homepage to lead with the entity-defining sentence ("Frisco-based roofing contractor serving DFW since 2008"), and earning four trade-publication mentions over a quarter through PR outreach.
+
+By month six, queries like "best roofers in Frisco for hail damage" were citing them by name on ChatGPT and Perplexity. They weren't ranked yet on Google for the same terms. The AI channel pulled ahead first.
+
+This is consistent with what we see across our [AI SEO and GEO](/services/ai-seo-geo) engagements. AI citations move faster than traditional rankings because the moat is so much smaller — most local competitors haven't started.
+
+## Common Mistakes to Avoid
+
+A few patterns sink SMB attempts at AI visibility:
+
+**Trying to "stuff" prompts.** Some agencies write content explicitly designed to manipulate ChatGPT — keyword-spammed FAQ blocks, AI-generated content about AI, repetitive claims. Models detect this and discount it. Write for humans. Structure for machines. Both at once.
+
+**Ignoring traditional SEO.** AI models still pull heavily from web content, and high-authority pages still get cited more often. If your domain authority is low and your content is thin, AI optimization won't fix the underlying problem. Treat AI SEO as a layer on top of [solid SEO fundamentals](/blog/ai-seo-101), not a replacement.
+
+**Setting it and forgetting it.** AI search is moving fast. The citation patterns from January 2026 are not the citation patterns from June 2026. Audit monthly. Iterate.
+
+**Outsourcing to a tool that promises automation.** No tool we've tested produces durable AI citations on autopilot. Software helps you measure and discover. The work itself — entity consistency, content depth, third-party citations — is human work.
+
+## Key Takeaways
+
+- ChatGPT citations function like top-of-page rankings for AI search and reach an audience traditional SEO often can't.
+- Models cite businesses they can identify as clear entities with consistent information across the web.
+- Schema markup, question-style headings, and direct-answer content structure are the technical foundation.
+- Third-party mentions and topical authority do more than on-page optimization alone.
+- Most SMBs aren't doing this yet — early movers are taking the citations the rest of the market will fight over in 2027.
+
+## Final Take
+
+Getting cited by ChatGPT isn't reserved for enterprise brands with eight-figure marketing budgets. It's a function of disciplined fundamentals — entity consistency, content depth, schema, third-party signals — applied with patience. Most SMBs we audit have done none of these. Pick the seven steps above, run them in order, and you'll be in AI answers before your competitors even realize the channel exists.
+
+If you want help running this playbook on your business, our team handles end-to-end [Search Everywhere Optimization](/services/search-everywhere-optimization) — combining traditional SEO and GEO so you show up wherever your customers are searching. [Request a free audit](/free-audit) and we'll tell you exactly where you stand on AI search visibility today.`,
+  },
+  {
     slug: "geo-generative-engine-optimization-2026",
     title: "GEO: How Generative Engine Optimization Is Changing the Marketing Landscape in 2026",
     excerpt: "AI-generated search results are rewriting the rules of visibility. Here's what GEO means for your brand — and how to adapt before your competitors do.",

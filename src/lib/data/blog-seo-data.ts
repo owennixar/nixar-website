@@ -8,6 +8,57 @@ export const BLOG_SEO_DATA: Record<string, {
   keyTakeaways: string[];
   faqs: { question: string; answer: string }[];
 }> = {
+  "perplexity-vs-google-where-to-optimize-first-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "Google and Perplexity serve different points in the buyer journey — Google for urgent and transactional intent, Perplexity for research and considered decisions.",
+      "For local consumer-facing DFW businesses, Google remains the stronger starting point because of Map Pack visibility and review-driven local intent.",
+      "For B2B and considered-purchase businesses in DFW, Perplexity often pays back optimization effort faster because the competitive landscape is less saturated.",
+      "Four diagnostic questions: Is the decision urgent or considered? Do customers compare? How much do reviews and proximity matter? What do closed-won customers say about how they found you?",
+      "Both platforms eventually matter — start where your customers are now and expand once the foundation is solid.",
+    ],
+    faqs: [
+      { question: "Should I pick Google or Perplexity first?", answer: "It depends on your customers, not the platforms. Local, urgent, transactional businesses (restaurants, contractors, retail) start with Google. B2B, considered-purchase, and research-driven businesses start with Perplexity. The fastest signal is asking your closed-won customers how they first heard about you." },
+      { question: "Is Perplexity actually big enough to matter for a small business?", answer: "For B2B and considered-purchase categories, yes — Perplexity's user base skews toward decision-makers and researchers, which is exactly the audience that matters for those businesses. The volume is smaller than Google but the per-citation value is often higher because users arrive with more intent." },
+      { question: "Do the optimization tactics overlap?", answer: "Substantially. Schema markup, entity consistency, content depth, and authoritative third-party citations help both platforms. The biggest difference is content structure — Perplexity rewards direct-answer-first writing more strictly than Google does." },
+      { question: "What if I don't know which audience I have?", answer: "Default to Google first. The audience size, intent quality, and Map Pack-driven local visibility make it the stronger starting point for most DFW businesses generally. Once your Google foundation is solid, expand to Perplexity and the other AI search platforms." },
+      { question: "How quickly can I see results from Perplexity optimization?", answer: "Faster than Google in most cases — typically 60-90 days for initial citations on niche queries, because the competitive landscape is less saturated. Google rankings for the same intent often take 4-9 months to mature, especially for competitive local keywords." },
+    ],
+  },
+  "schema-types-local-business-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "Local businesses need seven core schema types: Organization, LocalBusiness, FAQPage, BlogPosting, BreadcrumbList, Person, and Service or Product.",
+      "Schema unlocks rich results, AI citations, Map Pack details, and knowledge-panel content — it's infrastructure, not a direct ranking signal.",
+      "Use JSON-LD format, validate every schema before shipping, and keep content in sync with what users actually see on the page.",
+      "The author field in BlogPosting is the most commonly broken — emit a full Person sub-schema linked to a real bio page, not just a string.",
+      "Most local sites have partial or broken schema. Complete, validated schema is one of the highest-impact technical SEO investments a small business can make.",
+    ],
+    faqs: [
+      { question: "Does schema markup help with rankings?", answer: "Not directly. Schema doesn't raise organic rankings on its own. What it does is unlock rich results, AI citations, and Map Pack details — all of which dramatically increase click-through rate and AI visibility downstream. The compounding effect of better presentation often produces meaningful ranking improvements indirectly." },
+      { question: "Should I use a WordPress plugin for schema?", answer: "Only if the plugin is actively maintained and supports the latest schema standards. Many popular schema plugins ship outdated or broken markup. The safer path is to hand-implement schema in your server-rendered templates or use a Next.js / framework-native approach with full control." },
+      { question: "What's the difference between Article and BlogPosting schema?", answer: "BlogPosting is a more specific subtype of Article designed for blog content. Both are technically valid for blog posts, but Google prefers BlogPosting for blog content and Article for news, magazine pieces, or long-form editorial. For a typical business blog, use BlogPosting." },
+      { question: "Do I need schema if I'm a small local business?", answer: "Yes, especially if you're a small local business. The Map Pack, AI search citations, and rich results all favor businesses with complete LocalBusiness, Organization, and FAQPage schema. Small businesses without schema lose visibility to competitors who do implement it correctly." },
+      { question: "How do I check if my schema is working?", answer: "Use Google's Rich Results Test (search.google.com/test/rich-results) and the Schema.org Validator (validator.schema.org). Both will catch missing required fields, type mismatches, and structural errors. Test every page type — not just the homepage." },
+    ],
+  },
+  "how-to-get-cited-by-chatgpt-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "ChatGPT citations function like top-of-page rankings for AI search and reach audiences traditional SEO often can't.",
+      "AI models cite businesses they can identify as clear entities with consistent information across the web.",
+      "Schema markup, question-style headings, and direct-answer content structure are the technical foundation.",
+      "Third-party mentions and topical authority do more for citations than on-page optimization alone.",
+      "Most SMBs aren't doing this yet — early movers are taking the citations the rest of the market will fight over in 2027.",
+    ],
+    faqs: [
+      { question: "How long does it take to get cited by ChatGPT?", answer: "Initial citations typically appear within 60-120 days of disciplined optimization — schema markup, entity consistency, and direct-answer content structure. Sustained, repeatable citations across multiple query types take 4-6 months as AI models re-index your domain and your third-party citation graph fills in." },
+      { question: "Can a small business actually compete in ChatGPT search?", answer: "Yes, and often more easily than in Google. The AI search channel is less saturated, especially for local and niche queries. Most local SMBs aren't optimizing yet, so the entry barrier is lower than traditional SEO for the same intent." },
+      { question: "Do I need new content, or can I optimize what I have?", answer: "Most existing content can be restructured rather than replaced. Audit your top pages for question-style H2s, direct first-sentence answers, schema coverage, and entity-defining language. New content is only needed for clear gaps — questions buyers ask that your site doesn't currently answer." },
+      { question: "Is paying for AI search ads a substitute for getting cited organically?", answer: "No. ChatGPT ads (now available on Free and Go tiers) give you placement, but organic citations are what build long-term brand authority inside AI search. Treat them as complementary, with organic citations as the durable asset." },
+      { question: "What's the single most important first step?", answer: "Add comprehensive JSON-LD schema across your site — Organization, LocalBusiness, FAQPage, and Article schemas at minimum. Validate with Google's Rich Results Test. This is the foundation everything else builds on." },
+    ],
+  },
   "geo-generative-engine-optimization-2026": {
     authorKey: "owen",
     keyTakeaways: [
