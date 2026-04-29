@@ -8,6 +8,57 @@ export const BLOG_SEO_DATA: Record<string, {
   keyTakeaways: string[];
   faqs: { question: string; answer: string }[];
 }> = {
+  "marketing-automation-small-teams-build-vs-buy-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "The build-vs-buy framing has expanded — most small teams in 2026 run a hybrid of off-the-shelf SaaS, no-code workflow platforms, and selective AI agents.",
+      "The right choice depends on workflow standardization, technical capacity, operational maturity, and unit economics — not on which tools are most popular.",
+      "Most small teams are best served by a strong off-the-shelf core (CRM and email automation) plus no-code integrations for the edge cases.",
+      "AI agent platforms add value as scalpel-precision additions for fuzzy decisions, not as primary infrastructure yet.",
+      "The patterns that fail consistently: buying enterprise tools for SMB workflows, building everything custom, endless tool stacking, set-it-and-forget-it automation.",
+    ],
+    faqs: [
+      { question: "Which off-the-shelf marketing automation tool is best for a small business?", answer: "Depends on the priority. ActiveCampaign and HubSpot are strong general-purpose CRM-plus-marketing-automation choices. Klaviyo dominates e-commerce. Mailchimp and Brevo work well for lighter-weight email-focused needs. ConvertKit fits creators and content-focused businesses. Most small teams will be well-served by one of these for years." },
+      { question: "When does it make sense to use Zapier or Make alongside a CRM?", answer: "When your CRM doesn't natively connect to a tool you need (booking platforms, niche industry SaaS, payment processors), or when you have edge-case workflows the CRM can't express. Most small teams end up running 5-15 workflows in Zapier/Make alongside their core CRM — that's a healthy hybrid pattern." },
+      { question: "Are AI agent platforms reliable enough to use in production?", answer: "For specific tasks, yes — and improving fast. Lead qualification, content drafting, and customer service routing are areas where AI agents can deliver reliable results in 2026. For complex multi-step business-critical workflows, treat them as augmentation rather than autonomous systems. Always have human review on outputs that affect customers or sales." },
+      { question: "How much should a small team spend on marketing automation?", answer: "A reasonable benchmark for small teams is 5-15% of marketing budget on automation tooling and integration work. Below that, you're likely under-investing in efficiency. Above that, you're likely over-tooling. The exact number varies by industry and revenue model." },
+      { question: "Should I switch CRMs if mine isn't working?", answer: "Usually no. Switching CRMs is a 4-8 week project that disrupts the team. Before switching, audit whether you're using the platform's existing capabilities — most teams use 20-30% of what their CRM offers. Switching only makes sense after you've genuinely outgrown the platform's capabilities, not just because the workflows aren't working." },
+    ],
+  },
+  "core-web-vitals-2026-conversion": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "LCP under 2.5s, INP under 200ms, and CLS under 0.1 are the thresholds for 'good' Core Web Vitals.",
+      "Each metric corresponds to a specific user-facing problem that depresses conversion: LCP feels slow, INP feels broken, CLS feels disrespectful.",
+      "The conversion lift from CWV optimization typically pays back the cost faster than the SEO benefit alone justifies.",
+      "Most issues are predictable: oversized hero images, render-blocking JavaScript, web fonts swapping, missing image dimensions, and large client-side bundles.",
+      "Modern frameworks (Next.js, Astro, SvelteKit) handle CWV well by default. Legacy stacks (heavy WordPress, full client-rendered React) require more deliberate work.",
+    ],
+    faqs: [
+      { question: "How much do Core Web Vitals affect Google rankings?", answer: "They're confirmed ranking factors, but they're tie-breakers between otherwise comparable pages — not primary ranking levers like content quality and backlinks. The bigger reason to optimize CWV is conversion impact, which typically dwarfs the direct SEO benefit. Treat CWV as user-experience work that also helps SEO." },
+      { question: "Is lab data (PageSpeed Insights) or real-user data more important?", answer: "Real-user data is what matters for ranking and conversion. Lab data is useful for diagnosis and CI testing. Always optimize for the 75th-percentile real-user measurement, available through CrUX or your own RUM implementation." },
+      { question: "What's the single biggest CWV issue most SMB sites have?", answer: "Oversized hero images. A 4 MB hero loaded without responsive sizing or modern formats blows up LCP for nearly every visitor. Fixing this — generating WebP or AVIF at appropriate widths, using responsive image attributes — is usually the highest-impact single change." },
+      { question: "Should I switch frameworks if mine has bad CWV?", answer: "Not necessarily. Most CWV issues can be fixed inside the framework you're using. Switching frameworks is a major project that's only worth it if the existing stack has structural problems beyond CWV. Diagnose first, then decide." },
+      { question: "How long does it take to fix CWV issues?", answer: "For a small business website, most CWV optimization can be completed in 2-4 weeks of focused work. Image optimization is usually a day. JavaScript bundle reduction and lazy loading is typically a week. Layout shift fixes are quick once identified. The hard part is diagnosing the actual bottlenecks, not implementing the fixes." },
+    ],
+  },
+  "win-dallas-map-pack-tactics-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "Map Pack rankings come down to relevance (how well your GBP matches the query), distance (proximity to the searcher), and prominence (overall authority and reviews).",
+      "A complete GBP, sustained review velocity, NAP consistency, local content depth, and Dallas-relevant backlinks are the five tactics that move rankings.",
+      "Review velocity matters more than total review count. Aim for 4-8 new Google reviews per month minimum for service-based Dallas businesses.",
+      "The cleanup work takes 60-90 days for a single-location Dallas business. Maintenance is permanent.",
+      "Buying reviews, multiple GBP listings, and generic local content all fail in Dallas — the market is too large and too competitive for shortcuts.",
+    ],
+    faqs: [
+      { question: "How long does it take to rank in the Dallas Map Pack?", answer: "60-120 days for most service-based Dallas businesses doing the foundational work correctly. Highly competitive categories (lawyers, dentists, restaurants in saturated neighborhoods) can take 6-12 months. The variable that determines speed is usually review velocity — businesses that build a steady review-collection system see results faster." },
+      { question: "Is paying for Local Service Ads worth it for Dallas businesses?", answer: "Yes for most home services and a growing list of professional services categories. LSA appears above the Map Pack and uses pay-per-lead pricing rather than pay-per-click. The qualification process verifies your business and license, which adds trust signals. Treat LSA as a paid layer on top of organic local SEO, not a substitute." },
+      { question: "What's the most underinvested factor in Dallas local SEO?", answer: "Review velocity. Most Dallas businesses focus on getting to a high total review count, then stop the request process. Businesses that maintain a steady drip of new reviews — 4-8 per month minimum — outrank businesses with higher total counts but stale activity. Build a system." },
+      { question: "Do I need a Dallas-specific website page if I'm based in Dallas?", answer: "If your address is in Dallas and you serve primarily Dallas customers, your homepage and service pages typically cover this. If you serve multiple cities including Dallas, dedicated city-specific landing pages — including a Dallas page — produce ranking results for city-specific queries. Generic content with the city name swapped doesn't work; real local content does." },
+      { question: "How do I compete against businesses that have been ranking for years?", answer: "Distance is fixed, but prominence is controllable. Businesses ranking for years often have stale GBP profiles, slowing review velocity, and old NAP issues that have accumulated. A new entrant that does the foundation correctly often catches established competitors within 6-9 months by being more current and active. The market rewards activity." },
+    ],
+  },
   "nap-consistency-multi-location-businesses-2026": {
     authorKey: "anwar",
     keyTakeaways: [
