@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getFeaturedPosts, getSeriesPosts, getMorePosts } from "@/lib/data/blog";
+import { getAuthor } from "@/lib/data/authors";
 import AnimatedOrbs from "@/components/ui/AnimatedOrbs";
 import ParticleField from "@/components/ui/ParticleField";
 import NewsletterForm from "@/components/sections/NewsletterForm";
@@ -169,7 +170,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div className="mt-auto pt-6 flex items-center justify-between text-[0.7rem] text-[#666]">
-                    <span>{post.author}</span>
+                    <span>{getAuthor(post.authorSlug)?.name ?? "NIXAR Solutions"}</span>
                     <span>{post.readTime}</span>
                   </div>
                   <span className="mt-4 text-[0.75rem] font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
@@ -315,7 +316,7 @@ export default function BlogPage() {
                     {post.excerpt}
                   </p>
                   <div className="mt-auto pt-4 flex items-center justify-between text-[0.65rem] text-[#666]">
-                    <span>{post.author} · {post.readTime}</span>
+                    <span>{getAuthor(post.authorSlug)?.name ?? "NIXAR Solutions"} · {post.readTime}</span>
                     <span className="font-600 uppercase tracking-[0.1em] text-[#E71840] transition-colors group-hover:text-white">
                       Read Article &rarr;
                     </span>

@@ -1,37 +1,25 @@
-export interface BlogAuthor {
-  name: string;
-  title: string;
-  bio: string;
-  linkedin: string;
-}
-
-export const AUTHORS: Record<string, BlogAuthor> = {
-  owen: {
-    name: "Owen Nixon",
-    title: "Co-Founder & Principal, NIXAR Solutions",
-    bio: "Owen Nixon is co-founder of NIXAR Solutions, a digital transformation agency in Frisco, TX. With over a decade of experience in digital marketing, web development, and AI-powered business solutions, Owen leads NIXAR's strategic vision and client delivery. He specializes in cross-functional brand alignment and emerging search technologies including GEO and AI SEO.",
-    linkedin: "https://linkedin.com/in/owennixon",
-  },
-  anwar: {
-    name: "Anwar Mirza",
-    title: "Co-Founder & Principal, NIXAR Solutions",
-    bio: "Anwar Mirza is co-founder of NIXAR Solutions, bringing extensive expertise in digital transformation, automation, and AI integration to Dallas-Fort Worth businesses. Anwar leads NIXAR's technical implementation and AI service development, helping businesses leverage cutting-edge technology for measurable growth.",
-    linkedin: "https://linkedin.com/in/anwarmirza",
-  },
-};
+// Re-export for backward compatibility — single source of truth lives in authors.ts.
+export { authors as AUTHORS, type Author as BlogAuthor } from "./authors";
 
 export interface BlogPost {
   slug: string;
   title: string;
   excerpt: string;
+  /**
+   * Short TL;DR / summary block rendered above the body. AI search engines
+   * extract this heavily — keep it factual, lead with the answer, 2-3 sentences.
+   */
+  summary?: string;
   category: string;
   badge: string;
   badgeColor?: string;
+  /** Display string and schema datePublished. Human-readable; converted to ISO at the schema layer. */
   date: string;
+  /** Display string and schema dateModified. */
   lastUpdated: string;
   readTime: string;
-  author: string;
-  authorKey?: "owen" | "anwar";
+  /** Author slug (key into authors record). e.g. "owen-nixon". */
+  authorSlug: string;
   featured: boolean;
   series: { name: string; part: number; total: number } | null;
   image: string;
@@ -45,13 +33,14 @@ export const blogPosts: BlogPost[] = [
     slug: "geo-generative-engine-optimization-2026",
     title: "GEO: How Generative Engine Optimization Is Changing the Marketing Landscape in 2026",
     excerpt: "AI-generated search results are rewriting the rules of visibility. Here's what GEO means for your brand — and how to adapt before your competitors do.",
+    summary: "GEO (Generative Engine Optimization) is the practice of optimizing content so AI search engines like ChatGPT, Perplexity, and Google AI Overviews cite your brand in their generated answers. With Gartner projecting 25% of search queries to shift to AI by 2027, brands optimized for GEO capture visibility that traditional SEO can no longer reach.",
     category: "AI & SEO",
     badge: "HOT NOW 🔥",
     badgeColor: "#E71840",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "April 22, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "14 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: true,
     series: null,
     image: "/images/blog/geo-generative-engine-optimization-2026.webp",
@@ -129,13 +118,14 @@ GEO isn't replacing SEO — it's expanding what "search optimization" means. In 
     slug: "seo-vs-ai-seo-understanding-the-difference",
     title: "SEO vs. AI SEO: Understanding the Difference and Why It Matters",
     excerpt: "Traditional SEO isn't dead — but it's evolving fast. We break down the key differences between classic search optimization and the AI-driven future.",
+    summary: "Traditional SEO optimizes for ranking in Google's blue links. AI SEO (also called GEO) optimizes for being cited inside AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews. The two are complementary — winning brands run both, with AI SEO capturing the rapidly growing share of zero-click search.",
     category: "Search Strategy",
     badge: "IN-DEPTH DIVE",
     badgeColor: "#3B82F6",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "April 15, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "12 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: true,
     series: null,
     image: "/images/blog/seo-vs-ai-seo-understanding-the-difference.webp",
@@ -225,13 +215,14 @@ Traditional SEO isn't dead — it's still the foundation of search visibility. B
     slug: "manus-ai-changing-social-media-marketing",
     title: "How Manus AI Is Changing Social Media Marketing Forever",
     excerpt: "Meta's $2 billion acquisition of Manus AI is reshaping social media advertising from the inside. Here's what autonomous AI agents mean for marketers, agencies, and Dallas businesses.",
+    summary: "Meta's $2 billion acquisition of Manus AI brings autonomous AI agents into the world's largest ad platform. These agents plan, execute, and optimize social campaigns end-to-end with minimal human input, fundamentally changing the role of social media marketers and the agencies that serve them.",
     category: "Social Media & AI",
     badge: "TRENDING",
     badgeColor: "#F59E0B",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "April 8, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "13 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: true,
     series: null,
     image: "/images/blog/manus-ai-changing-social-media-marketing.webp",
@@ -313,13 +304,14 @@ Meta's acquisition of Manus AI marks the beginning of a new era in social media 
     slug: "seo-101",
     title: "SEO 101: The Complete Beginner's Guide to Search Engine Optimization in 2026",
     excerpt: "Everything you need to know about SEO — from how Google works to on-page optimization, keyword research, and link building. No experience needed.",
+    summary: "SEO is the practice of optimizing your website to rank in Google and other search engines, driving organic (unpaid) traffic. The fundamentals are technical health, on-page content optimization, and authoritative backlinks. SEO drives 53% of all website traffic and remains the highest-ROI marketing channel for most businesses.",
     category: "Beginner's Guide",
     badge: "START HERE",
     badgeColor: "#10B981",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "January 21, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "14 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: { name: "Beginner's Guide", part: 1, total: 5 },
     image: "/images/blog/seo-101.webp",
@@ -420,13 +412,14 @@ SEO is the practice of making your website visible when people search for what y
     slug: "geo-101",
     title: "GEO 101: A Beginner's Guide to Generative Engine Optimization in 2026",
     excerpt: "AI is changing how people find information. Learn how to get your business cited in AI-generated answers from ChatGPT, Perplexity, and Google AI Overviews.",
+    summary: "Generative Engine Optimization (GEO) is how you get cited in AI-generated answers from ChatGPT, Perplexity, Gemini, and Google AI Overviews. It requires structured content, clear entity definitions, authoritative sources, and consistent brand signals across the web — distinct from traditional SEO but built on the same foundation.",
     category: "Beginner's Guide",
     badge: "START HERE",
     badgeColor: "#10B981",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "February 11, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "12 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: { name: "Beginner's Guide", part: 2, total: 5 },
     image: "/images/blog/geo-101.webp",
@@ -512,13 +505,14 @@ GEO is how you get your business cited in AI-generated answers. It's new, it's g
     slug: "ai-seo-101",
     title: "AI SEO 101: How to Optimize Your Website for Both Google and AI Search in 2026",
     excerpt: "The complete beginner's guide to optimizing for traditional search engines AND AI platforms simultaneously. Learn the dual-optimization strategy every business needs.",
+    summary: "AI SEO is a unified strategy that optimizes content for both traditional search engines and AI-powered search platforms. It combines technical SEO, structured data, conversational content, and entity authority so your brand appears in Google rankings AND inside ChatGPT and Perplexity answers.",
     category: "Beginner's Guide",
     badge: "START HERE",
     badgeColor: "#10B981",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "February 18, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "13 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: { name: "Beginner's Guide", part: 3, total: 5 },
     image: "/images/blog/ai-seo-101.webp",
@@ -606,13 +600,14 @@ Optimizing for both Google and AI search isn't twice the work — it's a unified
     slug: "social-ads-101",
     title: "Social Media Ads 101: A Beginner's Guide to Running Paid Ads on Meta, TikTok, and LinkedIn in 2026",
     excerpt: "Learn how to create, target, and optimize paid social media campaigns across Meta, TikTok, and LinkedIn. Step-by-step guide for complete beginners.",
+    summary: "Paid social ads on Meta, TikTok, and LinkedIn let you reach targeted audiences quickly with measurable results. The basics: pick the platform that matches your audience, set a campaign objective, target by interest and behavior, A/B test creative, and optimize against conversion metrics — not vanity impressions.",
     category: "Beginner's Guide",
     badge: "START HERE",
     badgeColor: "#10B981",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "January 28, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "13 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: { name: "Beginner's Guide", part: 4, total: 5 },
     image: "/images/blog/social-ads-101.jpg",
@@ -700,13 +695,14 @@ Paid social media advertising is accessible, affordable, and one of the most eff
     slug: "social-content-101",
     title: "Social Media Content 101: How to Create Posts That Actually Get Engagement in 2026",
     excerpt: "Learn what to post, when to post, and how to create content people actually engage with — no fancy equipment needed.",
+    summary: "Effective social media content combines consistent posting, platform-specific formats, and a clear value proposition for your audience. Quality matters more than quantity — 3-5 quality posts per week beats daily filler. Lead with a hook, deliver value, and end with a clear next step.",
     category: "Beginner's Guide",
     badge: "START HERE",
     badgeColor: "#10B981",
-    date: "March 17, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "February 4, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "14 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: { name: "Beginner's Guide", part: 5, total: 5 },
     image: "/images/blog/social-content-101.webp",
@@ -798,13 +794,14 @@ Social media success in 2026 comes down to three things: understanding what your
     slug: "agentic-ai-marketing-2026",
     title: "Agentic AI in Marketing: What It Is, Why It Matters, and How to Prepare in 2026",
     excerpt: "Agentic AI refers to autonomous AI systems that plan, reason, and take action toward complex marketing goals with minimal human intervention. Here's what every marketer needs to know.",
+    summary: "Agentic AI refers to autonomous AI systems that plan, reason, and execute multi-step marketing tasks without constant human input. Unlike assistive AI tools, agentic systems set their own subgoals — running campaigns end-to-end, adjusting in real time, and reshaping how marketing teams operate.",
     category: "AI & Marketing",
     badge: "HOT NOW 🔥",
     badgeColor: "#E71840",
-    date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "March 25, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "13 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/agentic-ai-marketing-2026.webp",
@@ -888,13 +885,14 @@ Agentic AI is the next frontier in marketing technology. It's moving from concep
     slug: "chatgpt-ads-what-marketers-need-to-know-2026",
     title: "ChatGPT Now Has Ads: What This Means for Marketers and Your Brand in 2026",
     excerpt: "OpenAI launched advertising inside ChatGPT for Free and Go tier users. With 800M+ weekly users, ChatGPT is now a major ad platform. Here's what every marketer needs to know.",
+    summary: "OpenAI launched in-conversation advertising inside ChatGPT for Free and Go tier users. With over 800 million weekly active users, ChatGPT is now a major ad platform. Ads appear within AI responses — fundamentally different from search or social ads — and reward brands optimized for AI citation (GEO).",
     category: "AI & Advertising",
     badge: "BREAKING",
     badgeColor: "#EF4444",
-    date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "April 1, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "11 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/chatgpt-ads-what-marketers-need-to-know-2026.webp",
@@ -980,13 +978,14 @@ ChatGPT advertising represents the most significant new ad channel since TikTok.
     slug: "zero-click-search-death-of-the-click-2026",
     title: "The Death of the Click: How Zero-Click Search Is Reshaping Marketing Strategy in 2026",
     excerpt: "Zero-click search now affects nearly half of all Google searches. AI Overviews reduce organic clicks by up to 58%. Here's how to win when nobody clicks.",
+    summary: "Zero-click search — when users get their answer directly from the search results page without clicking through — now affects nearly 50% of Google queries. AI Overviews have reduced organic clicks by up to 58% for informational searches. Winning here means optimizing for visibility and brand recognition, not just rank position.",
     category: "Search Strategy",
     badge: "TRENDING",
     badgeColor: "#F59E0B",
     date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "12 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/zero-click-search-death-of-the-click-2026.webp",
@@ -1032,7 +1031,7 @@ The response isn't to abandon search optimization — it's to evolve your strate
 
 **Optimize for featured snippets and AI Overviews.** If the answer is going to be shown in the SERP, make sure it's YOUR content being featured. Structure content with clear, concise answers at the top of sections. Use table and list formats that Google favors for snippets.
 
-**Build brand recognition.** When people know and trust your brand, they search for you directly. Direct brand searches ("NIXAR Solutions") always result in clicks because the user wants YOUR site specifically. Invest in [brand building](/services/branding-creative-design) — it's the ultimate zero-click defense.
+**Build brand recognition.** When people know and trust your brand, they search for you directly. Direct brand searches ("NIXAR Solutions") always result in clicks because the user wants YOUR site specifically. Invest in [brand building](/services/branding-brand-identity) — it's the ultimate zero-click defense.
 
 **Focus on bottom-funnel content.** Content that drives action — product pages, service pages, booking pages, comparison guides — retains click-through rates because users need to take an action that the SERP can't complete.
 
@@ -1076,13 +1075,14 @@ Zero-click search is not the death of SEO — it's the evolution of SEO. The cli
     slug: "micro-communities-new-marketing-channel-2026",
     title: "Micro-Communities Are the New Marketing Channel: How Small Audiences Drive Big Results in 2026",
     excerpt: "Mass social media reach is declining while micro-communities on Reddit, Discord, and Substack deliver 25% higher ROI. The shift is from broadcasting to belonging.",
+    summary: "Mass social reach is declining as platforms throttle organic visibility. Niche communities on Reddit, Discord, Substack, and Slack deliver up to 25% higher ROI by trading scale for trust. The shift is from broadcasting to belonging — winning brands embed inside the communities their customers already trust.",
     category: "Social Media & Strategy",
     badge: "IN-DEPTH DIVE",
     badgeColor: "#3B82F6",
-    date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "March 4, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "11 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/micro-communities-new-marketing-channel-2026.webp",
@@ -1168,13 +1168,14 @@ The future of social media marketing isn't broadcasting to millions — it's bel
     slug: "ai-is-your-next-customer-marketing-to-machines-2026",
     title: "AI Is Your Next Customer: How to Market to Machines, Not Just People, in 2026",
     excerpt: "AI agents are shopping on behalf of consumers — comparing products, negotiating prices, and purchasing autonomously. If AI can't parse your data, your brand won't make the shortlist.",
+    summary: "AI agents are increasingly making purchasing decisions on behalf of consumers — comparing products, negotiating, and checking out autonomously. Brands that don't expose structured data, machine-readable pricing, and clean APIs will be invisible to these AI buyers. Marketing now has to address two audiences: humans and the AI agents acting for them.",
     category: "AI & Strategy",
     badge: "MUST READ",
     badgeColor: "#8B5CF6",
-    date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "March 11, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "12 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/ai-is-your-next-customer-marketing-to-machines-2026.jpg",
@@ -1264,13 +1265,14 @@ AI is no longer just a marketing tool — it's becoming a customer. AI agents ar
     slug: "dallas-marketing-landscape-2026",
     title: "The Dallas Marketing Landscape in 2026: Trends, Opportunities, and What Local Businesses Need to Know",
     excerpt: "DFW is one of the most competitive marketing markets in the U.S. Here's how Dallas businesses can stay visible with AI search, GEO, local SEO, and community engagement in 2026.",
+    summary: "Dallas-Fort Worth is one of the most competitive U.S. marketing markets, with 7.6M residents and a $600B+ regional GDP. Winning here in 2026 requires a multi-channel approach: strong local SEO, GEO optimization for AI search, strategic paid media, and authentic community engagement. The biggest opportunity is GEO — the local AI search landscape is wide open for early movers.",
     category: "Dallas Marketing",
     badge: "LOCAL 📍",
     badgeColor: "#06B6D4",
-    date: "March 18, 2026",
-    lastUpdated: "April 12, 2026",
+    date: "February 25, 2026",
+    lastUpdated: "April 29, 2026",
     readTime: "12 min read",
-    author: "NIXAR Solutions Team",
+    authorSlug: "owen-nixon",
     featured: false,
     series: null,
     image: "/images/blog/dallas-marketing-landscape-2026.webp",
@@ -1362,11 +1364,10 @@ The Dallas-Fort Worth marketing landscape in 2026 is competitive, fast-moving, a
 // Merge SEO supplementary data into posts
 import { BLOG_SEO_DATA } from "./blog-seo-data";
 
-// Enrich posts with SEO data (keyTakeaways, faqs, authorKey)
+// Enrich posts with SEO data (keyTakeaways, faqs)
 blogPosts.forEach((post) => {
   const seo = BLOG_SEO_DATA[post.slug];
   if (seo) {
-    post.authorKey = seo.authorKey;
     post.keyTakeaways = seo.keyTakeaways;
     post.faqs = seo.faqs;
   }

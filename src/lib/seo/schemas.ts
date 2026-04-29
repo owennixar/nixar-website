@@ -348,25 +348,36 @@ export function blogPostingSchema(post: {
   lastUpdated?: string;
   image: string;
   slug: string;
-  author?: string;
+  author?: { slug: string; name: string; linkedIn?: string };
 }) {
+  const toIso = (d?: string) => {
+    if (!d) return undefined;
+    const parsed = new Date(d);
+    return isNaN(parsed.getTime()) ? d : parsed.toISOString();
+  };
+  const author = post.author
+    ? {
+        "@type": "Person",
+        name: post.author.name,
+        url: `${SITE_URL}/about/team/${post.author.slug}`,
+        ...(post.author.linkedIn ? { sameAs: [post.author.linkedIn] } : {}),
+      }
+    : { "@type": "Person", name: "NIXAR Solutions Editorial Team" };
+
   return {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
-    author: {
-      "@type": "Person",
-      name: post.author ?? "NIXAR Solutions Editorial Team",
-    },
+    author,
     publisher: {
       "@type": "Organization",
       name: BUSINESS_NAME,
       logo: { "@type": "ImageObject", url: LOGO_URL },
       "@id": `${SITE_URL}/#organization`,
     },
-    datePublished: post.date,
-    dateModified: post.lastUpdated ?? post.date,
+    datePublished: toIso(post.date),
+    dateModified: toIso(post.lastUpdated ?? post.date),
     image: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
     url: `${SITE_URL}/blog/${post.slug}`,
@@ -374,14 +385,36 @@ export function blogPostingSchema(post: {
 }
 
 // ─── Person Schema ───────────────────────────────────────────────────────────
-export function personSchema(person: { name: string; jobTitle: string; description: string }) {
+export function personSchema(person: {
+  name: string;
+  jobTitle: string;
+  description: string;
+  slug?: string;
+  image?: string;
+  email?: string;
+  sameAs?: string[];
+}) {
+  const url = person.slug ? `${SITE_URL}/about/team/${person.slug}` : undefined;
+  const image = person.image
+    ? person.image.startsWith("http")
+      ? person.image
+      : `${SITE_URL}${person.image}`
+    : undefined;
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: person.name,
     jobTitle: person.jobTitle,
-    worksFor: { "@type": "Organization", name: BUSINESS_NAME },
+    worksFor: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      "@id": `${SITE_URL}/#organization`,
+    },
     description: person.description,
+    ...(url ? { url, mainEntityOfPage: url } : {}),
+    ...(image ? { image } : {}),
+    ...(person.email ? { email: person.email } : {}),
+    ...(person.sameAs && person.sameAs.length > 0 ? { sameAs: person.sameAs } : {}),
   };
 }
 

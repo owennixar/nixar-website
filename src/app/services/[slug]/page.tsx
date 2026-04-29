@@ -26,7 +26,7 @@ import {
   schemaToScript,
 } from "@/lib/seo/schemas";
 import AnimateIn from "@/components/ui/AnimateIn";
-import { DfwCitiesSection } from "@/components/seo/InternalLinks";
+import { DfwCitiesSection, RelatedInsightsSection } from "@/components/seo/InternalLinks";
 import CtaBanner from "@/components/sections/CtaBanner";
 import UniqueServiceSections from "@/components/services/UniqueServiceSections";
 import BackgroundEffects from "@/components/ui/BackgroundEffects";
@@ -475,6 +475,7 @@ export default async function ServicePage({
           </div>
         </section>
 
+        <RelatedInsightsSection serviceSlug={service.slug} />
         <DfwCitiesSection />
         <CtaBanner />
       </main>

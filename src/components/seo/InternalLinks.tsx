@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { services } from "@/lib/data/services";
+import { blogPosts } from "@/lib/data/blog";
 
 /**
  * "We Serve All of DFW". internal links to city pages.
@@ -95,5 +96,114 @@ export function RelatedServicesSection({ blogSlug }: { blogSlug: string }) {
         ))}
       </div>
     </div>
+  );
+}
+
+/**
+ * Service → Blog mapping (inverse of BLOG_TO_SERVICES). Drives the
+ * "Related Insights" section on /services/[slug] pages so service pages
+ * earn outbound links into related blog posts.
+ */
+const SERVICE_TO_BLOG: Record<string, string[]> = {
+  "search-everywhere-optimization": [
+    "geo-generative-engine-optimization-2026",
+    "seo-vs-ai-seo-understanding-the-difference",
+    "zero-click-search-death-of-the-click-2026",
+    "seo-101",
+    "ai-seo-101",
+  ],
+  "ai-seo-geo": [
+    "geo-generative-engine-optimization-2026",
+    "geo-101",
+    "ai-seo-101",
+    "chatgpt-ads-what-marketers-need-to-know-2026",
+    "ai-is-your-next-customer-marketing-to-machines-2026",
+  ],
+  "social-media-management": [
+    "manus-ai-changing-social-media-marketing",
+    "social-content-101",
+    "micro-communities-new-marketing-channel-2026",
+  ],
+  "automation-ai-integration": [
+    "agentic-ai-marketing-2026",
+    "manus-ai-changing-social-media-marketing",
+    "ai-is-your-next-customer-marketing-to-machines-2026",
+  ],
+  "ai-tailored-agents": [
+    "agentic-ai-marketing-2026",
+    "ai-is-your-next-customer-marketing-to-machines-2026",
+  ],
+  "paid-advertising": [
+    "social-ads-101",
+    "chatgpt-ads-what-marketers-need-to-know-2026",
+  ],
+  "content-marketing": [
+    "social-content-101",
+    "micro-communities-new-marketing-channel-2026",
+    "geo-101",
+  ],
+  "branding-brand-identity": [
+    "dallas-marketing-landscape-2026",
+  ],
+  "personalized-sales-support": [
+    "agentic-ai-marketing-2026",
+    "social-ads-101",
+  ],
+  "web-development": [
+    "seo-101",
+    "ai-seo-101",
+  ],
+};
+
+/**
+ * "Related Insights" section for /services/[slug] pages.
+ * Filters blog posts by curated topical mapping; falls back to most-recent
+ * featured posts if the service has no explicit mapping.
+ */
+export function RelatedInsightsSection({ serviceSlug }: { serviceSlug: string }) {
+  const slugs = SERVICE_TO_BLOG[serviceSlug];
+  const fallback = blogPosts.filter((p) => p.featured).slice(0, 3);
+  const posts = (slugs ?? [])
+    .map((slug) => blogPosts.find((p) => p.slug === slug))
+    .filter((p): p is NonNullable<typeof p> => Boolean(p))
+    .slice(0, 3);
+  const list = posts.length > 0 ? posts : fallback;
+
+  if (list.length === 0) return null;
+
+  return (
+    <section className="border-t border-white/10 bg-[#0A0A0A] py-16 lg:py-20">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <p className="text-[0.7rem] font-700 uppercase tracking-[0.2em] text-[#E71840]">
+          Related Insights
+        </p>
+        <h2 className="mt-3 font-[family-name:var(--font-oswald)] text-[clamp(1.6rem,3.5vw,2.5rem)] font-700 uppercase text-white">
+          From the NIXAR Blog
+        </h2>
+        <ul className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {list.map((post) => (
+            <li key={post.slug}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="block h-full rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all hover:border-[#E71840]/40 hover:bg-white/[0.05]"
+              >
+                <p className="text-[0.65rem] font-600 uppercase tracking-[0.15em] text-[#E71840]">
+                  {post.category}
+                </p>
+                <h3 className="mt-3 font-[family-name:var(--font-oswald)] text-[1.05rem] font-700 uppercase leading-[1.3] text-white">
+                  {post.title}
+                </h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-white/50 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <span className="mt-4 inline-block text-[12px] font-600 uppercase tracking-[0.1em] text-[#E71840]">
+                  Read article &rarr;
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
