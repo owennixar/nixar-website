@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: "Free Digital Marketing Audit Dallas | SEO & Website Analysis",
   description:
     "Get a free digital marketing audit from NIXAR Solutions. We'll analyze your SEO, website performance, social media, AI visibility, and competitors. No cost, no obligation.",
+  alternates: { canonical: "/free-audit" },
 };
 
 const auditCards = [

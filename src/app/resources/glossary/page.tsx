@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Marketing Glossary",
   description:
     "Definitions for SEO, GEO, AI SEO, PPC, CRO, and 30+ digital marketing terms. Learn the language of modern marketing.",
+  alternates: { canonical: "/resources/glossary" },
 };
 
 const TERMS: { term: string; definition: string; link?: string }[] = [

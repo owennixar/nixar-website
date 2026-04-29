@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // Cap delivered image width at 1920. Drops 2048/3840 srcset entries that
+    // were oversized for our hero source (1920×1080) and wasted LCP budget.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    formats: ["image/avif", "image/webp"],
+  },
   async headers() {
     return [
       {

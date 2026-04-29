@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "SEO vs GEO vs AI SEO | Understanding Modern Search",
   description:
     "Compare Traditional SEO, Generative Engine Optimization (GEO), and AI SEO. Learn which search strategy your business needs in 2026.",
+  alternates: { canonical: "/resources/seo-vs-geo-vs-ai-seo" },
 };
 
 const COMPARISON_ROWS = [

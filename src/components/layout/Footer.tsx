@@ -181,7 +181,7 @@ export default function Footer() {
               Frisco, TX
             </span>
             <a
-              href="tel:4697593638"
+              href="tel:+14697593638"
               className="flex items-center gap-2 text-[14px] text-white/55 transition-colors hover:text-white"
             >
               <Phone size={15} className="text-[var(--color-primary)]" />

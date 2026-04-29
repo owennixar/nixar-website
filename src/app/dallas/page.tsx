@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   title: "Marketing Agency Dallas TX | Digital Marketing, SEO & Web Design",
   description:
     "NIXAR Solutions is a top-rated marketing agency in Dallas, TX offering SEO, web design, social media marketing, paid advertising, AI automation, and branding. Serving all of DFW. Free audit.",
+  alternates: { canonical: "/dallas" },
 };
 
 export default function DallasPage() {
@@ -471,7 +472,7 @@ export default function DallasPage() {
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToScript(localBusinessSchema()) }}
+        dangerouslySetInnerHTML={{ __html: schemaToScript(localBusinessSchema(dallas)) }}
       />
       <script
         type="application/ld+json"

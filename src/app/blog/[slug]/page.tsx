@@ -8,7 +8,7 @@ import ParticleField from "@/components/ui/ParticleField";
 import BlogArticle from "@/components/sections/BlogArticle";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import JsonLd from "@/components/seo/JsonLd";
-import { articleSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schemas";
+import { blogPostingSchema, breadcrumbSchema, faqSchema } from "@/lib/seo/schemas";
 import { RelatedServicesSection } from "@/components/seo/InternalLinks";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
+    alternates: { canonical: `/blog/${post.slug}` },
   };
 }
 
@@ -61,7 +62,7 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <main className="w-full bg-[#0A0A0A] relative overflow-hidden">
       <JsonLd data={[
-        articleSchema({ title: post.title, excerpt: post.excerpt, date: post.date, lastUpdated: post.lastUpdated, image: post.image, slug: post.slug }),
+        blogPostingSchema({ title: post.title, excerpt: post.excerpt, date: post.date, lastUpdated: post.lastUpdated, image: post.image, slug: post.slug, author: post.author }),
         breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }, { name: post.title, url: `/blog/${post.slug}` }]),
         ...(post.faqs ? [faqSchema(post.faqs)] : []),
       ]} />

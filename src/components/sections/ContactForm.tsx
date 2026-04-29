@@ -124,8 +124,8 @@ export default function ContactForm() {
                 <ContactRow
                   icon={Phone}
                   label="Phone"
-                  value="(469) 759-3638"
-                  href="tel:4697593638"
+                  value="469-759-3638"
+                  href="tel:+14697593638"
                 />
                 <ContactRow
                   icon={Mail}

@@ -111,9 +111,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://nixarsolutions.com",
-  },
 };
 
 export default function RootLayout({

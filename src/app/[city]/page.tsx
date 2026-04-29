@@ -38,6 +38,7 @@ export async function generateMetadata({
   return {
     title: city.seoTitle,
     description: city.seoDescription,
+    alternates: { canonical: `/${city.slug}` },
   };
 }
 
@@ -439,7 +440,7 @@ export default async function CityPage({
       {/* JSON-LD */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: schemaToScript(localBusinessSchema()) }}
+        dangerouslySetInnerHTML={{ __html: schemaToScript(localBusinessSchema(city)) }}
       />
       <script
         type="application/ld+json"

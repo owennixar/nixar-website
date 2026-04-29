@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   },
   description:
     "Meet the team behind NIXAR Solutions. Founded in 2023 in Frisco, TX, we're a digital marketing agency transforming how DFW businesses grow online through SEO, web design, AI, and full-funnel strategy.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

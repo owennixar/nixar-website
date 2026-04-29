@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Sitemap",
   description:
     "Complete sitemap of all pages on the NIXAR Solutions website. Browse our services, location pages, blog, and more.",
+  alternates: { canonical: "/sitemap-page" },
 };
 
 const mainPages = [

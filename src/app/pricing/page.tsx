@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Digital Marketing Pricing Dallas | Transparent Agency Pricing",
   description:
     "Transparent digital marketing pricing from NIXAR Solutions in Dallas. SEO, social media, web design, and AI marketing packages starting at $1,500/month.",
+  alternates: { canonical: "/pricing" },
 };
 
 const TIERS = [

@@ -119,6 +119,7 @@ export async function generateMetadata({
   return {
     title: service.seoTitle,
     description: service.seoDescription,
+    alternates: { canonical: `/services/${service.slug}` },
   };
 }
 

@@ -1,13 +1,97 @@
 import type { FAQ } from "@/lib/data/faq";
 import type { Service } from "@/lib/data/services";
+import type { City } from "@/lib/data/cities";
 
 const SITE_URL = "https://nixarsolutions.com";
 const BUSINESS_NAME = "NIXAR Solutions";
 const PHONE = "+1-469-759-3638";
 const EMAIL = "hello@nixarsolutions.com";
+const LOGO_URL = `${SITE_URL}/logo.svg`;
+const SOCIAL_PROFILES = [
+  "https://facebook.com/nixarsolutions",
+  "https://instagram.com/nixarsolutions",
+  "https://linkedin.com/company/nixarsolutions",
+  "https://tiktok.com/@nixarsolutions",
+];
+const AREA_SERVED_NAMES = [
+  "Dallas",
+  "Frisco",
+  "Plano",
+  "McKinney",
+  "Prosper",
+  "Allen",
+  "Celina",
+  "Richardson",
+  "Carrollton",
+  "Denton",
+  "Lewisville",
+  "Flower Mound",
+  "Fort Worth",
+  "Arlington",
+  "Irving",
+  "Garland",
+  "Grand Prairie",
+  "Mesquite",
+  "Southlake",
+  "Grapevine",
+];
 
 // ─── LocalBusiness Schema ─────────────────────────────────────────────────────
-export function localBusinessSchema() {
+// When called with a city, the schema is anchored to that city's areaServed and
+// uses a city-specific @id so it can coexist with the global organization entity.
+export function localBusinessSchema(city?: City) {
+  const baseAreaServed = [
+    { "@type": "City", name: "Dallas" },
+    { "@type": "City", name: "Fort Worth" },
+    { "@type": "City", name: "Plano" },
+    { "@type": "City", name: "Frisco" },
+    { "@type": "City", name: "McKinney" },
+    { "@type": "City", name: "Arlington" },
+    { "@type": "City", name: "Richardson" },
+    { "@type": "City", name: "Denton" },
+    { "@type": "City", name: "Irving" },
+    { "@type": "City", name: "Garland" },
+    { "@type": "City", name: "Grand Prairie" },
+    { "@type": "City", name: "Mesquite" },
+    { "@type": "City", name: "Carrollton" },
+    { "@type": "City", name: "Lewisville" },
+    { "@type": "City", name: "Allen" },
+    { "@type": "City", name: "Flower Mound" },
+    { "@type": "City", name: "Southlake" },
+    { "@type": "City", name: "Grapevine" },
+    { "@type": "City", name: "Prosper" },
+    { "@type": "City", name: "Celina" },
+  ];
+
+  if (city) {
+    return {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/${city.slug}#localbusiness`,
+      name: `${BUSINESS_NAME} — ${city.name}, TX`,
+      description: `Digital marketing agency serving ${city.name}, TX and the Dallas-Fort Worth metroplex. AI-powered SEO, web development, custom AI agents, and growth strategies.`,
+      url: `${SITE_URL}/${city.slug}`,
+      telephone: PHONE,
+      email: EMAIL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Frisco",
+        addressRegion: "TX",
+        addressCountry: "US",
+      },
+      areaServed: { "@type": "City", name: city.name },
+      parentOrganization: { "@id": `${SITE_URL}/#organization` },
+      founder: [
+        { "@type": "Person", name: "Owen Nixon" },
+        { "@type": "Person", name: "Anwar Mirza" },
+      ],
+      foundingDate: "2023",
+      priceRange: "$$",
+      image: LOGO_URL,
+      sameAs: SOCIAL_PROFILES,
+    };
+  }
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -29,48 +113,28 @@ export function localBusinessSchema() {
       latitude: 33.1507,
       longitude: -96.8236,
     },
-    areaServed: [
-      { "@type": "City", name: "Dallas" },
-      { "@type": "City", name: "Fort Worth" },
-      { "@type": "City", name: "Plano" },
-      { "@type": "City", name: "Frisco" },
-      { "@type": "City", name: "McKinney" },
-      { "@type": "City", name: "Arlington" },
-      { "@type": "City", name: "Richardson" },
-      { "@type": "City", name: "Denton" },
-      { "@type": "City", name: "Irving" },
-      { "@type": "City", name: "Garland" },
-      { "@type": "City", name: "Grand Prairie" },
-      { "@type": "City", name: "Mesquite" },
-      { "@type": "City", name: "Carrollton" },
-      { "@type": "City", name: "Lewisville" },
-      { "@type": "City", name: "Allen" },
-      { "@type": "City", name: "Flower Mound" },
-      { "@type": "City", name: "Southlake" },
-      { "@type": "City", name: "Grapevine" },
-      { "@type": "City", name: "Prosper" },
-      { "@type": "City", name: "Celina" },
-    ],
+    areaServed: baseAreaServed,
     founder: [
-      { "@type": "Person", name: "Anwar Mirza" },
       { "@type": "Person", name: "Owen Nixon" },
+      { "@type": "Person", name: "Anwar Mirza" },
     ],
     foundingDate: "2023",
     priceRange: "$$",
-    image: `${SITE_URL}/og-image.jpg`,
-    sameAs: [],
+    image: LOGO_URL,
+    sameAs: SOCIAL_PROFILES,
   };
 }
 
-// ─── Organization Schema ──────────────────────────────────────────────────────
+// ─── Organization Schema (ProfessionalService for richer Local SEO) ───────────
 export function organizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     "@id": `${SITE_URL}/#organization`,
     name: BUSINESS_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/images/logo.svg`,
+    logo: LOGO_URL,
+    image: LOGO_URL,
     description:
       "NIXAR Solutions is a full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, branding, and growth strategies. Trusted by clients across DFW and nationwide.",
     telephone: PHONE,
@@ -81,11 +145,13 @@ export function organizationSchema() {
       addressRegion: "TX",
       addressCountry: "US",
     },
+    areaServed: AREA_SERVED_NAMES,
     founder: [
-      { "@type": "Person", name: "Anwar Mirza" },
       { "@type": "Person", name: "Owen Nixon" },
+      { "@type": "Person", name: "Anwar Mirza" },
     ],
     foundingDate: "2023",
+    sameAs: SOCIAL_PROFILES,
     knowsAbout: [
       "Digital Marketing",
       "Search Engine Optimization",
@@ -186,7 +252,7 @@ export function professionalServiceSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: BUSINESS_NAME,
-    image: `${SITE_URL}/images/nixar-logo-dark.png`,
+    image: LOGO_URL,
     url: SITE_URL,
     telephone: PHONE,
     email: EMAIL,
@@ -265,12 +331,45 @@ export function articleSchema(post: {
     publisher: {
       "@type": "Organization",
       name: BUSINESS_NAME,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/images/nixar-logo-dark.png` },
+      logo: { "@type": "ImageObject", url: LOGO_URL },
     },
     datePublished: post.date,
     dateModified: post.lastUpdated ?? post.date,
     image: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`,
     mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+  };
+}
+
+// ─── BlogPosting Schema (preferred for blog posts) ───────────────────────────
+export function blogPostingSchema(post: {
+  title: string;
+  excerpt: string;
+  date: string;
+  lastUpdated?: string;
+  image: string;
+  slug: string;
+  author?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    author: {
+      "@type": "Person",
+      name: post.author ?? "NIXAR Solutions Editorial Team",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: BUSINESS_NAME,
+      logo: { "@type": "ImageObject", url: LOGO_URL },
+      "@id": `${SITE_URL}/#organization`,
+    },
+    datePublished: post.date,
+    dateModified: post.lastUpdated ?? post.date,
+    image: post.image.startsWith("http") ? post.image : `${SITE_URL}${post.image}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
+    url: `${SITE_URL}/blog/${post.slug}`,
   };
 }
 

@@ -23,17 +23,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/resources/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/resources/seo-vs-geo-vs-ai-seo`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE_URL}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
+    { url: `${SITE_URL}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.5 },
     { url: `${SITE_URL}/sitemap-page`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
   ];
 
   // Blog post pages
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    lastModified: new Date(post.lastUpdated ?? post.date),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
 
   // Service pages
@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/services/${service.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.9,
   }));
 
   // Portfolio detail pages
@@ -57,14 +57,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/dallas`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.9 },
   ];
 
-  // City pages (excluding dallas. it has its own route)
+  // City pages (excluding dallas — it has its own route)
   const cityPages: MetadataRoute.Sitemap = cities
     .filter((city) => city.slug !== "dallas")
     .map((city) => ({
       url: `${SITE_URL}/${city.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.9,
     }));
 
   return [...staticPages, ...dallasPage, ...servicePages, ...portfolioPages, ...blogPages, ...cityPages];

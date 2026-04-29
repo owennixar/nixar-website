@@ -564,7 +564,7 @@ export default function HomeDark() {
             Frisco, TX
           </span>
           <a
-            href="tel:4697593638"
+            href="tel:+14697593638"
             className="text-[0.8rem] uppercase tracking-[0.1em] text-[#666] transition-colors hover:text-white"
           >
             469-759-3638

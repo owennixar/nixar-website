@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     url: "https://nixarsolutions.com/blog",
     type: "website",
   },
+  alternates: { canonical: "/blog" },
 };
 
 /* ─── badge color helper ─────────────────────────────────────────── */

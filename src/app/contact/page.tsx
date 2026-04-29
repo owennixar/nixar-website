@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   },
   description:
     "Get in touch with NIXAR Solutions, a digital marketing agency in Dallas, TX. Request your free digital audit, schedule a consultation, or call us at 469-759-3638.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

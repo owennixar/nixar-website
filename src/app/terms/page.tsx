@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "Review the terms and conditions governing the use of NIXAR Solutions' website and digital services.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [

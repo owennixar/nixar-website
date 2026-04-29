@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Learn about NIXAR Solutions' privacy practices, how we collect and use your information, and your rights regarding your personal data.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const sections = [

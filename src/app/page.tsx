@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   },
   description:
     "NIXAR Solutions is a full-service digital marketing agency in Dallas, TX. We offer SEO, web design, social media marketing, paid ads, AI automation, and branding for DFW businesses. Get your free audit today.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {

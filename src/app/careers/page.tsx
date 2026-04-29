@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Careers | Join the NIXAR Team",
   description:
     "Explore career opportunities at NIXAR Solutions. We're looking for talented people who want to transform how businesses grow online.",
+  alternates: { canonical: "/careers" },
 };
 
 const values = [

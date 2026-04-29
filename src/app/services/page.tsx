@@ -50,6 +50,7 @@ export const metadata: Metadata = {
   title: "Digital Marketing Services Dallas TX | SEO, Web Design, AI",
   description:
     "Explore NIXAR Solutions' full suite of digital marketing services. SEO, web development, AI agents, social media, paid ads, and more for Dallas-Fort Worth businesses.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesIndex() {

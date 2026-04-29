@@ -224,7 +224,7 @@ export default function Navbar() {
           {/* Desktop right: phone + CTA */}
           <div className="hidden items-center gap-5 lg:flex">
             <a
-              href="tel:4697593638"
+              href="tel:+14697593638"
               className="flex items-center gap-1.5 text-[13px] font-500 text-[#FFFFFF]/80 transition-colors hover:text-[#FFFFFF]"
               aria-label="Call us at 469-759-3638"
             >

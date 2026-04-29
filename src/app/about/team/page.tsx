@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Our Team | Owen Nixon & Anwar Mirza",
   description:
     "Meet the co-founders of NIXAR Solutions. Owen Nixon and Anwar Mirza lead Dallas-Fort Worth's AI-powered digital transformation agency.",
+  alternates: { canonical: "/about/team" },
 };
 
 const TEAM = [

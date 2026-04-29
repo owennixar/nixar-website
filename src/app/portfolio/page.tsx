@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Our Work | Digital Marketing Case Studies Dallas",
   description:
     "See real results from NIXAR Solutions. Case studies and portfolio of digital marketing, SEO, web design, and social media projects for Dallas-Fort Worth businesses.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {
