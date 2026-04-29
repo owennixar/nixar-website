@@ -23,7 +23,7 @@ const COMPARISON_ROWS = [
 
 const FAQS = [
   { question: "What's the difference between SEO and GEO?", answer: "SEO optimizes your website to rank in traditional search engine results like Google. GEO (Generative Engine Optimization) optimizes your content to be cited in AI-generated answers from platforms like ChatGPT, Perplexity, and Google AI Overviews. SEO focuses on keywords and backlinks; GEO focuses on structured, authoritative, citable content." },
-  { question: "Is GEO replacing SEO?", answer: "No. GEO complements SEO. it does not replace it. Traditional search still dominates with billions of daily queries. However, AI search is growing 300%+ year-over-year. Businesses that optimize for both have a significant competitive advantage." },
+  { question: "Is GEO replacing SEO?", answer: "No. GEO complements SEO — it does not replace it. Traditional search still dominates with billions of daily queries. However, AI search is growing 300%+ year-over-year. Businesses that optimize for both have a significant competitive advantage." },
   { question: "How long does GEO take to show results?", answer: "Initial AI citations can appear within 1-3 months as AI models re-index your optimized content. Unlike SEO which compounds slowly, GEO results can appear relatively quickly once your content is structured correctly for AI consumption." },
   { question: "Do I need AI SEO if I already do regular SEO?", answer: "Yes, if you want to be visible in both traditional and AI search results. AI SEO bridges both disciplines, ensuring your content ranks in Google AND gets cited by ChatGPT, Perplexity, and other AI platforms. Without AI SEO, you're invisible to a growing share of searchers." },
   { question: "How does NIXAR approach search optimization?", answer: "NIXAR implements all three disciplines as an integrated strategy. We optimize your technical SEO foundation, structure content for AI citability (GEO), and deploy AI-powered tools to automate and scale optimization across all search platforms simultaneously." },
@@ -130,7 +130,7 @@ export default function ComparisonPage() {
                 Why NIXAR Recommends <span className="text-[#E71840]">All Three</span>
               </h2>
               <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
-                Search is no longer one platform. Your customers search on Google, ask ChatGPT, browse TikTok, and query Perplexity. A business that only optimizes for traditional SEO is invisible on half the platforms their customers use. NIXAR&apos;s integrated approach ensures you&apos;re visible everywhere. in blue links, AI answers, social search, and voice results. One strategy, full coverage, measurable results.
+                Search is no longer one platform. Your customers search on Google, ask ChatGPT, browse TikTok, and query Perplexity. A business that only optimizes for traditional SEO is invisible on half the platforms their customers use. NIXAR&apos;s integrated approach ensures you&apos;re visible everywhere — in blue links, AI answers, social search, and voice results. One strategy, full coverage, measurable results.
               </p>
             </AnimateIn>
           </div>

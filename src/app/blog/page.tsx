@@ -88,7 +88,7 @@ export default function BlogPage() {
           </h1>
           <p className="mt-6 text-gray-300 text-base md:text-lg max-w-2xl mx-auto font-[family-name:var(--font-plus-jakarta)]">
             NIXAR Solutions breaks down emerging trends in AI, SEO, social media,
-            and the Dallas marketing landscape. so you can stay ahead.
+            and the Dallas marketing landscape — so you can stay ahead.
           </p>
           <p className="mt-3 text-xs text-gray-600 tracking-wider">
             Powered by{" "}
@@ -338,7 +338,7 @@ export default function BlogPage() {
             </h2>
             <p className="mt-4 text-[0.95rem] text-[#888] font-[family-name:var(--font-plus-jakarta)]">
               Get weekly insights on marketing, AI, and digital strategy delivered
-              to your inbox. No spam. just signal.
+              to your inbox. No spam — just signal.
             </p>
             <NewsletterForm />
             <p className="mt-4 text-[0.7rem] text-[#555]">

@@ -24,7 +24,7 @@ export default function CtaBanner() {
         </AnimateIn>
         <AnimateIn delay={0.2}>
           <a
-            href="#contact"
+            href="/free-audit"
             className="mt-8 inline-flex h-12 items-center rounded-full border-2 border-white px-8 text-[15px] font-600 text-white transition-all hover:bg-white hover:text-[var(--color-primary)]"
           >
             Get Free Audit &rarr;

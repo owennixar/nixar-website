@@ -118,12 +118,12 @@ const PROCESS_STEPS = [
   {
     num: "03",
     title: "Execution",
-    desc: "Our team builds, launches, and optimizes every asset. website, campaigns, content, automations.",
+    desc: "Our team builds, launches, and optimizes every asset — website, campaigns, content, automations.",
   },
   {
     num: "04",
     title: "Support",
-    desc: "Ongoing optimization, reporting, and scaling. We don't disappear after launch. we grow with you.",
+    desc: "Ongoing optimization, reporting, and scaling. We don't disappear after launch — we grow with you.",
   },
 ];
 
@@ -204,8 +204,7 @@ export default function HomeDark() {
         {/* Background Image */}
         <Image
           src="/images/hero-bg.webp"
-          alt=""
-          aria-hidden="true"
+          alt="NIXAR Solutions — digital marketing agency in Frisco, TX serving Dallas-Fort Worth"
           fill
           priority
           sizes="100vw"
@@ -229,16 +228,17 @@ export default function HomeDark() {
               <p
                 className="font-[family-name:var(--font-oswald)] text-[0.7rem] font-700 uppercase tracking-[0.2em] text-white/60"
               >
-                NIXAR Solutions. Frisco, TX
+                NIXAR Solutions — Frisco, TX
               </p>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className="mt-6">
-                <span className="sr-only">Digital Marketing Agency Dallas. </span>
+                <span className="sr-only">Digital Marketing Agency Dallas — </span>
                 <span className="hero-glow-white block font-[family-name:var(--font-oswald)] font-700 uppercase tracking-tight text-white" style={{ fontSize: 'clamp(2.5rem,10vw,7rem)', lineHeight: 1.1 }}>
                   <SplitText text="Digital" delay={0.2} stagger={0.03} />
                 </span>
+                <span className="sr-only"> </span>
                 <div style={{ overflow: 'visible', position: 'relative' }}>
                   <span className="hero-glow-red font-[family-name:var(--font-playfair)] font-700 italic text-[#E71840] md:whitespace-nowrap" style={{ display: 'inline-block', fontSize: 'clamp(2rem,7vw,6rem)', lineHeight: 1.1, padding: '0.15em 0.15em 0.05em 0.15em', margin: '-0.15em -0.15em -0.05em -0.15em' }}>
                     <SplitText text="Transformation." delay={0.4} stagger={0.03} />
@@ -253,7 +253,7 @@ export default function HomeDark() {
 
             <Reveal delay={0.3}>
               <p className="mt-6 max-w-md text-[1.1rem] leading-[1.7] text-white/70">
-                Dallas&apos;s full-service <span className="text-[#E71840]">digital marketing agency</span>. We don&apos;t just market. we transform businesses online
+                Dallas&apos;s full-service <span className="text-[#E71840]">digital marketing agency</span>. We don&apos;t just market — we transform businesses online
                 through SEO, web design, AI, and relentless execution.
               </p>
             </Reveal>
@@ -261,7 +261,7 @@ export default function HomeDark() {
             <Reveal delay={0.4}>
               <MagneticButton>
                 <a
-                  href="#contact"
+                  href="/free-audit"
                   className="mt-8 inline-flex h-[52px] items-center border border-white px-8 text-[13px] font-600 uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-white hover:text-[#0A0A0A]"
                 >
                   Get Free Audit
@@ -344,9 +344,12 @@ export default function HomeDark() {
                     <h3 className="mt-4 font-[family-name:var(--font-oswald)] text-[1.3rem] font-700 uppercase text-white flex items-center gap-2">
                       {s.title}
                       {s.isNew && (
-                        <span className="text-[0.6rem] font-600 uppercase tracking-wider text-[#E71840]">
-                          NEW
-                        </span>
+                        <>
+                          {" "}
+                          <span className="text-[0.6rem] font-600 uppercase tracking-wider text-[#E71840]">
+                            NEW
+                          </span>
+                        </>
                       )}
                     </h3>
                     <p className="mt-3 text-[0.9rem] leading-[1.6] text-[#888]">
@@ -642,7 +645,7 @@ function HorizontalPortfolio() {
             <Link key={p.name} href={`/portfolio/${p.slug}`} className="group block overflow-hidden rounded-2xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
               <div className="relative aspect-video overflow-hidden">
                 {p.image ? (
-                  <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={p.image} alt={`${p.name} — ${p.cat} case study by NIXAR Solutions`} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 ) : (
                   <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`} />
                 )}
@@ -687,7 +690,7 @@ function HorizontalPortfolio() {
             style={{ border: '1px solid rgba(255,255,255,0.08)' }}
           >
             {p.image ? (
-              <img src={p.image} alt={p.name} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src={p.image} alt={`${p.name} — ${p.cat} case study by NIXAR Solutions`} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
             ) : (
               <div className={`absolute inset-0 bg-gradient-to-br ${p.gradient}`} />
             )}

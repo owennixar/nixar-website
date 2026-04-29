@@ -21,7 +21,7 @@ export default function About() {
           <AnimateIn direction="left" distance={30} delay={0.2}>
             <p className="mt-6 text-base leading-[1.75] text-[var(--color-text-secondary)]">
               We provide full-spectrum digital solutions, handling everything from branding and web
-              design to automation and paid ads. so you don&apos;t have to juggle multiple vendors.
+              design to automation and paid ads — so you don&apos;t have to juggle multiple vendors.
               Every strategy is data-driven, backed by research and analytics to deliver measurable
               results, and we continuously monitor, test, and optimize your growth with 24/7 support.
             </p>

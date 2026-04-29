@@ -62,11 +62,11 @@ const TIERS = [
 ];
 
 const FAQS = [
-  { question: "Can I customize a plan?", answer: "Yes, every plan is tailored to your needs. The tiers above are starting points. we build a custom proposal after understanding your business goals." },
+  { question: "Can I customize a plan?", answer: "Yes, every plan is tailored to your needs. The tiers above are starting points — we build a custom proposal after understanding your business goals." },
   { question: "Is there a contract?", answer: "Month-to-month available. We earn your business every month with results, not contracts." },
   { question: "What's the onboarding process?", answer: "A 2-week discovery and strategy phase before any execution begins. We audit your current presence, define goals, and build your custom roadmap." },
   { question: "Do you offer one-time projects?", answer: "Yes, website builds and branding packages are available as one-time engagements. Contact us for project-based pricing." },
-  { question: "What if I'm not seeing results?", answer: "We provide transparent monthly reporting with clear KPIs. If something isn't working, we adjust strategy quickly. that's the advantage of month-to-month." },
+  { question: "What if I'm not seeing results?", answer: "We provide transparent monthly reporting with clear KPIs. If something isn't working, we adjust strategy quickly — that's the advantage of month-to-month." },
 ];
 
 export default function PricingPage() {
@@ -74,7 +74,7 @@ export default function PricingPage() {
     <>
       <main className="bg-[#0A0A0A]">
         <section className="relative w-full overflow-hidden" style={{ height: '45vh' }}>
-          <img src="/images/pricing-hero.webp" alt="Transparent digital marketing pricing. NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/images/pricing-hero.webp" alt="Transparent digital marketing agency pricing by NIXAR Solutions Dallas" loading="eager" decoding="sync" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.9) 100%)' }} />
           <div className="relative h-full flex items-end pb-12" style={{ zIndex: 2 }}>
             <div className="mx-auto max-w-7xl px-6 w-full">

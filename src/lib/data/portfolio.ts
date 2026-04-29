@@ -40,10 +40,10 @@ export const PORTFOLIO_METRICS: Record<string, { label: string; value: number; s
 };
 
 export const PORTFOLIO_IMAGES: Record<string, { src: string; alt: string }> = {
-  "tire-geeks": { src: "/images/portfolio-tiregeeks.webp", alt: "Tire Geeks digital marketing case study. social media and local SEO for automotive" },
-  "lonestar-kart-park": { src: "/images/portfolio-lonestar.webp", alt: "Lonestar Kart Park digital marketing and brand awareness campaign" },
-  "nixon-jach-hubbard": { src: "/images/portfolio-njh.webp", alt: "Nixon Jach Hubbard e-commerce website development" },
-  "syb-builders": { src: "/images/portfolio-syb.webp", alt: "SYB Builders construction website and digital marketing" },
+  "tire-geeks": { src: "/images/portfolio-tiregeeks.webp", alt: "Tire Geeks digital marketing and local SEO case study by NIXAR Solutions — social media and search visibility for an automotive shop" },
+  "lonestar-kart-park": { src: "/images/portfolio-lonestar.webp", alt: "Lonestar Kart Park digital marketing and brand awareness campaign case study by NIXAR Solutions" },
+  "nixon-jach-hubbard": { src: "/images/portfolio-njh.webp", alt: "Nixon Jach Hubbard custom website development and brand site case study by NIXAR Solutions" },
+  "syb-builders": { src: "/images/portfolio-syb.webp", alt: "SYB Builders construction website and digital marketing transformation case study by NIXAR Solutions" },
 };
 
 export const portfolio: PortfolioProject[] = [
@@ -54,7 +54,7 @@ export const portfolio: PortfolioProject[] = [
     description:
       "Comprehensive digital marketing and social media strategy to increase brand awareness and drive customer acquisition in the competitive automotive aftermarket industry.",
     challenge:
-      "A local tire shop in the DFW area was struggling to attract new customers during slow season. Their online presence was minimal. no social media strategy, outdated web listings, and zero visibility in local search results.",
+      "A local tire shop in the DFW area was struggling to attract new customers during slow season. Their online presence was minimal — no social media strategy, outdated web listings, and zero visibility in local search results.",
     solution:
       "NIXAR implemented a complete digital marketing overhaul. We built a strategic social media presence across Instagram and Facebook, created engaging content showcasing their services and expertise, optimized their Google Business Profile for local search, and launched targeted local SEO campaigns to capture 'near me' searches.",
     results:
@@ -114,7 +114,7 @@ export const portfolio: PortfolioProject[] = [
     challenge:
       "A construction company needed to look more professional online and generate qualified leads. Their website was outdated, they had no social media presence, and potential clients were choosing competitors who appeared more established online.",
     solution:
-      "We executed a full digital transformation. redesigning their website to showcase completed projects with a modern, professional aesthetic. We built out their content marketing with project case studies, optimized for local construction-related search terms, and established their social media presence to build credibility.",
+      "We executed a full digital transformation — redesigning their website to showcase completed projects with a modern, professional aesthetic. We built out their content marketing with project case studies, optimized for local construction-related search terms, and established their social media presence to build credibility.",
     results:
       "The transformation was dramatic. The company's professional image improved substantially, leading to inquiries from larger, higher-value projects. Their digital presence now accurately reflects the quality of their construction work, and they consistently generate leads through their website.",
     serviceLinks: [

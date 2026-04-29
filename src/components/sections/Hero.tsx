@@ -44,7 +44,7 @@ export default function Hero() {
 
           <AnimateIn delay={0.5} direction="none">
             <p className="mt-6 max-w-xl text-[1.1rem] leading-[1.7] font-400 text-white/70">
-              At NIXAR Solutions, we are more than a traditional digital marketing agency. we are
+              At NIXAR Solutions, we are more than a traditional digital marketing agency — we are
               a digital transformation agency. We transform our clients&apos; online presence through
               strategic marketing, engaging content, high-converting websites, SEO, social media
               management, and ROI-driven paid ads.
@@ -54,7 +54,7 @@ export default function Hero() {
           <AnimateIn delay={0.65} direction="none">
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="#contact"
+                href="/free-audit"
                 className="inline-flex h-[52px] items-center rounded-full bg-[var(--color-primary)] px-8 text-[15px] font-600 text-white shadow-lg shadow-[var(--color-primary-glow)] transition-all duration-200 hover:bg-[var(--color-primary-hover)] hover:scale-[1.02] hover:shadow-xl hover:shadow-[var(--color-primary-glow)]"
               >
                 Get Free Digital Audit

@@ -103,7 +103,7 @@ export default function DallasPage() {
               <p className="mt-6 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
                 Dallas is home to 23 Fortune 500 headquarters and one of the most competitive
                 business markets in America. To stand out in this city, you need more than marketing
-               . you need digital transformation. NIXAR Solutions combines AI-powered SEO,
+                — you need digital transformation. NIXAR Solutions combines AI-powered SEO,
                 conversion-focused web development, and full-funnel digital strategy to help Dallas
                 businesses dominate their market.
               </p>
@@ -112,7 +112,7 @@ export default function DallasPage() {
             <AnimateIn delay={0.5} direction="none">
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="#contact"
+                  href="/free-audit"
                   className="inline-flex h-[52px] items-center rounded-full bg-[#E71840] px-8 text-[15px] font-600 text-white shadow-lg shadow-[#E71840]/20 transition-all hover:bg-[#C41535] hover:scale-[1.02]"
                 >
                   Get Free Dallas Market Audit
@@ -143,7 +143,7 @@ export default function DallasPage() {
 
               <AnimateIn direction="left" distance={20} delay={0.1}>
                 <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
-                  Dallas is not just big. it is brutally competitive. With a GDP exceeding $500
+                  Dallas is not just big — it is brutally competitive. With a GDP exceeding $500
                   billion and industries spanning financial services, technology, healthcare,
                   telecommunications, energy, and real estate, the DFW metroplex attracts ambitious
                   businesses from across the country. Deep Ellum&apos;s creative startups compete
@@ -157,7 +157,7 @@ export default function DallasPage() {
                   In this environment, traditional marketing is not enough. Dallas businesses need
                   AI-powered strategies that can identify opportunities faster, optimize campaigns in
                   real time, and deliver measurable ROI on every dollar spent. NIXAR Solutions brings
-                  a digital transformation approach. we do not just run ads or post on social media.
+                  a digital transformation approach — we do not just run ads or post on social media.
                   We rebuild your entire online presence from the ground up, engineered for growth.
                 </p>
               </AnimateIn>
@@ -189,7 +189,7 @@ export default function DallasPage() {
                 <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
                   <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">1.34M</p>
                   <p className="mt-1 text-[14px] font-600 text-white">City Population</p>
-                  <p className="mt-1 text-[13px] text-white/40">7.6M in the DFW metroplex. massive addressable market</p>
+                  <p className="mt-1 text-[13px] text-white/40">7.6M in the DFW metroplex — massive addressable market</p>
                 </div>
                 <div className="rounded-2xl bg-white/[0.04] backdrop-blur-sm border border-white/10 p-7">
                   <p className="font-[family-name:var(--font-heading)] text-4xl font-900 text-[#E71840]">7</p>
@@ -218,7 +218,7 @@ export default function DallasPage() {
                 Digital Marketing Services for Dallas Businesses
               </h2>
               <p className="mt-3 max-w-2xl text-[15px] text-white/60">
-                Every service tailored to the Dallas market. from local SEO targeting
+                Every service tailored to the Dallas market — from local SEO targeting
                 Dallas-specific keywords to paid campaigns reaching DFW decision-makers.
               </p>
             </AnimateIn>
@@ -271,7 +271,7 @@ export default function DallasPage() {
             <AnimateIn delay={0.1}>
               <p className="mt-6 text-[15px] leading-[1.8] text-white/60">
                 Ranking on Google for &ldquo;marketing agency Dallas&rdquo; is just the beginning.
-                The search landscape is fragmenting. your Dallas customers now search on Google,
+                The search landscape is fragmenting — your Dallas customers now search on Google,
                 Google Maps, YouTube, TikTok, ChatGPT, Perplexity, and voice assistants. A modern
                 Dallas SEO strategy must cover all of these platforms simultaneously.
               </p>
@@ -291,7 +291,7 @@ export default function DallasPage() {
               <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
                 46% of all Google searches have local intent. 88% of smartphone local searches lead
                 to a call or visit within one week. For Dallas businesses, being invisible in local
-                search is not just a missed opportunity. it is revenue left on the table every
+                search is not just a missed opportunity — it is revenue left on the table every
                 single day. NIXAR&apos;s Search Everywhere Optimization ensures you appear wherever
                 Dallas customers are looking.
               </p>
@@ -299,7 +299,7 @@ export default function DallasPage() {
 
             <AnimateIn delay={0.25}>
               <a
-                href="#contact"
+                href="/free-audit"
                 className="mt-8 inline-flex h-12 items-center rounded-full bg-[#E71840] px-8 text-[14px] font-600 text-white transition-all hover:bg-[#C41535] hover:shadow-lg hover:shadow-[#E71840]/20"
               >
                 Get Your Free Dallas SEO Audit

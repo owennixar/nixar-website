@@ -94,7 +94,7 @@ export default function TeamSection() {
             >
               <img
                 src="/images/xlnc-logo.png"
-                alt="XLNC Digital. Partner Agency"
+                alt="XLNC Digital — NIXAR Solutions partner agency"
                 className="w-20 h-20 object-contain rounded-xl mx-auto"
               />
               <p className="mt-3 text-sm" style={{ color: '#E71840' }}>Partner Agency</p>

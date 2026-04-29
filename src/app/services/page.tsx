@@ -84,7 +84,7 @@ export default function ServicesIndex() {
             </AnimateIn>
             <AnimateIn delay={0.2}>
               <p className="mt-4 max-w-2xl text-[1.05rem] leading-[1.7] text-white/60">
-                End-to-end digital solutions. from branding and website development to AI automation and
+                End-to-end digital solutions — from branding and website development to AI automation and
                 paid advertising. One team. Full accountability. Measurable results.
               </p>
             </AnimateIn>
@@ -299,7 +299,7 @@ export default function ServicesIndex() {
               ] as const).map((industry, i) => (
                 <AnimateIn key={industry.name} delay={0.05 * i}>
                   <div className="glass-card overflow-hidden text-center transition-transform duration-300 hover:-translate-y-1">
-                    <img src={industry.image} alt={`${industry.name} marketing Dallas. NIXAR Solutions`} loading="lazy" className="w-full h-32 object-cover opacity-60" />
+                    <img src={industry.image} alt={`${industry.name} digital marketing in Dallas — NIXAR Solutions`} loading="lazy" className="w-full h-32 object-cover opacity-60" />
                     <div className="p-6">
                       <industry.Icon size={24} className="mx-auto text-[#E71840]" />
                       <h3 className="mt-3 font-[family-name:var(--font-heading)] text-[1rem] font-700 text-white">

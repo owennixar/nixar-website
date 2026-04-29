@@ -13,7 +13,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "What services does NIXAR Solutions offer?",
     answer:
-      "NIXAR Solutions offers 10 core services: Social Media Management, Website Development, Automation & AI Integration, Personalized Sales Support, Search Everywhere Optimization (SEO), Content Marketing, AI SEO & Generative Engine Optimization (GEO), Custom AI Tailored Agents, Branding & Brand Identity, and Paid Advertising. Each service is customized to the client's specific business goals. we don't sell cookie-cutter packages.",
+      "NIXAR Solutions offers 10 core services: Social Media Management, Website Development, Automation & AI Integration, Personalized Sales Support, Search Everywhere Optimization (SEO), Content Marketing, AI SEO & Generative Engine Optimization (GEO), Custom AI Tailored Agents, Branding & Brand Identity, and Paid Advertising. Each service is customized to the client's specific business goals — we don't sell cookie-cutter packages.",
   },
   {
     question: "What is Generative Engine Optimization (GEO)?",
@@ -33,12 +33,12 @@ export const generalFaqs: FAQ[] = [
   {
     question: "What makes NIXAR different from other Dallas marketing agencies?",
     answer:
-      "Three things: (1) We're AI-first. we use artificial intelligence in every aspect of our process, from SEO analysis to content strategy to custom agent development. (2) We're radically transparent. every strategy comes with clear KPIs, regular reporting, and honest assessments. (3) We're founders who build. NIXAR was started by two builders who got tired of agencies that overpromise and underdeliver. We only take on work we can deliver exceptional results for.",
+      "Three things: (1) We're AI-first — we use artificial intelligence in every aspect of our process, from SEO analysis to content strategy to custom agent development. (2) We're radically transparent — every strategy comes with clear KPIs, regular reporting, and honest assessments. (3) We're founders who build. NIXAR was started by two builders who got tired of agencies that overpromise and underdeliver. We only take on work we can deliver exceptional results for.",
   },
   {
     question: "What is an AI agent and how can it help my business?",
     answer:
-      "An AI agent is a custom-built intelligent system trained on your business data, processes, and brand voice. Unlike generic chatbots, our AI agents can handle customer inquiries, qualify leads, schedule appointments, automate internal workflows, and even make phone calls. all while sounding and behaving exactly like your brand. They work 24/7, reduce response times to seconds, and improve as they learn your business.",
+      "An AI agent is a custom-built intelligent system trained on your business data, processes, and brand voice. Unlike generic chatbots, our AI agents can handle customer inquiries, qualify leads, schedule appointments, automate internal workflows, and even make phone calls — all while sounding and behaving exactly like your brand. They work 24/7, reduce response times to seconds, and improve as they learn your business.",
   },
   {
     question: "Does NIXAR Solutions work with small businesses?",
@@ -56,11 +56,11 @@ export function getCityFaqs(cityName: string): FAQ[] {
     },
     {
       question: `Does NIXAR Solutions serve ${cityName}, Texas?`,
-      answer: `Yes. NIXAR Solutions is based in Frisco, TX and serves businesses throughout ${cityName} and the Dallas-Fort Worth metroplex. We understand the ${cityName} market because we're local. and we bring national-caliber digital marketing expertise to help ${cityName} businesses grow.`,
+      answer: `Yes. NIXAR Solutions is based in Frisco, TX and serves businesses throughout ${cityName} and the Dallas-Fort Worth metroplex. We understand the ${cityName} market because we're local — and we bring national-caliber digital marketing expertise to help ${cityName} businesses grow.`,
     },
     {
       question: `How much does digital marketing cost in ${cityName}?`,
-      answer: `Digital marketing costs in ${cityName} vary based on your business goals, competition level, and the services needed. NIXAR Solutions provides customized proposals after a free audit and consultation. We believe in transparent pricing with clear deliverables. no hidden fees, no long-term contracts. Contact us at 469-759-3638 for a free ${cityName} market analysis.`,
+      answer: `Digital marketing costs in ${cityName} vary based on your business goals, competition level, and the services needed. NIXAR Solutions provides customized proposals after a free audit and consultation. We believe in transparent pricing with clear deliverables — no hidden fees, no long-term contracts. Contact us at 469-759-3638 for a free ${cityName} market analysis.`,
     },
     {
       question: `What digital marketing services are available in ${cityName}?`,
@@ -80,7 +80,7 @@ export function getServiceFaqs(serviceTitle: string, serviceSlug: string): FAQ[]
       {
         question: "How much does social media management cost in Dallas?",
         answer:
-          "Social media management costs in Dallas vary based on the number of platforms, posting frequency, content complexity, and whether paid advertising is included. NIXAR Solutions provides customized social media strategies starting with a free audit. We don't offer generic packages. every plan is built around your business goals and budget.",
+          "Social media management costs in Dallas vary based on the number of platforms, posting frequency, content complexity, and whether paid advertising is included. NIXAR Solutions provides customized social media strategies starting with a free audit. We don't offer generic packages — every plan is built around your business goals and budget.",
       },
       {
         question: "What social media platforms should my Dallas business be on?",
@@ -97,7 +97,7 @@ export function getServiceFaqs(serviceTitle: string, serviceSlug: string): FAQ[]
       {
         question: "How long does it take to build a website?",
         answer:
-          "A typical business website takes 4-8 weeks from kickoff to launch. Complex projects with custom features, integrations, or extensive content may take 8-12 weeks. NIXAR Solutions follows a structured process. discovery, wireframing, design, development, content integration, QA, and launch. to ensure quality and meet deadlines.",
+          "A typical business website takes 4-8 weeks from kickoff to launch. Complex projects with custom features, integrations, or extensive content may take 8-12 weeks. NIXAR Solutions follows a structured process — discovery, wireframing, design, development, content integration, QA, and launch — to ensure quality and meet deadlines.",
       },
     ],
     "ai-seo-geo": [
@@ -109,19 +109,19 @@ export function getServiceFaqs(serviceTitle: string, serviceSlug: string): FAQ[]
       {
         question: "How do I get my business to appear in ChatGPT results?",
         answer:
-          "Getting cited in ChatGPT and other AI search engines requires a GEO strategy that includes structured data markup, authoritative content, clear entity definitions, consistent brand signals across the web, and strategic citation building. NIXAR Solutions is one of the first agencies in Dallas to offer dedicated GEO services. we help businesses become the answer AI models give when users ask about your industry.",
+          "Getting cited in ChatGPT and other AI search engines requires a GEO strategy that includes structured data markup, authoritative content, clear entity definitions, consistent brand signals across the web, and strategic citation building. NIXAR Solutions is one of the first agencies in Dallas to offer dedicated GEO services — we help businesses become the answer AI models give when users ask about your industry.",
       },
     ],
     "ai-tailored-agents": [
       {
         question: "What can a custom AI agent do for my business?",
         answer:
-          "Custom AI agents can handle customer service inquiries 24/7, qualify and route leads, schedule appointments, automate repetitive internal workflows, answer phone calls with natural voice, process orders, provide product recommendations, and more. all trained specifically on your business data, processes, and brand voice. Unlike generic chatbots, NIXAR's AI agents integrate into your existing tech stack.",
+          "Custom AI agents can handle customer service inquiries 24/7, qualify and route leads, schedule appointments, automate repetitive internal workflows, answer phone calls with natural voice, process orders, provide product recommendations, and more — all trained specifically on your business data, processes, and brand voice. Unlike generic chatbots, NIXAR's AI agents integrate into your existing tech stack.",
       },
       {
         question: "How long does it take to build a custom AI agent?",
         answer:
-          "A basic AI agent (customer FAQ bot, lead qualifier) can be deployed in 2-4 weeks. More complex agents (multi-system integrations, voice agents, workflow automation) typically take 4-8 weeks. NIXAR Solutions follows an iterative approach. we deploy quickly, then continuously improve the agent based on real interaction data.",
+          "A basic AI agent (customer FAQ bot, lead qualifier) can be deployed in 2-4 weeks. More complex agents (multi-system integrations, voice agents, workflow automation) typically take 4-8 weeks. NIXAR Solutions follows an iterative approach — we deploy quickly, then continuously improve the agent based on real interaction data.",
       },
     ],
   };
@@ -133,7 +133,7 @@ export function getServiceFaqs(serviceTitle: string, serviceSlug: string): FAQ[]
     },
     {
       question: `How do I choose a ${serviceTitle} agency in Dallas?`,
-      answer: `Look for an agency with proven results, transparent reporting, and a strategic approach. not just one that promises rankings or followers. Ask for case studies, check reviews, and make sure they understand your specific market. NIXAR Solutions offers a free audit and consultation so you can evaluate our approach before committing.`,
+      answer: `Look for an agency with proven results, transparent reporting, and a strategic approach — not just one that promises rankings or followers. Ask for case studies, check reviews, and make sure they understand your specific market. NIXAR Solutions offers a free audit and consultation so you can evaluate our approach before committing.`,
     },
   ];
 }

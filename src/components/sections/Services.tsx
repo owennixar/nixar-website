@@ -63,9 +63,12 @@ export default function Services() {
                         {service.title}
                       </span>
                       {service.isNew && (
-                        <span className="shrink-0 rounded-full bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
-                          New
-                        </span>
+                        <>
+                          {" "}
+                          <span className="shrink-0 rounded-full bg-[var(--color-primary)] px-2 py-0.5 text-[10px] font-700 uppercase tracking-wider text-white">
+                            New
+                          </span>
+                        </>
                       )}
                     </span>
 

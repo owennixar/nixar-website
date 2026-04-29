@@ -14,13 +14,13 @@ const STEPS = [
     num: "02",
     title: "Strategy",
     description:
-      "We build a custom roadmap aligned to your goals. not a recycled template, but a strategy engineered for your specific growth trajectory",
+      "We build a custom roadmap aligned to your goals — not a recycled template, but a strategy engineered for your specific growth trajectory",
   },
   {
     num: "03",
     title: "Execution",
     description:
-      "Our team handles the build-out across every channel. design, development, content, ads, SEO. with weekly reporting and full transparency",
+      "Our team handles the build-out across every channel — design, development, content, ads, SEO — with weekly reporting and full transparency",
   },
   {
     num: "04",

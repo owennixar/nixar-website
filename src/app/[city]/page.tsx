@@ -100,7 +100,7 @@ export default async function CityPage({
             <AnimateIn delay={0.45} direction="none">
               <div className="mt-7 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
+                  href="/free-audit"
                   className="inline-flex h-12 items-center rounded-full bg-[#E71840] px-7 text-[14px] font-600 text-white shadow-lg shadow-[#E71840]/20 transition-all hover:bg-[#C41535] hover:scale-[1.02]"
                 >
                   Get Free {city.name} Market Audit
@@ -134,7 +134,7 @@ export default async function CityPage({
 
               <AnimateIn direction="left" distance={20} delay={0.18}>
                 <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
-                  For {city.name} businesses, investing in digital marketing is not optional. it is
+                  For {city.name}{" "}businesses, investing in digital marketing is not optional — it is
                   the difference between growth and stagnation. Whether you are a local service
                   provider trying to capture &ldquo;near me&rdquo; searches, a B2B company targeting
                   corporate decision-makers, or a retailer competing with national chains, your online
@@ -144,7 +144,7 @@ export default async function CityPage({
 
               <AnimateIn direction="left" distance={20} delay={0.25}>
                 <p className="mt-4 text-[15px] leading-[1.8] text-white/60">
-                  NIXAR Solutions is based in Frisco. right in the heart of the DFW metroplex. and
+                  NIXAR Solutions is based in Frisco — right in the heart of the DFW metroplex — and
                   we understand the {city.name} market at a granular level. We know which keywords
                   drive local traffic, how {city.name} consumers research businesses, and what it
                   takes to stand out in {city.county}. Our AI-powered approach means faster results
@@ -211,8 +211,8 @@ export default async function CityPage({
                     LOCAL COMPETITION IS FIERCE
                   </h3>
                   <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
-                    With {city.population} residents and thousands of businesses competing
-                    for attention, standing out online isn&apos;t optional. it&apos;s survival.
+                    With {city.population}{" "}residents and thousands of businesses competing
+                    for attention, standing out online isn&apos;t optional — it&apos;s survival.
                     The businesses investing in digital marketing today will own the market
                     tomorrow.
                   </p>
@@ -226,7 +226,7 @@ export default async function CityPage({
                   </h3>
                   <p className="mt-3 text-[14px] leading-[1.75] text-gray-300">
                     88% of local searches on mobile result in a call or visit within one
-                    week. If your business isn&apos;t visible when {city.name} residents search
+                    week. If your business isn&apos;t visible when {city.name}{" "}residents search
                     for your services, you&apos;re losing customers to competitors who are.
                   </p>
                 </div>
