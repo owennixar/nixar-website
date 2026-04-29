@@ -8,6 +8,57 @@ export const BLOG_SEO_DATA: Record<string, {
   keyTakeaways: string[];
   faqs: { question: string; answer: string }[];
 }> = {
+  "nap-consistency-multi-location-businesses-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "NAP consistency for multi-location businesses requires per-location canonical formats enforced across 30-60 directories per location.",
+      "A typical 5-location business has 200-400 listings to audit. Most have meaningful inconsistencies in 30-50% of them on first audit.",
+      "Aggregators (Localeze, Acxiom, Foursquare, Data Axle) propagate corrections to dozens of downstream directories — fixing aggregator data is the highest-impact cleanup.",
+      "Maintenance is quarterly, not one-time. New directories appear, existing listings drift, regressions happen.",
+      "Automated listing management platforms make economic sense for businesses with 10+ locations. Manual quarterly audits work for 2-5 locations.",
+    ],
+    faqs: [
+      { question: "How long does a NAP audit and cleanup take?", answer: "For a single-location business, 1-2 weeks of focused work plus a 60-90 day propagation period. For a 5-location business, 4-6 weeks of cleanup plus the same propagation period. Larger multi-location businesses typically run cleanup as a 90-180 day project." },
+      { question: "Do I need a tool like Yext to manage NAP at scale?", answer: "For 10+ locations, the automated platforms (Yext, Moz Local, BrightLocal) typically pay back through operational savings and ranking benefits. For 2-5 locations, manual quarterly audits using a free tool like BrightLocal's citation tracker are usually sufficient." },
+      { question: "Is it OK if my locations share a single corporate phone number?", answer: "It's allowed but suboptimal. Shared phone numbers across locations create duplicate-business signals that hurt every location's local rankings. Each location should have a unique phone number, even if they all route internally to the same call center." },
+      { question: "What if a directory refuses to update incorrect information?", answer: "Document the issue, escalate through the directory's support process, and if it can't be resolved, focus your effort on directories that respond. Some long-tail directories don't matter enough to worry about. The major directories and aggregators almost always have functional correction processes." },
+      { question: "How often should I re-audit NAP?", answer: "Quarterly for active multi-location businesses, semi-annually at minimum. New directories appear constantly, existing listings drift over time, and regressions happen when employees update one listing without updating others. Building the audit into a recurring operational rhythm is what separates businesses that maintain consistency from those that lose it." },
+    ],
+  },
+  "service-area-business-seo-dfw-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "Service-area businesses get one Google Business Profile with the address hidden and service areas defined. Multiple profiles for cities served is a policy violation.",
+      "City-specific landing pages on the business's own website are the compensating asset that produces traditional organic ranking in cities outside the immediate Map Pack radius.",
+      "Generic city pages with the city name swapped don't work. Real city-specific content (neighborhoods, customer profiles, completed work, local references) does.",
+      "Entity signal consistency (NAP, schema with serviceArea, third-party citations) tells AI models which cities the business legitimately covers.",
+      "The strategy is operationally heavier than single-location SEO — the compensating value is visibility across an entire metropolitan area without policy risk.",
+    ],
+    faqs: [
+      { question: "Can I create a Google Business Profile for each city I serve?", answer: "No. Google's policy is one GBP per physical location, and a service-area business has one physical headquarters. Creating multiple profiles for cities you serve is a clear policy violation that leads to suspension. The compliant approach is one profile with defined service areas plus city-specific landing pages on your website." },
+      { question: "How many cities can I list as my service area?", answer: "There's no hard limit, but realistic coverage matters. Google's algorithm and customer review patterns both detect when a service-area definition is unrealistic. List the cities you genuinely serve and can prove you serve through reviews, completed projects, and content. Don't pad the list to capture search volume." },
+      { question: "Do I need a separate landing page for every city?", answer: "Yes, if you want to rank for city-specific organic queries outside your immediate Map Pack radius. Each page needs genuinely city-specific content — neighborhoods, customer profile, completed work, local references — not a template with the city name swapped. This is the most operationally demanding part of service-area SEO." },
+      { question: "What if my business is brand new and I don't have reviews from every city yet?", answer: "Start with the cities you've already served and build from there. Don't fake the geographic distribution. Reviews from customers across multiple cities reinforce the service-area definition over time, but the foundation is real work in real places. New businesses should focus on consistent quality and review collection in their core service area first." },
+      { question: "How do I handle Google Local Service Ads (LSA) for a service-area business?", answer: "LSA works well for service-area businesses because it's designed around service areas rather than physical addresses. The qualification process verifies your business and license, and the placement appears above the Map Pack for relevant queries. Treat LSA as a paid layer on top of organic local SEO, not a substitute for it." },
+    ],
+  },
+  "google-business-profile-mistakes-map-pack-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "Most Map Pack rankings are lost in fixable Google Business Profile mistakes, not in algorithmic mystery.",
+      "The highest-impact fixes are usually primary category, complete services list, full 750-character description, and review velocity.",
+      "Operational mistakes (slow review response, ignored Q&A, no Google Posts) compound over time and signal an inactive business to Google.",
+      "NAP consistency across directories is the slowest fix and one of the most impactful.",
+      "The cleanup sequence runs over 4-8 weeks for a small business doing this in-house. Ranking changes typically appear within 30-60 days of completion.",
+    ],
+    faqs: [
+      { question: "How long does it take to see Map Pack ranking changes after fixing GBP mistakes?", answer: "Most ranking changes appear within 30-60 days of completing the cleanup. Primary category and services list changes are often the fastest signals. NAP consistency improvements take longer (60-120 days) as Google reconciles citations across directories." },
+      { question: "Can I fix all 12 mistakes myself, or do I need an agency?", answer: "Most can be fixed in-house if you have a few hours of focused time. The two that benefit most from agency or specialist help are NAP consistency cleanup across 30-60 directories (operationally tedious) and review velocity systems (requires marketing automation). Everything else is small-business doable." },
+      { question: "How many Google Posts should I publish per month?", answer: "Aim for at least one post per week, ideally 1-2. Most post types expire after 7 days, so publishing weekly keeps your profile constantly updated. Consistency matters more than perfection — short, useful posts beat long, polished posts published once a month." },
+      { question: "What's the most common GBP mistake?", answer: "Wrong primary category. About 60% of the audits we run find a primary category that's broader than it should be, costing the business specificity in ranking signals. Fix this and you often see ranking improvements within two weeks." },
+      { question: "Should I respond to negative reviews?", answer: "Yes, every time. The response is more for future customers reading the review than for the original reviewer. A calm, professional response to a negative review actually builds trust. Ignoring negative reviews damages trust more than the negative review itself." },
+    ],
+  },
   "local-seo-frisco-businesses-2026-playbook": {
     authorKey: "anwar",
     keyTakeaways: [
