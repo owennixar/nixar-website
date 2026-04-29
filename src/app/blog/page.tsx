@@ -11,7 +11,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Blog | NIXAR Solutions",
+  title: "Blog",
   description:
     "Insights on AI, SEO, GEO, social media, and the Dallas marketing landscape from the NIXAR Solutions team.",
   openGraph: {

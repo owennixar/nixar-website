@@ -619,7 +619,7 @@ export default function AgencyComparison() {
             <span className="font-[family-name:var(--font-oswald)] text-[1rem] font-700 uppercase tracking-wider text-white">Growth</span>
           </div>
           <p ref={statsRef} className="mt-3 text-[0.6rem] font-500 text-[#666]" style={{ opacity: 0 }}>
-            20+ Years &bull; 500+ Projects &bull; 97% Satisfaction
+            DFW &amp; Nationwide &bull; 4.9/5 Client Rating
           </p>
           {/* Pulse ring from Growth */}
           <div

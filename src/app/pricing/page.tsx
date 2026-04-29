@@ -7,7 +7,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import { faqSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Pricing Dallas | Transparent Agency Pricing | NIXAR Solutions",
+  title: "Digital Marketing Pricing Dallas | Transparent Agency Pricing",
   description:
     "Transparent digital marketing pricing from NIXAR Solutions in Dallas. SEO, social media, web design, and AI marketing packages starting at $1,500/month.",
 };

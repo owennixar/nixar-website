@@ -1,6 +1,6 @@
 export default function TrustMarquee() {
   const text =
-    "Digital-Transformation Agency \u00A0\u2022\u00A0 Content-Centric & SEO-Driven \u00A0\u2022\u00A0 Sales-Focused & Lead-Conversion \u00A0\u2022\u00A0 End-to-End Digital Infrastructure \u00A0\u2022\u00A0 Full-Funnel Sales Support \u00A0\u2022\u00A0 20+ Years Combined Experience \u00A0\u2022\u00A0 500+ Projects Delivered \u00A0\u2022\u00A0 97%+ Client Satisfaction \u00A0\u2022\u00A0 ";
+    "Digital-Transformation Agency \u00A0\u2022\u00A0 Content-Centric & SEO-Driven \u00A0\u2022\u00A0 Sales-Focused & Lead-Conversion \u00A0\u2022\u00A0 End-to-End Digital Infrastructure \u00A0\u2022\u00A0 Full-Funnel Sales Support \u00A0\u2022\u00A0 Trusted by Clients Across DFW and Nationwide \u00A0\u2022\u00A0 4.9/5 Client Rating \u00A0\u2022\u00A0 ";
 
   return (
     <section className="overflow-hidden bg-[var(--color-bg-alt)] py-6" aria-label="Brand descriptors">

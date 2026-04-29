@@ -6,7 +6,7 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import { glossarySchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "Marketing Glossary | NIXAR Solutions",
+  title: "Marketing Glossary",
   description:
     "Definitions for SEO, GEO, AI SEO, PPC, CRO, and 30+ digital marketing terms. Learn the language of modern marketing.",
 };

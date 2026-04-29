@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   return {
-    title: `${project.name} | Portfolio | NIXAR Solutions`,
+    title: `${project.name} | Portfolio`,
     description: project.description,
   };
 }

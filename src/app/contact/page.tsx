@@ -44,7 +44,9 @@ const contactFaqs: FAQ[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Contact NIXAR Solutions | Digital Marketing Agency Dallas TX | Free Consultation",
+  title: {
+    absolute: "Contact NIXAR Solutions | Digital Marketing Agency Dallas TX | Free Consultation",
+  },
   description:
     "Get in touch with NIXAR Solutions, a digital marketing agency in Dallas, TX. Request your free digital audit, schedule a consultation, or call us at 469-759-3638.",
 };

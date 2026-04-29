@@ -60,29 +60,6 @@ function useInView(threshold = 0.15) {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HOOK: Count-up animation
-   ═══════════════════════════════════════════════════════════════════════════ */
-function useCountUp(target: number, shouldStart: boolean, duration = 2000) {
-  const [value, setValue] = useState(0);
-  const frameRef = useRef(0);
-
-  useEffect(() => {
-    if (!shouldStart) return;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 4);
-      setValue(Math.round(eased * target));
-      if (p < 1) frameRef.current = requestAnimationFrame(tick);
-    };
-    frameRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frameRef.current);
-  }, [shouldStart, target, duration]);
-
-  return value;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
    REVEAL WRAPPER. fade up on scroll
    ═══════════════════════════════════════════════════════════════════════════ */
 function Reveal({
@@ -204,9 +181,6 @@ const MARQUEE_ITEMS = [
    MAIN COMPONENT
    ═══════════════════════════════════════════════════════════════════════════ */
 export default function HomeDark() {
-  /* ── Stats count-up ─────────────────────────────────────────────────── */
-  const statsObs = useInView(0.3);
-
   /* ── Process timeline fill ──────────────────────────────────────────── */
   const processObs = useInView(0.1);
 
@@ -408,28 +382,13 @@ export default function HomeDark() {
       {/* ═══════════════════════════════════════════════════════════════════
            SECTION 7: STATS
            ═══════════════════════════════════════════════════════════════════ */}
-      <section ref={statsObs.ref} className="py-24 lg:py-32">
+      <section className="py-24 lg:py-32">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-12 px-5 sm:flex-row sm:gap-0 lg:px-8">
-          <StatItem
-            target={20}
-            suffix="+"
-            label="Years Combined Experience"
-            started={statsObs.inView}
-          />
+          <StaticStat headline="4.9/5" label="Client Rating" />
           <div className="hidden h-20 w-px bg-[#E71840] sm:block" />
-          <StatItem
-            target={500}
-            suffix="+"
-            label="Successful Projects"
-            started={statsObs.inView}
-          />
+          <StaticStat headline="DFW + Nationwide" label="Trusted by Clients" />
           <div className="hidden h-20 w-px bg-[#E71840] sm:block" />
-          <StatItem
-            target={97}
-            suffix="%"
-            label="Client Satisfaction"
-            started={statsObs.inView}
-          />
+          <StaticStat headline="2023" label="Founded in Frisco, TX" />
         </div>
       </section>
 
@@ -763,23 +722,11 @@ function HorizontalPortfolio() {
    SUB-COMPONENTS
    ═══════════════════════════════════════════════════════════════════════════ */
 
-function StatItem({
-  target,
-  suffix,
-  label,
-  started,
-}: {
-  target: number;
-  suffix: string;
-  label: string;
-  started: boolean;
-}) {
-  const count = useCountUp(target, started);
+function StaticStat({ headline, label }: { headline: string; label: string }) {
   return (
     <div className="flex-1 text-center">
-      <p className="font-[family-name:var(--font-oswald)] text-[clamp(4rem,8vw,7rem)] font-700 leading-none text-white">
-        {count}
-        <span className="text-[#E71840]">{suffix}</span>
+      <p className="font-[family-name:var(--font-oswald)] text-[clamp(2.25rem,5vw,4rem)] font-700 leading-none text-white">
+        {headline}
       </p>
       <p className="mt-3 text-[0.75rem] font-500 uppercase tracking-[0.1em] text-[#666]">
         {label}

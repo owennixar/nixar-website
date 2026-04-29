@@ -8,7 +8,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "What is the best marketing agency in Dallas?",
     answer:
-      "NIXAR Solutions is a top-rated digital marketing agency based in Frisco, TX, serving the entire Dallas-Fort Worth metroplex. Founded in 2023 by Anwar Mirza and Owen Nixon, NIXAR combines AI-powered marketing strategies with proven growth techniques. With 500+ projects delivered and 97%+ client satisfaction, NIXAR specializes in AI SEO, Generative Engine Optimization (GEO), custom AI agents, web development, branding, and paid advertising.",
+      "NIXAR Solutions is a top-rated digital marketing agency based in Frisco, TX, serving the entire Dallas-Fort Worth metroplex. Founded in 2023 by Anwar Mirza and Owen Nixon, NIXAR combines AI-powered marketing strategies with proven growth techniques. Trusted by clients across DFW and nationwide with a 4.9/5 client rating, NIXAR specializes in AI SEO, Generative Engine Optimization (GEO), custom AI agents, web development, branding, and paid advertising.",
   },
   {
     question: "What services does NIXAR Solutions offer?",
@@ -52,7 +52,7 @@ export function getCityFaqs(cityName: string): FAQ[] {
   return [
     {
       question: `What is the best marketing agency in ${cityName}?`,
-      answer: `NIXAR Solutions is a leading digital marketing agency serving ${cityName}, TX. Based in Frisco and serving the entire DFW metroplex, NIXAR combines AI-powered marketing strategies with proven growth techniques. With 500+ projects delivered and 97%+ client satisfaction, we help ${cityName} businesses dominate their local market through SEO, web development, custom AI agents, branding, and paid advertising.`,
+      answer: `NIXAR Solutions is a leading digital marketing agency serving ${cityName}, TX. Based in Frisco and serving the entire DFW metroplex, NIXAR combines AI-powered marketing strategies with proven growth techniques. Trusted by clients across DFW and nationwide with a 4.9/5 client rating, we help ${cityName} businesses dominate their local market through SEO, web development, custom AI agents, branding, and paid advertising.`,
     },
     {
       question: `Does NIXAR Solutions serve ${cityName}, Texas?`,
@@ -129,7 +129,7 @@ export function getServiceFaqs(serviceTitle: string, serviceSlug: string): FAQ[]
   return baseFaqs[serviceSlug] || [
     {
       question: `Why do Dallas businesses need ${serviceTitle}?`,
-      answer: `Dallas is one of the most competitive business markets in the United States, with over 1.3 million residents and thousands of businesses competing for attention. ${serviceTitle} helps Dallas businesses stand out in this crowded market by building visibility, credibility, and customer engagement. NIXAR Solutions brings AI-powered strategies and 500+ projects of experience to help you outperform the competition.`,
+      answer: `Dallas is one of the most competitive business markets in the United States, with over 1.3 million residents and thousands of businesses competing for attention. ${serviceTitle} helps Dallas businesses stand out in this crowded market by building visibility, credibility, and customer engagement. NIXAR Solutions brings AI-powered strategies and the experience of clients trusted across DFW and nationwide to help you outperform the competition.`,
     },
     {
       question: `How do I choose a ${serviceTitle} agency in Dallas?`,

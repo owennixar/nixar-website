@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return { title: "Post Not Found" };
   return {
-    title: `${post.title} | NIXAR Solutions Blog`,
+    title: `${post.title} | Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,

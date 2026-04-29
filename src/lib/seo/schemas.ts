@@ -72,7 +72,7 @@ export function organizationSchema() {
     url: SITE_URL,
     logo: `${SITE_URL}/images/logo.svg`,
     description:
-      "NIXAR Solutions is a full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, branding, and growth strategies. 500+ projects delivered.",
+      "NIXAR Solutions is a full-service digital marketing agency in Dallas-Fort Worth. AI-powered SEO, web development, custom AI agents, branding, and growth strategies. Trusted by clients across DFW and nationwide.",
     telephone: PHONE,
     email: EMAIL,
     address: {

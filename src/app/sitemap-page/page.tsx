@@ -6,7 +6,7 @@ import { services } from "@/lib/data/services";
 import { cities } from "@/lib/data/cities";
 
 export const metadata: Metadata = {
-  title: "Sitemap | NIXAR Solutions",
+  title: "Sitemap",
   description:
     "Complete sitemap of all pages on the NIXAR Solutions website. Browse our services, location pages, blog, and more.",
 };

@@ -11,16 +11,16 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { target: 20, suffix: "+", label: "Years Combined Experience" },
-  { target: 500, suffix: "+", label: "Projects Delivered" },
-  { target: 97, suffix: "%+", label: "Client Satisfaction" },
+  { target: null, suffix: "", label: "Client Rating", display: "4.9/5" },
+  { target: null, suffix: "", label: "Trusted by Clients", display: "DFW + Nationwide" },
   { target: 10, suffix: "+", label: "Services Offered" },
   { target: 20, suffix: "+", label: "Cities Served in DFW" },
   { target: null, suffix: "", label: "Support & Monitoring", display: "24/7" },
+  { target: null, suffix: "", label: "Founded in Frisco, TX", display: "2023" },
 ];
 
 function useCountUp(target: number | null, shouldAnimate: boolean) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(target ?? 0);
 
   useEffect(() => {
     if (!shouldAnimate || target === null) return;

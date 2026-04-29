@@ -658,7 +658,7 @@ The most sophisticated targeting in the world won't help if your ad creative doe
 
 **Clear Call to Action (CTA).** Every ad needs a clear next step: "Shop Now," "Get Your Free Quote," "Download the Guide," "Book a Consultation." Don't make people guess what to do next.
 
-**Social Proof.** Include customer testimonials, review scores, or "trusted by X customers" messaging. People trust what other people trust. "500+ businesses trust NIXAR Solutions" is more compelling than "We're a great agency."
+**Social Proof.** Include customer testimonials, review scores, or "trusted by X customers" messaging. People trust what other people trust. "Businesses across DFW and nationwide trust NIXAR Solutions" is more compelling than "We're a great agency."
 
 **Mobile-First Design.** Over 95% of social media usage happens on mobile. Design your ads for a phone screen first. Use vertical or square formats. Make text large enough to read on a small screen.
 

@@ -11,8 +11,10 @@ import { generalFaqs } from "@/lib/data/faq";
 import HomeDark from "@/components/sections/HomeDark";
 
 export const metadata: Metadata = {
-  title:
-    "Digital Marketing Agency Dallas TX | SEO, Web Design & AI Marketing | NIXAR Solutions",
+  title: {
+    absolute:
+      "Digital Marketing Agency Dallas TX | SEO, Web Design & AI Marketing | NIXAR Solutions",
+  },
   description:
     "NIXAR Solutions is a full-service digital marketing agency in Dallas, TX. We offer SEO, web design, social media marketing, paid ads, AI automation, and branding for DFW businesses. Get your free audit today.",
 };

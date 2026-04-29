@@ -70,11 +70,9 @@ export default function Hero() {
 
           <AnimateIn delay={0.8} direction="none">
             <div className="mt-8 flex flex-wrap items-center gap-3 text-[0.8rem] font-500 text-white/50">
-              <span>20+ Years Experience</span>
+              <span>Trusted by clients across DFW and nationwide</span>
               <span className="text-white/30">•</span>
-              <span>500+ Projects</span>
-              <span className="text-white/30">•</span>
-              <span>97% Satisfaction</span>
+              <span>4.9/5 client rating</span>
             </div>
           </AnimateIn>
         </div>

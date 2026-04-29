@@ -6,7 +6,7 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import { faqSchema, breadcrumbSchema } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "SEO vs GEO vs AI SEO | Understanding Modern Search | NIXAR Solutions",
+  title: "SEO vs GEO vs AI SEO | Understanding Modern Search",
   description:
     "Compare Traditional SEO, Generative Engine Optimization (GEO), and AI SEO. Learn which search strategy your business needs in 2026.",
 };

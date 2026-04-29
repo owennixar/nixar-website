@@ -37,10 +37,10 @@ export default function TrustBar() {
           <div className="flex items-center justify-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
               <span className="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-              <span className="text-white text-sm font-600">4.9/5</span>
+              <span className="text-white text-sm font-600">4.9/5 Client Rating</span>
             </div>
             <span className="text-gray-600">|</span>
-            <span className="text-gray-400 text-sm">97% Client Satisfaction</span>
+            <span className="text-gray-400 text-sm">DFW &amp; Nationwide</span>
           </div>
         </div>
       </div>

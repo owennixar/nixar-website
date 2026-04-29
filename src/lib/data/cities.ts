@@ -28,9 +28,9 @@ export const cities: City[] = [
       "Hospitality",
     ],
     nearbyCities: ["plano", "frisco", "irving", "richardson", "garland", "arlington"],
-    seoTitle: "Marketing Agency Dallas TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Dallas TX | Digital Marketing",
     seoDescription:
-      "NIXAR Solutions is a top-rated marketing agency in Dallas, TX. AI-powered SEO, web development, branding, and digital marketing strategies for Dallas businesses. 500+ projects delivered.",
+      "NIXAR Solutions is a top-rated marketing agency in Dallas, TX. AI-powered SEO, web development, branding, and digital marketing strategies trusted by clients across DFW and nationwide.",
   },
   {
     slug: "frisco",
@@ -48,7 +48,7 @@ export const cities: City[] = [
       "Retail",
     ],
     nearbyCities: ["plano", "mckinney", "prosper", "allen", "celina"],
-    seoTitle: "Marketing Agency Frisco TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Frisco TX | Digital Marketing",
     seoDescription:
       "Frisco's own digital marketing agency. NIXAR Solutions delivers AI-powered SEO, web development, and growth strategies for Frisco businesses. Based in Frisco, built for Frisco.",
   },
@@ -68,7 +68,7 @@ export const cities: City[] = [
       "Retail",
     ],
     nearbyCities: ["frisco", "richardson", "allen", "mckinney", "dallas"],
-    seoTitle: "Marketing Agency Plano TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Plano TX | Digital Marketing",
     seoDescription:
       "Digital marketing agency for Plano, TX businesses. NIXAR Solutions provides SEO, web development, and growth strategies for Plano's competitive corporate landscape.",
   },
@@ -88,7 +88,7 @@ export const cities: City[] = [
       "Agriculture Technology",
     ],
     nearbyCities: ["frisco", "allen", "plano", "prosper", "celina"],
-    seoTitle: "Marketing Agency McKinney TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency McKinney TX | Digital Marketing",
     seoDescription:
       "Marketing agency serving McKinney, TX. NIXAR Solutions helps McKinney businesses grow with AI-powered SEO, web development, and digital marketing strategies.",
   },
@@ -108,7 +108,7 @@ export const cities: City[] = [
       "Home Services",
     ],
     nearbyCities: ["frisco", "celina", "mckinney"],
-    seoTitle: "Marketing Agency Prosper TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Prosper TX | Digital Marketing",
     seoDescription:
       "Premium digital marketing for Prosper, TX businesses. NIXAR Solutions delivers sophisticated marketing strategies for Prosper's affluent and fast-growing market.",
   },
@@ -128,7 +128,7 @@ export const cities: City[] = [
       "Retail",
     ],
     nearbyCities: ["prosper", "frisco", "mckinney"],
-    seoTitle: "Marketing Agency Celina TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Celina TX | Digital Marketing",
     seoDescription:
       "Digital marketing for Celina, TX. the fastest-growing city in Texas. NIXAR Solutions helps Celina businesses establish dominance in a rapidly expanding market.",
   },
@@ -148,7 +148,7 @@ export const cities: City[] = [
       "Restaurant & Hospitality",
     ],
     nearbyCities: ["plano", "mckinney", "frisco", "richardson"],
-    seoTitle: "Marketing Agency Allen TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Allen TX | Digital Marketing",
     seoDescription:
       "Marketing agency serving Allen, TX. NIXAR Solutions provides SEO, web development, and digital growth strategies for Allen's thriving business community.",
   },
@@ -168,7 +168,7 @@ export const cities: City[] = [
       "Engineering",
     ],
     nearbyCities: ["plano", "dallas", "garland", "allen"],
-    seoTitle: "Marketing Agency Richardson TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Richardson TX | Digital Marketing",
     seoDescription:
       "Digital marketing for Richardson's Telecom Corridor and tech community. NIXAR Solutions delivers SEO, web development, and B2B marketing strategies for Richardson businesses.",
   },
@@ -188,7 +188,7 @@ export const cities: City[] = [
       "Food & Beverage",
     ],
     nearbyCities: ["plano", "lewisville", "dallas", "richardson"],
-    seoTitle: "Marketing Agency Carrollton TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Carrollton TX | Digital Marketing",
     seoDescription:
       "Marketing agency for Carrollton, TX businesses. NIXAR Solutions delivers SEO, web development, and multicultural marketing strategies for Carrollton's diverse market.",
   },
@@ -208,7 +208,7 @@ export const cities: City[] = [
       "Food & Beverage",
     ],
     nearbyCities: ["lewisville", "flower-mound", "carrollton"],
-    seoTitle: "Marketing Agency Denton TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Denton TX | Digital Marketing",
     seoDescription:
       "Digital marketing agency for Denton, TX. NIXAR Solutions helps Denton businesses reach both the university community and growing suburban market with SEO, web, and social strategies.",
   },
@@ -228,7 +228,7 @@ export const cities: City[] = [
       "Professional Services",
     ],
     nearbyCities: ["flower-mound", "carrollton", "denton"],
-    seoTitle: "Marketing Agency Lewisville TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Lewisville TX | Digital Marketing",
     seoDescription:
       "Marketing agency for Lewisville, TX. NIXAR Solutions provides SEO, web development, and digital marketing for Lewisville businesses in this strategically located DFW city.",
   },
@@ -248,7 +248,7 @@ export const cities: City[] = [
       "Home Services",
     ],
     nearbyCities: ["lewisville", "grapevine", "southlake"],
-    seoTitle: "Marketing Agency Flower Mound TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Flower Mound TX | Digital Marketing",
     seoDescription:
       "Premium digital marketing for Flower Mound, TX. NIXAR Solutions delivers polished SEO, web development, and marketing strategies for Flower Mound's affluent community.",
   },
@@ -268,7 +268,7 @@ export const cities: City[] = [
       "Fine Dining",
     ],
     nearbyCities: ["grapevine", "flower-mound", "fort-worth"],
-    seoTitle: "Marketing Agency Southlake TX | Premium Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Southlake TX | Premium Digital Marketing",
     seoDescription:
       "Luxury digital marketing for Southlake, TX. NIXAR Solutions delivers premium SEO, web development, and brand strategies for Southlake's high-net-worth market.",
   },
@@ -288,7 +288,7 @@ export const cities: City[] = [
       "Real Estate",
     ],
     nearbyCities: ["southlake", "flower-mound", "irving"],
-    seoTitle: "Marketing Agency Grapevine TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Grapevine TX | Digital Marketing",
     seoDescription:
       "Digital marketing for Grapevine, TX. the Christmas Capital of Texas. NIXAR Solutions helps Grapevine businesses capture both local and tourism-driven search traffic.",
   },
@@ -308,7 +308,7 @@ export const cities: City[] = [
       "Hospitality",
     ],
     nearbyCities: ["fort-worth", "dallas", "grand-prairie", "irving"],
-    seoTitle: "Marketing Agency Arlington TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Arlington TX | Digital Marketing",
     seoDescription:
       "Digital marketing agency for Arlington, TX. NIXAR Solutions provides SEO, web development, and growth strategies for Arlington's entertainment-driven economy.",
   },
@@ -328,9 +328,9 @@ export const cities: City[] = [
       "Technology",
     ],
     nearbyCities: ["arlington", "southlake", "grapevine", "grand-prairie"],
-    seoTitle: "Marketing Agency Fort Worth TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Fort Worth TX | Digital Marketing",
     seoDescription:
-      "Fort Worth's digital marketing partner. NIXAR Solutions delivers AI-powered SEO, web development, and growth strategies for Fort Worth businesses. 500+ projects. 97%+ satisfaction.",
+      "Fort Worth's digital marketing partner. NIXAR Solutions delivers AI-powered SEO, web development, and growth strategies, trusted by clients across DFW and nationwide with a 4.9/5 client rating.",
   },
   {
     slug: "garland",
@@ -348,7 +348,7 @@ export const cities: City[] = [
       "Automotive Services",
     ],
     nearbyCities: ["richardson", "plano", "dallas", "mesquite"],
-    seoTitle: "Marketing Agency Garland TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Garland TX | Digital Marketing",
     seoDescription:
       "Digital marketing for Garland, TX businesses. NIXAR Solutions provides SEO, web development, and multicultural marketing strategies for Garland's diverse market.",
   },
@@ -368,7 +368,7 @@ export const cities: City[] = [
       "Automotive",
     ],
     nearbyCities: ["garland", "dallas"],
-    seoTitle: "Marketing Agency Mesquite TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Mesquite TX | Digital Marketing",
     seoDescription:
       "Marketing agency for Mesquite, TX. NIXAR Solutions delivers SEO, web development, and culturally relevant digital marketing for the Rodeo Capital of Texas.",
   },
@@ -388,7 +388,7 @@ export const cities: City[] = [
       "Logistics",
     ],
     nearbyCities: ["dallas", "grapevine", "arlington", "grand-prairie"],
-    seoTitle: "Marketing Agency Irving TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Irving TX | Digital Marketing",
     seoDescription:
       "Digital marketing agency for Irving and Las Colinas businesses. NIXAR Solutions provides SEO, web development, and corporate marketing strategies for Irving's competitive market.",
   },
@@ -408,7 +408,7 @@ export const cities: City[] = [
       "Aerospace",
     ],
     nearbyCities: ["arlington", "irving", "dallas", "fort-worth"],
-    seoTitle: "Marketing Agency Grand Prairie TX | Digital Marketing | NIXAR Solutions",
+    seoTitle: "Marketing Agency Grand Prairie TX | Digital Marketing",
     seoDescription:
       "Marketing agency for Grand Prairie, TX. NIXAR Solutions delivers SEO, web development, and digital marketing for Grand Prairie's centrally located, diverse business community.",
   },

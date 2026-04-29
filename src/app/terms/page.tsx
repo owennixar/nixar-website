@@ -3,7 +3,7 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | NIXAR Solutions",
+  title: "Terms & Conditions",
   description:
     "Review the terms and conditions governing the use of NIXAR Solutions' website and digital services.",
 };

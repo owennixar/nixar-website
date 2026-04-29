@@ -18,7 +18,9 @@ import {
 } from "@/lib/seo/schemas";
 
 export const metadata: Metadata = {
-  title: "About NIXAR Solutions | Digital Marketing Agency in Frisco, TX Serving Dallas-Fort Worth",
+  title: {
+    absolute: "About NIXAR Solutions | Digital Marketing Agency in Frisco, TX Serving Dallas-Fort Worth",
+  },
   description:
     "Meet the team behind NIXAR Solutions. Founded in 2023 in Frisco, TX, we're a digital marketing agency transforming how DFW businesses grow online through SEO, web design, AI, and full-funnel strategy.",
 };

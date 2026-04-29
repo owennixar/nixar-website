@@ -3,7 +3,7 @@ import AnimateIn from "@/components/ui/AnimateIn";
 import CtaBanner from "@/components/sections/CtaBanner";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | NIXAR Solutions",
+  title: "Privacy Policy",
   description:
     "Learn about NIXAR Solutions' privacy practices, how we collect and use your information, and your rights regarding your personal data.",
 };

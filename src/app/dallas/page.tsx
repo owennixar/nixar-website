@@ -32,7 +32,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; className?: 
 };
 
 export const metadata: Metadata = {
-  title: "Marketing Agency Dallas TX | Digital Marketing, SEO & Web Design | NIXAR Solutions",
+  title: "Marketing Agency Dallas TX | Digital Marketing, SEO & Web Design",
   description:
     "NIXAR Solutions is a top-rated marketing agency in Dallas, TX offering SEO, web design, social media marketing, paid advertising, AI automation, and branding. Serving all of DFW. Free audit.",
 };
