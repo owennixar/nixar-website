@@ -30,6 +30,347 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "local-seo-frisco-businesses-2026-playbook",
+    title: "Local SEO for Frisco Businesses: The 2026 Playbook",
+    excerpt: "Frisco is one of the fastest-growing markets in the U.S., and the local SEO competition is intensifying every quarter. Here's the playbook we run for Frisco businesses competing for local visibility.",
+    summary: "Local SEO in Frisco is more competitive than most local markets in Texas because the population is growing faster than the supply of established service providers. The businesses that win are the ones that treat local SEO as a system — Google Business Profile optimization, NAP consistency, review velocity, neighborhood-level content, and Map Pack-targeted technical work — not as a one-time setup.",
+    category: "Local SEO",
+    badge: "FRISCO 📍",
+    badgeColor: "#06B6D4",
+    date: "May 19, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "8 min read",
+    authorSlug: "anwar-mirza",
+    featured: false,
+    series: null,
+    image: "/images/blog/local-seo-frisco-businesses-2026-playbook.webp",
+    content: `## Why Frisco Is a Different Local SEO Market
+
+Frisco has been the fastest-growing city in the United States for several consecutive years, and the marketing implications of that growth are unusual. The population is expanding faster than the supply of established service providers, which means new buyers arrive in the market every week looking for businesses they don't yet know. For local businesses competing on visibility, this is both an opportunity and a pressure: the audience is constantly refreshing, but so is the competitive set.
+
+The other thing that makes Frisco distinctive is the buyer profile. Median household income exceeds $135,000, and a meaningful share of new arrivals are corporate transferees from companies that have relocated to The Star, Legacy West, or Frisco's $5 Billion Mile. These buyers are digitally sophisticated, research-heavy, and often comparing service providers online before they make any decision. The local SEO discipline that works in Frisco is the discipline that holds up to research, not just the discipline that wins on proximity alone.
+
+This piece is the playbook we run for Frisco businesses across categories — from home services to professional services to retail. The mechanics are universal; the local color is what makes the difference.
+
+For background on the broader DFW dynamics, our [Dallas Marketing Landscape 2026](/blog/dallas-marketing-landscape-2026) piece covers the regional context this playbook operates inside.
+
+## The Foundation: Google Business Profile
+
+If a Frisco business does nothing else for local SEO, the first investment is a complete and active Google Business Profile (GBP). Map Pack rankings — the three local results that appear above traditional organic listings for proximity-driven queries — are gated almost entirely on GBP signals.
+
+Three GBP investments produce the most visible results. First, complete every field. Name, primary category, secondary categories, services, products, hours, attributes, business description, photos, and posts. Empty fields cost rankings. Second, photos matter more than most businesses realize. Aim for fresh photo uploads every 2-3 weeks. Interior, exterior, team, work-in-progress, finished projects. Photos signal an active business. Third, Google Posts are underused. Weekly updates announcing offers, events, or new services keep your listing surfaced when the algorithm chooses which businesses to feature.
+
+The hidden lever in GBP is the Q&A section. Most businesses leave their Q&A unattended, which means competitors or customers post questions and the business never answers. Treat Q&A as content you control: pre-populate it with the questions you want to be asked, answer them yourself with your business account, and update them quarterly.
+
+## NAP Consistency Across Every Listing
+
+NAP — Name, Address, Phone — is the single most under-invested foundational asset in local SEO. The principle is simple. Search engines and AI models cross-reference your business across dozens of directories. If your name is "Ace Plumbing" on your website, "Ace Plumbing of Frisco" on Yelp, and "Ace Plumbing LLC" on Bing, the algorithms see three businesses, not one. The result is fragmented authority and weaker rankings.
+
+The fix is operationally tedious but technically simple. Pick one canonical name, address, and phone format. Audit every directory you appear on — Google, Bing, Apple Maps, Yelp, Facebook, the BBB, industry-specific directories, hyper-local Frisco directories. Update each listing to match. Document the canonical version in writing so future updates are consistent.
+
+Aggregate data tools like Yext, Whitespark, and BrightLocal can automate the audit and submission process. For a small Frisco business managing this in-house, the manual approach is feasible — there are typically 30-60 directories that matter, and the upfront cleanup is a one-week project that produces compounding ranking benefits.
+
+## Review Velocity
+
+Reviews drive local rankings, and the metric that matters more than total review count is review velocity — the rate at which new reviews arrive. A Frisco business with 200 reviews and no new reviews in three months ranks below a competitor with 80 reviews and a steady drip of 4-6 new reviews per month. Google's algorithm reads sustained review activity as a signal of an active, healthy business.
+
+Practical sources of review velocity for Frisco businesses: post-service text-message follow-up (highest conversion in our experience, 25-40% review-rate when the timing is right), email follow-up sequences for service-based businesses with longer cycles, and front-line staff training to ask in person at moments of obvious customer satisfaction. Avoid review-gating tactics — Google's policy prohibits asking for positive reviews specifically while filtering out unhappy customers, and the platform actively detects this.
+
+Respond to every review within 48 hours. Both positive and negative. The response itself is a ranking signal and a trust signal to future customers reading the listing.
+
+## Frisco-Specific Content That Compounds
+
+Beyond the technical foundation, content is what differentiates Frisco businesses competing in the same category. Generic content about your service category gets you nowhere. Frisco-specific content is what produces both ranking lift and the trust signals AI search models cite.
+
+Three content patterns work well for Frisco businesses. First, neighborhood-level content. Write pages or posts about working in specific Frisco neighborhoods — Phillips Creek Ranch, Newman Village, Stonebriar, Plantation Resort, Starwood, Heritage Lakes. Each neighborhood has distinctive characteristics, and content that demonstrates knowledge of those characteristics ranks for both neighborhood-specific queries and broader Frisco-wide queries.
+
+Second, content tied to Frisco-specific events and landmarks. The Star (Cowboys headquarters), the PGA of America, FC Dallas at Toyota Stadium, Frisco StIR, Frisco Square — these are reference points buyers know. Content that ties your service category to local context performs better than generic content with the word "Frisco" inserted.
+
+Third, content about Frisco's growth itself. New construction patterns, school district changes, demographic shifts. Buyers researching service providers in a fast-growing market often search for context as much as they search for services. The business that publishes the context-setting content captures both audiences.
+
+## Measuring What's Working
+
+Local SEO measurement for Frisco businesses comes down to a few practical metrics:
+
+**Map Pack appearances** for your priority queries. Track this monthly with a tool like LocalFalcon, BrightLocal, or by manually checking from a Frisco IP address. Map Pack appearances drive most of the click-through value for local queries.
+
+**Branded-search trend.** Search Console will show whether your name is being searched more often over time. Rising branded-search volume is the leading indicator that your local marketing is creating awareness.
+
+**GBP insights** — calls, direction requests, website clicks from your Map Pack listing. These are the conversion-adjacent metrics that connect ranking to business outcomes.
+
+**Review velocity** as a count, not just an average. New reviews per month is a more useful operational metric than star average.
+
+For more on the broader local SEO foundation, see our [SEO 101 guide](/blog/seo-101). For the technical AI-search layer that increasingly affects local visibility, see our [Search Everywhere Optimization](/services/search-everywhere-optimization) work.
+
+## What Doesn't Work in Frisco
+
+A few tactics we've watched fail in the Frisco market specifically:
+
+**Generic location pages.** Building a page titled "Plumbing in Frisco" with the word "Frisco" repeated in the H1 and meta description and no actual local content. Google detects thin local content and either ignores it or, in extreme cases, penalizes it.
+
+**Buying reviews.** The local market is small enough that fake review patterns get noticed. Google's review filter catches most coordinated activity, and the reputational risk of getting caught outweighs any short-term ranking gain.
+
+**Ignoring the AI search channel.** Frisco buyers are increasingly using ChatGPT and Perplexity to research service providers. A business that ranks well on Google but is invisible in AI answers is forfeiting a meaningful share of consideration. The work in our [AEO checklist](/blog/answer-engine-optimization-checklist-2026) applies to local businesses too.
+
+## Key Takeaways
+
+- Frisco is a faster-growing local market than most, and the buyer profile (digitally sophisticated, research-heavy, high household income) rewards businesses that hold up to scrutiny — not just businesses that win on proximity.
+- Google Business Profile completeness, NAP consistency across directories, and steady review velocity are the three foundational levers. None is glamorous; all three are non-negotiable.
+- Frisco-specific content that references neighborhoods, landmarks, and growth dynamics outperforms generic local content with "Frisco" inserted.
+- Measure Map Pack appearances, branded-search trend, GBP insights, and review velocity. Star average and total review count matter less than the activity rate.
+- AI search is increasingly part of local consideration in Frisco. Local SEO that ignores the AI channel forfeits a growing share of buyer research.
+
+## Final Take
+
+Local SEO in Frisco rewards discipline more than cleverness. The businesses that win are the ones that build the foundation correctly, maintain it actively, and layer on the local context that demonstrates real knowledge of the market. Buyers in Frisco can tell the difference between a generic local SEO effort and one that's genuinely tuned for the city — and they reward the latter with calls, leads, and bookings.
+
+If you'd rather have someone build and maintain this system for your Frisco business, our team handles end-to-end [Search Everywhere Optimization](/services/search-everywhere-optimization), including local SEO, GBP management, review programs, and content built for the specific dynamics of the Frisco market. [Request a free audit](/free-audit) and we'll lay out exactly where your current local SEO stands relative to your competitive set. You can also see the full picture of what we do for Frisco businesses on our [Frisco services page](/frisco).`,
+  },
+  {
+    slug: "traditional-seo-tools-full-story-2026",
+    title: "Why Traditional SEO Tools Don't Tell the Full Story (and What to Use Alongside Them)",
+    excerpt: "Ahrefs, Semrush, and Moz are excellent — for the channel they were built to measure. They were not built to track AI search visibility. Here's what they miss and which tools fill the gap.",
+    summary: "Traditional SEO tools measure traditional search performance. They were built for a world where Google rankings were the proxy for visibility. That world is fragmenting fast as AI search platforms capture meaningful share of intent-rich queries. This piece walks through what tools like Ahrefs and Semrush still do well, what they miss, and how to assemble a hybrid measurement stack that covers both classic and AI search.",
+    category: "AI & SEO",
+    badge: "TOOLS",
+    badgeColor: "#3B82F6",
+    date: "May 15, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "10 min read",
+    authorSlug: "owen-nixon",
+    featured: false,
+    series: null,
+    image: "/images/blog/traditional-seo-tools-full-story-2026.webp",
+    content: `## The Tools That Built Modern SEO
+
+Ahrefs, Semrush, Moz, Sistrix, and a handful of other platforms have defined the measurement stack for SEO professionals for the better part of two decades. They're excellent at what they were built to do: track Google rankings, audit backlinks, monitor keyword positions, identify technical site issues, and benchmark against competitors. If your visibility lives entirely on Google's blue links, these tools are sufficient.
+
+The problem is that visibility no longer lives entirely on Google's blue links. AI Overviews now appear on roughly half of Google searches. ChatGPT serves hundreds of millions of weekly active users. Perplexity, Gemini, and Bing's Copilot capture share of the same intent-rich queries that used to send all their traffic through Google's traditional results.
+
+Traditional SEO tools don't track any of this. The result is a measurement blindspot that's growing every quarter — and most marketing teams haven't updated their reporting stack to account for it.
+
+For more on the underlying shift, see our analysis of [zero-click search dynamics](/blog/zero-click-search-death-of-the-click-2026). This piece focuses on what tools to add alongside the ones you're already paying for.
+
+## What Traditional SEO Tools Still Do Well
+
+It's worth saying clearly: the tools you already use are not obsolete. They remain best-in-class for several measurement categories that still matter and aren't going anywhere.
+
+**Keyword position tracking** is the original SEO use case and the tools handle it cleanly. Daily ranking checks across thousands of keywords, position-history graphs, SERP feature detection, mobile-vs-desktop variance — all of this is solved infrastructure. The data is reliable and the workflows are mature.
+
+**Backlink analysis** is still the strongest competitive intelligence asset most marketers have. Ahrefs in particular has built an industry-leading backlink index. Knowing who links to your competitors and how their authority is distributed across topic clusters is foundational work that hasn't changed.
+
+**Technical SEO auditing** — crawl errors, redirect chains, broken links, schema validation, page speed, internal linking — all the technical hygiene work runs through these tools. AI search engines pull from sites with clean technical foundations, so this work matters as much as ever.
+
+**Competitive intelligence** — what topics competitors rank for, where their content gaps are, which pages are driving their organic traffic — remains a core use case. The tools deliver this well.
+
+The point is not to abandon Ahrefs or Semrush. The point is to recognize what they don't measure.
+
+## The Visibility Gap
+
+Traditional SEO tools have a structural blind spot. They were architected to track keyword positions on Google's traditional results page. They scrape the SERP, identify ranked URLs, and surface position data. That methodology breaks for AI search.
+
+When ChatGPT generates an answer, there's no SERP. There's a paragraph of text with citations. When Perplexity responds to a query, the answer is structured but the platform doesn't expose the equivalent of a traditional ranking position. When Google AI Overviews appear, they often quote sources without those sources appearing as ranked links — and the click-through behavior of users who read AI Overviews is fundamentally different from users who read blue links.
+
+A few specific things traditional tools miss:
+
+**Whether you're cited inside AI-generated answers.** Your business might be the canonical source on "best CRM for small business" inside ChatGPT, and Ahrefs has no way to surface that.
+
+**Which questions and queries trigger your citation.** Tracking ranked keywords doesn't tell you what conversational queries lead to your business being mentioned in AI answers. The query patterns are different.
+
+**The effective traffic value of AI citations.** A citation in a ChatGPT answer to "best AI SEO agency in Dallas" might drive zero clicks but produce three new sales-qualified leads who searched for you by name afterward. Traditional tools don't model this branded-search-after-AI-citation pattern.
+
+**Share of voice in AI-generated content.** Traditional tools measure keyword share of voice. They don't measure citation share of voice across AI platforms — which is increasingly the equivalent metric for share of mind in commercial categories.
+
+## Tools to Use Alongside Traditional SEO Tools
+
+The category of "AI search visibility" tools is young, fragmented, and changing fast. A few platforms are emerging as practical additions to existing SEO stacks. We don't endorse any specific vendor — the category will consolidate over the next 18 months — but the categories of tooling are stable enough to plan around.
+
+**AI search rank tracking platforms.** A handful of tools now query ChatGPT, Perplexity, Gemini, and other LLM-based platforms on a recurring basis with a defined query set, then capture which sources are cited. This is the closest thing to position tracking for AI search. Vendors include Profound, Otterly, and a growing number of new entrants. The methodology is similar across them: define your query universe, monitor citations over time, track competitive citation share.
+
+**Brand mention monitoring across LLM outputs.** Tools that track when your brand name appears in AI-generated responses — both in your priority queries and in adjacent ones you might not have thought to track. This is closer to PR monitoring than rank tracking, but the data feeds the same strategic decisions.
+
+**Server log analysis for AI crawler traffic.** GPTBot, PerplexityBot, ClaudeBot, and Google-Extended (Google's AI training crawler) all leave fingerprints in server logs. Looking at your logs tells you which AI platforms are crawling which pages and how often. This is a quick proxy for AI visibility before you invest in a dedicated platform.
+
+**Branded-search lift tracking via Google Search Console.** This is free and underused. When AI citations work, they often produce a lift in branded searches — users see your name in a ChatGPT answer, then search for you on Google. Branded-search trends in Search Console are a leading indicator of effective AI search visibility.
+
+**Schema validation and AI-readability auditing.** Tools that test whether your schema is parseable by AI crawlers and whether your content is structured for direct extraction. Some traditional SEO tools (Sitebulb, Screaming Frog) handle pieces of this. Specialist tools are emerging that focus specifically on AI-readability scoring.
+
+For the underlying optimization work these tools support, see our [AEO checklist](/blog/answer-engine-optimization-checklist-2026) — the 23-step implementation list that the measurement stack is meant to track.
+
+## Building a Hybrid Measurement Stack
+
+A practical setup for a small business that wants to measure both traditional and AI search:
+
+**Tier 1 — Daily monitoring (automated):** Existing SEO tool (Ahrefs / Semrush / Moz) for keyword positions, backlinks, technical hygiene. Search Console and Google Analytics for site-side traffic data.
+
+**Tier 2 — Weekly review (lightly manual):** AI search rank tracker for citation monitoring across ChatGPT, Perplexity, Gemini. Server log analysis for AI crawler traffic patterns. Branded-search trend in Search Console as a leading indicator.
+
+**Tier 3 — Monthly audit (manual):** Run priority queries directly on ChatGPT, Perplexity, and Gemini. Document changes in citation patterns. Compare against competitors. Identify content gaps surfaced by missing citations.
+
+This stack does not require enterprise budgets. Ahrefs starts at $129/month, an emerging AI rank tracker is typically $50-200/month, and the manual monthly audit is one analyst-hour. The cost of running it is far less than the cost of being invisible in the AI channel.
+
+## What Numbers Actually Matter Now
+
+The shift in measurement also means a shift in which numbers matter. A few that mattered five years ago now matter less, and a few new ones matter more.
+
+**Less important than they used to be:** raw organic traffic counts (because zero-click queries reduce the click-through coefficient), keyword ranking positions for high-volume informational queries (because AI Overviews intercept the click), and backlink count as a vanity metric.
+
+**More important than they used to be:** branded-search trend, AI citation share for priority queries, share of voice across AI platforms versus traditional Google, and conversion rate on the traffic that does click through (because the visitors who arrive after AI exposure are typically warmer).
+
+**About the same:** technical SEO health, conversion rate on landing pages, internal linking structure, content quality.
+
+The strategic implication is that "rankings" as a north-star metric is increasingly obsolete. The right north star is "do the queries that matter for our business produce visibility for us across all channels users are actually using to make decisions." That metric is harder to measure, but it's the right one to organize around.
+
+## What This Looks Like in Practice for an SMB
+
+Most small businesses we work with don't need to overhaul their measurement stack overnight. The practical sequence is:
+
+**Month 1:** Keep existing SEO tools. Add server log analysis for AI crawler traffic. Set up Search Console branded-search trend monitoring. Define your top 5-10 priority queries.
+
+**Month 2:** Subscribe to one AI search rank tracker. Begin documenting citation patterns. Compare against competitors.
+
+**Month 3+:** Build the routine. Weekly review of AI citation changes. Monthly manual audit on priority queries. Quarterly strategy review based on what the data is showing.
+
+This is closer to the [Search Everywhere Optimization](/services/search-everywhere-optimization) approach we run for clients — measuring visibility across every channel where buyers are searching, not just the channels traditional tools were built for.
+
+## Key Takeaways
+
+- Traditional SEO tools (Ahrefs, Semrush, Moz) remain best-in-class for keyword tracking, backlink analysis, and technical auditing.
+- The structural blind spot is AI search — these tools were not built to track ChatGPT, Perplexity, Gemini, or Google AI Overviews citation behavior.
+- A hybrid stack covers both: existing SEO tool + an AI search rank tracker + Search Console branded-search trend + monthly manual audit.
+- The metrics that matter are shifting. Branded-search trend and AI citation share are increasingly more useful than raw organic traffic for measuring visibility.
+- Most SMBs don't need to overhaul their stack — they need to add 1-2 AI-specific layers on top of what they already use.
+
+## Final Take
+
+Traditional SEO tools aren't broken. They're incomplete for the search landscape that exists in 2026. The measurement gap is real and growing, and the businesses that close it first will have a clearer view of what's actually working — and an easier time justifying the optimization investments that compound.
+
+If you want help building out the right measurement stack for your specific business, our team handles end-to-end [AI SEO and GEO engagements](/services/ai-seo-geo) — including the measurement infrastructure that lets you track AI visibility alongside traditional SEO. [Request a free audit](/free-audit) and we'll show you exactly what your current tools are missing.`,
+  },
+  {
+    slug: "answer-engine-optimization-checklist-2026",
+    title: "Answer Engine Optimization Checklist: 23 Steps to AI Visibility",
+    excerpt: "Most AI visibility advice is high-level. This is the implementation list. Twenty-three concrete steps to make your business citable across ChatGPT, Perplexity, Gemini, and Google AI Overviews.",
+    summary: "Answer Engine Optimization (AEO) is the work of making your business citable inside AI-generated answers. The discipline is mostly tactical, not strategic. This 23-step checklist covers the foundation, content structure, schema, authority signals, and monitoring routines that get businesses from invisible to cited within 90-180 days.",
+    category: "AI & SEO",
+    badge: "CHECKLIST",
+    badgeColor: "#10B981",
+    date: "May 11, 2026",
+    lastUpdated: "April 29, 2026",
+    readTime: "11 min read",
+    authorSlug: "owen-nixon",
+    featured: false,
+    series: null,
+    image: "/images/blog/answer-engine-optimization-checklist-2026.webp",
+    content: `## What Is Answer Engine Optimization (AEO)?
+
+Answer Engine Optimization is what you do to get cited inside AI-generated answers from ChatGPT, Perplexity, Gemini, Google AI Overviews, Bing Copilot, and the broader category of AI search platforms. Some practitioners call it Generative Engine Optimization (GEO). The terminology is converging on AEO as the more accurate label — these platforms function as answer engines, not search engines, and the optimization work reflects that.
+
+This is the implementation list. The strategic case for AEO is covered in our [GEO 101 guide](/blog/geo-101) and the practical playbook for ChatGPT specifically lives in [How to Get Cited by ChatGPT](/blog/how-to-get-cited-by-chatgpt-2026). What follows is the checklist we run with clients — twenty-three steps grouped into five phases. Work them in order. Skip none.
+
+## Phase 1: Foundation (Steps 1-5)
+
+The foundation phase is about getting your entity recognized. Without it, the rest of the work is wasted.
+
+**1. Pick one canonical business name and use it everywhere.** "NIXAR Solutions" everywhere, not "Nixar" in some places and "NIXAR Solutions LLC" in others. Mismatches confuse AI models and create duplicate entity records.
+
+**2. Standardize NAP (Name, Address, Phone) across every directory.** Google Business Profile, Bing Places, Apple Maps, Facebook, Yelp, BBB, industry directories. Pick one address format, one phone format, and one business name. Then audit every listing.
+
+**3. Write a single canonical business description.** Two to three sentences. Includes your business category, what you do, and what makes you specific. Use this exact description in your Organization schema, Google Business Profile description, About page lead, and any third-party listings that allow custom descriptions.
+
+**4. Set up the foundational schema sitewide.** Organization schema in your root layout, validated with Google's Rich Results Test. This is what AI models read first when they encounter your site.
+
+**5. Confirm your About page tells your entity story clearly.** Founders, founding date, headquarters, primary services, geographic coverage. AI models pull from About pages heavily when forming entity descriptions. Bury this information and you forfeit the chance to influence how the model describes you.
+
+## Phase 2: Content Structure (Steps 6-11)
+
+Content structure is what makes your existing content extractable. Most pages contain the right information — they just hide it inside marketing copy.
+
+**6. Audit your H2s on top pages.** Rewrite headlines as the actual questions buyers ask. "Our Approach to Excellence" becomes "How do we approach client work?" or "What does a typical engagement look like?" The model extracts headings as topic signals.
+
+**7. Lead every section with the answer.** First sentence under each H2 should be a direct, factual answer to the question. Bury the answer in paragraph three and the model skips you.
+
+**8. Add an FAQ section to every important page.** Service pages, location pages, the homepage. Five to eight questions per page, written the way users actually phrase them, with direct one-paragraph answers. This is the single highest-ROI content change.
+
+**9. Use definitional structure for key terms.** When a page introduces a concept ("Search Everywhere Optimization is..."), the definitional sentence should be standalone, factual, and complete. Models extract these as definitions and reuse them in answers.
+
+**10. Add a TL;DR or summary block to long-form content.** AI engines extract these heavily for snippet citations. Two to three sentences, lead with the answer, no marketing fluff.
+
+**11. Cross-link related content with descriptive anchor text.** "Read our piece on local SEO" is weak. "Read our 2026 Local SEO Playbook" is clear. Anchor text influences how AI models interpret topical connections between your pages.
+
+## Phase 3: Schema and Technical (Steps 12-17)
+
+Schema is the structured-data layer that tells AI models what each piece of your site is. The technical layer ensures your content is fast, accessible, and crawlable.
+
+**12. Implement comprehensive JSON-LD schema.** Beyond Organization (Step 4), you need LocalBusiness (location pages), FAQPage (anywhere with Q&A), BlogPosting (every blog post), BreadcrumbList (interior pages), Person (author bios), and Service or Product (depending on your business). Our [seven schema types guide](/blog/schema-types-local-business-2026) covers each in detail.
+
+**13. Validate every schema before shipping.** Google's Rich Results Test catches missing required fields. The Schema.org Validator catches structural errors. Both should pass before any page goes live.
+
+**14. Keep schema content in sync with visible content.** FAQ schema with three questions where the page shows five is a Google policy violation. Match exactly.
+
+**15. Get Core Web Vitals into the green.** LCP under 2.5s, INP under 200ms, CLS under 0.1. Slow pages get fewer citations because models depend on freshness, and slow sites are crawled less often.
+
+**16. Make sure your sitemap.xml is current.** Every page you want indexed should appear, with accurate \`lastModified\` timestamps. AI models cross-reference sitemaps when deciding which content is current.
+
+**17. Confirm robots.txt allows AI crawlers.** GPTBot, PerplexityBot, ClaudeBot, Google-Extended. If you've blocked them, you've opted out of AI search visibility. Most businesses don't realize they've done this until they audit.
+
+## Phase 4: Authority and Citations (Steps 18-21)
+
+Authority signals are what tip AI models toward citing you over competitors with comparable content.
+
+**18. Build third-party citations on purpose.** Trade publication mentions, industry association listings, podcast appearances, partner co-marketing, customer case studies on third-party sites. Each independent reference tightens the citation graph models use.
+
+**19. Earn high-quality backlinks from authoritative sites.** Domain authority still matters, even in the AI search era. The backlink profile that drives traditional SEO authority also influences which sources AI models trust.
+
+**20. Publish regularly on a few core topics.** Topical authority compounds. Five comprehensive guides on AI SEO outperform fifty thin pieces across thirty unrelated topics. Pick three to five core topics. Go deep on each.
+
+**21. Get cited by your own customers.** Reviews, testimonials, case studies, user-generated content on third-party platforms. Models weight these as social-proof signals when deciding which sources to surface for "best [service] in [city]" queries.
+
+## Phase 5: Monitoring (Steps 22-23)
+
+Monitoring is what keeps the work productive over time. Without it, optimization becomes guessing.
+
+**22. Run the same five queries every month.** Pick five queries that matter for your business — typically variations of "best [service] in [city]" and informational queries adjacent to your offering. Run them on ChatGPT, Perplexity, Gemini, and Google AI Overviews. Document who gets cited. Track changes month-over-month.
+
+**23. Audit your content against the queries you're not winning.** When the model cites a competitor for a query you should be winning, read the cited content. What does it say that yours doesn't? That's your content gap. Close it within the next 30 days.
+
+## How Long This Takes
+
+A realistic timeline for a small business running this checklist with discipline:
+
+- **Phase 1 (Foundation):** 2-3 weeks if your NAP is already mostly consistent. Up to 6 weeks if it's a mess.
+- **Phase 2 (Content Structure):** 4-8 weeks depending on how many pages need restructuring.
+- **Phase 3 (Schema and Technical):** 2-4 weeks for implementation, plus ongoing maintenance.
+- **Phase 4 (Authority and Citations):** Ongoing. First meaningful citations typically appear 60-120 days after Phases 1-3 are complete.
+- **Phase 5 (Monitoring):** Permanent. One hour per month minimum.
+
+The total runway from "we haven't started" to "we're consistently cited in AI answers for our priority queries" is usually 4-6 months for a focused SMB. Larger businesses with more complex sites take longer.
+
+## What This Doesn't Cover
+
+A few things this checklist deliberately leaves out:
+
+**Paid AI search ads.** ChatGPT ads, Perplexity sponsored placements — these are pay-to-play channels worth their own analysis but they're separate from organic AEO.
+
+**Specific AI model quirks.** Each platform has small idiosyncrasies (e.g., Perplexity weights citation graphs differently than ChatGPT). The checklist above gets you 90% of the way across all of them. Platform-specific tuning is a Phase 6 concern after the fundamentals are solid.
+
+**Industry-specific schemas.** Healthcare, legal, financial services, and a few other regulated categories have additional schema requirements. If you operate in one of those, work with a specialist who knows the regulations.
+
+## Key Takeaways
+
+- AEO is mostly a tactical discipline — entity foundation, content structure, schema, authority signals, and monitoring — not a strategic mystery.
+- The 23 steps fall into five phases. Foundation must come first. Skipping foundation makes everything else underperform.
+- Most SMBs need 4-6 months from start to consistent AI citations. Larger sites take longer. The work compounds.
+- The single highest-ROI content change for most sites is adding question-style FAQ sections with direct one-paragraph answers.
+- Monthly monitoring is non-negotiable. AI search is moving fast and the queries that matter shift quarter to quarter.
+
+## Final Take
+
+The 23-step checklist isn't glamorous. Most of it is unsexy implementation work — schema validation, NAP audits, content restructuring, citation building. That's the point. Businesses that win in AI search aren't the ones with the cleverest hacks. They're the ones that did the foundational work while their competitors waited for a silver bullet.
+
+If you'd rather have someone run this list end-to-end on your business, our team handles full [AI SEO and GEO engagements](/services/ai-seo-geo) — covering all 23 steps plus ongoing monitoring and iteration. [Request a free audit](/free-audit) and we'll tell you which of the 23 steps your site is currently failing.`,
+  },
+  {
     slug: "perplexity-vs-google-where-to-optimize-first-2026",
     title: "Perplexity vs Google: Where Should DFW Businesses Optimize First?",
     excerpt: "Two search platforms, two very different audiences, and limited optimization time. Here's a decision framework for DFW businesses choosing where to focus first — and why the answer often surprises people.",

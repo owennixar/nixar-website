@@ -8,6 +8,57 @@ export const BLOG_SEO_DATA: Record<string, {
   keyTakeaways: string[];
   faqs: { question: string; answer: string }[];
 }> = {
+  "local-seo-frisco-businesses-2026-playbook": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "Frisco is a faster-growing local market than most, and the buyer profile rewards businesses that hold up to scrutiny — not just businesses that win on proximity.",
+      "Google Business Profile completeness, NAP consistency across directories, and steady review velocity are the three foundational levers.",
+      "Frisco-specific content that references neighborhoods, landmarks, and growth dynamics outperforms generic local content with 'Frisco' inserted.",
+      "Measure Map Pack appearances, branded-search trend, GBP insights, and review velocity. Star average and total review count matter less than activity rate.",
+      "AI search is increasingly part of local consideration in Frisco. Local SEO that ignores the AI channel forfeits a growing share of buyer research.",
+    ],
+    faqs: [
+      { question: "How fast can a Frisco business see local SEO results?", answer: "The fastest visible improvements come from Google Business Profile completion and NAP cleanup — both produce ranking shifts within 30-60 days. Content-driven ranking improvements typically take 90-180 days. AI search citations follow a similar 90-180 day curve once the technical foundation is in place." },
+      { question: "Do I need a separate Google Business Profile for each Frisco location?", answer: "Yes, if you have a physical storefront in each location. Google's policy is one GBP per physical location, with that location's actual address. Service-area businesses (no walk-in storefront) get one GBP for the headquarters with service-area definitions, not multiple listings." },
+      { question: "How many reviews per month should a Frisco business aim for?", answer: "4-8 new Google reviews per month is the sustainable target for most service-based Frisco businesses. Higher volumes are possible for retail or hospitality. The key is consistency — a steady drip beats sporadic bursts." },
+      { question: "Should I focus on Google or on AI search platforms first?", answer: "Google first, almost always. The Map Pack and traditional local results still drive the majority of local intent traffic in Frisco. Once your Google foundation is solid, AI search becomes the natural second priority — and it pays back faster than Google because the competitive landscape is much less saturated." },
+      { question: "What's the most common Frisco local SEO mistake?", answer: "Treating local SEO as a one-time setup. The businesses that win Frisco are the ones running it as an ongoing system: weekly GBP updates, monthly review program management, quarterly content publishing, and continuous NAP audits. The market is too competitive for set-and-forget." },
+    ],
+  },
+  "traditional-seo-tools-full-story-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "Traditional SEO tools (Ahrefs, Semrush, Moz) remain best-in-class for keyword tracking, backlink analysis, and technical auditing.",
+      "The structural blind spot is AI search — these tools weren't built to track ChatGPT, Perplexity, Gemini, or Google AI Overviews citation behavior.",
+      "A hybrid stack covers both: existing SEO tool + an AI search rank tracker + Search Console branded-search trend + monthly manual audit.",
+      "The metrics that matter are shifting. Branded-search trend and AI citation share are increasingly more useful than raw organic traffic for measuring visibility.",
+      "Most SMBs don't need to overhaul their stack — they need to add 1-2 AI-specific layers on top of what they already use.",
+    ],
+    faqs: [
+      { question: "Do I need to switch from Ahrefs or Semrush?", answer: "No. The traditional SEO tools you're using are still the best in their category — keyword tracking, backlink analysis, technical auditing, competitive intelligence. Add AI search visibility tools alongside them, don't replace them." },
+      { question: "What's the cheapest way to start measuring AI search visibility?", answer: "Three free things: server log analysis for AI crawler traffic (GPTBot, PerplexityBot, ClaudeBot, Google-Extended), Search Console branded-search trend monitoring, and manual monthly queries on ChatGPT, Perplexity, and Gemini for your priority terms. This gets you 70% of the visibility insight a paid tool provides." },
+      { question: "When should I subscribe to a paid AI search rank tracker?", answer: "Once you've defined your priority query universe (5-15 queries) and you're committed to running monthly comparative analysis against competitors. Below that volume, manual checks are sufficient. Above it, automation pays back fast." },
+      { question: "Are AI rank tracking tools accurate?", answer: "Reasonably, for the snapshot they capture. Each tool queries the platforms on a defined cadence with a defined query set, so the data reflects what those queries returned at that moment. It's directional rather than absolute — citation behavior shifts as platforms update — but it's good enough for tracking trends and competitive positioning." },
+      { question: "What metrics replace 'rankings' as the north star?", answer: "Branded-search trend (leading indicator of AI visibility working), AI citation share for priority queries (direct visibility measurement), and conversion rate on the traffic that does click through (signal that the visitors arriving are warmer). Together these give a more honest picture of whether your search investment is producing business outcomes." },
+    ],
+  },
+  "answer-engine-optimization-checklist-2026": {
+    authorKey: "owen",
+    keyTakeaways: [
+      "AEO is mostly a tactical discipline — entity foundation, content structure, schema, authority signals, and monitoring — not a strategic mystery.",
+      "The 23 steps fall into five phases. Foundation must come first. Skipping foundation makes everything else underperform.",
+      "Most SMBs need 4-6 months from start to consistent AI citations. Larger sites take longer. The work compounds.",
+      "The single highest-ROI content change for most sites is adding question-style FAQ sections with direct one-paragraph answers.",
+      "Monthly monitoring is non-negotiable — AI search is moving fast and the queries that matter shift quarter to quarter.",
+    ],
+    faqs: [
+      { question: "What's the difference between AEO and GEO?", answer: "Largely terminology. Generative Engine Optimization (GEO) was the early name, but the industry is converging on Answer Engine Optimization (AEO) as more accurate — these platforms function as answer engines, not generative engines. The work is the same: entity clarity, content structure, schema, third-party citations, and monitoring." },
+      { question: "Can I do AEO myself or do I need an agency?", answer: "Most of the 23 steps can be done in-house if you have technical capacity for the schema implementation and discipline for the monitoring. The phase that most teams underdeliver on is Phase 4 (authority and citations), which requires sustained PR and outreach work over months. Agencies add the most value on Phases 3 and 4." },
+      { question: "How do I know if my AEO work is paying off?", answer: "Run the same five priority queries on ChatGPT, Perplexity, Gemini, and Google AI Overviews every month. Document who gets cited. The leading indicator is your content showing up cited for related-but-secondary queries before you crack the priority queries themselves. That signals the model is treating you as authoritative on the topic cluster." },
+      { question: "Which step matters most?", answer: "Step 8 — adding FAQ schema with question-style headings and direct-answer content — typically produces the fastest measurable visibility gain. But the foundation steps (1-5) are non-optional prerequisites. Skipping foundation makes every other step underperform." },
+      { question: "How often should I rerun this checklist?", answer: "Phase 1 (foundation) is a one-time setup with annual audits. Phases 2 and 3 are quarterly maintenance. Phase 4 (authority) is continuous — content publishing and citation building never stop. Phase 5 (monitoring) is monthly." },
+    ],
+  },
   "perplexity-vs-google-where-to-optimize-first-2026": {
     authorKey: "anwar",
     keyTakeaways: [
