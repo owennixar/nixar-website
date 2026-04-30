@@ -8,6 +8,57 @@ export const BLOG_SEO_DATA: Record<string, {
   keyTakeaways: string[];
   faqs: { question: string; answer: string }[];
 }> = {
+  "real-cost-of-cheap-web-design-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "The right comparison for web design cost is total ownership cost over three years, not initial sticker price.",
+      "The nine hidden costs of cheap web design — lost conversions, SEO penalties, security incidents, replacement work, maintenance burden, lost trust, integration debt, missed branded search, opportunity cost — typically exceed the upfront savings by 5-10x.",
+      "'Quality' means modern technical foundation, performance budget, SEO architecture, integration design, maintainability, and brand-appropriate visual design — not just expensive.",
+      "Cheap web design is appropriate for validation projects, minimal businesses, and bridging needs. For revenue-driving SMB sites, it almost never is.",
+      "A defensible SMB website budget is $8,000-$25,000 build plus $2,000-$8,000 annual maintenance. Below that, hidden costs typically erode savings within 18-24 months.",
+    ],
+    faqs: [
+      { question: "Is a $500 website ever the right choice?", answer: "Yes, for validation projects, hobby businesses, or interim sites that aren't intended to drive meaningful revenue. The math changes when the site is responsible for actual leads, sales, or brand perception. For revenue-driving SMB websites, the cheap option almost always costs more over three years." },
+      { question: "Why does cheap web design cost more in maintenance?", answer: "The underlying foundation is weaker. Plugin updates break things more often. Theme updates change the design unexpectedly. Security patches require manual intervention. The accumulated maintenance burden often runs 30-50% of the original build cost annually, versus 5-15% for a well-built site. Three years compound the gap meaningfully." },
+      { question: "What's the difference between $1,500 freelance and $15,000 studio?", answer: "Mostly the technical foundation. The freelance work tends to use generic themes and shared hosting, with minimal SEO architecture and basic integrations. The studio work tends to use modern frameworks, performance budgets, comprehensive schema, and integrations designed for the actual tool stack. The difference shows up in the hidden costs over time, not in the initial appearance." },
+      { question: "Can I start cheap and upgrade later?", answer: "Sometimes, but most cheap-then-upgrade paths involve full rebuilds rather than iteration. The cheap site can't usually scale to match the upgraded requirements. Plan for rebuild in your budget if you start cheap. Most SMBs that take this path end up paying more than if they'd built quality from the start." },
+      { question: "What's the most expensive hidden cost of cheap web design?", answer: "Lost conversions. For an SMB with meaningful traffic, the conversion gap between a slow, poorly-designed site and a fast, well-designed equivalent is often 15-30% of revenue. That gap compounds for the entire life of the site and typically dwarfs every other hidden cost on the list." },
+    ],
+  },
+  "lead-to-loyal-90-day-activation-sequence-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "The 90 days after purchase determines retention more than any acquisition tactic. Customers who feel activated within this window stay 3-5x longer and refer 4-8x more.",
+      "Three phases: days 1-14 reduce friction, days 15-60 build habits, days 61-90 reinforce value.",
+      "The metric for phase 1 is time-to-first-value. The metric for phase 2 is usage continuity. The metric for phase 3 is value articulation quality.",
+      "Hybrid execution works best for small teams: automated sequences for standardized communications, human attention for high-value moments.",
+      "Skipping phase 3 — running good onboarding then going quiet — is the most common failure mode and produces measurable retention losses.",
+    ],
+    faqs: [
+      { question: "How automated should the 90-day sequence be?", answer: "Hybrid is the right answer for most small teams. Automate the standardized communications (welcome sequences, weekly check-ins, milestone notifications) and reserve human attention for the high-value moments (kickoff calls, course corrections, phase 3 review). Pure automation underperforms; pure manual doesn't scale beyond 10-15 customers." },
+      { question: "Does this work for one-off project businesses without ongoing relationships?", answer: "Adapted, yes. The phase structure compresses for shorter engagements (1-2 weeks each) but the principles still apply: reduce friction at start, build engagement during the work, reinforce value before the engagement ends. Customers who experience the full sequence in a one-off project refer at significantly higher rates than those who don't." },
+      { question: "How do we measure activation sequence effectiveness?", answer: "Three indicators are most reliable: time-to-first-value (shorter is better), usage continuity at day 60 (steady weekly engagement predicts retention), and net promoter score at day 90. The leading indicator that the sequence is working is referral velocity from customers in the 90-180 day window." },
+      { question: "What if our product has a long activation cycle that doesn't fit 90 days?", answer: "Adjust the phase boundaries to match your reality. The principles transfer to any timeframe. For complex enterprise products with 6-month implementations, the phases run roughly 30 days, 90 days, and 60 days. The mechanics are the same — reduce friction, build habits, reinforce value — at different cadences." },
+      { question: "Should sales or customer success own the 90-day sequence?", answer: "Customer success usually, with sales involvement at the start (handoff) and end (expansion). The handoff between sales and customer success is where most activation sequences break down. Document the handoff explicitly. Pass context (what the customer cares about, what they were promised, what their success metric is) rather than just contracts." },
+    ],
+  },
+  "brand-alignment-audit-why-marketing-isnt-working-2026": {
+    authorKey: "anwar",
+    keyTakeaways: [
+      "Marketing campaigns that underperform are usually misdiagnosed as channel or creative problems. The deeper issue is brand alignment.",
+      "Brand alignment is the consistency of external messaging, internal narrative, and customer experience. Strong brands have all three saying the same thing.",
+      "The three symptoms of misalignment are high lead volume with low conversion, faster-than-expected churn, and sales-marketing tension.",
+      "The audit involves inventorying external promises, interviewing employees, interviewing customers, and comparing the three sources for divergence.",
+      "Repair work depends on which gap is largest. Some gaps are marketing's to fix. Most aren't.",
+    ],
+    faqs: [
+      { question: "How long does a brand alignment audit take?", answer: "For a small business, 3-4 weeks of focused work — one week for inventory and document review, two weeks for employee and customer interviews, one week for synthesis and report. Larger or more complex organizations can take 6-8 weeks." },
+      { question: "Should marketing or HR own brand alignment work?", answer: "Both, depending on the gap. Marketing owns the external messaging layer and is responsible for not amplifying a promise the company can't deliver. HR and leadership own the employee experience layer. Operations owns the customer experience layer. The audit identifies which group needs to act on which gap." },
+      { question: "What if our brand is misaligned and we can't fix it quickly?", answer: "Most alignment work takes 6-18 months to complete fully. The interim move is to update marketing to match the actual current state of the company rather than continuing to amplify an aspirational promise the experience doesn't deliver. Honesty in the marketing reduces the alignment damage even before the operational work catches up." },
+      { question: "How do we know if our brand is aligned?", answer: "Run the three-layer comparison. If the external promise, internal narrative, and customer experience all describe the same company in compatible terms, you're aligned. If any pair diverges meaningfully, you're not. The clearest signal is hearing your sales reps describe the company in terms that don't match your website." },
+      { question: "Can a small business afford this kind of audit?", answer: "Yes. The audit methodology scales down to small businesses well — 8-15 employee interviews, 10-15 customer interviews, document review, and synthesis can be handled in a few weeks of focused work. The cost of doing the audit is far less than the cost of running misaligned marketing for two more years." },
+    ],
+  },
   "marketing-automation-small-teams-build-vs-buy-2026": {
     authorKey: "anwar",
     keyTakeaways: [
